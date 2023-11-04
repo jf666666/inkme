@@ -7,28 +7,50 @@
 
 import CoreData
 
+extension String{
+    static let random_str_characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    static func randomStr(len : Int) -> String{
+        var ranStr = ""
+        for _ in 0..<len {
+            let index = Int(arc4random_uniform(UInt32(random_str_characters.count)))
+            ranStr.append(random_str_characters[random_str_characters.index(random_str_characters.startIndex, offsetBy: index)])
+        }
+        return ranStr
+    }
+}
+
+
 struct PersistenceController {
     static let shared = PersistenceController()
 
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
+
+    let container: NSPersistentCloudKitContainer
+    
+    // 为预览目的添加的静态属性
+    static let preview: PersistenceController = {
+        let controller = PersistenceController(inMemory: true)
+        let viewContext = controller.container.viewContext
+                
+        // 在这里可以创建和配置一些用于预览的实体
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newFriend = FriendEntity(context: viewContext)
+            newFriend.nickname = "Sample Friend"
+            newFriend.iconURL = "https://example.com/image.png"
+            newFriend.onlineState = "online"
+            newFriend.vsMode = "Splat Zones"
+            newFriend.coopRule = nil
+            newFriend.isLocked = false
+            newFriend.isVcEnabled = false
+            newFriend.id = String.randomStr(len: 30)
         }
+        
         do {
             try viewContext.save()
         } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            print("preview context save failed")
         }
-        return result
+        return controller
     }()
-
-    let container: NSPersistentCloudKitContainer
 
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "InkCompanion")

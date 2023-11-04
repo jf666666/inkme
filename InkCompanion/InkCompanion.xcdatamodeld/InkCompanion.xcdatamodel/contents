@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="FriendEntity" representedClassName="FriendEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="coopRule" optional="YES" attributeType="String"/>
+        <attribute name="iconURL" attributeType="String" defaultValueString="https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/133136c9481fa136"/>
+        <attribute name="id" attributeType="String" minValueString="0" defaultValueString="none"/>
+        <attribute name="isLocked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isOnline" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isVcEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="nickname" attributeType="String" defaultValueString="zifeng"/>
+        <attribute name="onlineState" attributeType="String" defaultValueString=""/>
+        <attribute name="playerName" optional="YES" attributeType="String"/>
+        <attribute name="vsMode" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
-    <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-    </elements>
+    <entity name="WebServiceTokenEntity" representedClassName="WebServiceTokenEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="accessToken" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="language" optional="YES" attributeType="String"/>
+    </entity>
 </model>
