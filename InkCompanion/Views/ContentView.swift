@@ -43,7 +43,7 @@ struct ContentView: View {
         CoopHistoryList()
           .navigationViewStyle(StackNavigationViewStyle())
           .tabItem {
-            Label("shift", systemImage: "lifepreserver")
+            Label("打工记录", systemImage: "lifepreserver")
           }
           .tag(1)
 
@@ -52,7 +52,7 @@ struct ContentView: View {
         }
         .navigationViewStyle(.stack)
         .tabItem {
-          Label("ikachan", systemImage: "info.circle")
+          Label("调试", systemImage: "info.circle")
 
         }
         .tag(2)
