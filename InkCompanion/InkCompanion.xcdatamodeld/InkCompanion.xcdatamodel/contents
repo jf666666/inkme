@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="FriendEntity" representedClassName="FriendEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="coopRule" optional="YES" attributeType="String"/>
-        <attribute name="iconURL" attributeType="String" defaultValueString="https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/133136c9481fa136"/>
-        <attribute name="id" attributeType="String" minValueString="0" defaultValueString="none"/>
-        <attribute name="isLocked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="isOnline" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
-        <attribute name="isVcEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="nickname" attributeType="String" defaultValueString="zifeng"/>
-        <attribute name="onlineState" attributeType="String" defaultValueString=""/>
-        <attribute name="playerName" optional="YES" attributeType="String"/>
-        <attribute name="vsMode" optional="YES" attributeType="String"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="id"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="DetailEntity" representedClassName="DetailEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="detail" optional="YES" attributeType="Binary"/>
+        <attribute name="id" attributeType="String" defaultValueString=""/>
+        <attribute name="mode" attributeType="String" defaultValueString=""/>
+        <attribute name="player" optional="YES" attributeType="Binary"/>
+        <attribute name="rule" attributeType="String" defaultValueString=""/>
+        <attribute name="stage" attributeType="String" defaultValueString=""/>
+        <attribute name="stats" optional="YES" attributeType="Binary"/>
+        <attribute name="time" attributeType="Date" defaultDateTimeInterval="722052780" usesScalarValueType="NO"/>
+        <attribute name="weapon" optional="YES" attributeType="Binary"/>
+        <relationship name="shift" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShiftEntity" inverseName="details" inverseEntity="ShiftEntity"/>
     </entity>
-    <entity name="WebServiceTokenEntity" representedClassName="WebServiceTokenEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="accessToken" optional="YES" attributeType="String"/>
-        <attribute name="country" optional="YES" attributeType="String"/>
-        <attribute name="language" optional="YES" attributeType="String"/>
+    <entity name="ShiftEntity" representedClassName="ShiftEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="goldenAssist" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="goldenDeliver" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="mode" optional="YES" attributeType="String"/>
+        <attribute name="playCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rescue" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rescued" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rule" optional="YES" attributeType="String"/>
+        <attribute name="stage" optional="YES" attributeType="String"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wave" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="weapons" optional="YES" attributeType="String"/>
+        <relationship name="details" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DetailEntity" inverseName="shift" inverseEntity="DetailEntity"/>
     </entity>
 </model>

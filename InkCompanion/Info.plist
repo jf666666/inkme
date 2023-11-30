@@ -2,9 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>InkCompanionRefresh</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>zh_CN.otf</string>
+		<string>Splatoon1.otf</string>
+		<string>Splatoon2.otf</string>
+		<string>DFPZongYiW7-GB.ttf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>remote-notification</string>
+		<string>fetch</string>
+		<string>processing</string>
 	</array>
 </dict>
 </plist>

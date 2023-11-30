@@ -67,11 +67,11 @@ func getVsModeIcon(mode: String) -> Image {
     case "VnNNb2RlLTE=":
         return Image(.regularBattle)
     case "VnNNb2RlLTI=", "VnNNb2RlLTUx":
-        return Image(.anarchyBattle)
+        return Image(.anarchy)
     case "VnNNb2RlLTM=":
         return Image(.xBattle)
     case "VnNNb2RlLTQ=":
-        return Image(.anarchyBattle)
+        return Image(.anarchy)
     case "VnNNb2RlLTU=":
         return Image(.private)
     case "VnNNb2RlLTY=", "VnNNb2RlLTc=", "VnNNb2RlLTg=":
@@ -118,7 +118,7 @@ func getFriendColor(friend: FriendListResult.Data.Friends.Node) -> Color {
 
 func getCoopRuleColor(rule: CoopRule) -> SplatColor {
     switch rule {
-    case .REGULAR:
+    case .REGULAR, .ALL:
         return .SalmonRun
     case .BIG_RUN:
         return .BigRun
@@ -129,11 +129,11 @@ func getCoopRuleColor(rule: CoopRule) -> SplatColor {
 
 func getCoopRuleIcon(rule: CoopRule) -> Image {
     switch rule {
-    case .REGULAR:
-        return Image(.coop)
+    case .REGULAR, .ALL:
+        return Image(.coopRegular)
     case .BIG_RUN:
         return Image(.coopBigrun)
     case .TEAM_CONTEST:
-        return Image(.coopEggstra)
+        return Image(.coopTeamContest)
     }
 }

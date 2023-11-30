@@ -11,6 +11,11 @@ import Kingfisher
 struct FriendView: View {
     let friend: FriendListResult.Data.Friends.Node
     @Binding var expandedFriendId: String?
+    
+    @State private var image: Image?
+    @State private var isLoading = true
+    @State private var error: Error?
+    
     var body: some View {
         VStack {
             ZStack{
@@ -18,10 +23,10 @@ struct FriendView: View {
                     .fill(Color.gray.opacity(0.3)) // 默认背景色
                     .frame(width: 80, height: 80)
                     .overlay(
-                        // 假设你有一个属性来存储图片的URL
-                        KFImage(URL(string: friend.userIcon?.url ?? ""))
-                            .resizable()
-                            .scaledToFill()
+
+                      KFImage(URL(string: friend.userIcon?.url ?? ""))
+                        .resizable()
+                        .scaledToFit()
                     )
                     .clipShape(Circle())
                     .overlay(
@@ -61,6 +66,7 @@ struct FriendView: View {
     private func borderColor(for friendEntity: FriendListResult.Data.Friends.Node) -> Color {
         return getFriendColor(friend: friendEntity)
     }
+
 }
 
 
@@ -71,13 +77,13 @@ func getStateIcon(friend:FriendListResult.Data.Friends.Node)->Image{
     case FriendOnlineState.COOP_MODE_FIGHTING.rawValue:
         return getCoopRuleIcon( rule: CoopRule(rawValue: friend.coopRule!) ?? CoopRule.REGULAR)
     case FriendOnlineState.MINI_GAME_PLAYING.rawValue:
-        return Image(.coop)
+        return Image(.coopRegular)
     case FriendOnlineState.VS_MODE_MATCHING.rawValue, FriendOnlineState.COOP_MODE_MATCHING.rawValue, FriendOnlineState.ONLINE.rawValue:
-        return Image(.coop)
+        return Image(.coopRegular)
     case FriendOnlineState.OFFLINE.rawValue:
         return Image(systemName: "poweroff")
     default:
-        return Image(.coop)
+        return Image(.coopRegular)
     }
     
 }

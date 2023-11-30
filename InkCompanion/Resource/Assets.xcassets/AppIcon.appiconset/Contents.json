@@ -1,0 +1,14 @@
+{
+  "images" : [
+    {
+      "filename" : "DALL·E 2023-11-14 10.24.27 - A vibrant, colorful illustration inspired by the game 'Splatoon 3'. The image should feature abstract splashes of bright, multicolored ink reminiscent.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,2382 @@
+{
+  "data" : {
+    "currentFest" : null,
+    "xSchedules" : {
+      "nodes" : [
+        {
+          "startTime" : "2023-11-08T22:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS05",
+                "vsStageId" : 9,
+                "name" : "比目鱼住宅区",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/488017f3ce712fca9fb37d61fe306343054449bb2d2bb1751d95f54a98564cae_1.png?Expires=1704844800&Signature=YdFSE7YYhY7WHK9V9WVKaxmYDA6EyABrvQgZNjFs1aDWyw1HDNdSZ6GfHaz~ldF584zy7nIC6MS~-20grcI1qJHbb77iXDjHMUrONeG-Cu2BMKfRyBZrinhSK2bWpBALQpdWeGRrjb0sMjNuUjJOcBZTm4JzD7aITbrWnOEaUnOpqxHhQxOXkZBPmGwxnPNjCgUHbG9sjq1wngwQ2e32fJY2huJNnciisoak~jLLMu-qP-dqXMcRzZDTjHKAYAAYwbQa8p4yLrZ26uTQSWE~NBtBLVpeV9M2UvuvYUkjXngrMSvCgwcTetNe~qBqlp69qjoc9Wa8lqa7ww~QBee76g__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xMg==",
+                "vsStageId" : 12,
+                "name" : "鬼头刀SPA度假区",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/8273118c1ffe1bf6fe031c7d8c9795dab52632c9b76e8e9f01f644ac5ae0ccc0_1.png?Expires=1704844800&Signature=kmBrEJtSYIEL-oGBC3M7UxCf2dvIQbRFFYVNovjzZEsVtskf4taTkCLSxcwnp-57d8Q5H3d9Q4rFV3yVnfhJaCshuWPF0uXaRzOLoM2nDMyHzmC2l8uFQpou7QG4OJRo1NynOlYEqHjCodkzqWMgc8E8cWSaRvofxprV01Xd0P66bIj0oVtnZ4N9YdWEZ2tDqG8bAgUJS~rHcFtM7YwXQkdEimOWx~q7kPb-VSRKJj9sljw2zM56yK144JIpdJhsOKpCi6-qhBnXawG187X6~eI4Gxcb9BlOy2MG8tzZ2WNP4MCI3YT6rd5PN00bzWeFZod4W80g54pflAVv90g-Mw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格蛤蜊",
+              "rule" : "CLAM",
+              "id" : "VnNSdWxlLTQ="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-09T00:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T00:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS02",
+                "vsStageId" : 6,
+                "name" : "鱼肉碎金属",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/de1f212e9ff0648f36cd3b8e0917ef36b3bd51445159297dcb948f34a09f2f05_1.png?Expires=1704844800&Signature=DCx7ZtdZaAIINKvfQqr~PmCIMNoWodhT5Fgb0kg5LoQpsMfU~XyQvIcsrISJFbMUeKXGc4Mm1I3QKHHOn4Ydgdk99IYAp3xFfBuDZFVmErMcr7c6GBMG06axIcVtv6M90VtB8GJ8ZbmF5xIi1t4UHOQdjuIiASYy7NR7q8OPlNzCVls9F8Pn5tI16qmIEsbDppzqluP2ZIDHINXy5sBbeUtgnxZTZLgqUZvZdwztLYIBF3uFqcKY5bcwkr7paZLeYpwYSZklJt8NoHN~K1WTzL1XIRGHjo6HmshRSAodFYc~T6U~xtxdmZ9vCMKuPc8mhDGyOP357STnQZVFKhqx8Q__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS04",
+                "vsStageId" : 8,
+                "name" : "塔拉波特购物公园",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/f70e9f5af477a39ccfab631bfb81c9e2cedb4cd0947fe260847c214a6d23695f_1.png?Expires=1704844800&Signature=UshJ6zCIS6sJSTBYPrbmcdtkdsvE2FJqsG8~cdEzAUkxyQbhLNA5nXEVauwM9Z9LIHJI5g5-syCOJaS5oWfeSRKeg~e9KXnXeaW0bNfjAyoHxXHi5moapp1xwdbnj8XVKpmtN9wRnl86yfKol~aU4kx3okH4cReCR3Tlw3QyvUqXbEX70q9RXSzaTDilLmweJGT8LorrZMGsxBTkON0v-nr8XADsw6XeN5uqxhFryHcRE21tlxcdg5scUZHf8sj4VSnex1avJoSbXOPVPOZqx5iQ8EmG6SeTkBr4jUNv3OgfQ09e9tsKoBueHPdZ2akmRMKy4f3iKtNXhvVmEl6jPw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格塔楼",
+              "rule" : "LOFT",
+              "id" : "VnNSdWxlLTI="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-09T02:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T02:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS01",
+                "vsStageId" : 5,
+                "name" : "鱼露遗迹",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/f14c2a64e49d243679fc0884af91e1a07dc65600f9b90aefe92d7790dcffb191_1.png?Expires=1704844800&Signature=ELc9vhZ9IYAuhsNuTlbWLSJsvqFc-4JNMXzFME6U1jBgt1sJxPCX5ek2qeqTcKe8IJZ00jduaQcUzUXWqTAzXVHZdc0E7PlFWfcawNXeHHq9ClwvE3r8OM94fYBds8GSdnQpT3vsrGZYYLNs3U~3J8XUfPWoSkwznbkpax0mXtOWMwAi1yHWnokTK9bVmwIXyFQqTL~7UhdrJXsawGmZ9X-nqqZCsXuEGQX6a-TzTfzvLN3l-ypYanUC~jKTuzHpAxfUYp3S7zWalxshhX7ofJJaeuKNv8IXcq22hItbTG06gUaudqkPHmciC5JsSjvOrkGCKuhSqgixHqcCR6xyug__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS03",
+                "vsStageId" : 7,
+                "name" : "臭鱼干温泉",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/cd84d711b47a424334569ac20f33f8e0ab6a652dc07854dcd36508a0081e9034_1.png?Expires=1704844800&Signature=Hv-5-Vxpeu2YqGjYwp1YlxE0vUHklhmR6C0s0Yjy5ezdyqAll4S3Uvk-6YCWAYpVppVP4dCEZ-9YclgcrQLt2mg9s42Ev3xMYgJ0rr5wWOKmOkcoCpJVjUshrWeT2SxKYbULAz5xei1ddX7Mr2Zghhwi-aK6MuEVLIYly5-EWnWvj4DdNrgxoFIsgdlWXOviEQFAfEbko09GZbnYk7V3ynZjxlAHS6dpDmqXkZWpwkQQ6qMePrT-YCOwce0eTmui6TIDhiHSpGxBJS1rROWs-E8SHOvNj7l61Qgrj0F36DZB1ffOnp~iKR2bSptIYyiKNZiNHXobAYGCDdWh2L1e-A__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格鱼虎对战",
+              "rule" : "GOAL",
+              "id" : "VnNSdWxlLTM="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-09T04:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T04:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0z",
+                "vsStageId" : 3,
+                "name" : "烟管鱼市场",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/8dc2f16d39c630bab40cead5b2485ca3559e829d0d3de0c2232c7a62fefb5fa9_1.png?Expires=1704844800&Signature=PvdMv~ZvhiqBXY7GAW~wHyzNtGJu4w5fjQ0UOi4qEU7vxo~PTnVfccUX45cZuwlIE6dW4JiRWBOQ0IEkoHWoy2KWn0USb1ozDuWfmX0jhsF3lDshpKeQ1tulfMlKQLlN-ouNE-4Y28XNs2kp2ztHRCrdysOHHqC2Q98keeMCwoV5LvEN7rWayrhx3naFsL5~~maByVVhb4Dmnpk0FfIZgC-CnQQnmnKVC8gyT~gBapYufTpujXPh5CWkhnQCI7XPYneYwO8kdSV5YPuw96MV9JjZawetfJ~qgafTAMZG3CdEFF0jYyiIv6~X7ZsRIoMY2LrU7Y9V9bHju8YqC8kLKg__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0yMA==",
+                "vsStageId" : 20,
+                "name" : "大比目鱼海运中心",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/b65a70eedf129848b9d2b492bb68712abf91a5cbda13131848947fb04c51d665_1.png?Expires=1704844800&Signature=wvr67pB8u5ZQryyPjyCrNsFPn5-2R21FHFhTD0~-RQK8IM3vj~GiD9uuikE78w0V3DPzm4a4h853OfRHCYUYRkqfOdvnK7WFHp1LJQajgYVIRS1jnZK44f3uWD0Per9DnYWV~wjf-DD5jiIFnfVaMXPaNv6WoRCXpGf6m4IoP7zfBowIEcg6z-0nO1nNziwK5VqUo4lEyB3K99ui4lXY1jRNLPLMiIyDO4nZM6l5mkPDaRulos9adKVBTJ10MrzcD1yGnVly5qhZMa3mMWg59dJaRnd92B~GTWVYc9Pp-VdNGjo0uwy2ObQtRlZH9DKlcqFJYpQd8xhjhNLF8UveUw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格蛤蜊",
+              "rule" : "CLAM",
+              "id" : "VnNSdWxlLTQ="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-09T06:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T06:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0y",
+                "vsStageId" : 2,
+                "name" : "鳗鲶区",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/898e1ae6c737a9d44552c7c81f9b710676492681525c514eadc68a6780aa52af_1.png?Expires=1704844800&Signature=CylRvhSFefkTHRGg0s0x341rDpK0dW1wPlRKW9EM4PVg72qKkE15JbX9DT4Xo18SyeYNM3rHdYMPM01dY5YLCFYBMkiXGBvC34dlUlZ253B6OES5Gua0Hwyt6-WTMPy0u2tinrVw6oSaYIH7gyQ1nf6T~AUEDd7yI5cIR~ZF4a2NRQMMQH36iDFNXCFxLNiM8S8JiT1GryeJGaKDFDqDMuPq00zGndRE5JGqiQ-VS5zLFTibwc5LkwJQUHOD4FpKo4JW4Ujb44-tYKQxT6iuKM8lpvQOwHehfLWRxL-yO77IZy-~IULB-iAH5Ru~fvQuctSbnGKgkpHS2bEvDoaVaw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS00",
+                "vsStageId" : 4,
+                "name" : "竹蛏疏洪道",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_1.png?Expires=1704844800&Signature=aCVPQpc6fkx8elrWptfRNQXJ-anEOBqk8CnmPL~J5EU7~ECXalsFmdIb-ahU-OEtwgx31vfYXy1~68A945O6m54HLcbgWkSqnK0oG16i5iuMAlrIZyYCelxwAXYaeKns~T4XICDdOaF7s~CX0haaj9ZFQl19UpP7KwRB5VVVRaRExUdTlmsmR-06ZQ00pn8ua8LZ~wa4cSaMpoGy3YmFHFweeqsdmHmLm0FHQ5ZpEMj0Si0nWA5kGgWcn1bljvhqErl9CW4YRznttkCoh-AVewsD2knDtqu~SU9P-RW9KsXIYCBFoAP25pWDzPUlKh5g7SvvMCdpdPU3tAsOHzyZDA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格区域",
+              "rule" : "AREA",
+              "id" : "VnNSdWxlLTE="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-09T08:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T08:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0xMg==",
+                "vsStageId" : 12,
+                "name" : "鬼头刀SPA度假区",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/8273118c1ffe1bf6fe031c7d8c9795dab52632c9b76e8e9f01f644ac5ae0ccc0_1.png?Expires=1704844800&Signature=kmBrEJtSYIEL-oGBC3M7UxCf2dvIQbRFFYVNovjzZEsVtskf4taTkCLSxcwnp-57d8Q5H3d9Q4rFV3yVnfhJaCshuWPF0uXaRzOLoM2nDMyHzmC2l8uFQpou7QG4OJRo1NynOlYEqHjCodkzqWMgc8E8cWSaRvofxprV01Xd0P66bIj0oVtnZ4N9YdWEZ2tDqG8bAgUJS~rHcFtM7YwXQkdEimOWx~q7kPb-VSRKJj9sljw2zM56yK144JIpdJhsOKpCi6-qhBnXawG187X6~eI4Gxcb9BlOy2MG8tzZ2WNP4MCI3YT6rd5PN00bzWeFZod4W80g54pflAVv90g-Mw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xOQ==",
+                "vsStageId" : 19,
+                "name" : "高脚经济特区",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/4e0e9e2046aff1d635e23946d9f0a461486d2aab349079e551037e426ac82c7a_1.png?Expires=1704844800&Signature=P4~IInt32mWwNwr3gKhy1r-2MFLsCOFxWotmHNEtLSqM3x~4paTwqcFit3mlsZDXiYu9m5qMpDyTK-4hI-Pzb4TazTYLEmUt3mtAct6tU9esR1oQX1ydmtfOvy5rsIaUVuLb1z1nozLdk0w7ApD9pKKOSorlt-0cVwbCCG1p48SioWDa8cEEEPbY5tPKAupYWo3twA7pF7GRe7lyWb8o2hC6QIkJH0g1DZrlXe7cG6AUkgawK1jj9XgqDKdqGROo2eTGzq3NqvAVVx-jiK9cgRKZhhjB-gX75c77ldFrBa8Yiy4G6am3Iied9NVXro74csI-WeG1pWWQLRQfiGHWdA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格塔楼",
+              "rule" : "LOFT",
+              "id" : "VnNSdWxlLTI="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-09T10:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T10:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0xNg==",
+                "vsStageId" : 16,
+                "name" : "醋饭海洋世界",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/61ea801fa4ed32360dcaf83986222ded46a72dbf56194acc6d0cf4659a92ba85_1.png?Expires=1704844800&Signature=UJ77DJ-6VmgcmPeLWHFKe7rKEo9ojf9uxvNegOM8IJKIn5-UyZih2mYfP8NpVVOJiVBlvr3eNpel3Z9Ifgm3V1kmkjdWE3SeJik64zinlruBtzu3pUJzPtKpxQKdyDhvLn2wjxXw84w4pSd1kCJ8Vhyj-uCCvVU2oHtwchVJlG~opd~KsiMBf6xdKsGgZuUzvGWoDyzaTA6Fb9ZNAr0KWJKoHE6XaRyavzIJLlh6a8YQh1DHhkQZqwlHCqw2iI3mKHuWyRdUXc5EUJQ3Oku8ASl3j-Tv3IaSe4nwO36JqJUwqVqc1CYBXD3K2ACwhvCUgQFZX85a3C9Kt0t3bf6eug__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xNw==",
+                "vsStageId" : 17,
+                "name" : "昆布赛道",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/7b3cf118bd9f45d141cd6db0ee75b06e697fa83945c7fe1e6f8483de6a591f5f_1.png?Expires=1704844800&Signature=pB86z49uqrBZu9bVI3W-H25IRYIJI4rFJv90zajgmUeRiYgmVzWkD64ishajszBRwc~pHdejCFOxXfF4MO~CwuduqE63og6IIXUWk9JH3XBQo7E2O6y0WoUctBKc60sDbilfS8IVBTPUrgveVPHr4CuUQaIrzejVCCxnnn6M6F3Iowp6aZLVlPwVWxJHljogliNACLjFSBsp6iGPCZZyghRi75mIAhE~N4rnbLwcMft1f7Vqjn0z5PTfOIqd9-IXNuHM9~QcZFN-kZzykIrE7l0r~aLM1znDu4CfNbjYaQqbj5j2aEGltBMi4Dt1eCqcBRW743uFO~yXoLX9lh1ThA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格鱼虎对战",
+              "rule" : "GOAL",
+              "id" : "VnNSdWxlLTM="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-09T12:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T12:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0x",
+                "vsStageId" : 1,
+                "name" : "温泉花大峡谷",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/35f9ca08ccc2bf759774ab2cb886567c117b9287875ca92fb590c1294ddcdc1e_1.png?Expires=1704844800&Signature=QPMKMTDhgndGoKsNAzY-CI0AmFsreK~IKQY4wtdQWiFE2kEISBOPV6YviW8s6OuwfYn8ipvIlZuwHL6kYE5BgdaqFExBb88ebxGcRwpjpclbSrIY5xdvkcQ5KPEJKx79UKReEhYMfcJyUoMa1t4fOrygSk~omqhAQdQEISkWFwfz-Ksna7HeLIIJ7iytPiRqX2GBcSlnJlp-jw8teYYD8NMwCzjWDOzxAOgQA2j6sjA5fYDRMoTVNPIFmhzy8WtpO-kL0mayDyEHM~I2S3JtGwU55BZgYas-xjUUHiZ0YHwNVe1xoJnf-YjTQEDPOh7Ro-T~GI4vCY6R6EaeEoRuaA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xNQ==",
+                "vsStageId" : 15,
+                "name" : "座头购物中心",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_1.png?Expires=1704844800&Signature=GFpgXrGEf5Zekq94fvBtYMgeiM-E9gzplFZoRn2CD7Pi8JdPDT4xjVaKjYudwKOxXOiamyuFDzgF9RFHN0-S~IqdJWnJYDLGRL5TOhmpIDtMvnzl2DkqH5bS5ldLu0Xf9j1~hpX7tYmX~KK2JUWaNf20s6z95Jke8zJ3PwIvwEIPpEFMKDQBic9fQlIfGbsn0gVMm3TLsyOJvGUMqjX~jMd6FcyhPksbKK~SC~CK5yqjORvku-KvpNuPBpErmOQPEbtfcdTlH2jnJyU9lqbmYaLQDalAssbRTTquuicVpSq1qQccjOWQc~XSXp0ZlY~2smu1QhiNdpq0l0ED00a9JQ__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格蛤蜊",
+              "rule" : "CLAM",
+              "id" : "VnNSdWxlLTQ="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-09T14:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T14:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0xMQ==",
+                "vsStageId" : 11,
+                "name" : "金眼鲷美术馆",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/b9d8cfa186d197a27e075600a107c99d9e21646d116730f0843e0fff0aaba7dd_1.png?Expires=1704844800&Signature=eWr6sd-YmpgIbOdx96tTH4uFjPiuLFuF9YNiXa9yvJj5VJIBhJSCaPjn3VsGxSVTmRgkzFSnmcGPQ8dVjona8rQhTOycvVSQuJ4V9yfc4bYomdqw9U4ex1pYYTt1XIlxrQ7e1J3nEe9E0P6tOdqpzNb1Yhz2oPwnVnApUNBNoKSwc09W-Wxc~KVnmCx3yHP-~~sCK2HP7~r-D1uUITgBg6m-aU7zvUEJMFE2Aodokd8sI2vJXfUlQGyqXrm~LhdU28qrbjwnYbnliMcTNZhdSLtCZPNV-ZZpoQKRuF-dzl-zmHsabLCHcLkKYCnEbYbvm95pTAOsG7fCirxTKUmOYw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xOA==",
+                "vsStageId" : 18,
+                "name" : "鬼蝠鲼玛利亚号",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/0b7fd997781e03eb9d5bf1875ed070f698afc654f4fe929452c65aa26c0a35fd_1.png?Expires=1704844800&Signature=hD1dBcpfXEtVu9jgVIGB4bdUJlnvBcVtBwmgPOjxhZkAhJGuO669Ycsvlc67mr6MebYlv9S10Z1j5IdZ87nV6AAKCkXLP-4iO3HYXcUVw4VAYqgU~j8PGwSNisNr5Y8GGJdERDoAjffS8YlzyoWoJKTjv6xLWC~u5aMLYX4AB3QpnUolKq-feFcuMvBQwC1DQ9kTM7e-bbQVNrgAM-I4EJ~k1GGFwT646UHd2LjrHQRBnKHk~qklKg4MI5IliQcfQE7gKM9vifbLyC~5oYeWjogP4pnbdjXDEJEGyaDtYqvJqwekv1MYS0rV2JQQ83~hUw6d2NErccJXJsF2oK8lOQ__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格区域",
+              "rule" : "AREA",
+              "id" : "VnNSdWxlLTE="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-09T16:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T16:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0xMA==",
+                "vsStageId" : 10,
+                "name" : "真鲭跨海大桥",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/1db8ab338b64b464df50e7f9e270e59423ff8caac6f09679a24f1b7acf3a82f3_1.png?Expires=1704844800&Signature=mJHU2mQjVMKqhH3cNkXgSHH-zvvAX-NWjoCMxbl9huZGMODP-UM74WDWOJetNGpvvIt-eRUteMbcql3u3ow4hjLPik~VQeoH1QPeEwxo~-OyrWNnJU1e7knlXxYrjSB~2aJUp6x82c8~NoW9xRD8CLpueA4~gv~ayPYJh1xxFSQ437zWvZrQk4MuQXcltn4c4tOevUX0ea-7XS-hpfmRUdzAr19zc7C9iPy1h0ABOSBBIyKblVZCmkpYvOooFAb-bVyJiLYOs0fTN8auCrT1SLjpCvT2K1I1~VkPuB4kgB~ueCTQW2tlyMUNlD9Uun~Vb7fObmS1pY-Mi0iTMVrLLA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xNA==",
+                "vsStageId" : 14,
+                "name" : "鲟鱼造船厂",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/48684c69d5c5a4ffaf16b712a4895545a8d01196115d514fc878ce99863bb3e9_1.png?Expires=1704844800&Signature=ogPimSKqTN5b94G54kw4TFLM4eIiBGIuPSwwOJ7slYUxbVHWWQfFJoRBOz1uLdsGSRpk1EYiIcG4EXuY4tPMJ9j9oGhzIEjAWUwE6y7ZEgU9v6TaMRiTnp0iN1ILj9d4PWlc3JTAPe~H6KIGEzmKHoRKbfNwESusrntGc-0mJ-fGQrRA2KHLXOJSXN8dzxZlTVPBsPjgL5EjYa1cRRfIP2tlcOLyCh9RVGuiHjwARmPC-Lus5ZBePQklnxbk~xfrpOoaViV0sn9Fam5uJDpfkYdYA-7kMPQy90oqh9JDNCFxcFjanLCS7TIkM8pcp9OCkxWY~xgHFBxqzHuaSueQuw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格塔楼",
+              "rule" : "LOFT",
+              "id" : "VnNSdWxlLTI="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-09T18:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T18:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS05",
+                "vsStageId" : 9,
+                "name" : "比目鱼住宅区",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/488017f3ce712fca9fb37d61fe306343054449bb2d2bb1751d95f54a98564cae_1.png?Expires=1704844800&Signature=YdFSE7YYhY7WHK9V9WVKaxmYDA6EyABrvQgZNjFs1aDWyw1HDNdSZ6GfHaz~ldF584zy7nIC6MS~-20grcI1qJHbb77iXDjHMUrONeG-Cu2BMKfRyBZrinhSK2bWpBALQpdWeGRrjb0sMjNuUjJOcBZTm4JzD7aITbrWnOEaUnOpqxHhQxOXkZBPmGwxnPNjCgUHbG9sjq1wngwQ2e32fJY2huJNnciisoak~jLLMu-qP-dqXMcRzZDTjHKAYAAYwbQa8p4yLrZ26uTQSWE~NBtBLVpeV9M2UvuvYUkjXngrMSvCgwcTetNe~qBqlp69qjoc9Wa8lqa7ww~QBee76g__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xMw==",
+                "vsStageId" : 13,
+                "name" : "海女美术大学",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/40aba8b36a9439e2d670fde5b3478819ea8a94f9e503b9d783248a5716786f35_1.png?Expires=1704844800&Signature=HFLQYG-CTDq97PpR9NKfPyvBRTI2yx2YrbENyqDsxn0wUqKu8joKmKpHWEd1yNTQX2ThYwkkgNYMBoxBR5xgixqC25jpqOk1m7Q4i2qAxhP0ICUK54JAqapK3IJsmfZYB4vaA5ouNBHzgvi4hsmF2~pnXNW2hw8evL45-d8q4xHpM85kAk4eAj1QpyFMNHxGFJgE1bt8IoPIoF3YLDNiQ1JFTUhPRATuFoNhdYIZD10~11ZNUvVlIZx8hqn4PMtosVr-ZHhcm7ny06M9ZvZ44H83VAbZJAG0nALjrVbcMsSID35lMVW~GdE2Q7iEUhokW3F8hZJRXl0uHX46uhG0cQ__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格鱼虎对战",
+              "rule" : "GOAL",
+              "id" : "VnNSdWxlLTM="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-09T20:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T20:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0y",
+                "vsStageId" : 2,
+                "name" : "鳗鲶区",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/898e1ae6c737a9d44552c7c81f9b710676492681525c514eadc68a6780aa52af_1.png?Expires=1704844800&Signature=CylRvhSFefkTHRGg0s0x341rDpK0dW1wPlRKW9EM4PVg72qKkE15JbX9DT4Xo18SyeYNM3rHdYMPM01dY5YLCFYBMkiXGBvC34dlUlZ253B6OES5Gua0Hwyt6-WTMPy0u2tinrVw6oSaYIH7gyQ1nf6T~AUEDd7yI5cIR~ZF4a2NRQMMQH36iDFNXCFxLNiM8S8JiT1GryeJGaKDFDqDMuPq00zGndRE5JGqiQ-VS5zLFTibwc5LkwJQUHOD4FpKo4JW4Ujb44-tYKQxT6iuKM8lpvQOwHehfLWRxL-yO77IZy-~IULB-iAH5Ru~fvQuctSbnGKgkpHS2bEvDoaVaw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS04",
+                "vsStageId" : 8,
+                "name" : "塔拉波特购物公园",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/f70e9f5af477a39ccfab631bfb81c9e2cedb4cd0947fe260847c214a6d23695f_1.png?Expires=1704844800&Signature=UshJ6zCIS6sJSTBYPrbmcdtkdsvE2FJqsG8~cdEzAUkxyQbhLNA5nXEVauwM9Z9LIHJI5g5-syCOJaS5oWfeSRKeg~e9KXnXeaW0bNfjAyoHxXHi5moapp1xwdbnj8XVKpmtN9wRnl86yfKol~aU4kx3okH4cReCR3Tlw3QyvUqXbEX70q9RXSzaTDilLmweJGT8LorrZMGsxBTkON0v-nr8XADsw6XeN5uqxhFryHcRE21tlxcdg5scUZHf8sj4VSnex1avJoSbXOPVPOZqx5iQ8EmG6SeTkBr4jUNv3OgfQ09e9tsKoBueHPdZ2akmRMKy4f3iKtNXhvVmEl6jPw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格蛤蜊",
+              "rule" : "CLAM",
+              "id" : "VnNSdWxlLTQ="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-09T22:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T22:00:00Z",
+          "xMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0x",
+                "vsStageId" : 1,
+                "name" : "温泉花大峡谷",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/35f9ca08ccc2bf759774ab2cb886567c117b9287875ca92fb590c1294ddcdc1e_1.png?Expires=1704844800&Signature=QPMKMTDhgndGoKsNAzY-CI0AmFsreK~IKQY4wtdQWiFE2kEISBOPV6YviW8s6OuwfYn8ipvIlZuwHL6kYE5BgdaqFExBb88ebxGcRwpjpclbSrIY5xdvkcQ5KPEJKx79UKReEhYMfcJyUoMa1t4fOrygSk~omqhAQdQEISkWFwfz-Ksna7HeLIIJ7iytPiRqX2GBcSlnJlp-jw8teYYD8NMwCzjWDOzxAOgQA2j6sjA5fYDRMoTVNPIFmhzy8WtpO-kL0mayDyEHM~I2S3JtGwU55BZgYas-xjUUHiZ0YHwNVe1xoJnf-YjTQEDPOh7Ro-T~GI4vCY6R6EaeEoRuaA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS03",
+                "vsStageId" : 7,
+                "name" : "臭鱼干温泉",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/cd84d711b47a424334569ac20f33f8e0ab6a652dc07854dcd36508a0081e9034_1.png?Expires=1704844800&Signature=Hv-5-Vxpeu2YqGjYwp1YlxE0vUHklhmR6C0s0Yjy5ezdyqAll4S3Uvk-6YCWAYpVppVP4dCEZ-9YclgcrQLt2mg9s42Ev3xMYgJ0rr5wWOKmOkcoCpJVjUshrWeT2SxKYbULAz5xei1ddX7Mr2Zghhwi-aK6MuEVLIYly5-EWnWvj4DdNrgxoFIsgdlWXOviEQFAfEbko09GZbnYk7V3ynZjxlAHS6dpDmqXkZWpwkQQ6qMePrT-YCOwce0eTmui6TIDhiHSpGxBJS1rROWs-E8SHOvNj7l61Qgrj0F36DZB1ffOnp~iKR2bSptIYyiKNZiNHXobAYGCDdWh2L1e-A__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "XMatchSetting",
+            "vsRule" : {
+              "name" : "真格区域",
+              "rule" : "AREA",
+              "id" : "VnNSdWxlLTE="
+            },
+            "__isVsSetting" : "XMatchSetting"
+          },
+          "endTime" : "2023-11-10T00:00:00Z",
+          "festMatchSettings" : null
+        }
+      ]
+    },
+    "currentPlayer" : {
+      "userIcon" : {
+        "url" : "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/c2cf2a7210de4139"
+      }
+    },
+    "regularSchedules" : {
+      "nodes" : [
+        {
+          "startTime" : "2023-11-08T22:00:00Z",
+          "endTime" : "2023-11-09T00:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS03",
+                "vsStageId" : 7,
+                "name" : "臭鱼干温泉",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/cd84d711b47a424334569ac20f33f8e0ab6a652dc07854dcd36508a0081e9034_1.png?Expires=1704844800&Signature=Hv-5-Vxpeu2YqGjYwp1YlxE0vUHklhmR6C0s0Yjy5ezdyqAll4S3Uvk-6YCWAYpVppVP4dCEZ-9YclgcrQLt2mg9s42Ev3xMYgJ0rr5wWOKmOkcoCpJVjUshrWeT2SxKYbULAz5xei1ddX7Mr2Zghhwi-aK6MuEVLIYly5-EWnWvj4DdNrgxoFIsgdlWXOviEQFAfEbko09GZbnYk7V3ynZjxlAHS6dpDmqXkZWpwkQQ6qMePrT-YCOwce0eTmui6TIDhiHSpGxBJS1rROWs-E8SHOvNj7l61Qgrj0F36DZB1ffOnp~iKR2bSptIYyiKNZiNHXobAYGCDdWh2L1e-A__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xMA==",
+                "vsStageId" : 10,
+                "name" : "真鲭跨海大桥",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/1db8ab338b64b464df50e7f9e270e59423ff8caac6f09679a24f1b7acf3a82f3_1.png?Expires=1704844800&Signature=mJHU2mQjVMKqhH3cNkXgSHH-zvvAX-NWjoCMxbl9huZGMODP-UM74WDWOJetNGpvvIt-eRUteMbcql3u3ow4hjLPik~VQeoH1QPeEwxo~-OyrWNnJU1e7knlXxYrjSB~2aJUp6x82c8~NoW9xRD8CLpueA4~gv~ayPYJh1xxFSQ437zWvZrQk4MuQXcltn4c4tOevUX0ea-7XS-hpfmRUdzAr19zc7C9iPy1h0ABOSBBIyKblVZCmkpYvOooFAb-bVyJiLYOs0fTN8auCrT1SLjpCvT2K1I1~VkPuB4kgB~ueCTQW2tlyMUNlD9Uun~Vb7fObmS1pY-Mi0iTMVrLLA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T00:00:00Z",
+          "endTime" : "2023-11-09T02:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS01",
+                "vsStageId" : 5,
+                "name" : "鱼露遗迹",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/f14c2a64e49d243679fc0884af91e1a07dc65600f9b90aefe92d7790dcffb191_1.png?Expires=1704844800&Signature=ELc9vhZ9IYAuhsNuTlbWLSJsvqFc-4JNMXzFME6U1jBgt1sJxPCX5ek2qeqTcKe8IJZ00jduaQcUzUXWqTAzXVHZdc0E7PlFWfcawNXeHHq9ClwvE3r8OM94fYBds8GSdnQpT3vsrGZYYLNs3U~3J8XUfPWoSkwznbkpax0mXtOWMwAi1yHWnokTK9bVmwIXyFQqTL~7UhdrJXsawGmZ9X-nqqZCsXuEGQX6a-TzTfzvLN3l-ypYanUC~jKTuzHpAxfUYp3S7zWalxshhX7ofJJaeuKNv8IXcq22hItbTG06gUaudqkPHmciC5JsSjvOrkGCKuhSqgixHqcCR6xyug__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xNQ==",
+                "vsStageId" : 15,
+                "name" : "座头购物中心",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_1.png?Expires=1704844800&Signature=GFpgXrGEf5Zekq94fvBtYMgeiM-E9gzplFZoRn2CD7Pi8JdPDT4xjVaKjYudwKOxXOiamyuFDzgF9RFHN0-S~IqdJWnJYDLGRL5TOhmpIDtMvnzl2DkqH5bS5ldLu0Xf9j1~hpX7tYmX~KK2JUWaNf20s6z95Jke8zJ3PwIvwEIPpEFMKDQBic9fQlIfGbsn0gVMm3TLsyOJvGUMqjX~jMd6FcyhPksbKK~SC~CK5yqjORvku-KvpNuPBpErmOQPEbtfcdTlH2jnJyU9lqbmYaLQDalAssbRTTquuicVpSq1qQccjOWQc~XSXp0ZlY~2smu1QhiNdpq0l0ED00a9JQ__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T02:00:00Z",
+          "endTime" : "2023-11-09T04:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS00",
+                "vsStageId" : 4,
+                "name" : "竹蛏疏洪道",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_1.png?Expires=1704844800&Signature=aCVPQpc6fkx8elrWptfRNQXJ-anEOBqk8CnmPL~J5EU7~ECXalsFmdIb-ahU-OEtwgx31vfYXy1~68A945O6m54HLcbgWkSqnK0oG16i5iuMAlrIZyYCelxwAXYaeKns~T4XICDdOaF7s~CX0haaj9ZFQl19UpP7KwRB5VVVRaRExUdTlmsmR-06ZQ00pn8ua8LZ~wa4cSaMpoGy3YmFHFweeqsdmHmLm0FHQ5ZpEMj0Si0nWA5kGgWcn1bljvhqErl9CW4YRznttkCoh-AVewsD2knDtqu~SU9P-RW9KsXIYCBFoAP25pWDzPUlKh5g7SvvMCdpdPU3tAsOHzyZDA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xNA==",
+                "vsStageId" : 14,
+                "name" : "鲟鱼造船厂",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/48684c69d5c5a4ffaf16b712a4895545a8d01196115d514fc878ce99863bb3e9_1.png?Expires=1704844800&Signature=ogPimSKqTN5b94G54kw4TFLM4eIiBGIuPSwwOJ7slYUxbVHWWQfFJoRBOz1uLdsGSRpk1EYiIcG4EXuY4tPMJ9j9oGhzIEjAWUwE6y7ZEgU9v6TaMRiTnp0iN1ILj9d4PWlc3JTAPe~H6KIGEzmKHoRKbfNwESusrntGc-0mJ-fGQrRA2KHLXOJSXN8dzxZlTVPBsPjgL5EjYa1cRRfIP2tlcOLyCh9RVGuiHjwARmPC-Lus5ZBePQklnxbk~xfrpOoaViV0sn9Fam5uJDpfkYdYA-7kMPQy90oqh9JDNCFxcFjanLCS7TIkM8pcp9OCkxWY~xgHFBxqzHuaSueQuw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T04:00:00Z",
+          "endTime" : "2023-11-09T06:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS04",
+                "vsStageId" : 8,
+                "name" : "塔拉波特购物公园",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/f70e9f5af477a39ccfab631bfb81c9e2cedb4cd0947fe260847c214a6d23695f_1.png?Expires=1704844800&Signature=UshJ6zCIS6sJSTBYPrbmcdtkdsvE2FJqsG8~cdEzAUkxyQbhLNA5nXEVauwM9Z9LIHJI5g5-syCOJaS5oWfeSRKeg~e9KXnXeaW0bNfjAyoHxXHi5moapp1xwdbnj8XVKpmtN9wRnl86yfKol~aU4kx3okH4cReCR3Tlw3QyvUqXbEX70q9RXSzaTDilLmweJGT8LorrZMGsxBTkON0v-nr8XADsw6XeN5uqxhFryHcRE21tlxcdg5scUZHf8sj4VSnex1avJoSbXOPVPOZqx5iQ8EmG6SeTkBr4jUNv3OgfQ09e9tsKoBueHPdZ2akmRMKy4f3iKtNXhvVmEl6jPw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xMw==",
+                "vsStageId" : 13,
+                "name" : "海女美术大学",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/40aba8b36a9439e2d670fde5b3478819ea8a94f9e503b9d783248a5716786f35_1.png?Expires=1704844800&Signature=HFLQYG-CTDq97PpR9NKfPyvBRTI2yx2YrbENyqDsxn0wUqKu8joKmKpHWEd1yNTQX2ThYwkkgNYMBoxBR5xgixqC25jpqOk1m7Q4i2qAxhP0ICUK54JAqapK3IJsmfZYB4vaA5ouNBHzgvi4hsmF2~pnXNW2hw8evL45-d8q4xHpM85kAk4eAj1QpyFMNHxGFJgE1bt8IoPIoF3YLDNiQ1JFTUhPRATuFoNhdYIZD10~11ZNUvVlIZx8hqn4PMtosVr-ZHhcm7ny06M9ZvZ44H83VAbZJAG0nALjrVbcMsSID35lMVW~GdE2Q7iEUhokW3F8hZJRXl0uHX46uhG0cQ__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T06:00:00Z",
+          "endTime" : "2023-11-09T08:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0z",
+                "vsStageId" : 3,
+                "name" : "烟管鱼市场",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/8dc2f16d39c630bab40cead5b2485ca3559e829d0d3de0c2232c7a62fefb5fa9_1.png?Expires=1704844800&Signature=PvdMv~ZvhiqBXY7GAW~wHyzNtGJu4w5fjQ0UOi4qEU7vxo~PTnVfccUX45cZuwlIE6dW4JiRWBOQ0IEkoHWoy2KWn0USb1ozDuWfmX0jhsF3lDshpKeQ1tulfMlKQLlN-ouNE-4Y28XNs2kp2ztHRCrdysOHHqC2Q98keeMCwoV5LvEN7rWayrhx3naFsL5~~maByVVhb4Dmnpk0FfIZgC-CnQQnmnKVC8gyT~gBapYufTpujXPh5CWkhnQCI7XPYneYwO8kdSV5YPuw96MV9JjZawetfJ~qgafTAMZG3CdEFF0jYyiIv6~X7ZsRIoMY2LrU7Y9V9bHju8YqC8kLKg__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0yMA==",
+                "vsStageId" : 20,
+                "name" : "大比目鱼海运中心",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/b65a70eedf129848b9d2b492bb68712abf91a5cbda13131848947fb04c51d665_1.png?Expires=1704844800&Signature=wvr67pB8u5ZQryyPjyCrNsFPn5-2R21FHFhTD0~-RQK8IM3vj~GiD9uuikE78w0V3DPzm4a4h853OfRHCYUYRkqfOdvnK7WFHp1LJQajgYVIRS1jnZK44f3uWD0Per9DnYWV~wjf-DD5jiIFnfVaMXPaNv6WoRCXpGf6m4IoP7zfBowIEcg6z-0nO1nNziwK5VqUo4lEyB3K99ui4lXY1jRNLPLMiIyDO4nZM6l5mkPDaRulos9adKVBTJ10MrzcD1yGnVly5qhZMa3mMWg59dJaRnd92B~GTWVYc9Pp-VdNGjo0uwy2ObQtRlZH9DKlcqFJYpQd8xhjhNLF8UveUw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T08:00:00Z",
+          "endTime" : "2023-11-09T10:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0x",
+                "vsStageId" : 1,
+                "name" : "温泉花大峡谷",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/35f9ca08ccc2bf759774ab2cb886567c117b9287875ca92fb590c1294ddcdc1e_1.png?Expires=1704844800&Signature=QPMKMTDhgndGoKsNAzY-CI0AmFsreK~IKQY4wtdQWiFE2kEISBOPV6YviW8s6OuwfYn8ipvIlZuwHL6kYE5BgdaqFExBb88ebxGcRwpjpclbSrIY5xdvkcQ5KPEJKx79UKReEhYMfcJyUoMa1t4fOrygSk~omqhAQdQEISkWFwfz-Ksna7HeLIIJ7iytPiRqX2GBcSlnJlp-jw8teYYD8NMwCzjWDOzxAOgQA2j6sjA5fYDRMoTVNPIFmhzy8WtpO-kL0mayDyEHM~I2S3JtGwU55BZgYas-xjUUHiZ0YHwNVe1xoJnf-YjTQEDPOh7Ro-T~GI4vCY6R6EaeEoRuaA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xOA==",
+                "vsStageId" : 18,
+                "name" : "鬼蝠鲼玛利亚号",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/0b7fd997781e03eb9d5bf1875ed070f698afc654f4fe929452c65aa26c0a35fd_1.png?Expires=1704844800&Signature=hD1dBcpfXEtVu9jgVIGB4bdUJlnvBcVtBwmgPOjxhZkAhJGuO669Ycsvlc67mr6MebYlv9S10Z1j5IdZ87nV6AAKCkXLP-4iO3HYXcUVw4VAYqgU~j8PGwSNisNr5Y8GGJdERDoAjffS8YlzyoWoJKTjv6xLWC~u5aMLYX4AB3QpnUolKq-feFcuMvBQwC1DQ9kTM7e-bbQVNrgAM-I4EJ~k1GGFwT646UHd2LjrHQRBnKHk~qklKg4MI5IliQcfQE7gKM9vifbLyC~5oYeWjogP4pnbdjXDEJEGyaDtYqvJqwekv1MYS0rV2JQQ83~hUw6d2NErccJXJsF2oK8lOQ__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T10:00:00Z",
+          "endTime" : "2023-11-09T12:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0y",
+                "vsStageId" : 2,
+                "name" : "鳗鲶区",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/898e1ae6c737a9d44552c7c81f9b710676492681525c514eadc68a6780aa52af_1.png?Expires=1704844800&Signature=CylRvhSFefkTHRGg0s0x341rDpK0dW1wPlRKW9EM4PVg72qKkE15JbX9DT4Xo18SyeYNM3rHdYMPM01dY5YLCFYBMkiXGBvC34dlUlZ253B6OES5Gua0Hwyt6-WTMPy0u2tinrVw6oSaYIH7gyQ1nf6T~AUEDd7yI5cIR~ZF4a2NRQMMQH36iDFNXCFxLNiM8S8JiT1GryeJGaKDFDqDMuPq00zGndRE5JGqiQ-VS5zLFTibwc5LkwJQUHOD4FpKo4JW4Ujb44-tYKQxT6iuKM8lpvQOwHehfLWRxL-yO77IZy-~IULB-iAH5Ru~fvQuctSbnGKgkpHS2bEvDoaVaw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xOQ==",
+                "vsStageId" : 19,
+                "name" : "高脚经济特区",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/4e0e9e2046aff1d635e23946d9f0a461486d2aab349079e551037e426ac82c7a_1.png?Expires=1704844800&Signature=P4~IInt32mWwNwr3gKhy1r-2MFLsCOFxWotmHNEtLSqM3x~4paTwqcFit3mlsZDXiYu9m5qMpDyTK-4hI-Pzb4TazTYLEmUt3mtAct6tU9esR1oQX1ydmtfOvy5rsIaUVuLb1z1nozLdk0w7ApD9pKKOSorlt-0cVwbCCG1p48SioWDa8cEEEPbY5tPKAupYWo3twA7pF7GRe7lyWb8o2hC6QIkJH0g1DZrlXe7cG6AUkgawK1jj9XgqDKdqGROo2eTGzq3NqvAVVx-jiK9cgRKZhhjB-gX75c77ldFrBa8Yiy4G6am3Iied9NVXro74csI-WeG1pWWQLRQfiGHWdA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T12:00:00Z",
+          "endTime" : "2023-11-09T14:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0xMQ==",
+                "vsStageId" : 11,
+                "name" : "金眼鲷美术馆",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/b9d8cfa186d197a27e075600a107c99d9e21646d116730f0843e0fff0aaba7dd_1.png?Expires=1704844800&Signature=eWr6sd-YmpgIbOdx96tTH4uFjPiuLFuF9YNiXa9yvJj5VJIBhJSCaPjn3VsGxSVTmRgkzFSnmcGPQ8dVjona8rQhTOycvVSQuJ4V9yfc4bYomdqw9U4ex1pYYTt1XIlxrQ7e1J3nEe9E0P6tOdqpzNb1Yhz2oPwnVnApUNBNoKSwc09W-Wxc~KVnmCx3yHP-~~sCK2HP7~r-D1uUITgBg6m-aU7zvUEJMFE2Aodokd8sI2vJXfUlQGyqXrm~LhdU28qrbjwnYbnliMcTNZhdSLtCZPNV-ZZpoQKRuF-dzl-zmHsabLCHcLkKYCnEbYbvm95pTAOsG7fCirxTKUmOYw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xNg==",
+                "vsStageId" : 16,
+                "name" : "醋饭海洋世界",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/61ea801fa4ed32360dcaf83986222ded46a72dbf56194acc6d0cf4659a92ba85_1.png?Expires=1704844800&Signature=UJ77DJ-6VmgcmPeLWHFKe7rKEo9ojf9uxvNegOM8IJKIn5-UyZih2mYfP8NpVVOJiVBlvr3eNpel3Z9Ifgm3V1kmkjdWE3SeJik64zinlruBtzu3pUJzPtKpxQKdyDhvLn2wjxXw84w4pSd1kCJ8Vhyj-uCCvVU2oHtwchVJlG~opd~KsiMBf6xdKsGgZuUzvGWoDyzaTA6Fb9ZNAr0KWJKoHE6XaRyavzIJLlh6a8YQh1DHhkQZqwlHCqw2iI3mKHuWyRdUXc5EUJQ3Oku8ASl3j-Tv3IaSe4nwO36JqJUwqVqc1CYBXD3K2ACwhvCUgQFZX85a3C9Kt0t3bf6eug__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T14:00:00Z",
+          "endTime" : "2023-11-09T16:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0xNA==",
+                "vsStageId" : 14,
+                "name" : "鲟鱼造船厂",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/48684c69d5c5a4ffaf16b712a4895545a8d01196115d514fc878ce99863bb3e9_1.png?Expires=1704844800&Signature=ogPimSKqTN5b94G54kw4TFLM4eIiBGIuPSwwOJ7slYUxbVHWWQfFJoRBOz1uLdsGSRpk1EYiIcG4EXuY4tPMJ9j9oGhzIEjAWUwE6y7ZEgU9v6TaMRiTnp0iN1ILj9d4PWlc3JTAPe~H6KIGEzmKHoRKbfNwESusrntGc-0mJ-fGQrRA2KHLXOJSXN8dzxZlTVPBsPjgL5EjYa1cRRfIP2tlcOLyCh9RVGuiHjwARmPC-Lus5ZBePQklnxbk~xfrpOoaViV0sn9Fam5uJDpfkYdYA-7kMPQy90oqh9JDNCFxcFjanLCS7TIkM8pcp9OCkxWY~xgHFBxqzHuaSueQuw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xNQ==",
+                "vsStageId" : 15,
+                "name" : "座头购物中心",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_1.png?Expires=1704844800&Signature=GFpgXrGEf5Zekq94fvBtYMgeiM-E9gzplFZoRn2CD7Pi8JdPDT4xjVaKjYudwKOxXOiamyuFDzgF9RFHN0-S~IqdJWnJYDLGRL5TOhmpIDtMvnzl2DkqH5bS5ldLu0Xf9j1~hpX7tYmX~KK2JUWaNf20s6z95Jke8zJ3PwIvwEIPpEFMKDQBic9fQlIfGbsn0gVMm3TLsyOJvGUMqjX~jMd6FcyhPksbKK~SC~CK5yqjORvku-KvpNuPBpErmOQPEbtfcdTlH2jnJyU9lqbmYaLQDalAssbRTTquuicVpSq1qQccjOWQc~XSXp0ZlY~2smu1QhiNdpq0l0ED00a9JQ__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T16:00:00Z",
+          "endTime" : "2023-11-09T18:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0xMg==",
+                "vsStageId" : 12,
+                "name" : "鬼头刀SPA度假区",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/8273118c1ffe1bf6fe031c7d8c9795dab52632c9b76e8e9f01f644ac5ae0ccc0_1.png?Expires=1704844800&Signature=kmBrEJtSYIEL-oGBC3M7UxCf2dvIQbRFFYVNovjzZEsVtskf4taTkCLSxcwnp-57d8Q5H3d9Q4rFV3yVnfhJaCshuWPF0uXaRzOLoM2nDMyHzmC2l8uFQpou7QG4OJRo1NynOlYEqHjCodkzqWMgc8E8cWSaRvofxprV01Xd0P66bIj0oVtnZ4N9YdWEZ2tDqG8bAgUJS~rHcFtM7YwXQkdEimOWx~q7kPb-VSRKJj9sljw2zM56yK144JIpdJhsOKpCi6-qhBnXawG187X6~eI4Gxcb9BlOy2MG8tzZ2WNP4MCI3YT6rd5PN00bzWeFZod4W80g54pflAVv90g-Mw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xNw==",
+                "vsStageId" : 17,
+                "name" : "昆布赛道",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/7b3cf118bd9f45d141cd6db0ee75b06e697fa83945c7fe1e6f8483de6a591f5f_1.png?Expires=1704844800&Signature=pB86z49uqrBZu9bVI3W-H25IRYIJI4rFJv90zajgmUeRiYgmVzWkD64ishajszBRwc~pHdejCFOxXfF4MO~CwuduqE63og6IIXUWk9JH3XBQo7E2O6y0WoUctBKc60sDbilfS8IVBTPUrgveVPHr4CuUQaIrzejVCCxnnn6M6F3Iowp6aZLVlPwVWxJHljogliNACLjFSBsp6iGPCZZyghRi75mIAhE~N4rnbLwcMft1f7Vqjn0z5PTfOIqd9-IXNuHM9~QcZFN-kZzykIrE7l0r~aLM1znDu4CfNbjYaQqbj5j2aEGltBMi4Dt1eCqcBRW743uFO~yXoLX9lh1ThA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T18:00:00Z",
+          "endTime" : "2023-11-09T20:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS00",
+                "vsStageId" : 4,
+                "name" : "竹蛏疏洪道",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_1.png?Expires=1704844800&Signature=aCVPQpc6fkx8elrWptfRNQXJ-anEOBqk8CnmPL~J5EU7~ECXalsFmdIb-ahU-OEtwgx31vfYXy1~68A945O6m54HLcbgWkSqnK0oG16i5iuMAlrIZyYCelxwAXYaeKns~T4XICDdOaF7s~CX0haaj9ZFQl19UpP7KwRB5VVVRaRExUdTlmsmR-06ZQ00pn8ua8LZ~wa4cSaMpoGy3YmFHFweeqsdmHmLm0FHQ5ZpEMj0Si0nWA5kGgWcn1bljvhqErl9CW4YRznttkCoh-AVewsD2knDtqu~SU9P-RW9KsXIYCBFoAP25pWDzPUlKh5g7SvvMCdpdPU3tAsOHzyZDA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0xMA==",
+                "vsStageId" : 10,
+                "name" : "真鲭跨海大桥",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/1db8ab338b64b464df50e7f9e270e59423ff8caac6f09679a24f1b7acf3a82f3_1.png?Expires=1704844800&Signature=mJHU2mQjVMKqhH3cNkXgSHH-zvvAX-NWjoCMxbl9huZGMODP-UM74WDWOJetNGpvvIt-eRUteMbcql3u3ow4hjLPik~VQeoH1QPeEwxo~-OyrWNnJU1e7knlXxYrjSB~2aJUp6x82c8~NoW9xRD8CLpueA4~gv~ayPYJh1xxFSQ437zWvZrQk4MuQXcltn4c4tOevUX0ea-7XS-hpfmRUdzAr19zc7C9iPy1h0ABOSBBIyKblVZCmkpYvOooFAb-bVyJiLYOs0fTN8auCrT1SLjpCvT2K1I1~VkPuB4kgB~ueCTQW2tlyMUNlD9Uun~Vb7fObmS1pY-Mi0iTMVrLLA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T20:00:00Z",
+          "endTime" : "2023-11-09T22:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS02",
+                "vsStageId" : 6,
+                "name" : "鱼肉碎金属",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/de1f212e9ff0648f36cd3b8e0917ef36b3bd51445159297dcb948f34a09f2f05_1.png?Expires=1704844800&Signature=DCx7ZtdZaAIINKvfQqr~PmCIMNoWodhT5Fgb0kg5LoQpsMfU~XyQvIcsrISJFbMUeKXGc4Mm1I3QKHHOn4Ydgdk99IYAp3xFfBuDZFVmErMcr7c6GBMG06axIcVtv6M90VtB8GJ8ZbmF5xIi1t4UHOQdjuIiASYy7NR7q8OPlNzCVls9F8Pn5tI16qmIEsbDppzqluP2ZIDHINXy5sBbeUtgnxZTZLgqUZvZdwztLYIBF3uFqcKY5bcwkr7paZLeYpwYSZklJt8NoHN~K1WTzL1XIRGHjo6HmshRSAodFYc~T6U~xtxdmZ9vCMKuPc8mhDGyOP357STnQZVFKhqx8Q__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS05",
+                "vsStageId" : 9,
+                "name" : "比目鱼住宅区",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/488017f3ce712fca9fb37d61fe306343054449bb2d2bb1751d95f54a98564cae_1.png?Expires=1704844800&Signature=YdFSE7YYhY7WHK9V9WVKaxmYDA6EyABrvQgZNjFs1aDWyw1HDNdSZ6GfHaz~ldF584zy7nIC6MS~-20grcI1qJHbb77iXDjHMUrONeG-Cu2BMKfRyBZrinhSK2bWpBALQpdWeGRrjb0sMjNuUjJOcBZTm4JzD7aITbrWnOEaUnOpqxHhQxOXkZBPmGwxnPNjCgUHbG9sjq1wngwQ2e32fJY2huJNnciisoak~jLLMu-qP-dqXMcRzZDTjHKAYAAYwbQa8p4yLrZ26uTQSWE~NBtBLVpeV9M2UvuvYUkjXngrMSvCgwcTetNe~qBqlp69qjoc9Wa8lqa7ww~QBee76g__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T22:00:00Z",
+          "endTime" : "2023-11-10T00:00:00Z",
+          "regularMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS01",
+                "vsStageId" : 5,
+                "name" : "鱼露遗迹",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/f14c2a64e49d243679fc0884af91e1a07dc65600f9b90aefe92d7790dcffb191_1.png?Expires=1704844800&Signature=ELc9vhZ9IYAuhsNuTlbWLSJsvqFc-4JNMXzFME6U1jBgt1sJxPCX5ek2qeqTcKe8IJZ00jduaQcUzUXWqTAzXVHZdc0E7PlFWfcawNXeHHq9ClwvE3r8OM94fYBds8GSdnQpT3vsrGZYYLNs3U~3J8XUfPWoSkwznbkpax0mXtOWMwAi1yHWnokTK9bVmwIXyFQqTL~7UhdrJXsawGmZ9X-nqqZCsXuEGQX6a-TzTfzvLN3l-ypYanUC~jKTuzHpAxfUYp3S7zWalxshhX7ofJJaeuKNv8IXcq22hItbTG06gUaudqkPHmciC5JsSjvOrkGCKuhSqgixHqcCR6xyug__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS04",
+                "vsStageId" : 8,
+                "name" : "塔拉波特购物公园",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/f70e9f5af477a39ccfab631bfb81c9e2cedb4cd0947fe260847c214a6d23695f_1.png?Expires=1704844800&Signature=UshJ6zCIS6sJSTBYPrbmcdtkdsvE2FJqsG8~cdEzAUkxyQbhLNA5nXEVauwM9Z9LIHJI5g5-syCOJaS5oWfeSRKeg~e9KXnXeaW0bNfjAyoHxXHi5moapp1xwdbnj8XVKpmtN9wRnl86yfKol~aU4kx3okH4cReCR3Tlw3QyvUqXbEX70q9RXSzaTDilLmweJGT8LorrZMGsxBTkON0v-nr8XADsw6XeN5uqxhFryHcRE21tlxcdg5scUZHf8sj4VSnex1avJoSbXOPVPOZqx5iQ8EmG6SeTkBr4jUNv3OgfQ09e9tsKoBueHPdZ2akmRMKy4f3iKtNXhvVmEl6jPw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "RegularMatchSetting",
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "RegularMatchSetting"
+          },
+          "festMatchSettings" : null
+        }
+      ]
+    },
+    "vsStages" : {
+      "nodes" : [
+        {
+          "id" : "VnNTdGFnZS0x",
+          "stats" : {
+            "winRateLf" : 0.375,
+            "winRateTw" : 0.46078431372549017,
+            "winRateGl" : 0.5,
+            "winRateAr" : 0.46875,
+            "winRateCl" : 0.66666666666666663
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/35f9ca08ccc2bf759774ab2cb886567c117b9287875ca92fb590c1294ddcdc1e_0.png?Expires=1704844800&Signature=nGnpUVh3L5lc1LtIXUzRL9zmtl78QjCLSTIxvyschHoVBcxqDVSjtYsduqbCxZHC0aWtZw~QvkCw7NL1Qai9co9dcYZMsgCs2dMLulirJjE-d2n2GKGMwrPnGOCYgXjAdL~4jfURjCtLTi2FoTU4CdIYVLlXI-5AnCin-LEuGBxjn33eUP~f4-YYhbWQv6JpFApTytOz9AyNHefO4EDxvjp26vU8dJc17pvvjJtXsogleCog5nLssVwQbZs5Gv7dcRCpp6wVC1PK64SjNrsRwGPFN8~dHXWhbhDgYkyCp6gXH7R0ZDiLSySDy3xxunAcTrpu96-UeMHfOh1X27b6yQ__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 1,
+          "name" : "温泉花大峡谷"
+        },
+        {
+          "id" : "VnNTdGFnZS0y",
+          "stats" : {
+            "winRateLf" : 0.66666666666666663,
+            "winRateTw" : 0.5357142857142857,
+            "winRateGl" : 0.61538461538461542,
+            "winRateAr" : 0.72222222222222221,
+            "winRateCl" : 0.59999999999999998
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/898e1ae6c737a9d44552c7c81f9b710676492681525c514eadc68a6780aa52af_0.png?Expires=1704844800&Signature=XrH-t9y1iI6dTRtKDTIEOyuPwxvsVnqC5mFv2WKiyEFCykUk8RltqGhPjJNXTEu27V6mjjdFmz0OZ9VEtm6icnhaacflwh8N6s5wY8LfeNatiREY1Y~u7aFj1RwsVqcG0JfiXAD48fVPri1cWPBxY1nTeHkXwYmjc0HrBraBLrUamA-MKwOxz3qJ38ggQ2in1Nj0zRUnsFdadP8bwfUZyhhpwmIumLZSZ6DI0DDRtvh00J3BbOL56sUoeuo4iiTBSronYnCpWIEK-bscNntyP2AzEcvlt5kKWhyePuWcxp~ufmZ5SkvgFudyLekkfvm0vjQRtcqBLNkd2om-RDaFSQ__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 2,
+          "name" : "鳗鲶区"
+        },
+        {
+          "id" : "VnNTdGFnZS0z",
+          "stats" : {
+            "winRateLf" : 0.8571428571428571,
+            "winRateTw" : 0.52702702702702697,
+            "winRateGl" : 0.29166666666666669,
+            "winRateAr" : 0.78260869565217395,
+            "winRateCl" : null
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/8dc2f16d39c630bab40cead5b2485ca3559e829d0d3de0c2232c7a62fefb5fa9_0.png?Expires=1704844800&Signature=HhFuxEauedzLAndQxPu9WCNeY-dE34JykzVpljsH5unz8clwDkk75SFGKNPqlsLKO5CiDoEy3kbsFvrTJLqNospP5HR8buqw8v05oghrGH137SdKnUJzJuXjDHXnO7enFiZ6HbSWwRbY9x-rRHqSIyX6-0spu0Y-L23nAQES0a0P~Nu3S0C81HbpIE5K58B2D6O4K3QTM7K5s20n9P8eIXP-S~S5hTUvsDrUB7GQ~Q1mlsHezYJhdteNm9yj2eYs-ZYyVSARpNl0GNly0KsJ40pMhY5ul2ZtXiPOFx1GRaoOIUnSBFU8CQvdOXxn6GanaL5wRcvKKBFd93DY~QNPPA__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 3,
+          "name" : "烟管鱼市场"
+        },
+        {
+          "id" : "VnNTdGFnZS00",
+          "stats" : {
+            "winRateLf" : 0.42105263157894735,
+            "winRateTw" : 0.53333333333333333,
+            "winRateGl" : 0.36842105263157893,
+            "winRateAr" : 0.59999999999999998,
+            "winRateCl" : 0.83333333333333337
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_0.png?Expires=1704844800&Signature=Ors3LjPT62AJpdlpM2ypAGwt6a2wu~mFHoinTfipsIqHEPfu6Td2JVHqdZngvZHGQz61DkktZxS-Zp7vVEFxaui6nqUO5uLFSF5u~sQhXUL2tYSvOCVDrVAym3ZFliqSi8vLlWJE5WWzGLScRJ~-P3OFFHQjuDev1P7ylicxLyXbBW96eyNGmndpZ0VE5WhGYqIEMzic1CvvdTizSN6ks3gQckxGZbd9IWR6-DZmjQlhSD022NIoxPY-poy50l1BQVCEyf5-Ur-spB2dd2YKbr7wyFcAjFxS9GtVZcA589QRrtmQ8bm~DR9sJP3ZXVYVP7AA4b-~FJ6BXT2URyqzwQ__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 4,
+          "name" : "竹蛏疏洪道"
+        },
+        {
+          "id" : "VnNTdGFnZS01",
+          "stats" : {
+            "winRateLf" : 0.80000000000000004,
+            "winRateTw" : 0.5,
+            "winRateGl" : null,
+            "winRateAr" : 0.14285714285714285,
+            "winRateCl" : null
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/f14c2a64e49d243679fc0884af91e1a07dc65600f9b90aefe92d7790dcffb191_0.png?Expires=1704844800&Signature=qtTCD7rXXMXyXGfCJ4ZBXZYaCcYFhZbXRQj2KRiyj8EGaDVELcvCRbTbuRHPk-4smDSmL6~o2T27AKhH4CLVfGwgol5rrJX2-8tumASHjn~tMwyEQ0gcZh3JpZRfA5olvBGtGb8schEabmWCa4YkiKhIMxziaZfPQd1~fTM-SzDoOBgOXqA-qPAjgB14l7OKGDF~t9VH546ZZwPI4iW7DlivdU6Y3-QPbWA3aTOUDj1-PGfaoXucuM5WAXPGjaeWOu5xfgC3ts7JIXiRxJLbePiNSVGcbxVUgBu2SDdDVWmaTlo4FlhNiN5J6tSweUEUzI4HiJ6tgTdBNCcmr7IsPg__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 5,
+          "name" : "鱼露遗迹"
+        },
+        {
+          "id" : "VnNTdGFnZS02",
+          "stats" : {
+            "winRateLf" : 0.625,
+            "winRateTw" : 0.58904109589041098,
+            "winRateGl" : 0.69999999999999996,
+            "winRateAr" : 0.71111111111111114,
+            "winRateCl" : 0.5625
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/de1f212e9ff0648f36cd3b8e0917ef36b3bd51445159297dcb948f34a09f2f05_0.png?Expires=1704844800&Signature=USkV3bfiuEmv3MEPOeyqqGqQZwHtsZ5sK2nj1OuWK2F4-LneRljaiXEq2sMdt9gTrfJoapKBm1OSQ292LE8AtOcr757tcU2wRzH23sgM60PvsISaq6LAOauef00Jg4sRwo5LxojDq7xt5FcKTZW8zREsaxQXwkhY-fp6TULol-CbGTZB0VCORhtER7pukaxE15x3VofMNXLy1uKfxsUyo9ZkkYSBeJaHaW0sjX175rly4lAd8zQmkfMTrpA5gdYKo-aGY7EapVEwteS8IzUT6O7yXfbMYIwebvLfxkWK9G6GU4LTgTqLnrTB3Yx6OjM73zZkcxW9jLQYgZtkpGTl0Q__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 6,
+          "name" : "鱼肉碎金属"
+        },
+        {
+          "id" : "VnNTdGFnZS03",
+          "stats" : {
+            "winRateLf" : 0.70588235294117652,
+            "winRateTw" : 0.5714285714285714,
+            "winRateGl" : 0.625,
+            "winRateAr" : 0.80000000000000004,
+            "winRateCl" : 0.5
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/cd84d711b47a424334569ac20f33f8e0ab6a652dc07854dcd36508a0081e9034_0.png?Expires=1704844800&Signature=qSCux5OtiT0Hs55EC~6j3kG6qRiUQxlyA6Aw7rZfk1mRVB0kpuIIZGRytCBli7yOx0HdEjDZLNxolTIxQX92jdTTcC~nqivQvaenY0tRS0IPT~YMErwKdQO35X41HqN3WaYs4GzgJp0attHCJNqernrS845wx~wfja~Pb5Mrq6z5rP~65-2Ib3KeVYz5XP0eJ6CoJdWygO4VbVi9JUGO-Dj5vFBgkWVS~U1nEywNNsvighSoMMegjEwbzsBBlXVo8AigaJ1bReN6TT9~ecz9UhaMQHKkEVKaANgx45fSsBAVeXNvCeS0VtTvX4pTqmVkOl5dgg-F3hqQ-T52zIoE5w__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 7,
+          "name" : "臭鱼干温泉"
+        },
+        {
+          "id" : "VnNTdGFnZS04",
+          "stats" : {
+            "winRateLf" : 0.5,
+            "winRateTw" : 0.25,
+            "winRateGl" : null,
+            "winRateAr" : null,
+            "winRateCl" : null
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/f70e9f5af477a39ccfab631bfb81c9e2cedb4cd0947fe260847c214a6d23695f_0.png?Expires=1704844800&Signature=rZ6fIYhzRXhdceavV8lQ1IrKWZ66KMNgjARxpW44lohE9WdmcSSWUBUhqVd4gn4k4e8Sq-ZMTANk65tONHtnWqLasCFe93UL5ElBEJicC-c8QNb08QvAtMperu7JKcLrLbT91H7ktZ2efaBoloqDqM9QZ-2U4f6IKUFr1csK6qcOLc8bmD7GrkL8HigWH3059oQTHLru7KosqD6U409ayGK38inx~-BADXbFhR38UDoyn8ETVM85BgImwneCRiub6mcN~GKZ9De9kZ~LcTDYf~6jLG18UGw76BzixK427Gj~2nOd2dvjJmKKtVvrj1Xeb6UYSfZ4H-zNXZIZ4-y~sQ__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 8,
+          "name" : "塔拉波特购物公园"
+        },
+        {
+          "id" : "VnNTdGFnZS05",
+          "stats" : {
+            "winRateLf" : 0.81481481481481477,
+            "winRateTw" : 0.56666666666666665,
+            "winRateGl" : 0.61538461538461542,
+            "winRateAr" : 0.54545454545454541,
+            "winRateCl" : 0.80000000000000004
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/488017f3ce712fca9fb37d61fe306343054449bb2d2bb1751d95f54a98564cae_0.png?Expires=1704844800&Signature=vBfALqPe0ui8V3EmDypwbLm9JCFVnVajGSfl1ej1WFlRXK2fxTtcl3f9PAsvys0xi9lIM4B6pzVmBWxU2MaRp55Qn9DAzuaD7SzaGxwlbOHhknoUOBiMg4UWS8MRkbjl3A-LSrAhqQMWvm6SbWuMx907pBTlcDAsYccPA0gM16khCdagsOnPyli~kphWOvqIe62cNNhBT2qh1lfA3Y3ApoTwnROzKqDj4WKGMhObMc9iKU3-UAk8OnifKiAdEOJmaETs1QISZgrNpGMa03cBxI0inAI30vSweirY1CyZsdRR5ZdVFsM4eebk8UuSDxnWk~zYCu3s58W3NfsNEh0umQ__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 9,
+          "name" : "比目鱼住宅区"
+        },
+        {
+          "id" : "VnNTdGFnZS0xMA==",
+          "stats" : {
+            "winRateLf" : 0.5,
+            "winRateTw" : 0.53164556962025311,
+            "winRateGl" : 0.47826086956521741,
+            "winRateAr" : 0.55555555555555558,
+            "winRateCl" : 0.66666666666666663
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/1db8ab338b64b464df50e7f9e270e59423ff8caac6f09679a24f1b7acf3a82f3_0.png?Expires=1704844800&Signature=imlSF8jNrJxfgdEdo9MdzxdHBrPuUfW9zJ7pLVQy1QyzZwBHlxf4rQnGT6r0nw-fVFwGmFMXDb0CMeepSv2QoiNoDy3MqpksXH44GWbd9QxomgH1Gf2nmUiA8fblLfqO1p28LU1Fu~XMVENkLNGlqeF5HQzOaasE6r-o7AVZC510q0Ata-6b5lQgFvX1gStCwbEaNN8nRAn6TOK00yKa59DLN9mJUhI6ncyWaiwEhF3P~lvT2X1Vt4NVTPa06-LTjjjhZUpBgTWoRFouQ2pMChzWAYoOs6ic851Cz7QrfoD4WhXaAU7ON7bBxeXgwO8TAP~bMDNYQOjVRODOaRAlrw__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 10,
+          "name" : "真鲭跨海大桥"
+        },
+        {
+          "id" : "VnNTdGFnZS0xMQ==",
+          "stats" : {
+            "winRateLf" : 0.6216216216216216,
+            "winRateTw" : 0.59375,
+            "winRateGl" : 0.65000000000000002,
+            "winRateAr" : 0.45000000000000001,
+            "winRateCl" : 0.83333333333333337
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/b9d8cfa186d197a27e075600a107c99d9e21646d116730f0843e0fff0aaba7dd_0.png?Expires=1704844800&Signature=A~DKJS2pH-h1~vhMPgWwPlgyviD6GxNCvyuBK9Pr~x4JWbQ4e6t2ew-eHu6l2564RjnHQ1fl3NMi6P0HYSFJNta7ASH9JPZdzLIeH9auARNtkV~c6qLiwOweCN52kE7bFnBq0-T1kZRSQG8tBVZjfY80DHes4A2F6RexaJuKfwLhz6c3Dd6yNkldXgjruSN5RwjIgAIcPFvO9i-m4Gep4KSp5StPDO~wpus8uxHS1Jz75mgJvMqKRnLQ8s~chXW2xGIhpMItv-AIBpl2bzhs0tnoZKwPmi6Uhr0nvj75dAC8pQgvDM5Bg13D-eGV9FmInIAVyIoy~V8XzcmvpYnYDg__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 11,
+          "name" : "金眼鲷美术馆"
+        },
+        {
+          "id" : "VnNTdGFnZS0xMg==",
+          "stats" : {
+            "winRateLf" : 0.6071428571428571,
+            "winRateTw" : 0.46391752577319589,
+            "winRateGl" : 0.54545454545454541,
+            "winRateAr" : 0.53623188405797106,
+            "winRateCl" : 0.54545454545454541
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/8273118c1ffe1bf6fe031c7d8c9795dab52632c9b76e8e9f01f644ac5ae0ccc0_0.png?Expires=1704844800&Signature=iRDeKXi0fhVszGOXXH8-049B8PVL0dF7DtdQPxE5iCj0JlB2p-uVUcu6KEsk3aKoNYs2Xyw9xY1jCYcWIaWRDuMIZzugttcLUGiQ4RbWimUABIM3zMI8ulP~Y0EKa6aldK464pll4VA3aQz5HFSk1U91HKvL0drpZNUmpvDPY3zOCumK5vw4MOleR1fqRSrgUcBYIAyvWMm6T7CmqVw3JDTlnCQE4e7caXFIs7dRXyld8Qp8~olQd14JXxXQlWNlu~MfzuYOuQF4zGsHnsUZVjYhVvWML8WPUXq6Grysj3RAnqRH4Y5jz6NHCn1aJ93R390jq~Pw5mBb614KgyRQ1g__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 12,
+          "name" : "鬼头刀SPA度假区"
+        },
+        {
+          "id" : "VnNTdGFnZS0xMw==",
+          "stats" : {
+            "winRateLf" : 0.42105263157894735,
+            "winRateTw" : 0.57831325301204817,
+            "winRateGl" : 0.375,
+            "winRateAr" : 0.55555555555555558,
+            "winRateCl" : 0.52631578947368418
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/40aba8b36a9439e2d670fde5b3478819ea8a94f9e503b9d783248a5716786f35_0.png?Expires=1704844800&Signature=PbFAw-H7yAGFKcD~wwT30AC0VEc7KAWUH9CkRs3yJumgveFifzbFxg5zfjV5LZqjKKUXA3JgtTJ5hDWQb5Hb2N-thUj2WhOUsMoKUdz1pHyBeqaA4Ewrf0NWcMcI3SlvzPjEJFOUObA7CmYC6kw1t-WvH2EEP4s1l0z9nmx822Sz2nUHdZ~oP4FcjBza0VGMEsI6CXx26G7rpOBOazuCnHJLJR0PSlYxSmerwROtRJXGDuJ-Ki4QmMfvCNB~F4hKW96ClOkx72lJCIAg~YVaWhfstw1IHFibi5jCXfL16-I3DTMej4fld1vwqeY-zkfNEych7mzs~JE7qJEH2z6q~g__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 13,
+          "name" : "海女美术大学"
+        },
+        {
+          "id" : "VnNTdGFnZS0xNA==",
+          "stats" : {
+            "winRateLf" : 0.75,
+            "winRateTw" : 0.44262295081967212,
+            "winRateGl" : 0.5,
+            "winRateAr" : 0.67647058823529416,
+            "winRateCl" : 0.75
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/48684c69d5c5a4ffaf16b712a4895545a8d01196115d514fc878ce99863bb3e9_0.png?Expires=1704844800&Signature=DmvNL~c93q1xSKLY7ife86T1IlqqTVzFbOdQdb9iRCUv1i8qpKknUMx3~Q5Rq-kckgM3Mq7xkA0xwcJP9P53pYC9n5oYwcDi-CaQkxtgyPeSG-rOcp1r6IjH6aDQftwqjo862y6x8t-KJkGe46lAXg8JlG1L7N9DWbyndxu~iDLuiMUX5VbW5wy9sKLtOR98WWuLSoGVgfWHBKBagzLYaIi8hyvXWWmKod-Wr-UQn5-SkF2udMM1mnGuxWyj4WCdQxyAw~i-dZEKeL6SwpAI4psGOcgV4OGXh0cUQUUbd7s47-xDEzRfD4iBa3vq6grX98QHHnAIOxKUgW8E5KIUDw__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 14,
+          "name" : "鲟鱼造船厂"
+        },
+        {
+          "id" : "VnNTdGFnZS0xNQ==",
+          "stats" : {
+            "winRateLf" : 0.54761904761904767,
+            "winRateTw" : 0.51960784313725494,
+            "winRateGl" : 0.72727272727272729,
+            "winRateAr" : 0.46341463414634149,
+            "winRateCl" : 0.33333333333333331
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_0.png?Expires=1704844800&Signature=tp1ZHb2-87KFpR7FHz1gzwkj89c22JkMG45~PrIELVN0cJCeirxg3T93Y5-iT4YQOeZZq1nkXWlRA6hLiVcLoZTsU7v3heImfLI5zDndOvD-mMJQysUNJSbX-d9PPF2aEaJ-9ncRccgfWRy4mQkHwNWUanFk~CbjS1KAGF625rP~LRwDGGGIGocLn-JjhiVPcV4BDvN657j11Pbs6p-Kg3O3vWDOUKqU~ZhxNQc~NLS~ZeUxmx6xY7K~ZBJcPOP1u4afefI4Ob9Q3kkz~x9TL5K5NspFdKKLDw8gY-8e8C8iPYnyi5d2lWmojbgguIUP6JBneHxprIxACPBTV2c2Mg__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 15,
+          "name" : "座头购物中心"
+        },
+        {
+          "id" : "VnNTdGFnZS0xNg==",
+          "stats" : {
+            "winRateLf" : 0.58823529411764708,
+            "winRateTw" : 0.5056179775280899,
+            "winRateGl" : 0.57692307692307687,
+            "winRateAr" : 0.5625,
+            "winRateCl" : 0.5
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/61ea801fa4ed32360dcaf83986222ded46a72dbf56194acc6d0cf4659a92ba85_0.png?Expires=1704844800&Signature=g-i~NuplOTbk44tSVFGuL-13qo6IemAIvo7Ao4ZuDd6kMDW1DbQ27AQTaNf~lPgGRr4Tr65HDgAy1IGstanO6MqDACCLvH~B4PliCtkG23Vp59iCL6sB0M6AA-hGr4ZALK2AK5rsM47xxe9PYIsP-r~FJjiNHPSlsrxvfvy87fPeUldQC-4MRKs9z31JqydJcqUCk9r40KEzy7A76mLtA96CKMVEcXxI8MoazxuSCqC6qNmK7zdhjGvEldrh3Z4Hu792hcKrWpZCpKE54CMmYFDnGVQIa2rbdrpgN2mqsCbJ1QpH5MN2zMjcZosnsBV-ThQ4S0dCzmt6ImY0qfNRZQ__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 16,
+          "name" : "醋饭海洋世界"
+        },
+        {
+          "id" : "VnNTdGFnZS0xNw==",
+          "stats" : {
+            "winRateLf" : 0.5,
+            "winRateTw" : 0.66666666666666663,
+            "winRateGl" : null,
+            "winRateAr" : null,
+            "winRateCl" : null
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/7b3cf118bd9f45d141cd6db0ee75b06e697fa83945c7fe1e6f8483de6a591f5f_0.png?Expires=1704844800&Signature=BsrBq7R~o1SzyGOpSyN3iX-rEaJ9ngaUAQnH5Fyw3oPJsI68NVcZ5GNoHzqBZO96cYhBL0bKFro5Yxwe4RfkDTS8iDad0bMFEWrLt3AiPWRB7FmCRX9HLYwmSrZxkG8VhxwiZLBrkS6IdRCa3fBZahyyME8QSfywGFJPCqLNTgS4rrzBQMxF-OpEOkJj8S5RErEQplC3NxVDK3vy6aIfFlcBRzjIuVeiOe3uSj3IUyjfQ8SH-rqA6vSufUT8ps8iM8h6Bt6dVC0FAW9sIkJx62nr1sTi3OtOMkm77LttRMELkImTcwM-o6-xcouCLUsqcSRygh2Y6EWUu1p9RdIZAQ__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 17,
+          "name" : "昆布赛道"
+        },
+        {
+          "id" : "VnNTdGFnZS0xOA==",
+          "stats" : {
+            "winRateLf" : null,
+            "winRateTw" : 1,
+            "winRateGl" : 0.35714285714285715,
+            "winRateAr" : null,
+            "winRateCl" : null
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/0b7fd997781e03eb9d5bf1875ed070f698afc654f4fe929452c65aa26c0a35fd_0.png?Expires=1704844800&Signature=Ikfsir8BB2797ke7XIk8W40jRdWzMJxSkTea-5-tL~MH6LULVuMyHqdq2Rblq~BGgAG~5Jj~6-3GH8EWvHbY~x0rTBB7YCHMSArJzFzES6t~PZM7j1vcTi3zvwiAHlRvOvqfG24TwI6pzGMzlPeE21VzvFunjBfQ3upvWhAWr~GXEJnvzwoaZONiR9-MgMbKVleAszIVcfyyd67avAjHqMFFXVnKv654eaiKBbXQ9kSZ1k53VC-nliz9O78lvKjl27aeofdWiLjHDmZ-dmfT7je3I8vRDrijGHqxuSHNBxtGIEubsgwUT28Q2MCLm3hYSi-XMiQJxLGCQZIsedFm2A__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 18,
+          "name" : "鬼蝠鲼玛利亚号"
+        },
+        {
+          "id" : "VnNTdGFnZS0xOQ==",
+          "stats" : {
+            "winRateLf" : null,
+            "winRateTw" : 0.5,
+            "winRateGl" : null,
+            "winRateAr" : null,
+            "winRateCl" : null
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/4e0e9e2046aff1d635e23946d9f0a461486d2aab349079e551037e426ac82c7a_0.png?Expires=1704844800&Signature=YMymo-Na8sNgdn1IWTVzTRKrB6pDNcfu-GX~Gbd8WtGcTyvDx0ondcmDKdnNIOCk41D-IoUDWtj-WPoQZDneGem4KiBwzDpsNFFyyygXtWBkJ~BCnoFR5h9Dl16Dm8jCvhvXwtWuV9~laL9FqbeGuPxoGWlT1S~-R9AobMT-2CkL1lqInNMrt36sjKFPuX3X2qdxGZqD4qe6wSnzQM4VlYAo4zgdQorRz0qgmvKMvdYthpbPUOHM26j60Jdfu48TrWhaMBt-0LJb5pzRixz0CWQzeGJD6rATSfYC8~j9I9Yn6BjmW3qIZ2bvNtga3B4ilbYVPu0c5GhipZiJYCGcYw__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 19,
+          "name" : "高脚经济特区"
+        },
+        {
+          "id" : "VnNTdGFnZS0yMA==",
+          "stats" : {
+            "winRateLf" : 0,
+            "winRateTw" : null,
+            "winRateGl" : null,
+            "winRateAr" : null,
+            "winRateCl" : null
+          },
+          "originalImage" : {
+            "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/b65a70eedf129848b9d2b492bb68712abf91a5cbda13131848947fb04c51d665_0.png?Expires=1704844800&Signature=GiRmx~E744AHCaHiPcGVPnvy2w8WHjgGmXkgkhWq4Fuy1v1Eo8hMIQzSYUrfLZVH-wAgQP0dIYa4BCSY-C7C-FlOVGqSOMSpePQ1dVoQ9dTOTjm-D7qboYG-euN9QBUni8-pxGib9SX6LC7pVdBzmWc9igFO1sAadh6CacTrV6GZ~5s8euOgllmxSPEXxS4TxNmueBIco2YReFZVv6G5EgCC5oZhXgqdNsY91DD4aILUP99J9sBFz4cCLt7K6dnNxhpo3z3JE9TJ4GYOd-Akd3DzaGuyEuGjw-p1QB2yJ3lzUvBULwi48g11j6tYxjpBtwr2W3DJNI0bOCDKbwQS5Q__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "vsStageId" : 20,
+          "name" : "大比目鱼海运中心"
+        }
+      ]
+    },
+    "eventSchedules" : {
+      "nodes" : [
+        {
+          "leagueMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0xOQ==",
+                "vsStageId" : 19,
+                "name" : "高脚经济特区",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/4e0e9e2046aff1d635e23946d9f0a461486d2aab349079e551037e426ac82c7a_1.png?Expires=1704844800&Signature=P4~IInt32mWwNwr3gKhy1r-2MFLsCOFxWotmHNEtLSqM3x~4paTwqcFit3mlsZDXiYu9m5qMpDyTK-4hI-Pzb4TazTYLEmUt3mtAct6tU9esR1oQX1ydmtfOvy5rsIaUVuLb1z1nozLdk0w7ApD9pKKOSorlt-0cVwbCCG1p48SioWDa8cEEEPbY5tPKAupYWo3twA7pF7GRe7lyWb8o2hC6QIkJH0g1DZrlXe7cG6AUkgawK1jj9XgqDKdqGROo2eTGzq3NqvAVVx-jiK9cgRKZhhjB-gX75c77ldFrBa8Yiy4G6am3Iied9NVXro74csI-WeG1pWWQLRQfiGHWdA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS0yMA==",
+                "vsStageId" : 20,
+                "name" : "大比目鱼海运中心",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/b65a70eedf129848b9d2b492bb68712abf91a5cbda13131848947fb04c51d665_1.png?Expires=1704844800&Signature=wvr67pB8u5ZQryyPjyCrNsFPn5-2R21FHFhTD0~-RQK8IM3vj~GiD9uuikE78w0V3DPzm4a4h853OfRHCYUYRkqfOdvnK7WFHp1LJQajgYVIRS1jnZK44f3uWD0Per9DnYWV~wjf-DD5jiIFnfVaMXPaNv6WoRCXpGf6m4IoP7zfBowIEcg6z-0nO1nNziwK5VqUo4lEyB3K99ui4lXY1jRNLPLMiIyDO4nZM6l5mkPDaRulos9adKVBTJ10MrzcD1yGnVly5qhZMa3mMWg59dJaRnd92B~GTWVYc9Pp-VdNGjo0uwy2ObQtRlZH9DKlcqFJYpQd8xhjhNLF8UveUw__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "LeagueMatchSetting",
+            "leagueMatchEvent" : {
+              "regulationUrl" : null,
+              "id" : "TGVhZ3VlTWF0Y2hFdmVudC1QYWlyQ3Vw",
+              "leagueMatchEventId" : "PairCup",
+              "name" : "最强搭档争夺战",
+              "desc" : "展现两人的默契！2对2的小规模对战！",
+              "regulation" : "展现两人的默契！2对2的小规模对战！<br /><br />·为2对2的小规模对战！<br />·能以2人队伍或独自1人参加哦！<br />·复活时间将会缩短哦！<br />·基本装备能力和追加装备能力都会生效！"
+            },
+            "vsRule" : {
+              "name" : "真格塔楼",
+              "rule" : "LOFT",
+              "id" : "VnNSdWxlLTI="
+            },
+            "__isVsSetting" : "LeagueMatchSetting"
+          },
+          "timePeriods" : [
+            {
+              "endTime" : "2023-11-11T06:00:00Z",
+              "startTime" : "2023-11-11T04:00:00Z"
+            },
+            {
+              "endTime" : "2023-11-11T14:00:00Z",
+              "startTime" : "2023-11-11T12:00:00Z"
+            },
+            {
+              "endTime" : "2023-11-11T22:00:00Z",
+              "startTime" : "2023-11-11T20:00:00Z"
+            }
+          ]
+        },
+        {
+          "leagueMatchSetting" : {
+            "vsStages" : [
+              {
+                "id" : "VnNTdGFnZS0z",
+                "vsStageId" : 3,
+                "name" : "烟管鱼市场",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/8dc2f16d39c630bab40cead5b2485ca3559e829d0d3de0c2232c7a62fefb5fa9_1.png?Expires=1704844800&Signature=PvdMv~ZvhiqBXY7GAW~wHyzNtGJu4w5fjQ0UOi4qEU7vxo~PTnVfccUX45cZuwlIE6dW4JiRWBOQ0IEkoHWoy2KWn0USb1ozDuWfmX0jhsF3lDshpKeQ1tulfMlKQLlN-ouNE-4Y28XNs2kp2ztHRCrdysOHHqC2Q98keeMCwoV5LvEN7rWayrhx3naFsL5~~maByVVhb4Dmnpk0FfIZgC-CnQQnmnKVC8gyT~gBapYufTpujXPh5CWkhnQCI7XPYneYwO8kdSV5YPuw96MV9JjZawetfJ~qgafTAMZG3CdEFF0jYyiIv6~X7ZsRIoMY2LrU7Y9V9bHju8YqC8kLKg__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              },
+              {
+                "id" : "VnNTdGFnZS00",
+                "vsStageId" : 4,
+                "name" : "竹蛏疏洪道",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_1.png?Expires=1704844800&Signature=aCVPQpc6fkx8elrWptfRNQXJ-anEOBqk8CnmPL~J5EU7~ECXalsFmdIb-ahU-OEtwgx31vfYXy1~68A945O6m54HLcbgWkSqnK0oG16i5iuMAlrIZyYCelxwAXYaeKns~T4XICDdOaF7s~CX0haaj9ZFQl19UpP7KwRB5VVVRaRExUdTlmsmR-06ZQ00pn8ua8LZ~wa4cSaMpoGy3YmFHFweeqsdmHmLm0FHQ5ZpEMj0Si0nWA5kGgWcn1bljvhqErl9CW4YRznttkCoh-AVewsD2knDtqu~SU9P-RW9KsXIYCBFoAP25pWDzPUlKh5g7SvvMCdpdPU3tAsOHzyZDA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            ],
+            "__typename" : "LeagueMatchSetting",
+            "leagueMatchEvent" : {
+              "regulationUrl" : "https://www.nintendo.co.jp/splatoon/koshien2023/online/index.html?utm_source=SplatNet3&utm_medium=schedule&utm_campaign=2023_spl_koshien/",
+              "id" : "TGVhZ3VlTWF0Y2hFdmVudC1Db21wZXRpdGlvbnNKUA==",
+              "leagueMatchEventId" : "CompetitionsJP",
+              "name" : "大赛活动（JP）",
+              "desc" : "在大赛活动中努力争取靠前的名次吧！",
+              "regulation" : "为日本的大赛活动举行的活动比赛。<br />不参加大赛活动的玩家也可以游玩活动比赛。<br /><br />要想参加大赛活动，可能需要另行申请。<br />另外，参赛资格将有可能因居住地等因素受到限制。"
+            },
+            "vsRule" : {
+              "name" : "占地对战",
+              "rule" : "TURF_WAR",
+              "id" : "VnNSdWxlLTA="
+            },
+            "__isVsSetting" : "LeagueMatchSetting"
+          },
+          "timePeriods" : [
+            {
+              "endTime" : "2023-11-12T12:00:00Z",
+              "startTime" : "2023-11-12T10:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    "festSchedules" : {
+      "nodes" : [
+        {
+          "endTime" : "2023-11-09T00:00:00Z",
+          "startTime" : "2023-11-08T22:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "endTime" : "2023-11-09T02:00:00Z",
+          "startTime" : "2023-11-09T00:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "endTime" : "2023-11-09T04:00:00Z",
+          "startTime" : "2023-11-09T02:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "endTime" : "2023-11-09T06:00:00Z",
+          "startTime" : "2023-11-09T04:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "endTime" : "2023-11-09T08:00:00Z",
+          "startTime" : "2023-11-09T06:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "endTime" : "2023-11-09T10:00:00Z",
+          "startTime" : "2023-11-09T08:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "endTime" : "2023-11-09T12:00:00Z",
+          "startTime" : "2023-11-09T10:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "endTime" : "2023-11-09T14:00:00Z",
+          "startTime" : "2023-11-09T12:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "endTime" : "2023-11-09T16:00:00Z",
+          "startTime" : "2023-11-09T14:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "endTime" : "2023-11-09T18:00:00Z",
+          "startTime" : "2023-11-09T16:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "endTime" : "2023-11-09T20:00:00Z",
+          "startTime" : "2023-11-09T18:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "endTime" : "2023-11-09T22:00:00Z",
+          "startTime" : "2023-11-09T20:00:00Z",
+          "festMatchSettings" : null
+        },
+        {
+          "endTime" : "2023-11-10T00:00:00Z",
+          "startTime" : "2023-11-09T22:00:00Z",
+          "festMatchSettings" : null
+        }
+      ]
+    },
+    "coopGroupingSchedule" : {
+      "bigRunSchedules" : {
+        "nodes" : [
+
+        ]
+      },
+      "bannerImage" : null,
+      "teamContestSchedules" : {
+        "nodes" : [
+
+        ]
+      },
+      "regularSchedules" : {
+        "nodes" : [
+          {
+            "endTime" : "2023-11-09T16:00:00Z",
+            "startTime" : "2023-11-08T00:00:00Z",
+            "setting" : {
+              "__isCoopSetting" : "CoopNormalSetting",
+              "__typename" : "CoopNormalSetting",
+              "weapons" : [
+                {
+                  "name" : "专业模型枪MG",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/5ec00bcf96c7a3f731d7a2e67f60f802f33d22f07177b94d5905f471b08b629f_0.png?Expires=1704844800&Signature=NKu7oze32MDIf7e9sSFIzuzFfxS1k4Q~SVbFNWjIpBsRGfo-Xwe4wzDBDzc0t9ETmS6LeRkPP~Ai0lFZxUjq5raNdQdnN-wUQ7iONeNjtHXYOpx2uo6naHIYmixdrf9zkrevyxED2Q96EhM-Mp4E54cQltsuO8~u5mj5ZyQ1l1lQYYHHSrND5VnYY-DsLgSut0ahw6im1xglTKJcgFPQ3NgmDvV29ebBWTscXUBIVTot1ij7KN-fpXMxYSE4Jg0WKYgaaO2rihLfVf3uTS7trcol48EgEkfrW1mSIRUNuHuBTT8pt2DaXNwm5WW2WI19j8ie1ECLuVd033JiJEaQcw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "L3卷管枪",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/96833fc0f74242cd2bc73b241aab8a00d499ce9f6557722ef6503e12af8979f4_0.png?Expires=1704844800&Signature=bG8cj-dxzeW8~L6S-qU4lKAmONCbLghQFJ8GivuescRG7YeBZMnYvnr2zroMdMq98rnL9ekP03oE-cq5p5XPpFpb6dDNaEFw8rFyLNO-TrX27COlKCjC6u5m4jcxvA56nLYABiTOl0qlCyxbJ3eJbFssg7yItelFbuJWxNMkGwn7VvE5UWAsfnRys9f4ccR3I-eaXciOua7Ug~JgOlJ1xfLIvjJJdo6LNBUYDM2SDRrh9tBf2jknpBHPLYHoFzo3RKZkKlv2BLrLEzVJrWoncwbf91onPEBqgSCls-P3-~ihanwghKvCzg6lCekW0ATtTUUtLRb0J18VHyGP42p7EA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "工作刮水刀",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/ddd2a4258a70cdaf8a1dbc0ded024db497445d71f950fe7645fa8c69a178a082_0.png?Expires=1704844800&Signature=nLsfP3UiMu9CSrnPJah-z3v0Xq4trzuXCw61Q6eW-JWsUNFj8Udo~Z4eJxidqVhM8H3sQ0T95im53T9H-2~hEpn-~cJ11qlKe0oGv4l4KUb-hIYFC-sLNGsTAQA1iAieZwso-Zlhf8w09DDpJj885PTndi5ZI8S-VWUvy6lkQRceVkwLUeM5eKpekcYS0Akf~EgYUFWhOiKoyYyQDZFSPaoA4Ol2jsAZRjqRqV2hoFSzij1dfiduBLsGd7f0GMBqdcH2rEER3gGiqdaXEgzlPzlVWaHSkGu9xEUlTtl1ws1NxfRX1NqlzQO2usxgwc5KKEUOn7SPRtmKo1u-3LiBRA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "14式竹筒枪·甲",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/9c71334ea792864a00531040e0d05a183512e11277fd1fa681170874ba039268_0.png?Expires=1704844800&Signature=Lp8979PSwlbHWVPhuoERwSW6vlhOA0HAZxXZDHWeurz790X1IVoP3OBSMejweMuj1l0OWAALcrHMKMzwDAE2PQQwseTEoBqULo3MBrf~I7gzJj6AqNPJnTqTeyT-jj6WZ9NuTAdvxWvD~oBQZbYTeisgeGMhMkLQesQJg6OzG9ie3vQSGyceVEFdEUStW9XF8oj4UHNCVkQa5ZUjVPwoBDQ~vhw400fAiznI8l5GZkZB8Ow4s-~E1VCoN4XxVOZ46Ii30jAT6225yk3xdAexDhjW6ALpbe~hj6hl9PRgUSuy3unSVMuvKhA8qZPsfuGuvZUF5Gn~b4MMsYXobDISRQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "coopStage" : {
+                "id" : "Q29vcFN0YWdlLTg=",
+                "name" : "生筋子系统交流道遗址",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/0e05d4caa34089a447535708370286f4ee6068661359b4d7cf6c319863424f84_0.png?Expires=1704844800&Signature=RL1S-uL39wzBbidfKzITG4r7wKcHjTFdt1-yOAYE~D~rOOTOJ3zexTnXqbkwhy-n-hG6cptIyEFAjAGmdN~iL58a6yleyXQgkD8FGzuG8rGVZOTL9mYoCHGhNmCwldGBLXskgai~3K8oWKCrBuz84IrqkQyd63Cfo9aHo-HdVyKMUQhtnk1i1tfTZeUGj2Grbya0D69KGZvLiUhZGrEsUW2WdxUDDjH-ibx-lmEpbpAr-~2zOB9X3R6LlDXxUEPEOir9WRdkV0QRrLKGHdteagC8MWxQGkJadA4S0BtP5W~16If4I~RaHIZwufVO28lazHQqOi1hJSXI9j35dqv2AQ__&Key-Pair-Id=KNBS2THMRC385"
+                },
+                "thumbnailImage" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/0e05d4caa34089a447535708370286f4ee6068661359b4d7cf6c319863424f84_1.png?Expires=1704844800&Signature=To7U-EJPSZb3PMZ5iJ1dTjvn3ySyG5tsTN-8GJmvnY8ibqXCh4g6ss8GbRjfWRL2zkJfDPCJBGYkYmwC6ljWQt7K~6GzBqQRWhSAQfHiqnX1O49BMQR~TFjEI3T~WthwhNRu1alaYoQYP9G-YNsgdlnNmhU4WTsVwOyLbrRFMRPcBZGtVBL18NZQWd~xvM6ubSnIIElzn2tSZhacl-0zn~0x73ZNOvBkWGel6B8VXPPYiqvW3YDmhS4sUcwItu6QU1wU8XgVd9FV3tX3HVqO4Q7UuxSr7hTV33~OXcmFKRdV8RQJLKZqHKQhqZGK2h9rXc2KIqW~blhiBrmARWZYfA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            }
+          },
+          {
+            "endTime" : "2023-11-11T08:00:00Z",
+            "startTime" : "2023-11-09T16:00:00Z",
+            "setting" : {
+              "__isCoopSetting" : "CoopNormalSetting",
+              "__typename" : "CoopNormalSetting",
+              "weapons" : [
+                {
+                  "name" : "广域标记枪",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/6e58a0747ab899badcb6f351512c6034e0a49bd6453281f32c7f550a2132fd65_0.png?Expires=1704844800&Signature=QyKOuOQ5xuz8xK5dehiiWsurdjJy3Fdwwk6WLGCDzObWAThjazLiD6LvRXdAb-JCcFtEnxMkN9Wbv~Bq2vr-ehp~DChbpotx1PGzApd~LOAS~pOuvRFKBE9nW8bYaBehyoDH2KjuffYBSn6v51aB9HlJe7QmjzATeHPPkD~aWUGqG1ZB~Ij8ST2W6zv5zS44TJEJGLj8ORXctytPDGfl0pkE4mnkP49-r1src2gJjrPrsnyCW6FXIHJHZS4Zag0IUkmPI5K0AAq-JpSyDAy8hAb3JDnIXlrICERHgpXhWZiNduPwz9yTbwrZe5aumymCLv-Tq-FQgzU84VSYgJaPaQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "斯普拉射击枪",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/e3874d7d504acf89488ad7f68d29a348caea1a41cd43bd9a272069b0c0466570_0.png?Expires=1704844800&Signature=A42hdTiOjCe6PyDeG3E9KaK1pySTjAgqkhmDzZXn32rQf1HvP1mTICBZF8wDgYce2IyS5lMjfyvuh-QJX787~oyDA7HUbY6F2GaFDstcoF~cczIGQufrURtEXUBtP4t58fiTvOp~UwQpd1kaHpjBd4rtnyucbHMW45rSdSnwWOdoRce64qH7MLyqIARbtx5P4sW7bpUAFUdKhQ0Hh-AJDiCcTHmpI8GV0yz1ss72-QNNRCk0CBWsIgVXPkryh1vE-~dSS0uUT3lrorQ-C3dIJ-DGkhAcVbvYPAuxxsMFG~KLBCJUucpS51GOgYLS8de3lbfJXOsEjyt3WDIPxoq5-g__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "H3卷管枪",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/418d75d9ca0304922f06eff539c511238b143ef8331969e20d54a9560df57d5a_0.png?Expires=1704844800&Signature=II7cZulL54G8pnfNZhvhNRifoK7fseWT5-rtHZp7n10m9b3MwfU5r5elXoJoSyt-DUcQMWOhc3khuVppgjjdJ9l0GIy4iUN5o4SVq9zRn2lQJ9Vn6iJmEuk2rJ4GCAAEWMlkW6RGY4PkSVwggk~N7oo6LbSwyxgWSmk4z0kMeoE2IgYClsBqMS15laFQ~ioLImJME~tjMZJvHHnZVYaXVt5a54BpVskRlKVIFIahOTbglzVwOhtGkwha0RQbkwe6Z2z2r~0~fw3-zEmJqqJmBcgtvlxF5iHlmY2vD6DWYIL5nK2dK5~3Y3BupQKP-quitNborpdsHAD315Pxy5RIcw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "桶装旋转枪",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/fd06f01742a3b25ac57941150b3b81d56633831902f2da1f19a6244f2d8dd6fd_0.png?Expires=1704844800&Signature=ZSdLMSOzCAeVkkJDLxcAMQN-vvGEWXSRwYaLWqtwnRjBmtlJ07iY135OZDXEkK4ebGEA8fdWaiJyBezwgnFqPipfGBbMS254-OSvnSLIoPMFWiIAbFWuLtJAzXGqJwJh68wYRc4g~wZ2SJelbehpDl1zyb51b5yQbeO6TI-mRkKaukbXl3~9RxWvpq7DYMnx-O2pTQ0LQv27u3ye~1WoFhbCeqRp~y1rCv3cBq03pZwTUYa-5MFl3cjXFLoecr0MOcWKtufzhlSA8G1TIJo3sz~1XSajx3DN6b69do03p~QR8TaC4mp7IXaVR0cVF2uz3-P~-wvdNlExjAlGCwbkTw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "coopStage" : {
+                "id" : "Q29vcFN0YWdlLTE=",
+                "name" : "鲑坝",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/be584c7c7f547b8cbac318617f646680541f88071bc71db73cd461eb3ea6326e_0.png?Expires=1704844800&Signature=S0kcqSNJajK8uro0XroH9W3ct37Up0YY-TA3NMpxQv0RLGVSlD1IIdmC~YjgkYqNsduJe470JPGs028sLcNwaYuXC~hehovdQN1~kAf2OVvMopYnRVKKuE~1eX1krxaq0EyKjgQ9tGC2PChrhBDZgdY72UUZCPDvQHs0l1XArQcjtRQwMDOrYZZ80CPEWqAQVjNPJFo-Ikr6fwbwOAeGA4hM-~8ncazJbtYXXD0N0vWj8cn3g1PMcJcgLbcGQrMs2kyy6h4NYAeGEI3vvKYoimvIp1E6bC~wl1yzBgE14iJKPt5YvItx2OQntrTH9mEEDcl~6BOSYVxv1Q6Em2yitg__&Key-Pair-Id=KNBS2THMRC385"
+                },
+                "thumbnailImage" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/be584c7c7f547b8cbac318617f646680541f88071bc71db73cd461eb3ea6326e_1.png?Expires=1704844800&Signature=Q-U-CnOq5nsUcAfL796d2BUNFhzA4zVfyMUMUwcItz2lP0XRYSs7vlg3FUjVsQ3itjCfIO6Gn~ALH6WqIrVQ6VPm5KDcNzWK0HIwrb3Fu40j6JklQvb1ZH9wFkoDnwKYuYV2hhwk3zWqO2Ur-gQYYyF-w2vAzCaJUVJE~rcPByr2BTZkwdzXyTYZIiYhmdtrv3UuZX1zvy8UfnC2og3Zm8a-vYQ9BMqmQKimjP-d~sy8fJjYrbNR9JM49CHybh5eJ8J6GOtvc212gWYptB0TAWqTEVpIUKOIHiM~nnkLuC72QdUHsu3jV4htrFsizVTlD93z4YWM6aiHzRlBl-TAmQ__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            }
+          },
+          {
+            "endTime" : "2023-11-13T00:00:00Z",
+            "startTime" : "2023-11-11T08:00:00Z",
+            "setting" : {
+              "__isCoopSetting" : "CoopNormalSetting",
+              "__typename" : "CoopNormalSetting",
+              "weapons" : [
+                {
+                  "name" : "随机",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/ui_img/9d7272733ae2f2282938da17d69f13419a935eef42239132a02fcf37d8678f10_0.png?Expires=1704844800&Signature=IJ~5OR~wtg4ZvY88qIquuW1-x6-F8ez2~RKy~aKspE2LryMdtc2VTUWrdF3DvTbmldPU73H4dolF8E0f2SUfZb-UMzCPcbMYCGOPcaoNFvQhyXmBNxsjjLlSjEl6EYAMGl~SHdqRZGOZznoFDRVOFPf62-1JuDGdmOh60UXqkEHOe2eeefNOM7m~8oQR5WRqjstd-hB~lC83FttLGCbYNGlnn9qAjdmqROx6Oo9P2ZpKaUY09AETuiF10NkgY3bi7DHKKcgnBSzZiCDbFZKFz-LHQ3b-Sus3qkG-Tx7v5nbHyuCR4kUW877GU2fd8Lx38oitvsnpq0GDQvjDlFgayg__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "随机",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/ui_img/9d7272733ae2f2282938da17d69f13419a935eef42239132a02fcf37d8678f10_0.png?Expires=1704844800&Signature=IJ~5OR~wtg4ZvY88qIquuW1-x6-F8ez2~RKy~aKspE2LryMdtc2VTUWrdF3DvTbmldPU73H4dolF8E0f2SUfZb-UMzCPcbMYCGOPcaoNFvQhyXmBNxsjjLlSjEl6EYAMGl~SHdqRZGOZznoFDRVOFPf62-1JuDGdmOh60UXqkEHOe2eeefNOM7m~8oQR5WRqjstd-hB~lC83FttLGCbYNGlnn9qAjdmqROx6Oo9P2ZpKaUY09AETuiF10NkgY3bi7DHKKcgnBSzZiCDbFZKFz-LHQ3b-Sus3qkG-Tx7v5nbHyuCR4kUW877GU2fd8Lx38oitvsnpq0GDQvjDlFgayg__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "随机",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/ui_img/9d7272733ae2f2282938da17d69f13419a935eef42239132a02fcf37d8678f10_0.png?Expires=1704844800&Signature=IJ~5OR~wtg4ZvY88qIquuW1-x6-F8ez2~RKy~aKspE2LryMdtc2VTUWrdF3DvTbmldPU73H4dolF8E0f2SUfZb-UMzCPcbMYCGOPcaoNFvQhyXmBNxsjjLlSjEl6EYAMGl~SHdqRZGOZznoFDRVOFPf62-1JuDGdmOh60UXqkEHOe2eeefNOM7m~8oQR5WRqjstd-hB~lC83FttLGCbYNGlnn9qAjdmqROx6Oo9P2ZpKaUY09AETuiF10NkgY3bi7DHKKcgnBSzZiCDbFZKFz-LHQ3b-Sus3qkG-Tx7v5nbHyuCR4kUW877GU2fd8Lx38oitvsnpq0GDQvjDlFgayg__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "随机",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/ui_img/9d7272733ae2f2282938da17d69f13419a935eef42239132a02fcf37d8678f10_0.png?Expires=1704844800&Signature=IJ~5OR~wtg4ZvY88qIquuW1-x6-F8ez2~RKy~aKspE2LryMdtc2VTUWrdF3DvTbmldPU73H4dolF8E0f2SUfZb-UMzCPcbMYCGOPcaoNFvQhyXmBNxsjjLlSjEl6EYAMGl~SHdqRZGOZznoFDRVOFPf62-1JuDGdmOh60UXqkEHOe2eeefNOM7m~8oQR5WRqjstd-hB~lC83FttLGCbYNGlnn9qAjdmqROx6Oo9P2ZpKaUY09AETuiF10NkgY3bi7DHKKcgnBSzZiCDbFZKFz-LHQ3b-Sus3qkG-Tx7v5nbHyuCR4kUW877GU2fd8Lx38oitvsnpq0GDQvjDlFgayg__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "coopStage" : {
+                "id" : "Q29vcFN0YWdlLTI=",
+                "name" : "新卷堡",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/3418d2d89ef84288c78915b9acb63b4ad48df7bfcb48c27d6597920787e147ec_0.png?Expires=1704844800&Signature=teRqjyRYaUZ0ZY8dgA8GKXaVoG4TVH~9jaaIebQo4nRcFXB~w-C8z2~2Tm~CRLb5V2Y1R-c28z5RXQwJbQRAjtwfjsPm~~u2DPK7Rz6UNYD33XQlNtORdjfrvBYoxu1~ed8iaHv-ki-A5NSx7iCupgNcn-lCUz-ucptd~lW2JfEgMcYown43~omPFQgB~LY8Sg3E-LzFZ2oUcBroGqCuF10BMbi57mHrYv1SW7CBoJ-BD2xoPiGC9Wd5~dojqXYd1fvwfEy8fKwVsEv0Hc39L~p7lingDqO8YyGwWuXKZ1nXaX0Fbgh~QZgXsfWsII~HWbM18BmdOoqpzf6faTBVuQ__&Key-Pair-Id=KNBS2THMRC385"
+                },
+                "thumbnailImage" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/3418d2d89ef84288c78915b9acb63b4ad48df7bfcb48c27d6597920787e147ec_1.png?Expires=1704844800&Signature=T2MH6c7W6sMFJA-0w9bJ8w~Hyo7tiaFimJKxb3AVA-QIc6eEsCAssdbEdRFAxBxaFMObmINkVHzcNYtMPFtQ4sk1~soCOb5G3c11vwy542YB5o1tLrBQkK52rXzhlM~LZIkT774tFS9rnaeGfEEv47mpvGuc2qzXYsopDaOtquFStyyFEuDHTGzN9XbydzhCdFcz4KpoVhxqXDXubyRgPMOBKMSFzFzoO0R1o3ONqQ~5Qg2c7tVKwaUGPKgBom5pATh6w7BYjf15-R~OoeXPP7XWio2ixGC3NFJ9ckKkGjk-L5v-eDwMTpnscxSbFjn40-mbLGvks3IXDEq6gNcLwg__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            }
+          },
+          {
+            "endTime" : "2023-11-14T16:00:00Z",
+            "startTime" : "2023-11-13T00:00:00Z",
+            "setting" : {
+              "__isCoopSetting" : "CoopNormalSetting",
+              "__typename" : "CoopNormalSetting",
+              "weapons" : [
+                {
+                  "name" : "N-ZAP85",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/e6dbf73aa6ff9d1feb61fcabadb2d31e08b228a9736b4f5d8a5baeab9b493255_0.png?Expires=1704844800&Signature=H9ue7wbZBsTcqSv07PMxtZreMRmBxInDgG5FM4YdGmUyzBS4ZfmqatTxRIJbnq7MapuEarCOe7VndOxqCv71XbFsaEcKleygo29aagbwEFVMmBwAlF93xSTM6fbwIxStyHLGhKOhAg3iWdBPgF4JrjkT7ytLOtHqXAOeVh9Mf0EMo8NP4T7xojmNzWTnLMxEZ5YfxW0eRB9G09vI~oJ7TDZuQ8Ts5DQU3ttGsCwfdoNhH2t8RWnFj6eAnGT8zY3etAqZE4ao6rCQ9WVUelNwi~KDW09fR-O40cQDXkRtId7wRIkaYGP1rzUKPCCyxq7wIL78fiZvM49HlrmQldIcFA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "遮阳防空伞",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/15d101d0d11acbb8159e2701282879f2617d90c8573fd2f2239807721ff54ca4_0.png?Expires=1704844800&Signature=cxvmfx7ybiQIOqNy8F3inad6rE~EwrWa50LtFofNuREXJiyUp4i4SqgW8afMMGUDiYwjQqGn9H8ZsmAYRIhDyV95mb8wH0HMTBTtMp2T07deec~zIeK1wThnsk0BHoSruyPHWA9yUQKFH4H8qIjx-tbaMWPbgFRzez9OR~mu4lGHk42mcun3o9e2j65q9oyhM~8r5NecXwkleo15FpW3ExWZubEqzsUcLgny6DG32BgAjvgVhP06e0Qm~JKMs~LJZgfEjjZkxnFcq7p1MQ1xCgrPHByufnjdPeocP~4z4RvEdPhjafiSMFlSo-3TvPQuZvjCAk~U7oI5e4HA4izWRg__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "喷射清洁枪",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/035920eb9428955c25aecb8a56c2b1b58f3e322af3657d921db1778de4b80c59_0.png?Expires=1704844800&Signature=kNeGNht0FLHZHV5V5HQfVxElw1UsW-C6-7nk0jOSvCJIyT7aMdVCb1UxAcoMD25RQ0-J-TAgaJCndEzwPhSXzF2Cq0JX2tLkzEzQFjdYMcElGle~YSOr6zT5FtjImujwhGYgZ-kR97u6Cb6R5GuzKvdb9u0Sx-rgmX-txguQQbiQ1hwTLel5sdu95W-sPEAXQQPn8A8S82iPVJw41jxZxUDAl1C7U7g0iYeP8YW6IUtzpjWH0Be6gr~wCcExyflR7GdIGHyeUT1yby~dVXU-7JdiXRGu6iV9PiSQ59jCToLrtqoQspgxvy8VKntPUD-vPrOqyRcr6FXV81RUn9wcJQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "鱿快洁α",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/0cdd6036a6677d68bf28e1014b09a6f5a043e969027e532cd008049baace6527_0.png?Expires=1704844800&Signature=NLtVvx106n-VDAA5rEAVWOeir19-hmKjAOFXB~QBbviu6RqH6hlPTcaqD2Wh3GHMestHgRi1q8rdApIuqlDmr5lAJDFy1kpDbBZTDYX4NY5BL0c-9yQdcsmb8cEvJ4CRj1nqZ-LjypxeHaWz5vra16lBWHZKT8Nyk1Tl6-sBT5Qf8HeJawrvqI62~Yfe2DeFhwxHVoHHubCEHNxQZnUpr4c-AGVXuN5mHZN8-EuG2xWVEoL82PKFWpMHyBP9XnqneejNP33SpvIwZuZQfci33WtcI5DXSRsTTddx3PCMQMYZaNygjAJ-z6Tq6LY5JrqjTmmcQ0X8xJK9pFB-J1N1ig__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "coopStage" : {
+                "id" : "Q29vcFN0YWdlLTY=",
+                "name" : "漂浮落难船",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961_0.png?Expires=1704844800&Signature=f3euUIXa9pjT5V8gYBreZZ3pZcrqwY7wj-ql3YbhJ~o9FTSVrOm-5J4BVTHlBJfYArezdSuDcSbYvGvcDd8h4LbODp9gtPGAU-KRcsdoIVSn~lJWjKAoWtAkcK0C3ksRIq18foEvTxX70X~eOaeLV4n942DqU2~e49HnftjKUUQZ~TVjjq4jkRPLHsLVpODqU4PF0XXZ7tdLjwMiq1hguJl-MUBsHPRNol42eunK8067yHIIGoFyBjzKH2PIt0KeY6tSWSusC2-6XN7x2HWu3h4mM1iF6QucmEnC2PSSD8t3bfEIkSMHWOnBBSECtZ8Oy0CqQPm4VetYSM9sdjtSgQ__&Key-Pair-Id=KNBS2THMRC385"
+                },
+                "thumbnailImage" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961_1.png?Expires=1704844800&Signature=k3HHF6bX9FYxJUaXLccLftbD6ju7ipqFGBZKw1TCizRK5w7Zad39fQneGsAz7lo7IlB9K~GDByDWaoMqp5CcXI7gNXd69kds9md0D~22A1WtXjpG86pgIBnQ1w9Hra0hOMVGF93qrlPGGMdkh-WML4yFsn2s~qWQXQETDW3wI3TCpnyAk2nqpxxUWumzf3y4Hsk00Ma9ualc5K0qw6TEdOYUOWAo~UvY06v8n~9ZAVSP~tFG2xuEZZKFMsu5lUQ1sDLxnaibBWID6pyikGbPqDjkv~ItVaso2JoJikimfKUY5qKSsTBGsVPuE4ZLejVHykE9ycN1lkDOxmJCN7UvIQ__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            }
+          },
+          {
+            "endTime" : "2023-11-16T08:00:00Z",
+            "startTime" : "2023-11-14T16:00:00Z",
+            "setting" : {
+              "__isCoopSetting" : "CoopNormalSetting",
+              "__typename" : "CoopNormalSetting",
+              "weapons" : [
+                {
+                  "name" : "洗笔桶",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/f3dbd98d5b0e89f7be7eff25a5c63a06045fe64d8ffd5886e79c855e16791563_0.png?Expires=1704844800&Signature=fdPnQSLDA3c-LEmhFzfV351u2F~AhSJ0kmQz3Rv64t9R44siFG7yzXQKaWaKhy7I-iRGPqWzoisBoEd0Z3ZtqIMhKC9yhVx3GbCUxk70HnvyMzTmBCnFEGjYKZtH5LKiCb87v5UMWYHfD~3QIf4p0sf0cgZJjtHv2PgcsjEzMKhy1QEVLu9NdpFAgzJr87x8BsYeGkENrifUR2M24erC9f7~gU4CnFST0SZekOugQpDUw8arwoguP72Y0L~n32Z1eSGoONPb7rKI9yxCn57Z1NAuOTXzTtE8ho3OWI6-11a4UJA3trhU5pCgZ34oERUMLc5ttKZDSBGKYnxWYNQOtw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "可变式滚筒",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/8351e99589f03f49b5d681d36b083aaffd9c486a0558ab957ac44b0db0bb58bb_0.png?Expires=1704844800&Signature=mcoxasYZzkjcwo9dPhHBtetUxnLseMOsNOvGpg~1fUTsxZjrXzYyUUbpBAT8t50fg530AHFw83Zh4KjMfIXBPEeqlVH2MEgKk62nMlnlKwLPOj4N~uqfl0mIDsq-5sltl9hqDl80QReKtXbr~0NpN04j~Hl500rc4irt~8TCN9iJO1h5MIklm1gfkCleYPU7RfzQ~9GOtY6UO6dsi-xAZ6tsPCYhwpSh3A3eOdT6OqToKHCHZdz62jOXVzeuw-JpN4aCZHSFHWapKiryM0MqGCVs9UrWKNe6Hu-IHmPRmtNuZ75q6iPPeEwNyjP9AjHJBoji-zmbpbgK6HJlHBrnFQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "审查者",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/7f0192b8786a6fa7d5ed993022b1667de2fd90dadd8d34a3a7dff9578d34fa0a_0.png?Expires=1704844800&Signature=tpZkyMayX8k3fvnuUaWS0M84duTO7MoqvgYhPL~YiNFmyomKZBsv6H9ZPNJuSzgR8Du8sDUlsoiJNUCPJFUDRPsYM~Gu2mF7Kz4K4sklCFlTOOwLET5itziEUaVwEL3nZxs28iRDFTvbVT9Qn4KCt6ufe-0BZLbJiDokFXhC6hm2LtzCgFWA-gsA1IscJZyZu9q--L0~5LJUAbA2Me6n-Os3HGP4PvCZntkMZa6~aV3v7vafv0nPF9KQaEgLfjTOtfSjrYmFBaMqkXPEa-LeCSrJvVD0GCf4f9uQCU615ngaVd6DR7qix0PULchrDC0Q4wUX78-KP~FYdZePYyfk0Q__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "name" : "三发猎鱼弓",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/weapon_illust/676d9f49276f171a93ac06646c0fbdfbeb8c3d0284a057aee306404a6034ffef_0.png?Expires=1704844800&Signature=YCckky24gkkwgZa2Ofz1stoI7Kz5qf0~N0xwBzXBPpFrJWEGXVKSjT60NPNByClrkgPizv9PBkP6QmVXeWR3jW9p31PpFxSlSnP6iSz1917C5bMkYFfLWdS6BUQFLI5w0N~abBEsPzzqiCH0KolixhexUF~h-m6LhnZ9Ll2epJl1nS-XvINmLUE1snlHWbqyAzbcKYTZg-SdQ4v6ZIL7UphghaR70cFdyEfl7owytxw-tudxzP85kCTORVrBBu5WsusB1mOtkm59-aVdmAzZNWfOC5TNkuU-HKsXWvrvM7A4pCNBDbabjLqJ49Ui6nAb2UH2aTmepNiu3j1-Z8N0Ug__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "coopStage" : {
+                "id" : "Q29vcFN0YWdlLTQ=",
+                "name" : "时不知鲑烟熏工房",
+                "image" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/high_resolution/630d89698e3e260ef12cb2a32e1cb2c4c83c0e58fc882762da1fa2cea19a5260_0.png?Expires=1704844800&Signature=vJq3PupmSHHvftsNjStvAfacoRVUm6gpadqZutosz4QZJd9iSxt-Szztk8RAb6gxhC3WeL9ZgLKGld0kEd7KVgnrtr70TRK0XR-i-idSwmVNtmhtZLFxBpkii8oq9HEWORmTCHSYOUQeqKn1okwftnRXy2ufWBHHtt7XVmUX7vjQib8Ie~OYL0A0I5tEQAshbNZY5jD-rSzavLFBMvGwjq~lPQP1i2IN4S9UYPioeVTqly7Z3dG6fQ-hlG86NAALqQrgn9C0sBBES~uu22MY73kLKllfIJmPdi0YTNsdHI7CXHrJcaoJ3pyRihqZLbPDfwoEDTTC8uck3Sf10jY4oA__&Key-Pair-Id=KNBS2THMRC385"
+                },
+                "thumbnailImage" : {
+                  "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/630d89698e3e260ef12cb2a32e1cb2c4c83c0e58fc882762da1fa2cea19a5260_1.png?Expires=1704844800&Signature=Rp1dA4vWMJLOlIhMR4X14KUKAy-4iqWfJ6AqfcuUIwG2nlynhABPzPtqNHfoAynuz7Euu60Xis~K2GubrbGshHoQwQjxWhXfHQUcJ8NxcS-98UWVpliy48A7yPIQP6-bA58KKfC8dG8NopNdsG1-4e-3d6KVjqfx5UlQqhwBEYDecu6XAdbh5dKCuUgvjPUpkKAdOKLDpaR~nolUXmY7yKlYJBzNF~ysoZkA0S0plIJL7jDCtN93uAw8~O3eHpntpGDPDy35Xf6AnNfopNUQ0bVB7CVokzbwnk~CtzCEJA7Q-CFow-hNd3X1hOW8c8vGkp0N06l0aY-0YLiqQZ~adA__&Key-Pair-Id=KNBS2THMRC385"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "bankaraSchedules" : {
+      "nodes" : [
+        {
+          "startTime" : "2023-11-08T22:00:00Z",
+          "endTime" : "2023-11-09T00:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0xMQ==",
+                  "vsStageId" : 11,
+                  "name" : "金眼鲷美术馆",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/b9d8cfa186d197a27e075600a107c99d9e21646d116730f0843e0fff0aaba7dd_1.png?Expires=1704844800&Signature=eWr6sd-YmpgIbOdx96tTH4uFjPiuLFuF9YNiXa9yvJj5VJIBhJSCaPjn3VsGxSVTmRgkzFSnmcGPQ8dVjona8rQhTOycvVSQuJ4V9yfc4bYomdqw9U4ex1pYYTt1XIlxrQ7e1J3nEe9E0P6tOdqpzNb1Yhz2oPwnVnApUNBNoKSwc09W-Wxc~KVnmCx3yHP-~~sCK2HP7~r-D1uUITgBg6m-aU7zvUEJMFE2Aodokd8sI2vJXfUlQGyqXrm~LhdU28qrbjwnYbnliMcTNZhdSLtCZPNV-ZZpoQKRuF-dzl-zmHsabLCHcLkKYCnEbYbvm95pTAOsG7fCirxTKUmOYw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xMw==",
+                  "vsStageId" : 13,
+                  "name" : "海女美术大学",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/40aba8b36a9439e2d670fde5b3478819ea8a94f9e503b9d783248a5716786f35_1.png?Expires=1704844800&Signature=HFLQYG-CTDq97PpR9NKfPyvBRTI2yx2YrbENyqDsxn0wUqKu8joKmKpHWEd1yNTQX2ThYwkkgNYMBoxBR5xgixqC25jpqOk1m7Q4i2qAxhP0ICUK54JAqapK3IJsmfZYB4vaA5ouNBHzgvi4hsmF2~pnXNW2hw8evL45-d8q4xHpM85kAk4eAj1QpyFMNHxGFJgE1bt8IoPIoF3YLDNiQ1JFTUhPRATuFoNhdYIZD10~11ZNUvVlIZx8hqn4PMtosVr-ZHhcm7ny06M9ZvZ44H83VAbZJAG0nALjrVbcMsSID35lMVW~GdE2Q7iEUhokW3F8hZJRXl0uHX46uhG0cQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格鱼虎对战",
+                "rule" : "GOAL",
+                "id" : "VnNSdWxlLTM="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS01",
+                  "vsStageId" : 5,
+                  "name" : "鱼露遗迹",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/f14c2a64e49d243679fc0884af91e1a07dc65600f9b90aefe92d7790dcffb191_1.png?Expires=1704844800&Signature=ELc9vhZ9IYAuhsNuTlbWLSJsvqFc-4JNMXzFME6U1jBgt1sJxPCX5ek2qeqTcKe8IJZ00jduaQcUzUXWqTAzXVHZdc0E7PlFWfcawNXeHHq9ClwvE3r8OM94fYBds8GSdnQpT3vsrGZYYLNs3U~3J8XUfPWoSkwznbkpax0mXtOWMwAi1yHWnokTK9bVmwIXyFQqTL~7UhdrJXsawGmZ9X-nqqZCsXuEGQX6a-TzTfzvLN3l-ypYanUC~jKTuzHpAxfUYp3S7zWalxshhX7ofJJaeuKNv8IXcq22hItbTG06gUaudqkPHmciC5JsSjvOrkGCKuhSqgixHqcCR6xyug__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xNA==",
+                  "vsStageId" : 14,
+                  "name" : "鲟鱼造船厂",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/48684c69d5c5a4ffaf16b712a4895545a8d01196115d514fc878ce99863bb3e9_1.png?Expires=1704844800&Signature=ogPimSKqTN5b94G54kw4TFLM4eIiBGIuPSwwOJ7slYUxbVHWWQfFJoRBOz1uLdsGSRpk1EYiIcG4EXuY4tPMJ9j9oGhzIEjAWUwE6y7ZEgU9v6TaMRiTnp0iN1ILj9d4PWlc3JTAPe~H6KIGEzmKHoRKbfNwESusrntGc-0mJ-fGQrRA2KHLXOJSXN8dzxZlTVPBsPjgL5EjYa1cRRfIP2tlcOLyCh9RVGuiHjwARmPC-Lus5ZBePQklnxbk~xfrpOoaViV0sn9Fam5uJDpfkYdYA-7kMPQy90oqh9JDNCFxcFjanLCS7TIkM8pcp9OCkxWY~xgHFBxqzHuaSueQuw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格塔楼",
+                "rule" : "LOFT",
+                "id" : "VnNSdWxlLTI="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T00:00:00Z",
+          "endTime" : "2023-11-09T02:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0xMA==",
+                  "vsStageId" : 10,
+                  "name" : "真鲭跨海大桥",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/1db8ab338b64b464df50e7f9e270e59423ff8caac6f09679a24f1b7acf3a82f3_1.png?Expires=1704844800&Signature=mJHU2mQjVMKqhH3cNkXgSHH-zvvAX-NWjoCMxbl9huZGMODP-UM74WDWOJetNGpvvIt-eRUteMbcql3u3ow4hjLPik~VQeoH1QPeEwxo~-OyrWNnJU1e7knlXxYrjSB~2aJUp6x82c8~NoW9xRD8CLpueA4~gv~ayPYJh1xxFSQ437zWvZrQk4MuQXcltn4c4tOevUX0ea-7XS-hpfmRUdzAr19zc7C9iPy1h0ABOSBBIyKblVZCmkpYvOooFAb-bVyJiLYOs0fTN8auCrT1SLjpCvT2K1I1~VkPuB4kgB~ueCTQW2tlyMUNlD9Uun~Vb7fObmS1pY-Mi0iTMVrLLA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xNw==",
+                  "vsStageId" : 17,
+                  "name" : "昆布赛道",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/7b3cf118bd9f45d141cd6db0ee75b06e697fa83945c7fe1e6f8483de6a591f5f_1.png?Expires=1704844800&Signature=pB86z49uqrBZu9bVI3W-H25IRYIJI4rFJv90zajgmUeRiYgmVzWkD64ishajszBRwc~pHdejCFOxXfF4MO~CwuduqE63og6IIXUWk9JH3XBQo7E2O6y0WoUctBKc60sDbilfS8IVBTPUrgveVPHr4CuUQaIrzejVCCxnnn6M6F3Iowp6aZLVlPwVWxJHljogliNACLjFSBsp6iGPCZZyghRi75mIAhE~N4rnbLwcMft1f7Vqjn0z5PTfOIqd9-IXNuHM9~QcZFN-kZzykIrE7l0r~aLM1znDu4CfNbjYaQqbj5j2aEGltBMi4Dt1eCqcBRW743uFO~yXoLX9lh1ThA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格区域",
+                "rule" : "AREA",
+                "id" : "VnNSdWxlLTE="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS03",
+                  "vsStageId" : 7,
+                  "name" : "臭鱼干温泉",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/cd84d711b47a424334569ac20f33f8e0ab6a652dc07854dcd36508a0081e9034_1.png?Expires=1704844800&Signature=Hv-5-Vxpeu2YqGjYwp1YlxE0vUHklhmR6C0s0Yjy5ezdyqAll4S3Uvk-6YCWAYpVppVP4dCEZ-9YclgcrQLt2mg9s42Ev3xMYgJ0rr5wWOKmOkcoCpJVjUshrWeT2SxKYbULAz5xei1ddX7Mr2Zghhwi-aK6MuEVLIYly5-EWnWvj4DdNrgxoFIsgdlWXOviEQFAfEbko09GZbnYk7V3ynZjxlAHS6dpDmqXkZWpwkQQ6qMePrT-YCOwce0eTmui6TIDhiHSpGxBJS1rROWs-E8SHOvNj7l61Qgrj0F36DZB1ffOnp~iKR2bSptIYyiKNZiNHXobAYGCDdWh2L1e-A__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS05",
+                  "vsStageId" : 9,
+                  "name" : "比目鱼住宅区",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/488017f3ce712fca9fb37d61fe306343054449bb2d2bb1751d95f54a98564cae_1.png?Expires=1704844800&Signature=YdFSE7YYhY7WHK9V9WVKaxmYDA6EyABrvQgZNjFs1aDWyw1HDNdSZ6GfHaz~ldF584zy7nIC6MS~-20grcI1qJHbb77iXDjHMUrONeG-Cu2BMKfRyBZrinhSK2bWpBALQpdWeGRrjb0sMjNuUjJOcBZTm4JzD7aITbrWnOEaUnOpqxHhQxOXkZBPmGwxnPNjCgUHbG9sjq1wngwQ2e32fJY2huJNnciisoak~jLLMu-qP-dqXMcRzZDTjHKAYAAYwbQa8p4yLrZ26uTQSWE~NBtBLVpeV9M2UvuvYUkjXngrMSvCgwcTetNe~qBqlp69qjoc9Wa8lqa7ww~QBee76g__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格鱼虎对战",
+                "rule" : "GOAL",
+                "id" : "VnNSdWxlLTM="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T02:00:00Z",
+          "endTime" : "2023-11-09T04:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0y",
+                  "vsStageId" : 2,
+                  "name" : "鳗鲶区",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/898e1ae6c737a9d44552c7c81f9b710676492681525c514eadc68a6780aa52af_1.png?Expires=1704844800&Signature=CylRvhSFefkTHRGg0s0x341rDpK0dW1wPlRKW9EM4PVg72qKkE15JbX9DT4Xo18SyeYNM3rHdYMPM01dY5YLCFYBMkiXGBvC34dlUlZ253B6OES5Gua0Hwyt6-WTMPy0u2tinrVw6oSaYIH7gyQ1nf6T~AUEDd7yI5cIR~ZF4a2NRQMMQH36iDFNXCFxLNiM8S8JiT1GryeJGaKDFDqDMuPq00zGndRE5JGqiQ-VS5zLFTibwc5LkwJQUHOD4FpKo4JW4Ujb44-tYKQxT6iuKM8lpvQOwHehfLWRxL-yO77IZy-~IULB-iAH5Ru~fvQuctSbnGKgkpHS2bEvDoaVaw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS04",
+                  "vsStageId" : 8,
+                  "name" : "塔拉波特购物公园",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/f70e9f5af477a39ccfab631bfb81c9e2cedb4cd0947fe260847c214a6d23695f_1.png?Expires=1704844800&Signature=UshJ6zCIS6sJSTBYPrbmcdtkdsvE2FJqsG8~cdEzAUkxyQbhLNA5nXEVauwM9Z9LIHJI5g5-syCOJaS5oWfeSRKeg~e9KXnXeaW0bNfjAyoHxXHi5moapp1xwdbnj8XVKpmtN9wRnl86yfKol~aU4kx3okH4cReCR3Tlw3QyvUqXbEX70q9RXSzaTDilLmweJGT8LorrZMGsxBTkON0v-nr8XADsw6XeN5uqxhFryHcRE21tlxcdg5scUZHf8sj4VSnex1avJoSbXOPVPOZqx5iQ8EmG6SeTkBr4jUNv3OgfQ09e9tsKoBueHPdZ2akmRMKy4f3iKtNXhvVmEl6jPw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格蛤蜊",
+                "rule" : "CLAM",
+                "id" : "VnNSdWxlLTQ="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS02",
+                  "vsStageId" : 6,
+                  "name" : "鱼肉碎金属",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/de1f212e9ff0648f36cd3b8e0917ef36b3bd51445159297dcb948f34a09f2f05_1.png?Expires=1704844800&Signature=DCx7ZtdZaAIINKvfQqr~PmCIMNoWodhT5Fgb0kg5LoQpsMfU~XyQvIcsrISJFbMUeKXGc4Mm1I3QKHHOn4Ydgdk99IYAp3xFfBuDZFVmErMcr7c6GBMG06axIcVtv6M90VtB8GJ8ZbmF5xIi1t4UHOQdjuIiASYy7NR7q8OPlNzCVls9F8Pn5tI16qmIEsbDppzqluP2ZIDHINXy5sBbeUtgnxZTZLgqUZvZdwztLYIBF3uFqcKY5bcwkr7paZLeYpwYSZklJt8NoHN~K1WTzL1XIRGHjo6HmshRSAodFYc~T6U~xtxdmZ9vCMKuPc8mhDGyOP357STnQZVFKhqx8Q__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xMw==",
+                  "vsStageId" : 13,
+                  "name" : "海女美术大学",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/40aba8b36a9439e2d670fde5b3478819ea8a94f9e503b9d783248a5716786f35_1.png?Expires=1704844800&Signature=HFLQYG-CTDq97PpR9NKfPyvBRTI2yx2YrbENyqDsxn0wUqKu8joKmKpHWEd1yNTQX2ThYwkkgNYMBoxBR5xgixqC25jpqOk1m7Q4i2qAxhP0ICUK54JAqapK3IJsmfZYB4vaA5ouNBHzgvi4hsmF2~pnXNW2hw8evL45-d8q4xHpM85kAk4eAj1QpyFMNHxGFJgE1bt8IoPIoF3YLDNiQ1JFTUhPRATuFoNhdYIZD10~11ZNUvVlIZx8hqn4PMtosVr-ZHhcm7ny06M9ZvZ44H83VAbZJAG0nALjrVbcMsSID35lMVW~GdE2Q7iEUhokW3F8hZJRXl0uHX46uhG0cQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格塔楼",
+                "rule" : "LOFT",
+                "id" : "VnNSdWxlLTI="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T04:00:00Z",
+          "endTime" : "2023-11-09T06:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0x",
+                  "vsStageId" : 1,
+                  "name" : "温泉花大峡谷",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/35f9ca08ccc2bf759774ab2cb886567c117b9287875ca92fb590c1294ddcdc1e_1.png?Expires=1704844800&Signature=QPMKMTDhgndGoKsNAzY-CI0AmFsreK~IKQY4wtdQWiFE2kEISBOPV6YviW8s6OuwfYn8ipvIlZuwHL6kYE5BgdaqFExBb88ebxGcRwpjpclbSrIY5xdvkcQ5KPEJKx79UKReEhYMfcJyUoMa1t4fOrygSk~omqhAQdQEISkWFwfz-Ksna7HeLIIJ7iytPiRqX2GBcSlnJlp-jw8teYYD8NMwCzjWDOzxAOgQA2j6sjA5fYDRMoTVNPIFmhzy8WtpO-kL0mayDyEHM~I2S3JtGwU55BZgYas-xjUUHiZ0YHwNVe1xoJnf-YjTQEDPOh7Ro-T~GI4vCY6R6EaeEoRuaA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS01",
+                  "vsStageId" : 5,
+                  "name" : "鱼露遗迹",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/f14c2a64e49d243679fc0884af91e1a07dc65600f9b90aefe92d7790dcffb191_1.png?Expires=1704844800&Signature=ELc9vhZ9IYAuhsNuTlbWLSJsvqFc-4JNMXzFME6U1jBgt1sJxPCX5ek2qeqTcKe8IJZ00jduaQcUzUXWqTAzXVHZdc0E7PlFWfcawNXeHHq9ClwvE3r8OM94fYBds8GSdnQpT3vsrGZYYLNs3U~3J8XUfPWoSkwznbkpax0mXtOWMwAi1yHWnokTK9bVmwIXyFQqTL~7UhdrJXsawGmZ9X-nqqZCsXuEGQX6a-TzTfzvLN3l-ypYanUC~jKTuzHpAxfUYp3S7zWalxshhX7ofJJaeuKNv8IXcq22hItbTG06gUaudqkPHmciC5JsSjvOrkGCKuhSqgixHqcCR6xyug__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格鱼虎对战",
+                "rule" : "GOAL",
+                "id" : "VnNSdWxlLTM="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0y",
+                  "vsStageId" : 2,
+                  "name" : "鳗鲶区",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/898e1ae6c737a9d44552c7c81f9b710676492681525c514eadc68a6780aa52af_1.png?Expires=1704844800&Signature=CylRvhSFefkTHRGg0s0x341rDpK0dW1wPlRKW9EM4PVg72qKkE15JbX9DT4Xo18SyeYNM3rHdYMPM01dY5YLCFYBMkiXGBvC34dlUlZ253B6OES5Gua0Hwyt6-WTMPy0u2tinrVw6oSaYIH7gyQ1nf6T~AUEDd7yI5cIR~ZF4a2NRQMMQH36iDFNXCFxLNiM8S8JiT1GryeJGaKDFDqDMuPq00zGndRE5JGqiQ-VS5zLFTibwc5LkwJQUHOD4FpKo4JW4Ujb44-tYKQxT6iuKM8lpvQOwHehfLWRxL-yO77IZy-~IULB-iAH5Ru~fvQuctSbnGKgkpHS2bEvDoaVaw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS00",
+                  "vsStageId" : 4,
+                  "name" : "竹蛏疏洪道",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_1.png?Expires=1704844800&Signature=aCVPQpc6fkx8elrWptfRNQXJ-anEOBqk8CnmPL~J5EU7~ECXalsFmdIb-ahU-OEtwgx31vfYXy1~68A945O6m54HLcbgWkSqnK0oG16i5iuMAlrIZyYCelxwAXYaeKns~T4XICDdOaF7s~CX0haaj9ZFQl19UpP7KwRB5VVVRaRExUdTlmsmR-06ZQ00pn8ua8LZ~wa4cSaMpoGy3YmFHFweeqsdmHmLm0FHQ5ZpEMj0Si0nWA5kGgWcn1bljvhqErl9CW4YRznttkCoh-AVewsD2knDtqu~SU9P-RW9KsXIYCBFoAP25pWDzPUlKh5g7SvvMCdpdPU3tAsOHzyZDA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格区域",
+                "rule" : "AREA",
+                "id" : "VnNSdWxlLTE="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T06:00:00Z",
+          "endTime" : "2023-11-09T08:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS03",
+                  "vsStageId" : 7,
+                  "name" : "臭鱼干温泉",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/cd84d711b47a424334569ac20f33f8e0ab6a652dc07854dcd36508a0081e9034_1.png?Expires=1704844800&Signature=Hv-5-Vxpeu2YqGjYwp1YlxE0vUHklhmR6C0s0Yjy5ezdyqAll4S3Uvk-6YCWAYpVppVP4dCEZ-9YclgcrQLt2mg9s42Ev3xMYgJ0rr5wWOKmOkcoCpJVjUshrWeT2SxKYbULAz5xei1ddX7Mr2Zghhwi-aK6MuEVLIYly5-EWnWvj4DdNrgxoFIsgdlWXOviEQFAfEbko09GZbnYk7V3ynZjxlAHS6dpDmqXkZWpwkQQ6qMePrT-YCOwce0eTmui6TIDhiHSpGxBJS1rROWs-E8SHOvNj7l61Qgrj0F36DZB1ffOnp~iKR2bSptIYyiKNZiNHXobAYGCDdWh2L1e-A__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xNA==",
+                  "vsStageId" : 14,
+                  "name" : "鲟鱼造船厂",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/48684c69d5c5a4ffaf16b712a4895545a8d01196115d514fc878ce99863bb3e9_1.png?Expires=1704844800&Signature=ogPimSKqTN5b94G54kw4TFLM4eIiBGIuPSwwOJ7slYUxbVHWWQfFJoRBOz1uLdsGSRpk1EYiIcG4EXuY4tPMJ9j9oGhzIEjAWUwE6y7ZEgU9v6TaMRiTnp0iN1ILj9d4PWlc3JTAPe~H6KIGEzmKHoRKbfNwESusrntGc-0mJ-fGQrRA2KHLXOJSXN8dzxZlTVPBsPjgL5EjYa1cRRfIP2tlcOLyCh9RVGuiHjwARmPC-Lus5ZBePQklnxbk~xfrpOoaViV0sn9Fam5uJDpfkYdYA-7kMPQy90oqh9JDNCFxcFjanLCS7TIkM8pcp9OCkxWY~xgHFBxqzHuaSueQuw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格塔楼",
+                "rule" : "LOFT",
+                "id" : "VnNSdWxlLTI="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0x",
+                  "vsStageId" : 1,
+                  "name" : "温泉花大峡谷",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/35f9ca08ccc2bf759774ab2cb886567c117b9287875ca92fb590c1294ddcdc1e_1.png?Expires=1704844800&Signature=QPMKMTDhgndGoKsNAzY-CI0AmFsreK~IKQY4wtdQWiFE2kEISBOPV6YviW8s6OuwfYn8ipvIlZuwHL6kYE5BgdaqFExBb88ebxGcRwpjpclbSrIY5xdvkcQ5KPEJKx79UKReEhYMfcJyUoMa1t4fOrygSk~omqhAQdQEISkWFwfz-Ksna7HeLIIJ7iytPiRqX2GBcSlnJlp-jw8teYYD8NMwCzjWDOzxAOgQA2j6sjA5fYDRMoTVNPIFmhzy8WtpO-kL0mayDyEHM~I2S3JtGwU55BZgYas-xjUUHiZ0YHwNVe1xoJnf-YjTQEDPOh7Ro-T~GI4vCY6R6EaeEoRuaA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xOQ==",
+                  "vsStageId" : 19,
+                  "name" : "高脚经济特区",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/4e0e9e2046aff1d635e23946d9f0a461486d2aab349079e551037e426ac82c7a_1.png?Expires=1704844800&Signature=P4~IInt32mWwNwr3gKhy1r-2MFLsCOFxWotmHNEtLSqM3x~4paTwqcFit3mlsZDXiYu9m5qMpDyTK-4hI-Pzb4TazTYLEmUt3mtAct6tU9esR1oQX1ydmtfOvy5rsIaUVuLb1z1nozLdk0w7ApD9pKKOSorlt-0cVwbCCG1p48SioWDa8cEEEPbY5tPKAupYWo3twA7pF7GRe7lyWb8o2hC6QIkJH0g1DZrlXe7cG6AUkgawK1jj9XgqDKdqGROo2eTGzq3NqvAVVx-jiK9cgRKZhhjB-gX75c77ldFrBa8Yiy4G6am3Iied9NVXro74csI-WeG1pWWQLRQfiGHWdA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格蛤蜊",
+                "rule" : "CLAM",
+                "id" : "VnNSdWxlLTQ="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T08:00:00Z",
+          "endTime" : "2023-11-09T10:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS00",
+                  "vsStageId" : 4,
+                  "name" : "竹蛏疏洪道",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_1.png?Expires=1704844800&Signature=aCVPQpc6fkx8elrWptfRNQXJ-anEOBqk8CnmPL~J5EU7~ECXalsFmdIb-ahU-OEtwgx31vfYXy1~68A945O6m54HLcbgWkSqnK0oG16i5iuMAlrIZyYCelxwAXYaeKns~T4XICDdOaF7s~CX0haaj9ZFQl19UpP7KwRB5VVVRaRExUdTlmsmR-06ZQ00pn8ua8LZ~wa4cSaMpoGy3YmFHFweeqsdmHmLm0FHQ5ZpEMj0Si0nWA5kGgWcn1bljvhqErl9CW4YRznttkCoh-AVewsD2knDtqu~SU9P-RW9KsXIYCBFoAP25pWDzPUlKh5g7SvvMCdpdPU3tAsOHzyZDA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xNQ==",
+                  "vsStageId" : 15,
+                  "name" : "座头购物中心",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_1.png?Expires=1704844800&Signature=GFpgXrGEf5Zekq94fvBtYMgeiM-E9gzplFZoRn2CD7Pi8JdPDT4xjVaKjYudwKOxXOiamyuFDzgF9RFHN0-S~IqdJWnJYDLGRL5TOhmpIDtMvnzl2DkqH5bS5ldLu0Xf9j1~hpX7tYmX~KK2JUWaNf20s6z95Jke8zJ3PwIvwEIPpEFMKDQBic9fQlIfGbsn0gVMm3TLsyOJvGUMqjX~jMd6FcyhPksbKK~SC~CK5yqjORvku-KvpNuPBpErmOQPEbtfcdTlH2jnJyU9lqbmYaLQDalAssbRTTquuicVpSq1qQccjOWQc~XSXp0ZlY~2smu1QhiNdpq0l0ED00a9JQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格区域",
+                "rule" : "AREA",
+                "id" : "VnNSdWxlLTE="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0z",
+                  "vsStageId" : 3,
+                  "name" : "烟管鱼市场",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/8dc2f16d39c630bab40cead5b2485ca3559e829d0d3de0c2232c7a62fefb5fa9_1.png?Expires=1704844800&Signature=PvdMv~ZvhiqBXY7GAW~wHyzNtGJu4w5fjQ0UOi4qEU7vxo~PTnVfccUX45cZuwlIE6dW4JiRWBOQ0IEkoHWoy2KWn0USb1ozDuWfmX0jhsF3lDshpKeQ1tulfMlKQLlN-ouNE-4Y28XNs2kp2ztHRCrdysOHHqC2Q98keeMCwoV5LvEN7rWayrhx3naFsL5~~maByVVhb4Dmnpk0FfIZgC-CnQQnmnKVC8gyT~gBapYufTpujXPh5CWkhnQCI7XPYneYwO8kdSV5YPuw96MV9JjZawetfJ~qgafTAMZG3CdEFF0jYyiIv6~X7ZsRIoMY2LrU7Y9V9bHju8YqC8kLKg__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0yMA==",
+                  "vsStageId" : 20,
+                  "name" : "大比目鱼海运中心",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/b65a70eedf129848b9d2b492bb68712abf91a5cbda13131848947fb04c51d665_1.png?Expires=1704844800&Signature=wvr67pB8u5ZQryyPjyCrNsFPn5-2R21FHFhTD0~-RQK8IM3vj~GiD9uuikE78w0V3DPzm4a4h853OfRHCYUYRkqfOdvnK7WFHp1LJQajgYVIRS1jnZK44f3uWD0Per9DnYWV~wjf-DD5jiIFnfVaMXPaNv6WoRCXpGf6m4IoP7zfBowIEcg6z-0nO1nNziwK5VqUo4lEyB3K99ui4lXY1jRNLPLMiIyDO4nZM6l5mkPDaRulos9adKVBTJ10MrzcD1yGnVly5qhZMa3mMWg59dJaRnd92B~GTWVYc9Pp-VdNGjo0uwy2ObQtRlZH9DKlcqFJYpQd8xhjhNLF8UveUw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格鱼虎对战",
+                "rule" : "GOAL",
+                "id" : "VnNSdWxlLTM="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T10:00:00Z",
+          "endTime" : "2023-11-09T12:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS05",
+                  "vsStageId" : 9,
+                  "name" : "比目鱼住宅区",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/488017f3ce712fca9fb37d61fe306343054449bb2d2bb1751d95f54a98564cae_1.png?Expires=1704844800&Signature=YdFSE7YYhY7WHK9V9WVKaxmYDA6EyABrvQgZNjFs1aDWyw1HDNdSZ6GfHaz~ldF584zy7nIC6MS~-20grcI1qJHbb77iXDjHMUrONeG-Cu2BMKfRyBZrinhSK2bWpBALQpdWeGRrjb0sMjNuUjJOcBZTm4JzD7aITbrWnOEaUnOpqxHhQxOXkZBPmGwxnPNjCgUHbG9sjq1wngwQ2e32fJY2huJNnciisoak~jLLMu-qP-dqXMcRzZDTjHKAYAAYwbQa8p4yLrZ26uTQSWE~NBtBLVpeV9M2UvuvYUkjXngrMSvCgwcTetNe~qBqlp69qjoc9Wa8lqa7ww~QBee76g__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0yMA==",
+                  "vsStageId" : 20,
+                  "name" : "大比目鱼海运中心",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/b65a70eedf129848b9d2b492bb68712abf91a5cbda13131848947fb04c51d665_1.png?Expires=1704844800&Signature=wvr67pB8u5ZQryyPjyCrNsFPn5-2R21FHFhTD0~-RQK8IM3vj~GiD9uuikE78w0V3DPzm4a4h853OfRHCYUYRkqfOdvnK7WFHp1LJQajgYVIRS1jnZK44f3uWD0Per9DnYWV~wjf-DD5jiIFnfVaMXPaNv6WoRCXpGf6m4IoP7zfBowIEcg6z-0nO1nNziwK5VqUo4lEyB3K99ui4lXY1jRNLPLMiIyDO4nZM6l5mkPDaRulos9adKVBTJ10MrzcD1yGnVly5qhZMa3mMWg59dJaRnd92B~GTWVYc9Pp-VdNGjo0uwy2ObQtRlZH9DKlcqFJYpQd8xhjhNLF8UveUw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格蛤蜊",
+                "rule" : "CLAM",
+                "id" : "VnNSdWxlLTQ="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0xMQ==",
+                  "vsStageId" : 11,
+                  "name" : "金眼鲷美术馆",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/b9d8cfa186d197a27e075600a107c99d9e21646d116730f0843e0fff0aaba7dd_1.png?Expires=1704844800&Signature=eWr6sd-YmpgIbOdx96tTH4uFjPiuLFuF9YNiXa9yvJj5VJIBhJSCaPjn3VsGxSVTmRgkzFSnmcGPQ8dVjona8rQhTOycvVSQuJ4V9yfc4bYomdqw9U4ex1pYYTt1XIlxrQ7e1J3nEe9E0P6tOdqpzNb1Yhz2oPwnVnApUNBNoKSwc09W-Wxc~KVnmCx3yHP-~~sCK2HP7~r-D1uUITgBg6m-aU7zvUEJMFE2Aodokd8sI2vJXfUlQGyqXrm~LhdU28qrbjwnYbnliMcTNZhdSLtCZPNV-ZZpoQKRuF-dzl-zmHsabLCHcLkKYCnEbYbvm95pTAOsG7fCirxTKUmOYw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xOA==",
+                  "vsStageId" : 18,
+                  "name" : "鬼蝠鲼玛利亚号",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/0b7fd997781e03eb9d5bf1875ed070f698afc654f4fe929452c65aa26c0a35fd_1.png?Expires=1704844800&Signature=hD1dBcpfXEtVu9jgVIGB4bdUJlnvBcVtBwmgPOjxhZkAhJGuO669Ycsvlc67mr6MebYlv9S10Z1j5IdZ87nV6AAKCkXLP-4iO3HYXcUVw4VAYqgU~j8PGwSNisNr5Y8GGJdERDoAjffS8YlzyoWoJKTjv6xLWC~u5aMLYX4AB3QpnUolKq-feFcuMvBQwC1DQ9kTM7e-bbQVNrgAM-I4EJ~k1GGFwT646UHd2LjrHQRBnKHk~qklKg4MI5IliQcfQE7gKM9vifbLyC~5oYeWjogP4pnbdjXDEJEGyaDtYqvJqwekv1MYS0rV2JQQ83~hUw6d2NErccJXJsF2oK8lOQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格塔楼",
+                "rule" : "LOFT",
+                "id" : "VnNSdWxlLTI="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T12:00:00Z",
+          "endTime" : "2023-11-09T14:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0xOA==",
+                  "vsStageId" : 18,
+                  "name" : "鬼蝠鲼玛利亚号",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/0b7fd997781e03eb9d5bf1875ed070f698afc654f4fe929452c65aa26c0a35fd_1.png?Expires=1704844800&Signature=hD1dBcpfXEtVu9jgVIGB4bdUJlnvBcVtBwmgPOjxhZkAhJGuO669Ycsvlc67mr6MebYlv9S10Z1j5IdZ87nV6AAKCkXLP-4iO3HYXcUVw4VAYqgU~j8PGwSNisNr5Y8GGJdERDoAjffS8YlzyoWoJKTjv6xLWC~u5aMLYX4AB3QpnUolKq-feFcuMvBQwC1DQ9kTM7e-bbQVNrgAM-I4EJ~k1GGFwT646UHd2LjrHQRBnKHk~qklKg4MI5IliQcfQE7gKM9vifbLyC~5oYeWjogP4pnbdjXDEJEGyaDtYqvJqwekv1MYS0rV2JQQ83~hUw6d2NErccJXJsF2oK8lOQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xOQ==",
+                  "vsStageId" : 19,
+                  "name" : "高脚经济特区",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/4e0e9e2046aff1d635e23946d9f0a461486d2aab349079e551037e426ac82c7a_1.png?Expires=1704844800&Signature=P4~IInt32mWwNwr3gKhy1r-2MFLsCOFxWotmHNEtLSqM3x~4paTwqcFit3mlsZDXiYu9m5qMpDyTK-4hI-Pzb4TazTYLEmUt3mtAct6tU9esR1oQX1ydmtfOvy5rsIaUVuLb1z1nozLdk0w7ApD9pKKOSorlt-0cVwbCCG1p48SioWDa8cEEEPbY5tPKAupYWo3twA7pF7GRe7lyWb8o2hC6QIkJH0g1DZrlXe7cG6AUkgawK1jj9XgqDKdqGROo2eTGzq3NqvAVVx-jiK9cgRKZhhjB-gX75c77ldFrBa8Yiy4G6am3Iied9NVXro74csI-WeG1pWWQLRQfiGHWdA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格鱼虎对战",
+                "rule" : "GOAL",
+                "id" : "VnNSdWxlLTM="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0xMg==",
+                  "vsStageId" : 12,
+                  "name" : "鬼头刀SPA度假区",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/8273118c1ffe1bf6fe031c7d8c9795dab52632c9b76e8e9f01f644ac5ae0ccc0_1.png?Expires=1704844800&Signature=kmBrEJtSYIEL-oGBC3M7UxCf2dvIQbRFFYVNovjzZEsVtskf4taTkCLSxcwnp-57d8Q5H3d9Q4rFV3yVnfhJaCshuWPF0uXaRzOLoM2nDMyHzmC2l8uFQpou7QG4OJRo1NynOlYEqHjCodkzqWMgc8E8cWSaRvofxprV01Xd0P66bIj0oVtnZ4N9YdWEZ2tDqG8bAgUJS~rHcFtM7YwXQkdEimOWx~q7kPb-VSRKJj9sljw2zM56yK144JIpdJhsOKpCi6-qhBnXawG187X6~eI4Gxcb9BlOy2MG8tzZ2WNP4MCI3YT6rd5PN00bzWeFZod4W80g54pflAVv90g-Mw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xNw==",
+                  "vsStageId" : 17,
+                  "name" : "昆布赛道",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/7b3cf118bd9f45d141cd6db0ee75b06e697fa83945c7fe1e6f8483de6a591f5f_1.png?Expires=1704844800&Signature=pB86z49uqrBZu9bVI3W-H25IRYIJI4rFJv90zajgmUeRiYgmVzWkD64ishajszBRwc~pHdejCFOxXfF4MO~CwuduqE63og6IIXUWk9JH3XBQo7E2O6y0WoUctBKc60sDbilfS8IVBTPUrgveVPHr4CuUQaIrzejVCCxnnn6M6F3Iowp6aZLVlPwVWxJHljogliNACLjFSBsp6iGPCZZyghRi75mIAhE~N4rnbLwcMft1f7Vqjn0z5PTfOIqd9-IXNuHM9~QcZFN-kZzykIrE7l0r~aLM1znDu4CfNbjYaQqbj5j2aEGltBMi4Dt1eCqcBRW743uFO~yXoLX9lh1ThA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格区域",
+                "rule" : "AREA",
+                "id" : "VnNSdWxlLTE="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T14:00:00Z",
+          "endTime" : "2023-11-09T16:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0x",
+                  "vsStageId" : 1,
+                  "name" : "温泉花大峡谷",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/35f9ca08ccc2bf759774ab2cb886567c117b9287875ca92fb590c1294ddcdc1e_1.png?Expires=1704844800&Signature=QPMKMTDhgndGoKsNAzY-CI0AmFsreK~IKQY4wtdQWiFE2kEISBOPV6YviW8s6OuwfYn8ipvIlZuwHL6kYE5BgdaqFExBb88ebxGcRwpjpclbSrIY5xdvkcQ5KPEJKx79UKReEhYMfcJyUoMa1t4fOrygSk~omqhAQdQEISkWFwfz-Ksna7HeLIIJ7iytPiRqX2GBcSlnJlp-jw8teYYD8NMwCzjWDOzxAOgQA2j6sjA5fYDRMoTVNPIFmhzy8WtpO-kL0mayDyEHM~I2S3JtGwU55BZgYas-xjUUHiZ0YHwNVe1xoJnf-YjTQEDPOh7Ro-T~GI4vCY6R6EaeEoRuaA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xNw==",
+                  "vsStageId" : 17,
+                  "name" : "昆布赛道",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/7b3cf118bd9f45d141cd6db0ee75b06e697fa83945c7fe1e6f8483de6a591f5f_1.png?Expires=1704844800&Signature=pB86z49uqrBZu9bVI3W-H25IRYIJI4rFJv90zajgmUeRiYgmVzWkD64ishajszBRwc~pHdejCFOxXfF4MO~CwuduqE63og6IIXUWk9JH3XBQo7E2O6y0WoUctBKc60sDbilfS8IVBTPUrgveVPHr4CuUQaIrzejVCCxnnn6M6F3Iowp6aZLVlPwVWxJHljogliNACLjFSBsp6iGPCZZyghRi75mIAhE~N4rnbLwcMft1f7Vqjn0z5PTfOIqd9-IXNuHM9~QcZFN-kZzykIrE7l0r~aLM1znDu4CfNbjYaQqbj5j2aEGltBMi4Dt1eCqcBRW743uFO~yXoLX9lh1ThA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格塔楼",
+                "rule" : "LOFT",
+                "id" : "VnNSdWxlLTI="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS05",
+                  "vsStageId" : 9,
+                  "name" : "比目鱼住宅区",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/488017f3ce712fca9fb37d61fe306343054449bb2d2bb1751d95f54a98564cae_1.png?Expires=1704844800&Signature=YdFSE7YYhY7WHK9V9WVKaxmYDA6EyABrvQgZNjFs1aDWyw1HDNdSZ6GfHaz~ldF584zy7nIC6MS~-20grcI1qJHbb77iXDjHMUrONeG-Cu2BMKfRyBZrinhSK2bWpBALQpdWeGRrjb0sMjNuUjJOcBZTm4JzD7aITbrWnOEaUnOpqxHhQxOXkZBPmGwxnPNjCgUHbG9sjq1wngwQ2e32fJY2huJNnciisoak~jLLMu-qP-dqXMcRzZDTjHKAYAAYwbQa8p4yLrZ26uTQSWE~NBtBLVpeV9M2UvuvYUkjXngrMSvCgwcTetNe~qBqlp69qjoc9Wa8lqa7ww~QBee76g__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xNg==",
+                  "vsStageId" : 16,
+                  "name" : "醋饭海洋世界",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/61ea801fa4ed32360dcaf83986222ded46a72dbf56194acc6d0cf4659a92ba85_1.png?Expires=1704844800&Signature=UJ77DJ-6VmgcmPeLWHFKe7rKEo9ojf9uxvNegOM8IJKIn5-UyZih2mYfP8NpVVOJiVBlvr3eNpel3Z9Ifgm3V1kmkjdWE3SeJik64zinlruBtzu3pUJzPtKpxQKdyDhvLn2wjxXw84w4pSd1kCJ8Vhyj-uCCvVU2oHtwchVJlG~opd~KsiMBf6xdKsGgZuUzvGWoDyzaTA6Fb9ZNAr0KWJKoHE6XaRyavzIJLlh6a8YQh1DHhkQZqwlHCqw2iI3mKHuWyRdUXc5EUJQ3Oku8ASl3j-Tv3IaSe4nwO36JqJUwqVqc1CYBXD3K2ACwhvCUgQFZX85a3C9Kt0t3bf6eug__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格蛤蜊",
+                "rule" : "CLAM",
+                "id" : "VnNSdWxlLTQ="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T16:00:00Z",
+          "endTime" : "2023-11-09T18:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS04",
+                  "vsStageId" : 8,
+                  "name" : "塔拉波特购物公园",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/f70e9f5af477a39ccfab631bfb81c9e2cedb4cd0947fe260847c214a6d23695f_1.png?Expires=1704844800&Signature=UshJ6zCIS6sJSTBYPrbmcdtkdsvE2FJqsG8~cdEzAUkxyQbhLNA5nXEVauwM9Z9LIHJI5g5-syCOJaS5oWfeSRKeg~e9KXnXeaW0bNfjAyoHxXHi5moapp1xwdbnj8XVKpmtN9wRnl86yfKol~aU4kx3okH4cReCR3Tlw3QyvUqXbEX70q9RXSzaTDilLmweJGT8LorrZMGsxBTkON0v-nr8XADsw6XeN5uqxhFryHcRE21tlxcdg5scUZHf8sj4VSnex1avJoSbXOPVPOZqx5iQ8EmG6SeTkBr4jUNv3OgfQ09e9tsKoBueHPdZ2akmRMKy4f3iKtNXhvVmEl6jPw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xNg==",
+                  "vsStageId" : 16,
+                  "name" : "醋饭海洋世界",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/61ea801fa4ed32360dcaf83986222ded46a72dbf56194acc6d0cf4659a92ba85_1.png?Expires=1704844800&Signature=UJ77DJ-6VmgcmPeLWHFKe7rKEo9ojf9uxvNegOM8IJKIn5-UyZih2mYfP8NpVVOJiVBlvr3eNpel3Z9Ifgm3V1kmkjdWE3SeJik64zinlruBtzu3pUJzPtKpxQKdyDhvLn2wjxXw84w4pSd1kCJ8Vhyj-uCCvVU2oHtwchVJlG~opd~KsiMBf6xdKsGgZuUzvGWoDyzaTA6Fb9ZNAr0KWJKoHE6XaRyavzIJLlh6a8YQh1DHhkQZqwlHCqw2iI3mKHuWyRdUXc5EUJQ3Oku8ASl3j-Tv3IaSe4nwO36JqJUwqVqc1CYBXD3K2ACwhvCUgQFZX85a3C9Kt0t3bf6eug__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格区域",
+                "rule" : "AREA",
+                "id" : "VnNSdWxlLTE="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0xMw==",
+                  "vsStageId" : 13,
+                  "name" : "海女美术大学",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/40aba8b36a9439e2d670fde5b3478819ea8a94f9e503b9d783248a5716786f35_1.png?Expires=1704844800&Signature=HFLQYG-CTDq97PpR9NKfPyvBRTI2yx2YrbENyqDsxn0wUqKu8joKmKpHWEd1yNTQX2ThYwkkgNYMBoxBR5xgixqC25jpqOk1m7Q4i2qAxhP0ICUK54JAqapK3IJsmfZYB4vaA5ouNBHzgvi4hsmF2~pnXNW2hw8evL45-d8q4xHpM85kAk4eAj1QpyFMNHxGFJgE1bt8IoPIoF3YLDNiQ1JFTUhPRATuFoNhdYIZD10~11ZNUvVlIZx8hqn4PMtosVr-ZHhcm7ny06M9ZvZ44H83VAbZJAG0nALjrVbcMsSID35lMVW~GdE2Q7iEUhokW3F8hZJRXl0uHX46uhG0cQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xNQ==",
+                  "vsStageId" : 15,
+                  "name" : "座头购物中心",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_1.png?Expires=1704844800&Signature=GFpgXrGEf5Zekq94fvBtYMgeiM-E9gzplFZoRn2CD7Pi8JdPDT4xjVaKjYudwKOxXOiamyuFDzgF9RFHN0-S~IqdJWnJYDLGRL5TOhmpIDtMvnzl2DkqH5bS5ldLu0Xf9j1~hpX7tYmX~KK2JUWaNf20s6z95Jke8zJ3PwIvwEIPpEFMKDQBic9fQlIfGbsn0gVMm3TLsyOJvGUMqjX~jMd6FcyhPksbKK~SC~CK5yqjORvku-KvpNuPBpErmOQPEbtfcdTlH2jnJyU9lqbmYaLQDalAssbRTTquuicVpSq1qQccjOWQc~XSXp0ZlY~2smu1QhiNdpq0l0ED00a9JQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格鱼虎对战",
+                "rule" : "GOAL",
+                "id" : "VnNSdWxlLTM="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T18:00:00Z",
+          "endTime" : "2023-11-09T20:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS02",
+                  "vsStageId" : 6,
+                  "name" : "鱼肉碎金属",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/de1f212e9ff0648f36cd3b8e0917ef36b3bd51445159297dcb948f34a09f2f05_1.png?Expires=1704844800&Signature=DCx7ZtdZaAIINKvfQqr~PmCIMNoWodhT5Fgb0kg5LoQpsMfU~XyQvIcsrISJFbMUeKXGc4Mm1I3QKHHOn4Ydgdk99IYAp3xFfBuDZFVmErMcr7c6GBMG06axIcVtv6M90VtB8GJ8ZbmF5xIi1t4UHOQdjuIiASYy7NR7q8OPlNzCVls9F8Pn5tI16qmIEsbDppzqluP2ZIDHINXy5sBbeUtgnxZTZLgqUZvZdwztLYIBF3uFqcKY5bcwkr7paZLeYpwYSZklJt8NoHN~K1WTzL1XIRGHjo6HmshRSAodFYc~T6U~xtxdmZ9vCMKuPc8mhDGyOP357STnQZVFKhqx8Q__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xMQ==",
+                  "vsStageId" : 11,
+                  "name" : "金眼鲷美术馆",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/b9d8cfa186d197a27e075600a107c99d9e21646d116730f0843e0fff0aaba7dd_1.png?Expires=1704844800&Signature=eWr6sd-YmpgIbOdx96tTH4uFjPiuLFuF9YNiXa9yvJj5VJIBhJSCaPjn3VsGxSVTmRgkzFSnmcGPQ8dVjona8rQhTOycvVSQuJ4V9yfc4bYomdqw9U4ex1pYYTt1XIlxrQ7e1J3nEe9E0P6tOdqpzNb1Yhz2oPwnVnApUNBNoKSwc09W-Wxc~KVnmCx3yHP-~~sCK2HP7~r-D1uUITgBg6m-aU7zvUEJMFE2Aodokd8sI2vJXfUlQGyqXrm~LhdU28qrbjwnYbnliMcTNZhdSLtCZPNV-ZZpoQKRuF-dzl-zmHsabLCHcLkKYCnEbYbvm95pTAOsG7fCirxTKUmOYw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格蛤蜊",
+                "rule" : "CLAM",
+                "id" : "VnNSdWxlLTQ="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS04",
+                  "vsStageId" : 8,
+                  "name" : "塔拉波特购物公园",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/f70e9f5af477a39ccfab631bfb81c9e2cedb4cd0947fe260847c214a6d23695f_1.png?Expires=1704844800&Signature=UshJ6zCIS6sJSTBYPrbmcdtkdsvE2FJqsG8~cdEzAUkxyQbhLNA5nXEVauwM9Z9LIHJI5g5-syCOJaS5oWfeSRKeg~e9KXnXeaW0bNfjAyoHxXHi5moapp1xwdbnj8XVKpmtN9wRnl86yfKol~aU4kx3okH4cReCR3Tlw3QyvUqXbEX70q9RXSzaTDilLmweJGT8LorrZMGsxBTkON0v-nr8XADsw6XeN5uqxhFryHcRE21tlxcdg5scUZHf8sj4VSnex1avJoSbXOPVPOZqx5iQ8EmG6SeTkBr4jUNv3OgfQ09e9tsKoBueHPdZ2akmRMKy4f3iKtNXhvVmEl6jPw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xNA==",
+                  "vsStageId" : 14,
+                  "name" : "鲟鱼造船厂",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/48684c69d5c5a4ffaf16b712a4895545a8d01196115d514fc878ce99863bb3e9_1.png?Expires=1704844800&Signature=ogPimSKqTN5b94G54kw4TFLM4eIiBGIuPSwwOJ7slYUxbVHWWQfFJoRBOz1uLdsGSRpk1EYiIcG4EXuY4tPMJ9j9oGhzIEjAWUwE6y7ZEgU9v6TaMRiTnp0iN1ILj9d4PWlc3JTAPe~H6KIGEzmKHoRKbfNwESusrntGc-0mJ-fGQrRA2KHLXOJSXN8dzxZlTVPBsPjgL5EjYa1cRRfIP2tlcOLyCh9RVGuiHjwARmPC-Lus5ZBePQklnxbk~xfrpOoaViV0sn9Fam5uJDpfkYdYA-7kMPQy90oqh9JDNCFxcFjanLCS7TIkM8pcp9OCkxWY~xgHFBxqzHuaSueQuw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格塔楼",
+                "rule" : "LOFT",
+                "id" : "VnNSdWxlLTI="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T20:00:00Z",
+          "endTime" : "2023-11-09T22:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0z",
+                  "vsStageId" : 3,
+                  "name" : "烟管鱼市场",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/8dc2f16d39c630bab40cead5b2485ca3559e829d0d3de0c2232c7a62fefb5fa9_1.png?Expires=1704844800&Signature=PvdMv~ZvhiqBXY7GAW~wHyzNtGJu4w5fjQ0UOi4qEU7vxo~PTnVfccUX45cZuwlIE6dW4JiRWBOQ0IEkoHWoy2KWn0USb1ozDuWfmX0jhsF3lDshpKeQ1tulfMlKQLlN-ouNE-4Y28XNs2kp2ztHRCrdysOHHqC2Q98keeMCwoV5LvEN7rWayrhx3naFsL5~~maByVVhb4Dmnpk0FfIZgC-CnQQnmnKVC8gyT~gBapYufTpujXPh5CWkhnQCI7XPYneYwO8kdSV5YPuw96MV9JjZawetfJ~qgafTAMZG3CdEFF0jYyiIv6~X7ZsRIoMY2LrU7Y9V9bHju8YqC8kLKg__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xMg==",
+                  "vsStageId" : 12,
+                  "name" : "鬼头刀SPA度假区",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/8273118c1ffe1bf6fe031c7d8c9795dab52632c9b76e8e9f01f644ac5ae0ccc0_1.png?Expires=1704844800&Signature=kmBrEJtSYIEL-oGBC3M7UxCf2dvIQbRFFYVNovjzZEsVtskf4taTkCLSxcwnp-57d8Q5H3d9Q4rFV3yVnfhJaCshuWPF0uXaRzOLoM2nDMyHzmC2l8uFQpou7QG4OJRo1NynOlYEqHjCodkzqWMgc8E8cWSaRvofxprV01Xd0P66bIj0oVtnZ4N9YdWEZ2tDqG8bAgUJS~rHcFtM7YwXQkdEimOWx~q7kPb-VSRKJj9sljw2zM56yK144JIpdJhsOKpCi6-qhBnXawG187X6~eI4Gxcb9BlOy2MG8tzZ2WNP4MCI3YT6rd5PN00bzWeFZod4W80g54pflAVv90g-Mw__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格鱼虎对战",
+                "rule" : "GOAL",
+                "id" : "VnNSdWxlLTM="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS03",
+                  "vsStageId" : 7,
+                  "name" : "臭鱼干温泉",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/cd84d711b47a424334569ac20f33f8e0ab6a652dc07854dcd36508a0081e9034_1.png?Expires=1704844800&Signature=Hv-5-Vxpeu2YqGjYwp1YlxE0vUHklhmR6C0s0Yjy5ezdyqAll4S3Uvk-6YCWAYpVppVP4dCEZ-9YclgcrQLt2mg9s42Ev3xMYgJ0rr5wWOKmOkcoCpJVjUshrWeT2SxKYbULAz5xei1ddX7Mr2Zghhwi-aK6MuEVLIYly5-EWnWvj4DdNrgxoFIsgdlWXOviEQFAfEbko09GZbnYk7V3ynZjxlAHS6dpDmqXkZWpwkQQ6qMePrT-YCOwce0eTmui6TIDhiHSpGxBJS1rROWs-E8SHOvNj7l61Qgrj0F36DZB1ffOnp~iKR2bSptIYyiKNZiNHXobAYGCDdWh2L1e-A__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xMA==",
+                  "vsStageId" : 10,
+                  "name" : "真鲭跨海大桥",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/1db8ab338b64b464df50e7f9e270e59423ff8caac6f09679a24f1b7acf3a82f3_1.png?Expires=1704844800&Signature=mJHU2mQjVMKqhH3cNkXgSHH-zvvAX-NWjoCMxbl9huZGMODP-UM74WDWOJetNGpvvIt-eRUteMbcql3u3ow4hjLPik~VQeoH1QPeEwxo~-OyrWNnJU1e7knlXxYrjSB~2aJUp6x82c8~NoW9xRD8CLpueA4~gv~ayPYJh1xxFSQ437zWvZrQk4MuQXcltn4c4tOevUX0ea-7XS-hpfmRUdzAr19zc7C9iPy1h0ABOSBBIyKblVZCmkpYvOooFAb-bVyJiLYOs0fTN8auCrT1SLjpCvT2K1I1~VkPuB4kgB~ueCTQW2tlyMUNlD9Uun~Vb7fObmS1pY-Mi0iTMVrLLA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格区域",
+                "rule" : "AREA",
+                "id" : "VnNSdWxlLTE="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        },
+        {
+          "startTime" : "2023-11-09T22:00:00Z",
+          "endTime" : "2023-11-10T00:00:00Z",
+          "bankaraMatchSettings" : [
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS00",
+                  "vsStageId" : 4,
+                  "name" : "竹蛏疏洪道",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_1.png?Expires=1704844800&Signature=aCVPQpc6fkx8elrWptfRNQXJ-anEOBqk8CnmPL~J5EU7~ECXalsFmdIb-ahU-OEtwgx31vfYXy1~68A945O6m54HLcbgWkSqnK0oG16i5iuMAlrIZyYCelxwAXYaeKns~T4XICDdOaF7s~CX0haaj9ZFQl19UpP7KwRB5VVVRaRExUdTlmsmR-06ZQ00pn8ua8LZ~wa4cSaMpoGy3YmFHFweeqsdmHmLm0FHQ5ZpEMj0Si0nWA5kGgWcn1bljvhqErl9CW4YRznttkCoh-AVewsD2knDtqu~SU9P-RW9KsXIYCBFoAP25pWDzPUlKh5g7SvvMCdpdPU3tAsOHzyZDA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS0xMA==",
+                  "vsStageId" : 10,
+                  "name" : "真鲭跨海大桥",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/1db8ab338b64b464df50e7f9e270e59423ff8caac6f09679a24f1b7acf3a82f3_1.png?Expires=1704844800&Signature=mJHU2mQjVMKqhH3cNkXgSHH-zvvAX-NWjoCMxbl9huZGMODP-UM74WDWOJetNGpvvIt-eRUteMbcql3u3ow4hjLPik~VQeoH1QPeEwxo~-OyrWNnJU1e7knlXxYrjSB~2aJUp6x82c8~NoW9xRD8CLpueA4~gv~ayPYJh1xxFSQ437zWvZrQk4MuQXcltn4c4tOevUX0ea-7XS-hpfmRUdzAr19zc7C9iPy1h0ABOSBBIyKblVZCmkpYvOooFAb-bVyJiLYOs0fTN8auCrT1SLjpCvT2K1I1~VkPuB4kgB~ueCTQW2tlyMUNlD9Uun~Vb7fObmS1pY-Mi0iTMVrLLA__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格塔楼",
+                "rule" : "LOFT",
+                "id" : "VnNSdWxlLTI="
+              },
+              "bankaraMode" : "CHALLENGE",
+              "__isVsSetting" : "BankaraMatchSetting"
+            },
+            {
+              "vsStages" : [
+                {
+                  "id" : "VnNTdGFnZS0z",
+                  "vsStageId" : 3,
+                  "name" : "烟管鱼市场",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/8dc2f16d39c630bab40cead5b2485ca3559e829d0d3de0c2232c7a62fefb5fa9_1.png?Expires=1704844800&Signature=PvdMv~ZvhiqBXY7GAW~wHyzNtGJu4w5fjQ0UOi4qEU7vxo~PTnVfccUX45cZuwlIE6dW4JiRWBOQ0IEkoHWoy2KWn0USb1ozDuWfmX0jhsF3lDshpKeQ1tulfMlKQLlN-ouNE-4Y28XNs2kp2ztHRCrdysOHHqC2Q98keeMCwoV5LvEN7rWayrhx3naFsL5~~maByVVhb4Dmnpk0FfIZgC-CnQQnmnKVC8gyT~gBapYufTpujXPh5CWkhnQCI7XPYneYwO8kdSV5YPuw96MV9JjZawetfJ~qgafTAMZG3CdEFF0jYyiIv6~X7ZsRIoMY2LrU7Y9V9bHju8YqC8kLKg__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id" : "VnNTdGFnZS02",
+                  "vsStageId" : 6,
+                  "name" : "鱼肉碎金属",
+                  "image" : {
+                    "url" : "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/v2/stage_img/icon/low_resolution/de1f212e9ff0648f36cd3b8e0917ef36b3bd51445159297dcb948f34a09f2f05_1.png?Expires=1704844800&Signature=DCx7ZtdZaAIINKvfQqr~PmCIMNoWodhT5Fgb0kg5LoQpsMfU~XyQvIcsrISJFbMUeKXGc4Mm1I3QKHHOn4Ydgdk99IYAp3xFfBuDZFVmErMcr7c6GBMG06axIcVtv6M90VtB8GJ8ZbmF5xIi1t4UHOQdjuIiASYy7NR7q8OPlNzCVls9F8Pn5tI16qmIEsbDppzqluP2ZIDHINXy5sBbeUtgnxZTZLgqUZvZdwztLYIBF3uFqcKY5bcwkr7paZLeYpwYSZklJt8NoHN~K1WTzL1XIRGHjo6HmshRSAodFYc~T6U~xtxdmZ9vCMKuPc8mhDGyOP357STnQZVFKhqx8Q__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "__typename" : "BankaraMatchSetting",
+              "vsRule" : {
+                "name" : "真格蛤蜊",
+                "rule" : "CLAM",
+                "id" : "VnNSdWxlLTQ="
+              },
+              "bankaraMode" : "OPEN",
+              "__isVsSetting" : "BankaraMatchSetting"
+            }
+          ],
+          "festMatchSettings" : null
+        }
+      ]
+    }
+  }
+}
+
