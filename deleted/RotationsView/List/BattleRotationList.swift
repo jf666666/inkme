@@ -13,7 +13,7 @@ struct BattleRotationList: View {
   @EnvironmentObject private var rotationModel:RotationModel
   @EnvironmentObject private var timePublisher: TimePublisher
 
-  let specifiedMode:BattleMode
+  let specifiedMode:ScheduleMode
 
   private var rotations: [BattleRotation] {
     (rotationModel.battleRotationDict[specifiedMode] ?? []).filter{!$0.isExpired(timePublisher.currentTime)}

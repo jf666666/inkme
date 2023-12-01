@@ -20,16 +20,16 @@ struct DetailScrollView<Content: View>: View {
 
     var body: some View {
         ScrollView {
-            VStack {
+//            VStack {
                 HStack {
                     Spacer()
                     content()
                     Spacer()
                 }
-            }
+//            }
             .padding(.horizontal, horizontalPadding)
         }
         .frame(maxWidth: .infinity)
-        // .fixSafeareaBackground() // 添加您的自定义方法或视图修饰符
+//         .fixSafeareaBackground() // 添加您的自定义方法或视图修饰符
     }
 }

@@ -22,11 +22,6 @@ final class InkBackgroundRefresher {
   private let nintendo = InkNet.NintendoService()
   private init() { }
 
-//  private func registerBackgroundTask() {
-//    BGTaskScheduler.shared.register(forTaskWithIdentifier: InkBackgroundTaskIdentifier.backgroundRefresh, using: nil) { [weak self] task in
-//      self?.handleAppRefresh(task: task as! BGAppRefreshTask)
-//    }
-//  }
   
   @Sendable
   nonisolated func handleAppRefresh() async{

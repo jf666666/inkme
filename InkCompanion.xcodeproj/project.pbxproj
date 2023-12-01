@@ -3,19 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8B01F85F2B174F830031044D /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01F85E2B174F830031044D /* DocumentPicker.swift */; };
-		8B17F0242B16B88400A3C46A /* DatePickerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17F0232B16B88400A3C46A /* DatePickerTest.swift */; };
 		8B17F0272B16BB6900A3C46A /* OverlayDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8B17F0262B16BB6900A3C46A /* OverlayDatePicker */; };
+		8B1A23EB2B194E78002498DC /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23EA2B194E78002498DC /* ScheduleView.swift */; };
+		8B1A23ED2B194F1C002498DC /* ScheduleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23EC2B194F1C002498DC /* ScheduleRow.swift */; };
+		8B1A23EF2B194F32002498DC /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23EE2B194F32002498DC /* ScheduleViewModel.swift */; };
+		8B1A23F12B196255002498DC /* BattleSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23F02B196255002498DC /* BattleSchedule.swift */; };
+		8B1A23F32B1995D4002498DC /* ScheduleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23F22B1995D4002498DC /* ScheduleList.swift */; };
+		8B1A23F52B19B02C002498DC /* ScheduleCellPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23F42B19B02C002498DC /* ScheduleCellPrimary.swift */; };
+		8B1A23F72B19B05F002498DC /* StageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23F62B19B05F002498DC /* StageCard.swift */; };
+		8B1A23F92B19B08A002498DC /* StageTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23F82B19B08A002498DC /* StageTitleLabel.swift */; };
+		8B1A23FB2B19B0BF002498DC /* ScheduleCellSecondary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23FA2B19B0BF002498DC /* ScheduleCellSecondary.swift */; };
 		8B1D5C812AF8403400F9C92B /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 8B1D5C802AF8403400F9C92B /* Hero */; };
 		8B2A5EB32B15C21F0022817E /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A5EB22B15C21F0022817E /* ImportView.swift */; };
 		8B33B5E72B048187002BEBBE /* InkNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B33B5E62B048187002BEBBE /* InkNet.swift */; };
 		8B33B5EA2B0487AB002BEBBE /* InkPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B33B5E92B0487AB002BEBBE /* InkPreference.swift */; };
 		8B3479352B175A5D001F7737 /* DetailScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3479342B175A5D001F7737 /* DetailScrollView.swift */; };
 		8B3479382B182965001F7737 /* RotationSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3479372B182965001F7737 /* RotationSection.swift */; };
+		8B34793B2B18AD69001F7737 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34793A2B18AD69001F7737 /* HomePage.swift */; };
+		8B34793D2B18B322001F7737 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34793C2B18B322001F7737 /* HomeViewModel.swift */; };
 		8B40D07F2B14BD0700608971 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40D07E2B14BD0700608971 /* Bundle+.swift */; };
 		8B40D0812B14BF4200608971 /* Logger+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40D0802B14BF4200608971 /* Logger+.swift */; };
 		8B46A54B2AF4962F001FB5E2 /* WeaponRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46A54A2AF4962F001FB5E2 /* WeaponRecord.swift */; };
@@ -52,22 +62,16 @@
 		8B6A07FF2B10C1E600C8BDC9 /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A07FE2B10C1E600C8BDC9 /* WaveShape.swift */; };
 		8B6A08012B10C65A00C8BDC9 /* CornerRadiusModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A08002B10C65A00C8BDC9 /* CornerRadiusModifier.swift */; };
 		8B6A5E452AFC554A00C76B70 /* CoopSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A5E442AFC554A00C76B70 /* CoopSchedule.swift */; };
-		8B6A5E4A2AFC5F4700C76B70 /* BankaraSchedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A5E492AFC5F4700C76B70 /* BankaraSchedules.swift */; };
+		8B6A5E4A2AFC5F4700C76B70 /* AnarchySchedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A5E492AFC5F4700C76B70 /* AnarchySchedules.swift */; };
 		8B6A5E4C2AFC632500C76B70 /* RegularSchedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A5E4B2AFC632500C76B70 /* RegularSchedules.swift */; };
 		8B6A5E4E2AFC649900C76B70 /* XSchedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A5E4D2AFC649900C76B70 /* XSchedules.swift */; };
 		8B6A5E502AFC64FE00C76B70 /* FestSchedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A5E4F2AFC64FE00C76B70 /* FestSchedules.swift */; };
 		8B6A5E522AFC653B00C76B70 /* EventSchedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A5E512AFC653B00C76B70 /* EventSchedules.swift */; };
 		8B6A5E542AFC66DF00C76B70 /* StageSchedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A5E532AFC66DF00C76B70 /* StageSchedules.swift */; };
-		8B6A5E582AFC6E0200C76B70 /* SchedulesRefineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A5E572AFC6E0200C76B70 /* SchedulesRefineView.swift */; };
 		8B6A73B32B058B2400361CF6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE662AF20BF0005F5FB8 /* IconView.swift */; };
 		8B6A73B52B058EA400361CF6 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A73B42B058EA400361CF6 /* Color+Ext.swift */; };
 		8B6A73B82B0591F000361CF6 /* BattleStagesImageAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A73B72B0591F000361CF6 /* BattleStagesImageAlignment.swift */; };
-		8B6A73BD2B05976D00361CF6 /* BattleRotationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A73BC2B05976D00361CF6 /* BattleRotationList.swift */; };
-		8B6A73C02B059A7800361CF6 /* BattleRotationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A73BF2B059A7800361CF6 /* BattleRotationRow.swift */; };
 		8B6A73C22B059BAB00361CF6 /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A73C12B059BAB00361CF6 /* DateFormatter+Ext.swift */; };
-		8B6A73C42B059E5100361CF6 /* RotationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A73C32B059E5100361CF6 /* RotationModel.swift */; };
-		8B6A73C62B05A1DF00361CF6 /* BattleRotationDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A73C52B05A1DF00361CF6 /* BattleRotationDict.swift */; };
-		8B6A73C82B05AEF800361CF6 /* BattleRotationTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A73C72B05AEF800361CF6 /* BattleRotationTab.swift */; };
 		8B7B3B822B10E19400E81ED5 /* DFPZongYiW7-GB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B3B812B10E19400E81ED5 /* DFPZongYiW7-GB.ttf */; };
 		8B7B3B852B117E6000E81ED5 /* StageSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B3B842B117E6000E81ED5 /* StageSelection.swift */; };
 		8B7B3B872B117E9000E81ED5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B3B862B117E9000E81ED5 /* PlayerView.swift */; };
@@ -88,8 +92,6 @@
 		8B9BFE532AF20BDC005F5FB8 /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE3C2AF20BDC005F5FB8 /* SwiftJSON.swift */; };
 		8B9BFE542AF20BDC005F5FB8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE3D2AF20BDC005F5FB8 /* String.swift */; };
 		8B9BFE6E2AF20BF0005F5FB8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE612AF20BF0005F5FB8 /* LoginView.swift */; };
-		8B9BFE762AF20BF0005F5FB8 /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE6A2AF20BF0005F5FB8 /* StageView.swift */; };
-		8B9BFE782AF20BF0005F5FB8 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE6C2AF20BF0005F5FB8 /* SettingView.swift */; };
 		8B9BFE792AF20BF0005F5FB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE6D2AF20BF0005F5FB8 /* ContentView.swift */; };
 		8B9BFE7E2AF20BF3005F5FB8 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE7B2AF20BF3005F5FB8 /* LoginAPI.swift */; };
 		8B9BFE7F2AF20BF3005F5FB8 /* fAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE7C2AF20BF3005F5FB8 /* fAPI.swift */; };
@@ -99,23 +101,16 @@
 		8B9BFE902AF20C5C005F5FB8 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8B9BFE8F2AF20C5C005F5FB8 /* SwiftyJSON */; };
 		8B9E0E762B09CCFE007700D0 /* InkCompanion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E0E742B09CCFE007700D0 /* InkCompanion.xcdatamodeld */; };
 		8BA5C14F2B147A8B001CA89D /* InkAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF4BDFB2B1362CB00E5C6B5 /* InkAppDelegate.swift */; };
-		8BB5A7ED2AFCB2F40095E0E9 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A7EC2AFCB2F40095E0E9 /* TimeView.swift */; };
-		8BB5A7F02AFCB5630095E0E9 /* BattleRotationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A7EF2AFCB5630095E0E9 /* BattleRotationCell.swift */; };
 		8BB5A7F42AFD07870095E0E9 /* TimePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A7F32AFD07870095E0E9 /* TimePublisher.swift */; };
 		8BB5A7F62AFD0AA30095E0E9 /* SpecialWeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D5C822AF867EF00F9C92B /* SpecialWeaponsView.swift */; };
-		8BB5A7FB2AFD0F2E0095E0E9 /* ScheduleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A7FA2AFD0F2E0095E0E9 /* ScheduleProtocol.swift */; };
-		8BB5A8132AFD8B940095E0E9 /* StageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A8122AFD8B940095E0E9 /* StageProtocol.swift */; };
-		8BB5A8152AFDBDAA0095E0E9 /* MatchSettingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A8142AFDBDAA0095E0E9 /* MatchSettingProtocol.swift */; };
-		8BB7D1BE2AFE54820021CF39 /* ShiftProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1BD2AFE54820021CF39 /* ShiftProtocol.swift */; };
+		8BB5A7FB2AFD0F2E0095E0E9 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A7FA2AFD0F2E0095E0E9 /* Schedule.swift */; };
+		8BB5A8132AFD8B940095E0E9 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A8122AFD8B940095E0E9 /* Stage.swift */; };
 		8BB7D1C22AFE608B0021CF39 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1C12AFE608B0021CF39 /* View.swift */; };
 		8BB7D1CA2AFF5A7F0021CF39 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1C72AFF5A7F0021CF39 /* GameMode.swift */; };
 		8BB7D1CB2AFF5A7F0021CF39 /* BattleRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1C82AFF5A7F0021CF39 /* BattleRule.swift */; };
-		8BB7D1CC2AFF5A7F0021CF39 /* BattleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1C92AFF5A7F0021CF39 /* BattleMode.swift */; };
-		8BB7D1D22AFFABCC0021CF39 /* BattleRotationStageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1D12AFFABCC0021CF39 /* BattleRotationStageCard.swift */; };
+		8BB7D1CC2AFF5A7F0021CF39 /* ScheduleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1C92AFF5A7F0021CF39 /* ScheduleMode.swift */; };
 		8BB7D1D52AFFAEDE0021CF39 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1D42AFFAEDE0021CF39 /* Constants.swift */; };
 		8BB7D1D72AFFAF320021CF39 /* StyleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1D62AFFAF320021CF39 /* StyleConstants.swift */; };
-		8BB7D1DE2AFFB9440021CF39 /* RotationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1DA2AFFB9440021CF39 /* RotationProtocol.swift */; };
-		8BB7D1E02AFFB9440021CF39 /* BattleRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1DC2AFFB9440021CF39 /* BattleRotation.swift */; };
 		8BB7D1E52B0070AB0021CF39 /* InkFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1E42B0070AB0021CF39 /* InkFont.swift */; };
 		8BB7D1E72B0073360021CF39 /* ScaledLimitedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1E62B0073360021CF39 /* ScaledLimitedLine.swift */; };
 		8BB7D1EB2B00810C0021CF39 /* StageScheduleQuery.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BB7D1EA2B00810C0021CF39 /* StageScheduleQuery.json */; };
@@ -153,13 +148,24 @@
 
 /* Begin PBXFileReference section */
 		8B01F85E2B174F830031044D /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
-		8B17F0232B16B88400A3C46A /* DatePickerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTest.swift; sourceTree = "<group>"; };
+		8B1A23EA2B194E78002498DC /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		8B1A23EC2B194F1C002498DC /* ScheduleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRow.swift; sourceTree = "<group>"; };
+		8B1A23EE2B194F32002498DC /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		8B1A23F02B196255002498DC /* BattleSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleSchedule.swift; sourceTree = "<group>"; };
+		8B1A23F22B1995D4002498DC /* ScheduleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleList.swift; sourceTree = "<group>"; };
+		8B1A23F42B19B02C002498DC /* ScheduleCellPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellPrimary.swift; sourceTree = "<group>"; };
+		8B1A23F62B19B05F002498DC /* StageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageCard.swift; sourceTree = "<group>"; };
+		8B1A23F82B19B08A002498DC /* StageTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageTitleLabel.swift; sourceTree = "<group>"; };
+		8B1A23FA2B19B0BF002498DC /* ScheduleCellSecondary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellSecondary.swift; sourceTree = "<group>"; };
 		8B1D5C822AF867EF00F9C92B /* SpecialWeaponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialWeaponsView.swift; sourceTree = "<group>"; };
 		8B2A5EB22B15C21F0022817E /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
 		8B33B5E62B048187002BEBBE /* InkNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNet.swift; sourceTree = "<group>"; };
 		8B33B5E92B0487AB002BEBBE /* InkPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkPreference.swift; sourceTree = "<group>"; };
 		8B3479342B175A5D001F7737 /* DetailScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScrollView.swift; sourceTree = "<group>"; };
 		8B3479372B182965001F7737 /* RotationSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationSection.swift; sourceTree = "<group>"; };
+		8B3479392B187716001F7737 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8B34793A2B18AD69001F7737 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		8B34793C2B18B322001F7737 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8B40D07E2B14BD0700608971 /* Bundle+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		8B40D0802B14BF4200608971 /* Logger+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logger+.swift"; sourceTree = "<group>"; };
 		8B46A54A2AF4962F001FB5E2 /* WeaponRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponRecord.swift; sourceTree = "<group>"; };
@@ -194,21 +200,15 @@
 		8B6A07FE2B10C1E600C8BDC9 /* WaveShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
 		8B6A08002B10C65A00C8BDC9 /* CornerRadiusModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusModifier.swift; sourceTree = "<group>"; };
 		8B6A5E442AFC554A00C76B70 /* CoopSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopSchedule.swift; sourceTree = "<group>"; };
-		8B6A5E492AFC5F4700C76B70 /* BankaraSchedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankaraSchedules.swift; sourceTree = "<group>"; };
+		8B6A5E492AFC5F4700C76B70 /* AnarchySchedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnarchySchedules.swift; sourceTree = "<group>"; };
 		8B6A5E4B2AFC632500C76B70 /* RegularSchedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularSchedules.swift; sourceTree = "<group>"; };
 		8B6A5E4D2AFC649900C76B70 /* XSchedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSchedules.swift; sourceTree = "<group>"; };
 		8B6A5E4F2AFC64FE00C76B70 /* FestSchedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestSchedules.swift; sourceTree = "<group>"; };
 		8B6A5E512AFC653B00C76B70 /* EventSchedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSchedules.swift; sourceTree = "<group>"; };
 		8B6A5E532AFC66DF00C76B70 /* StageSchedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSchedules.swift; sourceTree = "<group>"; };
-		8B6A5E572AFC6E0200C76B70 /* SchedulesRefineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesRefineView.swift; sourceTree = "<group>"; };
 		8B6A73B42B058EA400361CF6 /* Color+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		8B6A73B72B0591F000361CF6 /* BattleStagesImageAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleStagesImageAlignment.swift; sourceTree = "<group>"; };
-		8B6A73BC2B05976D00361CF6 /* BattleRotationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleRotationList.swift; sourceTree = "<group>"; };
-		8B6A73BF2B059A7800361CF6 /* BattleRotationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleRotationRow.swift; sourceTree = "<group>"; };
 		8B6A73C12B059BAB00361CF6 /* DateFormatter+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Ext.swift"; sourceTree = "<group>"; };
-		8B6A73C32B059E5100361CF6 /* RotationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationModel.swift; sourceTree = "<group>"; };
-		8B6A73C52B05A1DF00361CF6 /* BattleRotationDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleRotationDict.swift; sourceTree = "<group>"; };
-		8B6A73C72B05AEF800361CF6 /* BattleRotationTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleRotationTab.swift; sourceTree = "<group>"; };
 		8B7B3B812B10E19400E81ED5 /* DFPZongYiW7-GB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DFPZongYiW7-GB.ttf"; sourceTree = "<group>"; };
 		8B7B3B842B117E6000E81ED5 /* StageSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSelection.swift; sourceTree = "<group>"; };
 		8B7B3B862B117E9000E81ED5 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -247,31 +247,22 @@
 		8B9BFE672AF20BF0005F5FB8 /* WeaponView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponView.swift; sourceTree = "<group>"; };
 		8B9BFE682AF20BF0005F5FB8 /* ScheduleBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleBaseView.swift; sourceTree = "<group>"; };
 		8B9BFE692AF20BF0005F5FB8 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
-		8B9BFE6A2AF20BF0005F5FB8 /* StageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 		8B9BFE6B2AF20BF0005F5FB8 /* SchedulesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
-		8B9BFE6C2AF20BF0005F5FB8 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		8B9BFE6D2AF20BF0005F5FB8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8B9BFE7B2AF20BF3005F5FB8 /* LoginAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		8B9BFE7C2AF20BF3005F5FB8 /* fAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fAPI.swift; sourceTree = "<group>"; };
 		8B9BFE7D2AF20BF3005F5FB8 /* Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetch.swift; sourceTree = "<group>"; };
 		8B9BFE822AF20BF7005F5FB8 /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		8B9E0E752B09CCFE007700D0 /* InkCompanion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InkCompanion.xcdatamodel; sourceTree = "<group>"; };
-		8BB5A7EC2AFCB2F40095E0E9 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
-		8BB5A7EF2AFCB5630095E0E9 /* BattleRotationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleRotationCell.swift; sourceTree = "<group>"; };
 		8BB5A7F32AFD07870095E0E9 /* TimePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePublisher.swift; sourceTree = "<group>"; };
-		8BB5A7FA2AFD0F2E0095E0E9 /* ScheduleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleProtocol.swift; sourceTree = "<group>"; };
-		8BB5A8122AFD8B940095E0E9 /* StageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageProtocol.swift; sourceTree = "<group>"; };
-		8BB5A8142AFDBDAA0095E0E9 /* MatchSettingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSettingProtocol.swift; sourceTree = "<group>"; };
-		8BB7D1BD2AFE54820021CF39 /* ShiftProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftProtocol.swift; sourceTree = "<group>"; };
+		8BB5A7FA2AFD0F2E0095E0E9 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		8BB5A8122AFD8B940095E0E9 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		8BB7D1C12AFE608B0021CF39 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		8BB7D1C72AFF5A7F0021CF39 /* GameMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		8BB7D1C82AFF5A7F0021CF39 /* BattleRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleRule.swift; sourceTree = "<group>"; };
-		8BB7D1C92AFF5A7F0021CF39 /* BattleMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleMode.swift; sourceTree = "<group>"; };
-		8BB7D1D12AFFABCC0021CF39 /* BattleRotationStageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleRotationStageCard.swift; sourceTree = "<group>"; };
+		8BB7D1C92AFF5A7F0021CF39 /* ScheduleMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleMode.swift; sourceTree = "<group>"; };
 		8BB7D1D42AFFAEDE0021CF39 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8BB7D1D62AFFAF320021CF39 /* StyleConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleConstants.swift; sourceTree = "<group>"; };
-		8BB7D1DA2AFFB9440021CF39 /* RotationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationProtocol.swift; sourceTree = "<group>"; };
-		8BB7D1DC2AFFB9440021CF39 /* BattleRotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleRotation.swift; sourceTree = "<group>"; };
 		8BB7D1E42B0070AB0021CF39 /* InkFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkFont.swift; sourceTree = "<group>"; };
 		8BB7D1E62B0073360021CF39 /* ScaledLimitedLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaledLimitedLine.swift; sourceTree = "<group>"; };
 		8BB7D1EA2B00810C0021CF39 /* StageScheduleQuery.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StageScheduleQuery.json; sourceTree = "<group>"; };
@@ -279,7 +270,6 @@
 		8BB7D1EE2B0082370021CF39 /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		8BB7D1F12B008F250021CF39 /* IdealFontLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdealFontLayout.swift; sourceTree = "<group>"; };
 		8BCD71512AF667B200EE3F4A /* CoopDetailHolder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoopDetailHolder.json; sourceTree = "<group>"; };
-		8BCD71572AF7BCD100EE3F4A /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		8BCD99A32B0AE51F00829AF5 /* NintendoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NintendoAccount.swift; sourceTree = "<group>"; };
 		8BCF4B9D2B0739A6009FAB9B /* CoopHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopHistoryList.swift; sourceTree = "<group>"; };
 		8BDBC4452B0B6E4800A4258E /* CoopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopDetailView.swift; sourceTree = "<group>"; };
@@ -336,8 +326,23 @@
 		8B17F0252B16BB6900A3C46A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8B3479392B187716001F7737 /* README.md */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B1A23E92B194D62002498DC /* Schedules */ = {
+			isa = PBXGroup;
+			children = (
+				8B1A23EA2B194E78002498DC /* ScheduleView.swift */,
+				8B1A23EC2B194F1C002498DC /* ScheduleRow.swift */,
+				8B1A23F22B1995D4002498DC /* ScheduleList.swift */,
+				8B1A23F42B19B02C002498DC /* ScheduleCellPrimary.swift */,
+				8B1A23F62B19B05F002498DC /* StageCard.swift */,
+				8B1A23F82B19B08A002498DC /* StageTitleLabel.swift */,
+				8B1A23FA2B19B0BF002498DC /* ScheduleCellSecondary.swift */,
+			);
+			path = Schedules;
 			sourceTree = "<group>";
 		};
 		8B33B5E52B04816E002BEBBE /* Network */ = {
@@ -416,7 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				8B6A5E442AFC554A00C76B70 /* CoopSchedule.swift */,
-				8B6A5E492AFC5F4700C76B70 /* BankaraSchedules.swift */,
+				8B6A5E492AFC5F4700C76B70 /* AnarchySchedules.swift */,
 				8B6A5E4B2AFC632500C76B70 /* RegularSchedules.swift */,
 				8B6A5E4D2AFC649900C76B70 /* XSchedules.swift */,
 				8B6A5E4F2AFC64FE00C76B70 /* FestSchedules.swift */,
@@ -432,22 +437,6 @@
 				8B6A73B72B0591F000361CF6 /* BattleStagesImageAlignment.swift */,
 			);
 			path = Alignment;
-			sourceTree = "<group>";
-		};
-		8B6A73B92B05974A00361CF6 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				8B6A73BC2B05976D00361CF6 /* BattleRotationList.swift */,
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
-		8B6A73BE2B059A6100361CF6 /* Rows */ = {
-			isa = PBXGroup;
-			children = (
-				8B6A73BF2B059A7800361CF6 /* BattleRotationRow.swift */,
-			);
-			path = Rows;
 			sourceTree = "<group>";
 		};
 		8B7B3B832B117E2F00E81ED5 /* CoopDetailView */ = {
@@ -543,14 +532,13 @@
 		8B9BFE602AF20BF0005F5FB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8BB5A7EE2AFCB5340095E0E9 /* Rotations */,
+				8B1A23E92B194D62002498DC /* Schedules */,
 				8BCD714A2AF64D3500EE3F4A /* Job */,
 				8B9BFE612AF20BF0005F5FB8 /* LoginView.swift */,
 				8B9BFE632AF20BF0005F5FB8 /* Components */,
-				8B9BFE6C2AF20BF0005F5FB8 /* SettingView.swift */,
 				8B9BFE6D2AF20BF0005F5FB8 /* ContentView.swift */,
 				8B596B8F2AF38634006FA8F8 /* Style.swift */,
-				8B6A5E572AFC6E0200C76B70 /* SchedulesRefineView.swift */,
+				8B34793A2B18AD69001F7737 /* HomePage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -561,13 +549,9 @@
 				8B6A07F62B103ADB00C8BDC9 /* GrayscaleTextureView.swift */,
 				8BB5A7F52AFD09F60095E0E9 /* Deprecated */,
 				8B596B8B2AF35465006FA8F8 /* FriendsView.swift */,
-				8B9BFE6A2AF20BF0005F5FB8 /* StageView.swift */,
 				8B596B8D2AF35671006FA8F8 /* FriendView.swift */,
 				8B46A55C2AF5CCF1001FB5E2 /* NameplateView.swift */,
-				8BCD71572AF7BCD100EE3F4A /* BarView.swift */,
-				8BB5A7EC2AFCB2F40095E0E9 /* TimeView.swift */,
 				8B2A5EB22B15C21F0022817E /* ImportView.swift */,
-				8B17F0232B16B88400A3C46A /* DatePickerTest.swift */,
 				8B01F85E2B174F830031044D /* DocumentPicker.swift */,
 			);
 			path = Components;
@@ -592,25 +576,11 @@
 				8B33B5E52B04816E002BEBBE /* Network */,
 				8B0F48A52B02F5EC009FF1DD /* Data */,
 				8BB7D1E82B0080A60021CF39 /* MockData */,
-				8BB7D1D82AFFB9440021CF39 /* Rotations */,
 				8BB7D1CE2AFFAB570021CF39 /* Publisher */,
 				8BB7D1C62AFF5A7F0021CF39 /* Modes+Rules */,
 				8BB5A7F92AFD0F1B0095E0E9 /* Protocols */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		8BB5A7EE2AFCB5340095E0E9 /* Rotations */ = {
-			isa = PBXGroup;
-			children = (
-				8B6A73BE2B059A6100361CF6 /* Rows */,
-				8B6A73B92B05974A00361CF6 /* List */,
-				8BB7D1D32AFFAD2A0021CF39 /* Labels */,
-				8BB7D1D02AFFAB780021CF39 /* Cells */,
-				8BB7D1CF2AFFAB700021CF39 /* Cards */,
-				8B6A73C72B05AEF800361CF6 /* BattleRotationTab.swift */,
-			);
-			path = Rotations;
 			sourceTree = "<group>";
 		};
 		8BB5A7F52AFD09F60095E0E9 /* Deprecated */ = {
@@ -632,10 +602,9 @@
 		8BB5A7F92AFD0F1B0095E0E9 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				8BB5A7FA2AFD0F2E0095E0E9 /* ScheduleProtocol.swift */,
-				8BB5A8122AFD8B940095E0E9 /* StageProtocol.swift */,
-				8BB5A8142AFDBDAA0095E0E9 /* MatchSettingProtocol.swift */,
-				8BB7D1BD2AFE54820021CF39 /* ShiftProtocol.swift */,
+				8BB5A7FA2AFD0F2E0095E0E9 /* Schedule.swift */,
+				8BB5A8122AFD8B940095E0E9 /* Stage.swift */,
+				8B1A23F02B196255002498DC /* BattleSchedule.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -687,7 +656,7 @@
 			children = (
 				8BB7D1C72AFF5A7F0021CF39 /* GameMode.swift */,
 				8BB7D1C82AFF5A7F0021CF39 /* BattleRule.swift */,
-				8BB7D1C92AFF5A7F0021CF39 /* BattleMode.swift */,
+				8BB7D1C92AFF5A7F0021CF39 /* ScheduleMode.swift */,
 			);
 			path = "Modes+Rules";
 			sourceTree = "<group>";
@@ -698,40 +667,6 @@
 				8BB5A7F32AFD07870095E0E9 /* TimePublisher.swift */,
 			);
 			path = Publisher;
-			sourceTree = "<group>";
-		};
-		8BB7D1CF2AFFAB700021CF39 /* Cards */ = {
-			isa = PBXGroup;
-			children = (
-				8BB7D1D12AFFABCC0021CF39 /* BattleRotationStageCard.swift */,
-			);
-			path = Cards;
-			sourceTree = "<group>";
-		};
-		8BB7D1D02AFFAB780021CF39 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				8BB5A7EF2AFCB5630095E0E9 /* BattleRotationCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		8BB7D1D32AFFAD2A0021CF39 /* Labels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Labels;
-			sourceTree = "<group>";
-		};
-		8BB7D1D82AFFB9440021CF39 /* Rotations */ = {
-			isa = PBXGroup;
-			children = (
-				8BB7D1DA2AFFB9440021CF39 /* RotationProtocol.swift */,
-				8BB7D1DC2AFFB9440021CF39 /* BattleRotation.swift */,
-				8B6A73C32B059E5100361CF6 /* RotationModel.swift */,
-				8B6A73C52B05A1DF00361CF6 /* BattleRotationDict.swift */,
-			);
-			path = Rotations;
 			sourceTree = "<group>";
 		};
 		8BB7D1E32B0070930021CF39 /* Modifiers */ = {
@@ -792,6 +727,8 @@
 			isa = PBXGroup;
 			children = (
 				8BE74ADA2B0ECB0D001796DF /* CoopModel.swift */,
+				8B34793C2B18B322001F7737 /* HomeViewModel.swift */,
+				8B1A23EE2B194F32002498DC /* ScheduleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -914,6 +851,7 @@
 				8BA5C1492B14699D001CA89D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8B17F01B2B16205B00A3C46A /* XCRemoteSwiftPackageReference "OverlayDatePicker" */,
 				8B17F01E2B16271B00A3C46A /* XCRemoteSwiftPackageReference "Fastis" */,
+				8B3479762B18BAA9001F7737 /* XCLocalSwiftPackageReference "../../../GolandProjects/SplatNet3" */,
 			);
 			productRefGroup = 8B9BFDF82AF20BCE005F5FB8 /* Products */;
 			projectDirPath = "";
@@ -971,22 +909,19 @@
 				8B7B3B892B11838900E81ED5 /* CoopDetailTopCard.swift in Sources */,
 				8B01F85F2B174F830031044D /* DocumentPicker.swift in Sources */,
 				8B4ABECF2AF9D1590017E6E6 /* CoopHistoryListItem.swift in Sources */,
-				8BB5A8132AFD8B940095E0E9 /* StageProtocol.swift in Sources */,
+				8B1A23F32B1995D4002498DC /* ScheduleList.swift in Sources */,
+				8BB5A8132AFD8B940095E0E9 /* Stage.swift in Sources */,
 				8BB7D1CA2AFF5A7F0021CF39 /* GameMode.swift in Sources */,
-				8B6A5E582AFC6E0200C76B70 /* SchedulesRefineView.swift in Sources */,
 				8B6A5E502AFC64FE00C76B70 /* FestSchedules.swift in Sources */,
-				8B6A73C42B059E5100361CF6 /* RotationModel.swift in Sources */,
 				8B33B5E72B048187002BEBBE /* InkNet.swift in Sources */,
+				8B1A23FB2B19B0BF002498DC /* ScheduleCellSecondary.swift in Sources */,
 				8BB7D1F22B008F250021CF39 /* IdealFontLayout.swift in Sources */,
-				8BB5A8152AFDBDAA0095E0E9 /* MatchSettingProtocol.swift in Sources */,
-				8B6A5E4A2AFC5F4700C76B70 /* BankaraSchedules.swift in Sources */,
+				8B6A5E4A2AFC5F4700C76B70 /* AnarchySchedules.swift in Sources */,
 				8B3479382B182965001F7737 /* RotationSection.swift in Sources */,
 				8B9BFE7E2AF20BF3005F5FB8 /* LoginAPI.swift in Sources */,
-				8BB7D1E02AFFB9440021CF39 /* BattleRotation.swift in Sources */,
 				8BB7D1E72B0073360021CF39 /* ScaledLimitedLine.swift in Sources */,
 				8B46A5592AF52E91001FB5E2 /* CoopHistories.swift in Sources */,
 				8B9BFE522AF20BDC005F5FB8 /* Collection.swift in Sources */,
-				8BB7D1BE2AFE54820021CF39 /* ShiftProtocol.swift in Sources */,
 				8B6A73C22B059BAB00361CF6 /* DateFormatter+Ext.swift in Sources */,
 				8BE74ADB2B0ECB0D001796DF /* CoopModel.swift in Sources */,
 				8BDBC4462B0B6E4800A4258E /* CoopDetailView.swift in Sources */,
@@ -994,43 +929,44 @@
 				8B6A5E4E2AFC649900C76B70 /* XSchedules.swift in Sources */,
 				8B46A55D2AF5CCF1001FB5E2 /* NameplateView.swift in Sources */,
 				8B6A73B52B058EA400361CF6 /* Color+Ext.swift in Sources */,
-				8BB5A7ED2AFCB2F40095E0E9 /* TimeView.swift in Sources */,
+				8B1A23F12B196255002498DC /* BattleSchedule.swift in Sources */,
+				8B34793D2B18B322001F7737 /* HomeViewModel.swift in Sources */,
 				8B9BFE542AF20BDC005F5FB8 /* String.swift in Sources */,
 				8B40D07F2B14BD0700608971 /* Bundle+.swift in Sources */,
 				8B6A07F92B103BB200C8BDC9 /* AppColor.swift in Sources */,
 				8B6A08012B10C65A00C8BDC9 /* CornerRadiusModifier.swift in Sources */,
 				8B596B882AF34025006FA8F8 /* RequestID.swift in Sources */,
-				8B9BFE762AF20BF0005F5FB8 /* StageView.swift in Sources */,
 				8BA5C14F2B147A8B001CA89D /* InkAppDelegate.swift in Sources */,
 				8B5DD3EA2B083ED700EDD673 /* InkData.swift in Sources */,
 				8B9BFE7F2AF20BF3005F5FB8 /* fAPI.swift in Sources */,
-				8BB7D1DE2AFFB9440021CF39 /* RotationProtocol.swift in Sources */,
-				8BB5A7F02AFCB5630095E0E9 /* BattleRotationCell.swift in Sources */,
 				8BB7D1D52AFFAEDE0021CF39 /* Constants.swift in Sources */,
-				8BB7D1D22AFFABCC0021CF39 /* BattleRotationStageCard.swift in Sources */,
 				8B9BFE6E2AF20BF0005F5FB8 /* LoginView.swift in Sources */,
 				8B596B8A2AF34076006FA8F8 /* FriendList.swift in Sources */,
 				8B9BFE532AF20BDC005F5FB8 /* SwiftJSON.swift in Sources */,
 				8B6A73B32B058B2400361CF6 /* IconView.swift in Sources */,
+				8B1A23EB2B194E78002498DC /* ScheduleView.swift in Sources */,
 				8BF742D22B15ACBA00382A0E /* CoopSummaryDetail.swift in Sources */,
+				8B1A23F92B19B08A002498DC /* StageTitleLabel.swift in Sources */,
 				8B596B8C2AF35465006FA8F8 /* FriendsView.swift in Sources */,
 				8B40D0812B14BF4200608971 /* Logger+.swift in Sources */,
 				8BFE69482AF8A69100370F8F /* EnemyView.swift in Sources */,
 				8B9BFE502AF20BDC005F5FB8 /* Image.swift in Sources */,
 				8B46A5512AF4D5BB001FB5E2 /* FestRecord.swift in Sources */,
+				8B1A23F52B19B02C002498DC /* ScheduleCellPrimary.swift in Sources */,
+				8B34793B2B18AD69001F7737 /* HomePage.swift in Sources */,
 				8B9BFE4F2AF20BDC005F5FB8 /* KFImage.swift in Sources */,
 				8B6A73B82B0591F000361CF6 /* BattleStagesImageAlignment.swift in Sources */,
-				8BB5A7FB2AFD0F2E0095E0E9 /* ScheduleProtocol.swift in Sources */,
+				8BB5A7FB2AFD0F2E0095E0E9 /* Schedule.swift in Sources */,
 				8B33B5EA2B0487AB002BEBBE /* InkPreference.swift in Sources */,
-				8B9BFE782AF20BF0005F5FB8 /* SettingView.swift in Sources */,
+				8B1A23EF2B194F32002498DC /* ScheduleViewModel.swift in Sources */,
 				8B5FB8622B11C58F00709CD6 /* WaveView.swift in Sources */,
 				8BB7D1EF2B0082370021CF39 /* Date+Ext.swift in Sources */,
-				8BB7D1CC2AFF5A7F0021CF39 /* BattleMode.swift in Sources */,
+				8BB7D1CC2AFF5A7F0021CF39 /* ScheduleMode.swift in Sources */,
 				8B5FB8642B122F2700709CD6 /* CoopPlayerPreview.swift in Sources */,
 				8B9BFE4E2AF20BDC005F5FB8 /* Date.swift in Sources */,
 				8BE74AD82B0E3329001796DF /* FixSafeareaBackgroundModifier.swift in Sources */,
-				8B6A73C62B05A1DF00361CF6 /* BattleRotationDict.swift in Sources */,
 				8B596B932AF3CD39006FA8F8 /* HistoryRecord.swift in Sources */,
+				8B1A23ED2B194F1C002498DC /* ScheduleRow.swift in Sources */,
 				8B9BFDFB2AF20BCE005F5FB8 /* InkCompanionApp.swift in Sources */,
 				8B9BFE792AF20BF0005F5FB8 /* ContentView.swift in Sources */,
 				8B46A5532AF507F1001FB5E2 /* BattleHistories.swift in Sources */,
@@ -1050,27 +986,24 @@
 				8B7B3B852B117E6000E81ED5 /* StageSelection.swift in Sources */,
 				8B6A07FF2B10C1E600C8BDC9 /* WaveShape.swift in Sources */,
 				8BB7D1D72AFFAF320021CF39 /* StyleConstants.swift in Sources */,
-				8B6A73C02B059A7800361CF6 /* BattleRotationRow.swift in Sources */,
 				8B6A5E452AFC554A00C76B70 /* CoopSchedule.swift in Sources */,
 				8BB5A7F42AFD07870095E0E9 /* TimePublisher.swift in Sources */,
 				8BB7D1E52B0070AB0021CF39 /* InkFont.swift in Sources */,
 				8B9E0E762B09CCFE007700D0 /* InkCompanion.xcdatamodeld in Sources */,
 				8BB7D1ED2B0081260021CF39 /* MockData.swift in Sources */,
-				8B6A73BD2B05976D00361CF6 /* BattleRotationList.swift in Sources */,
 				8B5FB8662B12CB0700709CD6 /* TextureBackGround.swift in Sources */,
 				8B46A55B2AF5C7D5001FB5E2 /* Splatoon3Ink.swift in Sources */,
 				8B6A5E4C2AFC632500C76B70 /* RegularSchedules.swift in Sources */,
 				8BE74ADD2B0ECDAF001796DF /* CoopSummaryCard.swift in Sources */,
 				8B46A54B2AF4962F001FB5E2 /* WeaponRecord.swift in Sources */,
-				8B6A73C82B05AEF800361CF6 /* BattleRotationTab.swift in Sources */,
 				8B46A54D2AF4BE99001FB5E2 /* EquipmentsQuery.swift in Sources */,
 				8B9BFE802AF20BF3005F5FB8 /* Fetch.swift in Sources */,
 				8B9BFE832AF20BF7005F5FB8 /* UserDefault.swift in Sources */,
-				8B17F0242B16B88400A3C46A /* DatePickerTest.swift in Sources */,
 				8B9BFDFD2AF20BCE005F5FB8 /* Persistence.swift in Sources */,
 				8B596B8E2AF35671006FA8F8 /* FriendView.swift in Sources */,
 				8B7B3B872B117E9000E81ED5 /* PlayerView.swift in Sources */,
 				8BCF4B9E2B0739A6009FAB9B /* CoopHistoryList.swift in Sources */,
+				8B1A23F72B19B05F002498DC /* StageCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1464,6 +1397,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		8B3479762B18BAA9001F7737 /* XCLocalSwiftPackageReference "../../../GolandProjects/SplatNet3" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../../GolandProjects/SplatNet3;
+		};
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		8B17F01B2B16205B00A3C46A /* XCRemoteSwiftPackageReference "OverlayDatePicker" */ = {

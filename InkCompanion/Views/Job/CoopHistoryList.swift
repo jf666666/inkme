@@ -28,7 +28,6 @@ struct CoopHistoryList: View {
                 .clipped(antialiased: true)
                 .padding([.leading, .trailing])
                 .padding(.top, 15)
-              // FIXME:
                 .padding(.bottom, 0.1)
 
             }

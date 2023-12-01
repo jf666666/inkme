@@ -9,8 +9,18 @@ import Foundation
 import AnyCodable
 
 enum BankaraMatchMode: String, Codable,CaseIterable {
+
     case CHALLENGE = "CHALLENGE"
     case OPEN = "OPEN"
+
+  var name:String{
+    switch self {
+    case .CHALLENGE:
+      return "挑战"
+    case .OPEN:
+      return "开放"
+    }
+  }
 }
 
 enum BankaraMatchChallengeState: String, Codable {
@@ -23,6 +33,14 @@ enum BankaraMatchChallengeState: String, Codable {
 enum FestMatchMode: String, Codable,CaseIterable{
     case challenge = "CHALLENGE"
     case regular = "REGULAR"
+  var name:String{
+    switch self {
+    case .challenge:
+      return "挑战"
+    case .regular:
+      return "一般"
+    }
+  }
 }
 
 enum Judgement: String, Codable {

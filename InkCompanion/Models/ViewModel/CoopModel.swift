@@ -20,6 +20,7 @@ class CoopModel:ObservableObject{
   @Published var selectedId:String?
   @Published var progress:Double = 0
   @Published var rows:[[CoopHistoryDetail]] = []
+
   var ruleFilter:FilterProps = FilterProps(modes: ["salmon_run"])
   var startDate:Date? = nil
   var endDate:Date? = nil
@@ -35,6 +36,7 @@ class CoopModel:ObservableObject{
     case none
   }
 
+  /// 并发获取打工记录
   func loadFromNet() async{
     if self.stats == .refreshing{
       return

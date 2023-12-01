@@ -29,7 +29,7 @@ struct ContentView: View {
       TabView {
 
         NavigationView {
-          BattleRotationTab()
+          HomePage()
 //          ImportView()
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -41,7 +41,7 @@ struct ContentView: View {
 
 
         CoopHistoryList()
-          .navigationViewStyle(StackNavigationViewStyle())
+//          .navigationViewStyle(StackNavigationViewStyle())
           .tabItem {
             Label("打工记录", systemImage: "lifepreserver")
           }

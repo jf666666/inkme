@@ -7,40 +7,27 @@
 
 import SwiftUI
 
-// MARK: - BattleMode
+enum ScheduleMode: Identifiable, Equatable, Codable,Hashable, CaseIterable {
 
-/// Data model for the battle modes.
-//enum BattleMode: String, Identifiable, CaseIterable, Equatable, Codable {
-//  static let `default`: Self = .regular
-//
-//  case regular
-//  case x
-//  case event
-//  case anarchy_challenge
-//  case anarchy_open
-//  case fest
-//  var id: String { rawValue }
-//}
+  static let `default`: Self = .regular
 
-enum ScheduleMode: Identifiable, Equatable, Codable,Hashable {
+  case regular
+  case x
+  case event
+  case anarchy
+  case fest
+  case salmonRun
 
-    static let `default`: Self = .regular
-
-    case regular
-    case x
-    case event
-    case anarchy(BankaraMatchMode)
-    case fest(FestMatchMode)
-
-    var id: String {
-        switch self {
-        case .regular: return "regular"
-        case .x: return "x"
-        case .event: return "event"
-        case .anarchy(let mode): return "anarchy_\(mode.rawValue)"
-        case .fest(let mode): return "fest_\(mode.rawValue)"
-        }
+  var id: String {
+    switch self {
+    case .regular: return "regular"
+    case .x: return "x"
+    case .event: return "event"
+    case .anarchy: return "anarchy"
+    case .fest: return "fest"
+    case .salmonRun: return "salmon_run"
     }
+  }
 }
 
 
@@ -52,6 +39,8 @@ extension ScheduleMode {
     case .event: .leagueBattleTheme
     case .x: .xBattleTheme
     case .fest:.leagueBattleTheme
+    case .salmonRun: .salmonRunTheme
+
     }
   }
 }
@@ -60,10 +49,11 @@ extension ScheduleMode {
   var name: String {
     switch self {
     case .regular: "Regular"
-    case .anarchy(let mode): "Anarchy \(mode.rawValue.capitalized)"
+    case .anarchy: "Anarchy"
     case .event: "Event"
     case .x : "X Battle"
-    case .fest(let mode): "Fest \(mode.rawValue.capitalized)"
+    case .fest: "Fest"
+    case .salmonRun: "Salmon Run"
     }
   }
 
@@ -74,6 +64,7 @@ extension ScheduleMode {
     case .event: "Challenge"
     case .x: "X"
     case .fest: "Fest"
+    case .salmonRun: "Salmon Run"
     }
   }
 }
@@ -91,24 +82,11 @@ extension ScheduleMode{
       return Image(.anarchy)
     case .fest:
       return Image(.league)
+    case .salmonRun:
+      return Image(.salmonRun)
     }
   }
 }
 
 
-extension ScheduleMode: CaseIterable {
-    static var allCases: [ScheduleMode] {
-      var cases: [ScheduleMode] = [.regular,.x, .event,.anarchy(.CHALLENGE), .fest(.regular)]
-//        cases.append(contentsOf: BankaraMatchMode.allCases.map { .anarchy($0) })
-//        cases.append(contentsOf: FestMatchMode.allCases.map { .fest($0) })
-        return cases
-    }
 
-  static var anarchyCases:[ScheduleMode]{
-    BankaraMatchMode.allCases.map { .anarchy($0) }
-  }
-
-  static var festCases:[ScheduleMode]{
-    FestMatchMode.allCases.map { .fest($0) }
-  }
-}

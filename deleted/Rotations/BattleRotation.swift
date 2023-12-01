@@ -14,7 +14,7 @@ struct BattleRotation: Rotation, Hashable {
   let startTime: Date
   let endTime: Date
 
-  let mode: BattleMode
+  let mode: ScheduleMode
   let rule: BattleRule
   let stageA: any Stage
   let stageB: any Stage
@@ -54,7 +54,7 @@ extension RegularSchedule {
     guard let stages = regularMatchSetting?.vsStages else { return nil}
     let stageA = stages[0]
     let stageB = stages[1]
-    let mode = BattleMode.regular
+    let mode = ScheduleMode.regular
     let rule = BattleRule.turfWar
     let start = startTime.asDate
     let end = endTime.asDate
@@ -67,7 +67,7 @@ extension XSchedule{
     guard let stages = xMatchSetting?.vsStages else { return nil}
     let stageA = stages[0]
     let stageB = stages[1]
-    let mode = BattleMode.x
+    let mode = ScheduleMode.x
     let rule = xMatchSetting?.vsRule?.rule ?? .clamBlitz
     let start = startTime.asDate
     let end = endTime.asDate
@@ -83,7 +83,7 @@ extension BankaraSchedules{
     let end = endTime.asDate
     let stageA = stages[0]
     let stageB = stages[1]
-    let mode = BattleMode.anarchy(mode)
+    let mode = ScheduleMode.anarchy(mode)
     let rule = setting.vsRule?.rule ?? .clamBlitz
     return BattleRotation(startTime: start, endTime: end, mode: mode, rule: rule, stageA: stageA, stageB: stageB)
   }
@@ -95,7 +95,7 @@ extension FestSchedule {
     guard let stages = setting.vsStages else { return nil}
     let stageA = stages[0]
     let stageB = stages[1]
-    let mode = BattleMode.fest(mode)
+    let mode = ScheduleMode.fest(mode)
     let rule = BattleRule.turfWar
     let start = startTime.asDate
     let end = endTime.asDate

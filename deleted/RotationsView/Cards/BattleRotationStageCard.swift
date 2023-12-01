@@ -49,33 +49,7 @@ struct BattleRotationStageCardPrimary: View {
   }
 }
 
-struct BattleRotationStageCardSecondary: View {
-  typealias Scoped = Constants.Style.Rotation.Battle.Card.Secondary
 
-  let rotation:BattleRotation
-  let stageSelection: BattleStageSelection
-
-  private var stage: any Stage {
-    stageSelection == .stageA ? rotation.stageA : rotation.stageB
-  }
-
-  var body: some View {
-    VStack(alignment: .trailing,spacing: Scoped.SPACING_V){
-      KFImage(URL(string: stage.image?.url ?? ""))
-        .resizable()
-        .antialiased(true)
-        .cornerRadius(Scoped.IMG_CORNER_RADIUS)
-        .shadow(radius: Constants.Style.Global.SHADOW_RADIUS)
-        .scaledToFit()
-        .alignmentGuide(.battleStagesImageAlignment) { $0[.bottom]}
-        .layoutPriority(1)
-
-      Text(stage.name ?? "nil")
-        .scaledLimitedLine()
-        .inkFont(.font1, size: Scoped.FONT_SIZE, relativeTo: .body)
-    }
-  }
-}
 
 struct StageTitleLabel: View {
   typealias Scoped = Constants.Style.Rotation.Label

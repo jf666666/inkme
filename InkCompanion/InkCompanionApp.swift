@@ -17,8 +17,8 @@ struct InkCompanionApp: App {
 
   let persistenceController = PersistenceController.shared
   @StateObject var timePublisher: TimePublisher = .shared
-  @StateObject var rotationModel = RotationModel()
   @StateObject var coopModel = CoopModel()
+  @StateObject var homeViewModel = HomeViewModel()
   private let refresher:InkBackgroundRefresher = .shared
 
   init() {
@@ -32,8 +32,8 @@ struct InkCompanionApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(timePublisher)
-                .environmentObject(rotationModel)
                 .environmentObject(coopModel)
+                .environmentObject(homeViewModel)
 
         }
         .backgroundTask(.appRefresh("InkCompanionRefresh"),action: refresher.handleAppRefresh)

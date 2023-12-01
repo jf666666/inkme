@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias BattleRotationDict = [BattleMode: [BattleRotation]]
+typealias BattleRotationDict = [ScheduleMode: [BattleRotation]]
 
 extension BattleRotationDict {
   /// Returns true if any `BattleMode`s contain empty rotations.
@@ -24,7 +24,7 @@ extension BattleRotationDict {
 
   init() {
     self = [:]
-    for mode in BattleMode.allCases {
+    for mode in ScheduleMode.allCases {
       self[mode] = []
     }
   }

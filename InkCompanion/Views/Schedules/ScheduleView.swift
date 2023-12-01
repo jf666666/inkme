@@ -16,14 +16,33 @@ struct ScheduleView: View {
     viewModel.scheduleDict[mode] ?? []
   }
   var body: some View {
-    VStack{
-      ForEach(schedules ,id:\.startTime){schedule in
-        if let schedule = schedule as? Battle2CasesSchedule{
+    Group{
 
-        }else if let schedule = schedule as? BattleRegularSchedule{
+        if let schedules = schedules as? [Battle2CasesSchedule]{
+          if viewModel.currentMode == .anarchy{
+            if viewModel.anarchyMode == .CHALLENGE{
+              let challengeSchedules = schedules.map{$0.toRegularSchedule(isChallenge: true)}
+              ScheduleList(schedules: challengeSchedules)
+            }else{
+              let openSchedules = schedules.map{$0.toRegularSchedule(isChallenge: false)}
+              ScheduleList(schedules: openSchedules)
+            }
+          }else{
+            if viewModel.festMode == .challenge{
+              let challengeSchedules = schedules.map{$0.toRegularSchedule(isChallenge: true)}
+              ScheduleList(schedules: challengeSchedules)
+            }else{
+              let regularSchedules = schedules.map{$0.toRegularSchedule(isChallenge: false)}
+              ScheduleList(schedules: regularSchedules)
+            }
+          }
+          if viewModel.currentMode == .fest{
 
+          }
+        }else if let schedules = schedules as? [BattleRegularSchedule]{
+          ScheduleList(schedules: schedules)
         }
-      }
+
     }
     .animation(
       .bouncy,
@@ -34,4 +53,5 @@ struct ScheduleView: View {
 #Preview {
   ScheduleView()
     .environmentObject(HomeViewModel())
+    .environmentObject(TimePublisher.shared)
 }

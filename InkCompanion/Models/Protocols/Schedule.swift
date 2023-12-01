@@ -10,8 +10,11 @@
 import Foundation
 
 protocol Schedule:Identifiable,Equatable,Hashable {
-  var mode:any CaseIterable {get set} //regular bankara event x
-  var rule:any CaseIterable {get set} // turf zone rainmaker tower...
+  associatedtype Mode: CaseIterable
+      associatedtype Rule: CaseIterable
+
+  var mode:Mode {get set} //regular anarchy event x
+  var rule:Rule {get set} // turf zone rainmaker tower...
   var startTime:Date {get set}
   var endTime:Date {get set}
   var stages:[Stage] {get set}

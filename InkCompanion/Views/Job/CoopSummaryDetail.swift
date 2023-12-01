@@ -192,6 +192,7 @@ struct CoopSummaryDetail:View {
       .padding(.top, 9)
       .padding(.bottom, 8)
       .textureBackground(texture: .bubble, radius: 18)
+
       VStack { }
         .frame(maxWidth: .infinity, minHeight: 19, maxHeight: 19)
         .overlay(
@@ -229,6 +230,7 @@ struct CoopSummaryDetail:View {
           .foregroundStyle(Color.spGreen)
           .offset(y:2)
         }
+        .offset(y: -8)
     }
 
 //    .overlay {

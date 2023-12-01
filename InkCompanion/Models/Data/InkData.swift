@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+
 class InkData{
   static let shared = InkData()
   private init() {}
@@ -211,21 +212,6 @@ struct ShiftInfo{
   var playCount:Int
 }
 
-//func updateShiftInfo(shift:ShiftInfo?, detail:CoopHistoryDetail)->ShiftInfo{
-//  var newShift:ShiftInfo
-//  if let s = shift{
-//    newShift = s
-//  }
-//  let stats = getCoopStats(coop: detail)
-//  newShift.goldenAssist += Double(stats.myself.assist)
-//  newShift.goldenDeliver += Double(stats.myself.golden)
-//  newShift.normalDeliver += Double(stats.myself.power)
-//  newShift.playCount += 1
-//  newShift.rescue += Double(stats.myself.rescue)
-//  newShift.rescued += Double(stats.myself.rescued)
-//  newShift.wave += Double(stats.wave)
-//  return newShift
-//}
 
 
 func getCoopStats(coop:CoopHistoryDetail) -> CoopStatus{

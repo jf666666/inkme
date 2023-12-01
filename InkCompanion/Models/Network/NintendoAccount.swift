@@ -8,9 +8,8 @@
 import Foundation
 import AuthenticationServices
 import OSLog
+
 extension InkNet{
-  
-  
   class NintendoService:NSObject,ASWebAuthenticationPresentationContextProviding{
     let logger = Logger(.custom(InkNet.NintendoService.self))
     func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
