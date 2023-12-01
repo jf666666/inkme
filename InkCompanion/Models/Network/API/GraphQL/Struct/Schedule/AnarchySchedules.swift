@@ -7,9 +7,9 @@
 
 import Foundation
 
-typealias BankaraSchedulesConnection = Connection<BankaraSchedules>
+typealias BankaraSchedulesConnection = Connection<AnarchySchedules>
 
-struct BankaraSchedules:Codable{
+struct AnarchySchedules:Codable{
     let startTime:String
     let endTime:String
     let bankaraMatchSettings:[BankaraMatchSetting]?

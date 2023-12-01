@@ -10,8 +10,8 @@
 import Foundation
 
 protocol Schedule:Identifiable,Equatable,Hashable {
-  var mode:String {get set} //regular bankara event x
-  var rule:String {get set} // turf zone rainmaker tower...
+  var mode:any CaseIterable {get set} //regular bankara event x
+  var rule:any CaseIterable {get set} // turf zone rainmaker tower...
   var startTime:Date {get set}
   var endTime:Date {get set}
   var stages:[Stage] {get set}
@@ -37,6 +37,7 @@ extension Schedule {
     startTime > currentTime
   }
 }
+
 
 
 extension Schedule{

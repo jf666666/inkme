@@ -9,7 +9,7 @@ import Foundation
 
 
 final class RotationModel:ObservableObject{
-  @Published var mode:BattleMode = .regular
+  @Published var mode:ScheduleMode = .regular
 //  static let shared:RotationModel = .init()
   @Published var battleRotationDict = BattleRotationDict()
   private var inkNet = InkNet.shared

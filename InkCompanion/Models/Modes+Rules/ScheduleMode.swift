@@ -22,7 +22,7 @@ import SwiftUI
 //  var id: String { rawValue }
 //}
 
-enum BattleMode: Identifiable, Equatable, Codable,Hashable {
+enum ScheduleMode: Identifiable, Equatable, Codable,Hashable {
 
     static let `default`: Self = .regular
 
@@ -44,7 +44,7 @@ enum BattleMode: Identifiable, Equatable, Codable,Hashable {
 }
 
 
-extension BattleMode {
+extension ScheduleMode {
   var themeColor: Color {
     switch self {
     case .regular: .regularBattleTheme
@@ -56,7 +56,7 @@ extension BattleMode {
   }
 }
 
-extension BattleMode {
+extension ScheduleMode {
   var name: String {
     switch self {
     case .regular: "Regular"
@@ -78,7 +78,7 @@ extension BattleMode {
   }
 }
 
-extension BattleMode{
+extension ScheduleMode{
   var icon:Image{
     switch self {
     case .regular:
@@ -96,19 +96,19 @@ extension BattleMode{
 }
 
 
-extension BattleMode: CaseIterable {
-    static var allCases: [BattleMode] {
-      var cases: [BattleMode] = [.regular,.x, .event,.anarchy(.CHALLENGE), .fest(.regular)]
+extension ScheduleMode: CaseIterable {
+    static var allCases: [ScheduleMode] {
+      var cases: [ScheduleMode] = [.regular,.x, .event,.anarchy(.CHALLENGE), .fest(.regular)]
 //        cases.append(contentsOf: BankaraMatchMode.allCases.map { .anarchy($0) })
 //        cases.append(contentsOf: FestMatchMode.allCases.map { .fest($0) })
         return cases
     }
 
-  static var anarchyCases:[BattleMode]{
+  static var anarchyCases:[ScheduleMode]{
     BankaraMatchMode.allCases.map { .anarchy($0) }
   }
 
-  static var festCases:[BattleMode]{
+  static var festCases:[ScheduleMode]{
     FestMatchMode.allCases.map { .fest($0) }
   }
 }
