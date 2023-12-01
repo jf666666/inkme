@@ -1,4 +1,4 @@
-![IMG_6671](https://github.com/jf666666/imink3/assets/63494980/cd98ffed-5c27-4da4-9fc9-42a9eb1fbbcb)# imink3
+# imink3
 imink for splatoon3
 
 ## 简单做了一些界面
@@ -10,5 +10,5 @@ imink for splatoon3
 
 2023.12.1
 - homepage
-![Uploading I![IMG_6670](https://github.com/jf666666/imink3/assets/63494980/5b2eee90-942a-404e-8a58-2e6dea0bbcc0)
-MG_6671.PNG…]()
+
+![34b6b7e93915499da689bcb53df71c85](https://github.com/jf666666/imink3/assets/63494980/80fb8b03-25eb-4b0b-b9c9-316511606d29)
