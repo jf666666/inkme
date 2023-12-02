@@ -48,7 +48,7 @@ class CoopModel:ObservableObject{
         await withTaskGroup(of: CoopHistoryDetail?.self) { group in
           for detail in details {
             group.addTask {
-              if self.inkData.isExist(id: detail.id){
+              if await self.inkData.isExist(id: detail.id){
                 return nil
               }
               if let completeDetail = await self.inkNet.fetchCoopHistoryDetail(id: detail.id, diff: detail.gradePointDiff ?? .NONE){
@@ -59,7 +59,7 @@ class CoopModel:ObservableObject{
           }
           for await result in group{
             if let completeDetail = result{
-              inkData.addCoop(detail: completeDetail)
+              await inkData.addCoop(detail: completeDetail)
               DispatchQueue.main.async {
                 if self.rows.isEmpty || !self.coopCanGroup(current: self.rows[0][0], new: completeDetail){
                   withAnimation {
@@ -79,23 +79,24 @@ class CoopModel:ObservableObject{
     self.stats = .none
   }
 
-  func loadFromData(length:Int, filter: FilterProps? = nil) {
+  func loadFromData(length:Int, filter: FilterProps? = nil)async {
     let count = self.rows.flatMap { $0 }.count
     let offset = count
     let limit = length - count
     var read = 0
     var details:[CoopHistoryDetail] = []
     while read < limit{
-      details += self.inkData.queryDetail(offset: offset+read,limit: min(limit-read,BATCH_SIZE), filter: filter)
+      details += await self.inkData.queryDetail(offset: offset+read,limit: min(limit-read,BATCH_SIZE), filter: filter)
       if self.rows.count < min(BATCH_SIZE, limit-read){
         break
       }
       read += self.rows.count
     }
     
+    let tempDetails = details
     DispatchQueue.main.async {
       withAnimation {
-        for detail in details{
+        for detail in tempDetails{
           if self.rows.isEmpty || !self.coopCanGroup(current: self.rows.last![0], new: detail){
             self.rows.append([detail])
           }else{
@@ -122,17 +123,17 @@ extension CoopModel{
     self.ruleFilter.rules = [rule.rawValue]
   }
 
-  func selectRule(rule:CoopRule){
+  func selectRule(rule:CoopRule) async{
     self.rows = []
     setRuleFilter(rule: rule)
-    self.loadFromData(length: 300, filter: self.ruleFilter)
+    await self.loadFromData(length: 300, filter: self.ruleFilter)
   }
 
-  func selectTimeRange(start:Date?, end:Date?){
+  func selectTimeRange(start:Date?, end:Date?) async{
     self.rows = []
     if let start = start, let end = end{
       self.ruleFilter.dateRange = [start,end]
     }
-    self.loadFromData(length: 300, filter: self.ruleFilter)
+    await self.loadFromData(length: 300, filter: self.ruleFilter)
   }
 }

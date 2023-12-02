@@ -15,26 +15,24 @@ struct ScheduleList: View {
   private var validSchedules: [BattleRegularSchedule] {
     schedules.filter{!$0.isExpired(timePublisher.currentTime)}
   }
-
+  
+  
   var body: some View {
     
 
-        VStack(spacing:20) {
-          ForEach(validSchedules) { schedule in
-            if schedule.isCurrent(timePublisher.currentTime){
-              ScheduleCellPrimary( rowWidth: 400, rotation: schedule)
-                .padding()
-                .textureBackground(texture: .bubble, radius: 18)
-            }else{
-              ScheduleCellSecondary(schedule: schedule, rowWidth: 400)
-                .padding()
-                .textureBackground(texture: .bubble, radius: 18)
-            }
-          }
-        }
 
-      .padding(.horizontal, 7)
-//      .fixSafeareaBackground()
+          ForEach(validSchedules, id:\.startTime) { schedule in
+            var type:ScheduleCellPrimary.type{schedule.isCurrent(timePublisher.currentTime) ? .primary : .secondary}
+
+              ScheduleCellPrimary(schedule: schedule,scheduleType:type)
+//                .padding()
+//                .textureBackground(texture: .bubble, radius: 18)
+          }
+    if validSchedules.isEmpty{
+      EmptyView()
+    }
+
+
 
 
   }

@@ -131,3 +131,4 @@ struct CoopDetailView_Previews:PreviewProvider{
     CoopDetailView( detail: MockData.getCoopHistoryDetail(),namespace: namespace)
   }
 }
+

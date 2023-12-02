@@ -46,11 +46,11 @@ extension BattleRule {
 extension BattleRule {
   var name: String {
     switch self {
-    case .turfWar: "Turf War"
-    case .splatZones: "Splat Zones"
-    case .towerControl: "Tower Control"
-    case .rainmaker: "Rainmaker"
-    case .clamBlitz: "Clam Blitz"
+    case .turfWar: "Turf War".localizedString
+    case .splatZones: "Splat Zones".localizedString
+    case .towerControl: "Tower Control".localizedString
+    case .rainmaker: "Rainmaker".localizedString
+    case .clamBlitz: "Clam Blitz".localizedString
     }
   }
 

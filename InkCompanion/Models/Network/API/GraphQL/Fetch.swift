@@ -29,7 +29,7 @@ func FetchGraphQl<T: Codable>(
     variables: [String: Any]?,
     completion: @escaping (Result<T, Error>) -> Void
 ) {
-    let context = PersistenceController.shared.container.viewContext
+    
   if let webServiceToken:WebServiceTokenStruct = UserDefaultsManager.object(forKey: .WebServiceToken),let bulletToken = UserDefaultsManager.string(forKey: .BulletToken){
         let body: [String: Any] = [
             "extensions": [

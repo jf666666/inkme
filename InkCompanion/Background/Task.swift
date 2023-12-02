@@ -47,7 +47,7 @@ final class InkBackgroundRefresher {
         await withTaskGroup(of: CoopHistoryDetail?.self) { group in
           for detail in details {
             group.addTask {
-              if self.inkData.isExist(id: detail.id){
+              if await self.inkData.isExist(id: detail.id){
                 return nil
               }
               if let completeDetail = await self.inkNet.fetchCoopHistoryDetail(id: detail.id, diff: detail.gradePointDiff ?? .NONE){
@@ -58,7 +58,7 @@ final class InkBackgroundRefresher {
           }
           for await detail in group{
             if let completeDetail = detail{
-              inkData.addCoop(detail: completeDetail)
+              await inkData.addCoop(detail: completeDetail)
               result += 1
             }
           }

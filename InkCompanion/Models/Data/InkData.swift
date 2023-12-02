@@ -14,30 +14,36 @@ class InkData{
 
   var context:NSManagedObjectContext {PersistenceController.shared.container.viewContext}
 
-  private func save(){
-    if context.hasChanges{
-      do{
-        try context.save()
-        print("saved!!")
-      }catch let error as NSError{
-        print("failed!!")
-        print(error.userInfo)
+  private func save() async {
+      if context.hasChanges {
+          do {
+              try await context.perform {
+                  try self.context.save()
+                  print("saved!!")
+              }
+          } catch let error as NSError {
+              print("failed!!")
+              print(error.userInfo)
+          }
       }
-    }
   }
 
-  func isExist(id:String) ->Bool{
-    let fetchRequest:NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
-    fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-    fetchRequest.fetchLimit = 1
 
-    do {
-      let result = try context.fetch(fetchRequest)
-      return !result.isEmpty
-    }catch{
-      return false
-    }
+  func isExist(id: String) async -> Bool {
+      let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
+      fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+      fetchRequest.fetchLimit = 1
+
+      do {
+          let result = try await context.perform {
+              try self.context.fetch(fetchRequest)
+          }
+          return !result.isEmpty
+      } catch {
+          return false
+      }
   }
+
 
   private func isShiftExist(id:String) ->Bool{
     let fetchRequest:NSFetchRequest<ShiftEntity> = ShiftEntity.fetchRequest()
@@ -52,8 +58,8 @@ class InkData{
     }
   }
 
-  func addCoop(detail:CoopHistoryDetail){
-    if isExist(id: detail.id){
+  func addCoop(detail:CoopHistoryDetail) async{
+    if await isExist(id: detail.id){
       return
     }
 
@@ -71,10 +77,10 @@ class InkData{
 
     var waveLen: Int {detail.rule == .TEAM_CONTEST ? 5 : 3}
 
-    save()
+    await save()
   }
 
-  func deleteDetail(count:Int){
+  func deleteDetail(count:Int) async{
     let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
 
     // 设置排序
@@ -92,7 +98,7 @@ class InkData{
       }
 
       // 保存更改
-      save()
+      await save()
     } catch {
       print("Error deleting DetailEntity objects: \(error)")
     }
@@ -103,7 +109,7 @@ class InkData{
 
 
 
-  func queryDetail<T:Codable>(offset: Int, limit: Int, filter: FilterProps? = nil) -> [T] {
+  func queryDetail<T:Codable>(offset: Int, limit: Int, filter: FilterProps? = nil) async -> [T] {
     let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
 
     // 设置排序
@@ -133,7 +139,7 @@ class InkData{
     }
   }
 
-  func addShift(group:CoopHistoryGroup){
+  func addShift(group:CoopHistoryGroup) async{
     if self.isShiftExist(id: group.startTime){
       return
     }
@@ -148,7 +154,7 @@ class InkData{
     entity.rescue = 0
     entity.wave = 0
     entity.rescued = 0
-    save()
+    await save()
   }
 }
 

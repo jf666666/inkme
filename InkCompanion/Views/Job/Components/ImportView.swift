@@ -11,23 +11,25 @@ import SwiftyJSON
 
 
 
-func importJsonData(from url: URL) {
+func importJsonData(from url: URL)  {
   struct temp:Codable{
     struct temp1:Codable{
       let coopHistoryDetail:CoopHistoryDetail
     }
     let coops:[temp1]
   }
+  Task{
     do {
-        let jsonData = try Data(contentsOf: url)
-        let decoder = JSONDecoder()
-        let data = try decoder.decode(temp.self, from: jsonData)
+      let jsonData = try Data(contentsOf: url)
+      let decoder = JSONDecoder()
+      let data = try decoder.decode(temp.self, from: jsonData)
       for detail in data.coops{
-        if !InkData.shared.isExist(id: detail.coopHistoryDetail.id){
-          InkData.shared.addCoop(detail: detail.coopHistoryDetail)
+        if  await !InkData.shared.isExist(id: detail.coopHistoryDetail.id){
+          await InkData.shared.addCoop(detail: detail.coopHistoryDetail)
         }
       }
     } catch {
-        print("Error reading or decoding JSON: \(error)")
+      print("Error reading or decoding JSON: \(error)")
     }
+  }
 }

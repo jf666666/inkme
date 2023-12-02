@@ -106,7 +106,7 @@ extension Date {
     let timeLength = TimeLength(days: days, hours: hours, minutes: minutes, seconds: seconds)
     let timeLengthString = timeLength.getLocalizedDescriptionString()
 
-    return "remaining \(timeLengthString)"
+    return "剩余\(timeLengthString)"
   }
 
   /// Convert a Date to the string key for the until time.

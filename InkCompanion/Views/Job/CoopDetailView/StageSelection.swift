@@ -15,7 +15,8 @@ enum StageSelection:String {
   case JamminSalmonJunction = "Q29vcFN0YWdlLTg="
   case SpawningGrounds = "Q29vcFN0YWdlLTE="
   case SockeyeStation = "Q29vcFN0YWdlLTI="
-  
+  case BarnacleDime = "Q29vcFN0YWdlLTEwNQ=="
+
 }
 
 extension StageSelection {
@@ -33,6 +34,8 @@ extension StageSelection {
       return Image(.copShakeup)
     case .SockeyeStation:
       return Image(.copShakespiral)
+    case .BarnacleDime:
+      return Image(.vssSection)
     }
   }
 }

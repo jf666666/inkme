@@ -242,7 +242,9 @@ struct LoginView: View {
       }
 
       Button("删除前10个Detail"){
-        InkData.shared.deleteDetail(count: 3)
+        Task{
+         await InkData.shared.deleteDetail(count: 3)
+        }
       }
 
       Button("查看data地址"){

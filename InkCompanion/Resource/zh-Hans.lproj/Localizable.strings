@@ -276,6 +276,7 @@
 "Q29vcEdyYWRlLTg=" = "传说";
 "Q29vcEVuZW15LTI0" = "辰龙";
 "Q29vcEVuZW15LTIz" = "横纲";
+"Q29vcEVuZW15LTI1" = "巨颚";
 
 "Q29vcFN0YWdlLTEwNA==" = "鱼露遗迹";
 "Q29vcFN0YWdlLTc=" = "麦年海洋发电所";
@@ -284,3 +285,10 @@
 "Q29vcFN0YWdlLTY=" = "漂浮落难船";
 "Q29vcFN0YWdlLTI=" = "新卷堡";
 "Q29vcFN0YWdlLTE=" = "鲑坝";
+"Q29vcFN0YWdlLTEwNQ==" = "塔拉波特购物公园";
+
+"Turf War" = "占地对战";
+"Splat Zones" = "真格区域";
+"Tower Control" = "真格塔楼";
+"Rainmaker" = "真格鱼虎";
+"Clam Blitz" = "真格蛤蜊";

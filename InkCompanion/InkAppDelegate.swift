@@ -95,7 +95,7 @@ func postUserNotification(title: String, body: String, interval: TimeInterval) {
   content.sound = UNNotificationSound.default
 
   // 2. 设置触发器
-  let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
+  _ = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
 
   // 3. 创建请求
   let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)

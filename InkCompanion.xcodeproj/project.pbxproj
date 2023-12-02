@@ -535,7 +535,6 @@
 				8B1A23E92B194D62002498DC /* Schedules */,
 				8BCD714A2AF64D3500EE3F4A /* Job */,
 				8B9BFE612AF20BF0005F5FB8 /* LoginView.swift */,
-				8B9BFE632AF20BF0005F5FB8 /* Components */,
 				8B9BFE6D2AF20BF0005F5FB8 /* ContentView.swift */,
 				8B596B8F2AF38634006FA8F8 /* Style.swift */,
 				8B34793A2B18AD69001F7737 /* HomePage.swift */,
@@ -713,6 +712,7 @@
 		8BCD714A2AF64D3500EE3F4A /* Job */ = {
 			isa = PBXGroup;
 			children = (
+				8B9BFE632AF20BF0005F5FB8 /* Components */,
 				8B7B3B832B117E2F00E81ED5 /* CoopDetailView */,
 				8B4ABECE2AF9D1590017E6E6 /* CoopHistoryListItem.swift */,
 				8BCF4B9D2B0739A6009FAB9B /* CoopHistoryList.swift */,

@@ -64,13 +64,15 @@ struct CoopHistoryList: View {
     }
     .sheet(isPresented: $showingDateRangePicker) {
       DatePickerView { start, end in
-        model.selectTimeRange(start: start, end: end)
+        Task{
+          await model.selectTimeRange(start: start, end: end)
+        }
       }
       .presentationDetents([.medium, .large])
       .padding()
     }
     .task {
-      model.loadFromData(length: 500)
+      await model.loadFromData(length: 500)
       await model.loadFromNet()
     }
     .refreshable {
@@ -88,7 +90,9 @@ struct CoopHistoryList: View {
       Button {
         model.selectedRule = rule
         model.navigationTitle = rule.name
-        model.selectRule(rule: rule)
+        Task{
+          await model.selectRule(rule: rule)
+        }
       } label: {
         Label(
           title: { Text("\(rule.name)") },
