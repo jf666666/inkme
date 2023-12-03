@@ -37,6 +37,8 @@ final class InkNet {
     }
   }
 
+//  func fetchVsHistoryDetail(id:String) async ->VsHistoryDetail
+
   func fetchSchedule() async->StageSchedules?{
     do{
       return try await fetchGraphQL(hash: .StageScheduleQuery) as StageSchedules

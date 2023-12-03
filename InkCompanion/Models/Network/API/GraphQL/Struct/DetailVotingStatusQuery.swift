@@ -42,15 +42,7 @@ struct Fest: Codable {
     let tricolorStage: VsStage?
 }
 
-struct VsStage: Codable,Stage {
-    let __typename: String?
-    var id: String
-    let vsStageId: Double?
-  var name: String?
-    var image: Icon?
-    let originalImage:Icon?
-    let stats: VsStageRecordStats?
-}
+
 
 struct VsStageRecordStats: Codable {
     let lastPlayedTime: String?

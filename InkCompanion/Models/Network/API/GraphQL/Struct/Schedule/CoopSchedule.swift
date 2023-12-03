@@ -15,6 +15,11 @@ struct CoopSchedule:Codable{
     let startTime:String
     let endTime:String
     let setting:CoopScheduleSetting
+
+  func isCurrent(_ currentTime: Date) -> Bool {
+    startTime.asDate <= currentTime &&
+    endTime.asDate > currentTime
+  }
 }
 
 struct CoopScheduleSetting:Codable{

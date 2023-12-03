@@ -13,15 +13,16 @@ struct StageCard:View {
   typealias Scoped = Constants.Style.Rotation.Battle.Card.Primary
 
   let stage:Stage
+  var s:StageSelection{StageSelection.getStageSelection(from: stage.id)}
   var body: some View {
-    KFImage(URL(string: stage.image?.url ?? ""))
+    s.image
       .resizable()
       .antialiased(true)
       .continuousCornerRadius(8)
       .scaledToFit()
       .overlay(
         StageTitleLabel(
-          title: stage.name ?? "nil",
+          title: s.name,
           fontSize: Scoped.LABEL_FONT_SIZE,
           relTextStyle: .body)
         .padding(.leading, Scoped.LABEL_PADDING_LEADING)

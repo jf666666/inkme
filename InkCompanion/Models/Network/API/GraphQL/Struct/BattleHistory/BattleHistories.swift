@@ -131,10 +131,9 @@ struct XMatchMeasurement: Codable {
 
 
 struct VsRule: Codable {
-    let __typename: String?
-    let name: String?
-    let rule: BattleRule?
-    let id: String?
+    let name: String
+    let rule: BattleRule
+    let id: String
 }
 
 struct BankaraMatchChallenge: Codable {
@@ -154,39 +153,19 @@ typealias VsHistoryGroupConnection = Connection<VsHistoryGroup>
 typealias VsHistoryDetailConnection = Connection<VsHistoryDetail>
 
 
-struct VsHistoryDetail: Codable {
-    var __typename: String?
-    var id: String?
-    var vsMode: VsMode?
-    var vsRule: VsRule?
-    var vsStage: VsStage?
-    var playedTime: String?
-    var duration: Int?
-    var judgement: Judgement?
-    var player: VsPlayer?
-    var knockout: JudgementKnockout?
-    var myTeam: VsTeam?
-    var otherTeams: [VsTeam]?
-    var udemae: AnyCodable?
-    var bankaraMatch: BankaraMatchHistory?
-    var leagueMatch: LeagueMatchHistory?
-    var xMatch: XMatchHistory?
-    var festMatch: FestMatchHistory?
-    var awards: [Award]?
-    var nextHistoryDetail: NextPreviousHistory?
-    var previousHistoryDetail: NextPreviousHistory?
+
+
+struct VsHistoryDetailQuery:Codable{
+  struct Data:Codable{
+    let vsHistoryDetail:VsHistoryDetail
+  }
+  let data:Data
 }
 
 
-struct Award: Codable {
-    var name: String
-    var rank: AwardRank
-}
 
-enum AwardRank:String,Codable {
-    case GOLD = "GOLD"
-    case SILVER = "SILVER"
-}
+
+
 
 struct FestMatchHistory: Codable {
     var dragonMatchType: DragonMatchType
@@ -253,8 +232,6 @@ struct VsTeamResult: Codable {
 }
 
 struct VsPlayer: Codable {
-    var __typename: String?
-    var __isPlayer: String?
     var id: String?
     var byname: String?
     var name: String?

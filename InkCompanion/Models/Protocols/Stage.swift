@@ -8,7 +8,7 @@
 import Foundation
 
 protocol Stage:Codable{
-  var name: String? { get set}
+  var name: String { get set}
   var image: Icon? { get set}
   var id:String {get set}
 }

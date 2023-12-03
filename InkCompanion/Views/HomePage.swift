@@ -29,8 +29,9 @@ struct HomePage: View {
 
       }
       .frame(maxWidth: .infinity)
+      .padding(.horizontal,15)
     }
-    .padding(.horizontal,8)
+
     .navigationBarTitle("Home", displayMode: .inline)
     .frame(maxWidth: .infinity)
     .fixSafeareaBackground()

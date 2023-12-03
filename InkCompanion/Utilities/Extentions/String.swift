@@ -11,7 +11,13 @@ extension String {
     var localizedString: String {
         NSLocalizedString(self, comment: "")
     }
-    
+
+    var stageName: String {
+          let bundlePath = Bundle.main.path(forResource: "en", ofType: "lproj")
+          let englishBundle = Bundle(path: bundlePath!)
+          return NSLocalizedString(self, bundle: englishBundle!, comment: "")
+      }
+
     var localizedIntentsString: String {
         let languageCode = INPreferences.siriLanguageCode()
         

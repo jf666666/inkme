@@ -9,6 +9,8 @@ import SwiftUI
 import Kingfisher
 
 struct ShiftCell: View {
+  @EnvironmentObject private var timePublisher: TimePublisher
+
   let shift:CoopSchedule
   var stage:StageSelection{StageSelection(rawValue: shift.setting.coopStage.id) ?? .unknown}
   var timeString:String{
@@ -21,7 +23,27 @@ struct ShiftCell: View {
     VStack{
       titleSection
       stageAndWeaponSection
+      if shift.isCurrent(timePublisher.currentTime){
+        VStack(alignment: .trailing){
+          remainingTimeSection
+          ProgressView(
+            value: min(timePublisher.currentTime, shift.endTime.asDate) - shift.startTime.asDate,
+            total: shift.endTime.asDate - shift.startTime.asDate)
+//          .padding(.bottom, 8)
+          .tint(ScheduleMode.salmonRun.themeColor)
+        }
+      }
     }
+  }
+
+  private var remainingTimeSection: some View {
+    Text(timePublisher.currentTime.toTimeRemainingStringKey(until: shift.endTime.asDate))
+      .contentTransition(.numericText(countsDown: true))
+      .animation(.snappy, value: timePublisher.currentTime)
+      .scaledLimitedLine()
+      .foregroundStyle(Color.secondary)
+      .inkFont(.font1, size: 15, relativeTo: .headline)
+//      .frame(alignment: .trailing)
   }
 
   var titleSection:some View{
@@ -135,4 +157,5 @@ struct ShiftCell: View {
     .padding(8)
     .textureBackground(texture: .bubble, radius: 18)
     .frame(width: 366,height: 180)
+    .environmentObject(TimePublisher.shared)
 }

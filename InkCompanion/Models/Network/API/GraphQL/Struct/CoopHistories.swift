@@ -192,7 +192,7 @@ struct CoopStage: Codable,Equatable,Stage,Hashable {
     
     let __typename: String?
     var id: String
-    var name: String?
+    var name: String
     let coopStageId: Int?
     var image: Icon?
     let thumbnailImage: Icon?
