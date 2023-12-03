@@ -274,9 +274,7 @@
 
 //Coop
 "Q29vcEdyYWRlLTg=" = "传说";
-"Q29vcEVuZW15LTI0" = "辰龙";
-"Q29vcEVuZW15LTIz" = "横纲";
-"Q29vcEVuZW15LTI1" = "巨颚";
+
 
 "Q29vcFN0YWdlLTEwNA==" = "鱼露遗迹";
 "Q29vcFN0YWdlLTc=" = "麦年海洋发电所";
@@ -292,3 +290,23 @@
 "Tower Control" = "真格塔楼";
 "Rainmaker" = "真格鱼虎";
 "Clam Blitz" = "真格蛤蜊";
+
+//Enemy
+"Q29vcEVuZW15LTQ=" = "炸弹鱼";
+"Q29vcEVuZW15LTU=" = "垫肩飞鱼";
+"Q29vcEVuZW15LTY=" = "铁板鱼";
+"Q29vcEVuZW15LTc=" = "蛇鱼";
+"Q29vcEVuZW15LTg=" = "高塔鱼";
+"Q29vcEVuZW15LTk=" = "鼹鼠鱼";
+"Q29vcEVuZW15LTEw" = "蝙蝠鱼";
+"Q29vcEVuZW15LTEx" = "柱鱼";
+"Q29vcEVuZW15LTEy" = "潜水鱼";
+"Q29vcEVuZW15LTEz" = "铁球鱼";
+"Q29vcEVuZW15LTE0" = "锅盖鱼";
+"Q29vcEVuZW15LTIw" = "泥鲑鱼";
+"Q29vcEVuZW15LTE1" = "金鲑鱼";
+"Q29vcEVuZW15LTE3" = "烤架鱼";
+"Q29vcEVuZW15LTIz" = "横纲";
+"Q29vcEVuZW15LTI0" = "辰龙";
+"Q29vcEVuZW15LTI1" = "巨颚";
+

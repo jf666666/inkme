@@ -9,32 +9,43 @@ import SwiftUI
 import Kingfisher
 
 struct ScheduleView: View {
-    @EnvironmentObject var viewModel: HomeViewModel
+  @EnvironmentObject var viewModel:HomeViewModel
 
-    var mode: ScheduleMode { viewModel.currentMode }
-    var schedules: [any Schedule] {
-        viewModel.scheduleDict[mode] ?? []
-    }
+  var mode:ScheduleMode{viewModel.currentMode}
+  var schedules:[any Schedule]{
+    viewModel.scheduleDict[mode] ?? []
+  }
+  var body: some View {
+    Group{
 
-    private var processedSchedules: [BattleRegularSchedule] {
-        if let schedules = schedules as? [Battle2CasesSchedule] {
-            let isChallenge = (mode == .anarchy && viewModel.anarchyMode == .CHALLENGE) ||
-                              (mode != .anarchy && viewModel.festMode == .challenge)
-            return schedules.map { $0.toRegularSchedule(isChallenge: isChallenge) }
-        } else if let schedules = schedules as? [BattleRegularSchedule] {
-            return schedules
+      if let schedules = schedules as? [Battle2CasesSchedule]{
+        if viewModel.currentMode == .anarchy{
+          if viewModel.anarchyMode == .CHALLENGE{
+            let challengeSchedules = schedules.map{$0.toRegularSchedule(isChallenge: true)}
+            ScheduleList(schedules: challengeSchedules)
+          }else{
+            let openSchedules = schedules.map{$0.toRegularSchedule(isChallenge: false)}
+            ScheduleList(schedules: openSchedules)
+          }
+        }else{
+          if viewModel.festMode == .challenge{
+            let challengeSchedules = schedules.map{$0.toRegularSchedule(isChallenge: true)}
+            ScheduleList(schedules: challengeSchedules)
+          }else{
+            let regularSchedules = schedules.map{$0.toRegularSchedule(isChallenge: false)}
+            ScheduleList(schedules: regularSchedules)
+          }
         }
-        return []
-    }
-  
-
-    var body: some View {
-      
-        ScheduleList(schedules: processedSchedules)
-            .animation(.bouncy, value: schedules.map { $0.startTime })
-            .frame(width: 377)
+      }else if let schedules = schedules as? [BattleRegularSchedule]{
+        ScheduleList(schedules: schedules)
+      }
 
     }
+    .animation(
+      .bouncy,
+      value: schedules.map { $0.startTime })
+//    .frame(width: 377)
+  }
 }
 
 

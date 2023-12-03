@@ -62,24 +62,6 @@ struct CoopDetailView: View {
       }
   }
 
-  private func waveResultsView(range: Range<Int>) -> some View {
-      HStack(alignment: .top, spacing: 10) {
-          ForEach(range, id: \.self) { waveIndex in
-              let waveResult = detail.waveResults[waveIndex]
-              WaveResult(result: waveResult, pass: isWavePassed(waveResult), bossName: detail.bossResult?.boss.name)
-                  .rotationEffect(.degrees(-2))
-          }
-      }
-  }
-
-  private func isWavePassed(_ waveResult: CoopWaveResult) -> Bool {
-      if waveResult.waveNumber == 4, let bossResult = detail.bossResult {
-          return bossResult.hasDefeatBoss
-      }
-      return detail.resultWave == 0 || waveResult.waveNumber != detail.waveResults.count
-  }
-
-
   var enemy:some View {
     VStack(spacing:2){
       ForEach(detail.enemyResults,id: \.enemy.id){ enemy in
@@ -107,7 +89,6 @@ struct CoopDetailView: View {
   }
 
   var member:some View{
-
     VStack(spacing:2){
       Group {
         playerResult(result: detail.myResult)
@@ -119,8 +100,23 @@ struct CoopDetailView: View {
     }
     .padding(.all,10)
     .textureBackground(texture: .bubble, radius: 18)
-    
+  }
 
+  private func waveResultsView(range: Range<Int>) -> some View {
+      HStack(alignment: .top, spacing: 10) {
+          ForEach(range, id: \.self) { waveIndex in
+              let waveResult = detail.waveResults[waveIndex]
+              WaveResult(result: waveResult, pass: isWavePassed(waveResult), bossName: detail.bossResult?.boss.name)
+                  .rotationEffect(.degrees(-2))
+          }
+      }
+  }
+
+  private func isWavePassed(_ waveResult: CoopWaveResult) -> Bool {
+      if waveResult.waveNumber == 4, let bossResult = detail.bossResult {
+          return bossResult.hasDefeatBoss
+      }
+      return detail.resultWave == 0 || waveResult.waveNumber != detail.waveResults.count
   }
 }
 

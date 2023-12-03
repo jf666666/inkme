@@ -33,8 +33,8 @@ extension Date {
 }
 
 extension Date {
-  static private let ikaTimeFormatter = DateFormatter(ikaType: .time)
-  static private let ikaDateFormatter = DateFormatter(ikaType: .date)
+  static private let inkTimeFormatter = DateFormatter(inkType: .time)
+  static private let inkDateFormatter = DateFormatter(inkType: .date)
 
   // MARK: Internal
 
@@ -46,7 +46,7 @@ extension Date {
   func toBattleTimeString(includeDateIf shouldIncludeDate: Bool = false)
     -> String
   {
-    let timeString = Date.ikaTimeFormatter.string(from: self)
+    let timeString = Date.inkTimeFormatter.string(from: self)
 
     guard shouldIncludeDate
     else { return timeString }
@@ -69,25 +69,11 @@ extension Date {
   ///   - shouldIncludeDate: If including the date in the time string (default to false).
   ///   parameter has changed.
   /// - Returns: The salmon time string.
-  func toSalmonTimeString(includeDateIf shouldIncludeDate: Bool = false)
+  func toSalmonTimeString()
     -> String
   {
-    let timeString = Date.ikaTimeFormatter.string(from: self)
-
-    guard shouldIncludeDate
-    else { return timeString }
-
-    guard !Calendar.current.isDateInToday(self)
-    else { return String(localized: "Today") + " " + timeString }
-
-    guard !Calendar.current.isDateInYesterday(self)
-    else { return String(localized: "Yesterday") + " " + timeString }
-
-    guard !Calendar.current.isDateInTomorrow(self)
-    else { return String(localized: "Tomorrow") + " " + timeString }
-
-    // other than Today, Yesterday or Tomorrow
-    let dateString = Date.ikaDateFormatter.string(from: self)
+    let timeString = Date.inkTimeFormatter.string(from: self)
+    let dateString = Date.inkDateFormatter.string(from: self)
     return dateString + timeString
   }
 

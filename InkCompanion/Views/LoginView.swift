@@ -83,7 +83,7 @@ struct LoginView: View {
         FetchGraphQl(
 
           language: "zh-CN",
-          hash: .MyOutfitCommonDataEquipmentsQuery, variables: nil
+          hash: .myOutfitCommonDataEquipmentsQuery, variables: nil
         ){(result: Result<MyOutfitCommonDataEquipmentsQuery, Error>) in
           switch result{
           case .success(let historyRecordQuery):

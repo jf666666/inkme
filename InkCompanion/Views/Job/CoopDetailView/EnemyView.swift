@@ -14,10 +14,10 @@ extension CoopDetailView{
     let result:CoopEnemyResult
     var body: some View {
       HStack{
-        KFImage(URL(string: result.enemy.image?.url ?? ""))
+        result.enemy.enemy.image
           .resizable()
           .scaledToFit()
-        Text("\(result.enemy.name)")
+        Text("\(result.enemy.id.localizedString)")
           .inkFont(.font1, size: 15, relativeTo: .body)
         Spacer()
         Group{

@@ -38,7 +38,7 @@ extension BattleRule {
     case .rainmaker: Image(.rainmaker)
     case .splatZones: Image(.splatZones)
     case .towerControl: Image(.towerControl)
-    case .turfWar: Image(.turfWar2)
+    case .turfWar: Image(.turfWar)
     }
   }
 }

@@ -16,6 +16,7 @@ enum StageSelection:String {
   case SpawningGrounds = "Q29vcFN0YWdlLTE="
   case SockeyeStation = "Q29vcFN0YWdlLTI="
   case BarnacleDime = "Q29vcFN0YWdlLTEwNQ=="
+  case unknown = "? ? ?"
 
 }
 
@@ -36,6 +37,10 @@ extension StageSelection {
       return Image(.copShakespiral)
     case .BarnacleDime:
       return Image(.vssSection)
+    case .unknown:
+      return Image(.unknownStage)
+
+
     }
   }
 }

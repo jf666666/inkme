@@ -40,7 +40,8 @@ final class InkNet {
   func fetchSchedule() async->StageSchedules?{
     do{
       return try await fetchGraphQL(hash: .StageScheduleQuery) as StageSchedules
-    }catch{
+    }catch let error as NSError{
+      print("\(error) \(error.userInfo)")
       return nil
     }
   }

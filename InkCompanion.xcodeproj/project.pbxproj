@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		8B01F85F2B174F830031044D /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01F85E2B174F830031044D /* DocumentPicker.swift */; };
+		8B0B2ACF2B1B53E000FDA4B5 /* ShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B2ACE2B1B53E000FDA4B5 /* ShiftView.swift */; };
+		8B0B2AD22B1C0B5A00FDA4B5 /* ShiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B2AD12B1C0B5A00FDA4B5 /* ShiftCell.swift */; };
+		8B0B2AD42B1C1CE200FDA4B5 /* CoopRecordQuery_CN.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B0B2AD32B1C1CE200FDA4B5 /* CoopRecordQuery_CN.json */; };
+		8B0B2AD62B1C20CB00FDA4B5 /* CoopRecordQuery_EN.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B0B2AD52B1C20CB00FDA4B5 /* CoopRecordQuery_EN.json */; };
+		8B0B2AD92B1C30FE00FDA4B5 /* StageRecordQuery_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B0B2AD72B1C30FE00FDA4B5 /* StageRecordQuery_en.json */; };
+		8B0B2ADA2B1C30FE00FDA4B5 /* StageRecordsRefetchQuery_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B0B2AD82B1C30FE00FDA4B5 /* StageRecordsRefetchQuery_en.json */; };
+		8B0B2ADC2B1C50DE00FDA4B5 /* SalmonStageAndWeaponsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B2ADB2B1C50DE00FDA4B5 /* SalmonStageAndWeaponsLayout.swift */; };
+		8B0B2ADE2B1C59CC00FDA4B5 /* ShiftSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B2ADD2B1C59CC00FDA4B5 /* ShiftSchedule.swift */; };
+		8B0B2AE02B1C619600FDA4B5 /* stageScheduleQuery12.2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B0B2ADF2B1C619600FDA4B5 /* stageScheduleQuery12.2.json */; };
 		8B17F0272B16BB6900A3C46A /* OverlayDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8B17F0262B16BB6900A3C46A /* OverlayDatePicker */; };
 		8B1A23EB2B194E78002498DC /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23EA2B194E78002498DC /* ScheduleView.swift */; };
 		8B1A23ED2B194F1C002498DC /* ScheduleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23EC2B194F1C002498DC /* ScheduleRow.swift */; };
@@ -148,6 +157,15 @@
 
 /* Begin PBXFileReference section */
 		8B01F85E2B174F830031044D /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		8B0B2ACE2B1B53E000FDA4B5 /* ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftView.swift; sourceTree = "<group>"; };
+		8B0B2AD12B1C0B5A00FDA4B5 /* ShiftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftCell.swift; sourceTree = "<group>"; };
+		8B0B2AD32B1C1CE200FDA4B5 /* CoopRecordQuery_CN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CoopRecordQuery_CN.json; sourceTree = "<group>"; };
+		8B0B2AD52B1C20CB00FDA4B5 /* CoopRecordQuery_EN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CoopRecordQuery_EN.json; sourceTree = "<group>"; };
+		8B0B2AD72B1C30FE00FDA4B5 /* StageRecordQuery_en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StageRecordQuery_en.json; sourceTree = "<group>"; };
+		8B0B2AD82B1C30FE00FDA4B5 /* StageRecordsRefetchQuery_en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StageRecordsRefetchQuery_en.json; sourceTree = "<group>"; };
+		8B0B2ADB2B1C50DE00FDA4B5 /* SalmonStageAndWeaponsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalmonStageAndWeaponsLayout.swift; sourceTree = "<group>"; };
+		8B0B2ADD2B1C59CC00FDA4B5 /* ShiftSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftSchedule.swift; sourceTree = "<group>"; };
+		8B0B2ADF2B1C619600FDA4B5 /* stageScheduleQuery12.2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stageScheduleQuery12.2.json; sourceTree = "<group>"; };
 		8B1A23EA2B194E78002498DC /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		8B1A23EC2B194F1C002498DC /* ScheduleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRow.swift; sourceTree = "<group>"; };
 		8B1A23EE2B194F32002498DC /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
@@ -313,6 +331,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B0B2AD02B1C07AB00FDA4B5 /* Shift */ = {
+			isa = PBXGroup;
+			children = (
+				8B0B2ACE2B1B53E000FDA4B5 /* ShiftView.swift */,
+				8B0B2AD12B1C0B5A00FDA4B5 /* ShiftCell.swift */,
+			);
+			path = Shift;
+			sourceTree = "<group>";
+		};
 		8B0F48A52B02F5EC009FF1DD /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +559,8 @@
 		8B9BFE602AF20BF0005F5FB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8B0B2AD02B1C07AB00FDA4B5 /* Shift */,
+				8B9BFE632AF20BF0005F5FB8 /* Components */,
 				8B1A23E92B194D62002498DC /* Schedules */,
 				8BCD714A2AF64D3500EE3F4A /* Job */,
 				8B9BFE612AF20BF0005F5FB8 /* LoginView.swift */,
@@ -604,6 +633,7 @@
 				8BB5A7FA2AFD0F2E0095E0E9 /* Schedule.swift */,
 				8BB5A8122AFD8B940095E0E9 /* Stage.swift */,
 				8B1A23F02B196255002498DC /* BattleSchedule.swift */,
+				8B0B2ADD2B1C59CC00FDA4B5 /* ShiftSchedule.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -692,6 +722,11 @@
 		8BB7D1E92B0080BF0021CF39 /* json */ = {
 			isa = PBXGroup;
 			children = (
+				8B0B2ADF2B1C619600FDA4B5 /* stageScheduleQuery12.2.json */,
+				8B0B2AD72B1C30FE00FDA4B5 /* StageRecordQuery_en.json */,
+				8B0B2AD82B1C30FE00FDA4B5 /* StageRecordsRefetchQuery_en.json */,
+				8B0B2AD52B1C20CB00FDA4B5 /* CoopRecordQuery_EN.json */,
+				8B0B2AD32B1C1CE200FDA4B5 /* CoopRecordQuery_CN.json */,
 				8BCD71512AF667B200EE3F4A /* CoopDetailHolder.json */,
 				8B4ABEC42AF8F9F30017E6E6 /* CoopResult.json */,
 				8B4ABECC2AF9C9110017E6E6 /* CoopStageHolder.json */,
@@ -703,6 +738,7 @@
 		8BB7D1F02B008F1D0021CF39 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
+				8B0B2ADB2B1C50DE00FDA4B5 /* SalmonStageAndWeaponsLayout.swift */,
 				8B6A73B62B0591DB00361CF6 /* Alignment */,
 				8BB7D1F12B008F250021CF39 /* IdealFontLayout.swift */,
 			);
@@ -712,7 +748,6 @@
 		8BCD714A2AF64D3500EE3F4A /* Job */ = {
 			isa = PBXGroup;
 			children = (
-				8B9BFE632AF20BF0005F5FB8 /* Components */,
 				8B7B3B832B117E2F00E81ED5 /* CoopDetailView */,
 				8B4ABECE2AF9D1590017E6E6 /* CoopHistoryListItem.swift */,
 				8BCF4B9D2B0739A6009FAB9B /* CoopHistoryList.swift */,
@@ -871,13 +906,18 @@
 			files = (
 				8BFE694C2AF8B40100370F8F /* Splatoon2.otf in Resources */,
 				8BCD71522AF667B200EE3F4A /* CoopDetailHolder.json in Resources */,
+				8B0B2AE02B1C619600FDA4B5 /* stageScheduleQuery12.2.json in Resources */,
 				8B9BFE082AF20BD0005F5FB8 /* Preview Assets.xcassets in Resources */,
 				8B9BFE4C2AF20BDC005F5FB8 /* Localizable.strings in Resources */,
+				8B0B2AD92B1C30FE00FDA4B5 /* StageRecordQuery_en.json in Resources */,
 				8B7B3B822B10E19400E81ED5 /* DFPZongYiW7-GB.ttf in Resources */,
 				8B4ABECD2AF9C9110017E6E6 /* CoopStageHolder.json in Resources */,
 				8B4ABEC52AF8F9F30017E6E6 /* CoopResult.json in Resources */,
+				8B0B2AD62B1C20CB00FDA4B5 /* CoopRecordQuery_EN.json in Resources */,
 				8B46A5652AF6002E001FB5E2 /* Splatoon1.otf in Resources */,
+				8B0B2ADA2B1C30FE00FDA4B5 /* StageRecordsRefetchQuery_en.json in Resources */,
 				8BB7D1EB2B00810C0021CF39 /* StageScheduleQuery.json in Resources */,
+				8B0B2AD42B1C1CE200FDA4B5 /* CoopRecordQuery_CN.json in Resources */,
 				8B9BFE4D2AF20BDC005F5FB8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -903,6 +943,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B0B2ADE2B1C59CC00FDA4B5 /* ShiftSchedule.swift in Sources */,
 				8BB7D1C22AFE608B0021CF39 /* View.swift in Sources */,
 				8B596B9D2AF46489006FA8F8 /* CatalogQuery.swift in Sources */,
 				8B6A07F72B103ADB00C8BDC9 /* GrayscaleTextureView.swift in Sources */,
@@ -946,9 +987,11 @@
 				8B6A73B32B058B2400361CF6 /* IconView.swift in Sources */,
 				8B1A23EB2B194E78002498DC /* ScheduleView.swift in Sources */,
 				8BF742D22B15ACBA00382A0E /* CoopSummaryDetail.swift in Sources */,
+				8B0B2AD22B1C0B5A00FDA4B5 /* ShiftCell.swift in Sources */,
 				8B1A23F92B19B08A002498DC /* StageTitleLabel.swift in Sources */,
 				8B596B8C2AF35465006FA8F8 /* FriendsView.swift in Sources */,
 				8B40D0812B14BF4200608971 /* Logger+.swift in Sources */,
+				8B0B2ACF2B1B53E000FDA4B5 /* ShiftView.swift in Sources */,
 				8BFE69482AF8A69100370F8F /* EnemyView.swift in Sources */,
 				8B9BFE502AF20BDC005F5FB8 /* Image.swift in Sources */,
 				8B46A5512AF4D5BB001FB5E2 /* FestRecord.swift in Sources */,
@@ -973,6 +1016,7 @@
 				8BB7D1CB2AFF5A7F0021CF39 /* BattleRule.swift in Sources */,
 				8B46A54F2AF4CA0F001FB5E2 /* DetailVotingStatusQuery.swift in Sources */,
 				8B6A5E522AFC653B00C76B70 /* EventSchedules.swift in Sources */,
+				8B0B2ADC2B1C50DE00FDA4B5 /* SalmonStageAndWeaponsLayout.swift in Sources */,
 				8BCD99A42B0AE51F00829AF5 /* NintendoAccount.swift in Sources */,
 				8B5FB8692B1305B400709CD6 /* Task.swift in Sources */,
 				8B3479352B175A5D001F7737 /* DetailScrollView.swift in Sources */,

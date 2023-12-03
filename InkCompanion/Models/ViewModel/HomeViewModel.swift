@@ -9,12 +9,16 @@ import Foundation
 
 
 class HomeViewModel: ObservableObject{
+
   @Published var currentMode:ScheduleMode = .regular
   @Published var anarchyMode:BankaraMatchMode = .CHALLENGE
   @Published var festMode:FestMatchMode = .challenge
-  private var inkNet = InkNet.shared
   @Published var scheduleDict:[ScheduleMode:[any Schedule]]
-
+  @Published var regularShift:[CoopSchedule] = []
+  @Published var bigrunShift:[CoopSchedule] = []
+  @Published var teamContestShift:[CoopSchedule] = []
+  
+  private var inkNet = InkNet.shared
   init() {
     self.scheduleDict = [:]
     for mode in ScheduleMode.allCases {
@@ -29,6 +33,8 @@ class HomeViewModel: ObservableObject{
       self.scheduleDict[.anarchy] = (data?.data.bankaraSchedules?.nodes ?? []).compactMap{ $0.toSchedule()}
       self.scheduleDict[.fest] = (data?.data.festSchedules?.nodes ?? []).compactMap{ $0.toSchedule()}
       self.scheduleDict[.x] = (data?.data.xSchedules?.nodes ?? []).compactMap{ $0.toSchedule()}
+      self.regularShift = (data?.data.coopGroupingSchedule?.regularSchedules.nodes ?? [])
+      self.bigrunShift = (data?.data.coopGroupingSchedule?.bigRunSchedules.nodes ?? [])
     }
   }
 

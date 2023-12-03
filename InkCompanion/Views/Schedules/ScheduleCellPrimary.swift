@@ -43,18 +43,17 @@ struct ScheduleCellPrimary: View {
           timeRangeSection
         }
       }
-//      if scheduleType == .primary {
-//        ProgressView(
-//          value: min(timePublisher.currentTime, schedule.endTime) - schedule.startTime,
-//          total: schedule.endTime - schedule.startTime)
-//        .padding(.bottom, 8)
-//      .tint(schedule.mode.themeColor)
-//      }
+      if scheduleType == .primary {
+        ProgressView(
+          value: min(timePublisher.currentTime, schedule.endTime) - schedule.startTime,
+          total: schedule.endTime - schedule.startTime)
+        .padding(.bottom, 8)
+      .tint(schedule.mode.themeColor)
+      }
       HStack{
         StageCard(stage: schedule.stages[0])
         StageCard(stage: schedule.stages[1])
       }
-
     }
   }
 
@@ -62,10 +61,10 @@ struct ScheduleCellPrimary: View {
   private var ruleIcon: some View {
     schedule.rule.image
       .antialiased(true)
-      .resizable()
-      .scaledToFit()
+//      .resizable()
+//      .scaledToFit()
       .shadow(radius: 4)
-      .layoutPriority(1)
+//      .layoutPriority(1)
 
   }
   var timeRangeSection:some View{
@@ -84,11 +83,11 @@ struct ScheduleCellPrimary: View {
       ruleIcon
       ruleTitle
     }
-    .frame(
-      width: 400 * 0.45,
-      height: 400 * 0.115,
-      alignment: .leading)
-    .hAlignment(.leading)
+//    .frame(
+//      width: 400 * 0.45,
+//      height: 400 * 0.115,
+//      alignment: .leading)
+//    .hAlignment(.leading)
   }
 
   private var ruleTitle: some View {

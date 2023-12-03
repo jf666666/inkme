@@ -73,7 +73,7 @@ extension ScheduleMode{
   var icon:Image{
     switch self {
     case .regular:
-      return Image(.regular)
+      return Image(.turfWar)
     case .x:
       return Image(.xBattle)
     case .event:

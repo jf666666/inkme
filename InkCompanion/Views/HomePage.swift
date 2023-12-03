@@ -10,43 +10,39 @@ import SwiftUI
 struct HomePage: View {
   @EnvironmentObject var viewModel: HomeViewModel
   var body: some View {
-//    NavigationStack {
-      ScrollView{
-        HStack {
-          Spacer()
-          VStack(alignment: .center,spacing: 20){
-
-//            todayHolder
-            EmptyView()
-              .textureBackground(texture: .streak, radius: 18)
-              .frame(height: 200)
-
-            scheduleTitle
-            modePicker
-            subModePicker
+    ScrollView{
+      VStack(alignment: .center,spacing: 20){
+        EmptyView()
+          .textureBackground(texture: .streak, radius: 18)
+          .frame(height: 200)
+        VStack(spacing:5){
+          scheduleTitle
+          modePicker
+          subModePicker
+          if viewModel.currentMode != .salmonRun{
             ScheduleView()
-
+          }else{
+            ShiftView()
           }
-          Spacer()
+
         }
-        .padding(.horizontal,8)
+
       }
-
-
-
-      .navigationBarTitle("Home", displayMode: .inline)
       .frame(maxWidth: .infinity)
-      .fixSafeareaBackground()
-      .task {
-        await viewModel.loadSchedules()
-      }
-      .refreshable {
-        await viewModel.loadSchedules()
-      }
-
-
-
+    }
+    .padding(.horizontal,8)
+    .navigationBarTitle("Home", displayMode: .inline)
+    .frame(maxWidth: .infinity)
+    .fixSafeareaBackground()
+    .task {
+      await viewModel.loadSchedules()
+    }
+    .refreshable {
+      await viewModel.loadSchedules()
+    }
   }
+
+
   var todayHolder:some View{
     VStack{}
       .textureBackground(texture: .bubble, radius: 18)
@@ -82,7 +78,6 @@ struct HomePage: View {
         }
         .pickerStyle(SegmentedPickerStyle())
         .frame(width: 80)
-        .padding(.top,5)
       }
       if viewModel.currentMode == .fest{
         Picker("", selection: $viewModel.festMode) {
@@ -106,8 +101,8 @@ struct HomePage: View {
 
 
 struct ViewWidthKey: PreferenceKey {
-    static var defaultValue: CGFloat = 0
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = nextValue()
-    }
+  static var defaultValue: CGFloat = 0
+  static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+    value = nextValue()
+  }
 }

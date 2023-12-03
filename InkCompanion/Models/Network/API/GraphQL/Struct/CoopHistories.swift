@@ -147,7 +147,7 @@ extension CoopRule{
   var icon:Image{
     switch self {
     case .REGULAR, .ALL:
-      return Image(.coopRegular)
+      return Image(.salmonRun)
     case .BIG_RUN:
       return Image(.coopBigrun)
     case .TEAM_CONTEST:
@@ -196,6 +196,8 @@ struct CoopStage: Codable,Equatable,Stage,Hashable {
     let coopStageId: Int?
     var image: Icon?
     let thumbnailImage: Icon?
+
+    
 }
 
 struct CoopWaveResult: Codable,Hashable {
@@ -272,8 +274,75 @@ struct CoopEnemy: Codable,Hashable {
     let id: String
     let name: String
     let image: Icon?
+    var enemy:Enemy{Enemy(rawValue: id) ?? .unknown}
 }
 
+extension CoopEnemy{
+  enum Enemy:String{
+    case Steelhead = "Q29vcEVuZW15LTQ="
+    case Flyfish = "Q29vcEVuZW15LTU="
+    case Scrapper = "Q29vcEVuZW15LTY="
+    case SteelEel = "Q29vcEVuZW15LTc="
+    case Stinger = "Q29vcEVuZW15LTg="
+    case Maws = "Q29vcEVuZW15LTk="
+    case Drizzler = "Q29vcEVuZW15LTEw"
+    case FishStick = "Q29vcEVuZW15LTEx"
+    case FlipperFlopper = "Q29vcEVuZW15LTEy"
+    case BigShot = "Q29vcEVuZW15LTEz"
+    case SlamminLid = "Q29vcEVuZW15LTE0"
+    case Cohozuna = "Q29vcEVuZW15LTIz"
+    case Horrorboros = "Q29vcEVuZW15LTI0"
+    case Megalodontia = "Q29vcEVuZW15LTI1"
+    case MudMouth = "Q29vcEVuZW15LTIw"
+    case Goldis = "Q29vcEVuZW15LTE1"
+    case Griller = "Q29vcEVuZW15LTE3"
+    case unknown = "??"
+  }
+  
+}
+
+extension CoopEnemy.Enemy{
+  var image:Image{
+    switch self {
+    case .Steelhead:
+      Image(.steelhead)
+    case .Flyfish:
+      Image(.flyfish)
+    case .Scrapper:
+      Image(.scrapper)
+    case .SteelEel:
+      Image(.steelEel)
+    case .Stinger:
+      Image(.stinger)
+    case .Maws:
+      Image(.maws)
+    case .Drizzler:
+      Image(.drizzler)
+    case .FishStick:
+      Image(.fishStick)
+    case .FlipperFlopper:
+      Image(.flipperFlopper)
+    case .BigShot:
+      Image(.bigShot)
+    case .SlamminLid:
+      Image(.slamminLid)
+    case .Cohozuna:
+      Image(.cohozuna)
+    case .Horrorboros:
+      Image(.horrorboros)
+    case .Megalodontia:
+      Image(.megalodontia)
+    case .MudMouth:
+      Image(.mudMouth)
+    case .unknown:
+      Image(.unknowEnemy)
+    case .Goldis:
+      Image(.goldie)
+    case .Griller:
+      Image(.griller)
+    }
+  }
+}
 
 
 
@@ -319,7 +388,7 @@ enum CoopTrophy:String,Codable {
 
 // Assuming the structure of CoopGrade, CoopTrophy
 
-enum CoopMode:String,Codable {
+enum CoopMode:String,Codable,CaseIterable {
     case REGULAR = "REGULAR"
     case PRIVATE_CUSTOM = "PRIVATE_CUSTOM"
     case PRIVATE_SCENARIO = "PRIVATE_SCENARIO"

@@ -271,3 +271,23 @@
 "open_shift" = "Currently, %2$@ in %3$@ with %4$@, %5$@, %6$@ and %7$@ for loan of %1$@ Salmon Run is open, remaining %8$@.";
 "soon_shift" = "Soon, %2$@ in %3$@ with %4$@, %5$@, %6$@ and %7$@ for loan of %1$@ Salmon Run will be open in %8$@.";
 "next_shift" = "Next, %2$@ in %3$@ with %4$@, %5$@, %6$@ and %7$@ for loan of %1$@ Salmon Run will be open in %8$@.";
+
+
+//Enemy
+"Q29vcEVuZW15LTQ=" = "Steelhead";
+"Q29vcEVuZW15LTU=" = "Flyfish";
+"Q29vcEVuZW15LTY=" = "Scrapper";
+"Q29vcEVuZW15LTc=" = "Steel Eel";
+"Q29vcEVuZW15LTg=" = "Stinger";
+"Q29vcEVuZW15LTk=" = "Maws";
+"Q29vcEVuZW15LTEw" = "Drizzler";
+"Q29vcEVuZW15LTEx" = "Fish Stick";
+"Q29vcEVuZW15LTEy" = "Flipper-Flopper";
+"Q29vcEVuZW15LTEz" = "Big Shot";
+"Q29vcEVuZW15LTE0" = "Slammin' Lid";
+"Q29vcEVuZW15LTIw" = "MudMouth";
+"Q29vcEVuZW15LTE1" = "Goldis";
+"Q29vcEVuZW15LTE3" = "Griller";
+"Q29vcEVuZW15LTIz" = "Cohozuna";
+"Q29vcEVuZW15LTI0" = "Horrorboros";
+"Q29vcEVuZW15LTI1" = "Megalodontia";
