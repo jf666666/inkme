@@ -82,7 +82,7 @@ struct Nameplate: Codable {
 struct NameplateBackground: Codable { 
     let id: String?
     let image: Icon?
-    let textColor: Colour?
+    let textColor: SN3Color?
 }
 
 struct Badge: Codable {
@@ -91,7 +91,7 @@ struct Badge: Codable {
     let description: String?
 }
 
-struct Colour: Codable {
+struct SN3Color: Codable {
     let a: Double
     let r: Double
     let g: Double
@@ -103,7 +103,6 @@ struct Colour: Codable {
 
 
 struct Weapon: Codable {
-    var __typename: String? = "Weapon"
     let id: String?
     let weaponId: Int?
     let weaponCategory: WeaponCategory?

@@ -61,10 +61,9 @@ typealias FestVoteConnection = Connection<FestVote>
 
 
 struct FestTeam: Codable {
-    let __typename: String?
     let id: String?
     let teamName: String?
-    let color: Colour?
+    let color: SN3Color?
     let image: Icon?
     let myVoteState: FestVoteState?
     let preVotes: FestVoteConnection?

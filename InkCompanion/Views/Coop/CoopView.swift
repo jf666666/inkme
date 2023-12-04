@@ -11,7 +11,7 @@ import CoreData
 import Foundation
 
 
-struct CoopHistoryList: View {
+struct CoopView: View {
   @Environment(\.managedObjectContext) var context
   @EnvironmentObject var model: CoopModel
   @Namespace var namespace
@@ -35,7 +35,7 @@ struct CoopHistoryList: View {
 
             ForEach(model.rows[index]){ detail in
               NavigationLink(value: detail.id) {
-                CoopHistoryListItem(historyDetail: detail, namespace: namespace)
+                CoopItem(historyDetail: detail, namespace: namespace)
                   .padding([.leading, .trailing])
                   .padding(.top,3)
               }
@@ -119,7 +119,7 @@ struct CoopHistoryList: View {
 
 
 #Preview {
-  CoopHistoryList()
+  CoopView()
     .environmentObject(CoopModel())
 }
 

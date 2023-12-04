@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct CoopHistoryListItem: View {
+struct CoopItem: View {
   let historyDetail:CoopHistoryDetail
   var clear:Bool {historyDetail.resultWave == 0}
   var resultColor:Color { clear ? AppColor.waveClearColor : AppColor.waveDefeatColor}
@@ -202,10 +202,10 @@ struct CoopHistoryListItem: View {
   }
 }
 
-struct CoopHistoryListitemView_Preview:PreviewProvider{
+struct CoopItemView_Preview:PreviewProvider{
   @Namespace static var namespace
   static var previews: some View {
-    CoopHistoryListItem(historyDetail: MockData.getCoopHistoryDetail(),namespace: namespace)
+    CoopItem(historyDetail: MockData.getCoopHistoryDetail(),namespace: namespace)
       .padding(.top, 8)
       .padding([.leading, .trailing])
       .background(.black)

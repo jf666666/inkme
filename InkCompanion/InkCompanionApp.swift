@@ -19,6 +19,7 @@ struct InkCompanionApp: App {
   @StateObject var timePublisher: TimePublisher = .shared
   @StateObject var coopModel = CoopModel()
   @StateObject var homeViewModel = HomeViewModel()
+  @StateObject var battleModel = BattleModel()
   private let refresher:InkBackgroundRefresher = .shared
 
   init() {
@@ -34,6 +35,7 @@ struct InkCompanionApp: App {
                 .environmentObject(timePublisher)
                 .environmentObject(coopModel)
                 .environmentObject(homeViewModel)
+                .environmentObject(battleModel)
 
         }
         .backgroundTask(.appRefresh("InkCompanionRefresh"),action: refresher.handleAppRefresh)

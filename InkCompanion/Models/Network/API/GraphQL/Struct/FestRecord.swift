@@ -59,7 +59,7 @@ struct FestDetail: Codable {
 
 struct FestTeamDetail: Codable {
     let id: String?
-    let color: Colour?
+    let color: SN3Color?
     let image: Icon?
     let myVoteState: String?
     let preVotes: FestVoteConnection?

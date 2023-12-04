@@ -94,6 +94,21 @@ struct MockData {
 
     return try! JSONDecoder().decode(StageSchedules.self, from: data!)
   }
+  
+  static func getVsHistoryDetail()->VsHistoryDetail{
+    struct DetailQuery:Codable{
+      struct Data:Codable{
+        let vsHistoryDetail:VsHistoryDetail
+      }
+      let data:Data
+    }
+    let fileURL = Bundle.main.url(forResource: "VsHistoryDetailQuery", withExtension: "json")
+
+    let data = try? Data(contentsOf: fileURL!)
+
+    let q =  try! JSONDecoder().decode(DetailQuery.self, from: data!)
+    return q.data.vsHistoryDetail
+  }
 
   static func getCoopHistoryGroup()->CoopHistoryGroup{
     let fileURL = Bundle.main.url(forResource: "CoopResult", withExtension: "json")

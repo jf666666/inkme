@@ -45,7 +45,7 @@ struct CoopScheduleSetting:Codable{
 }
 
 struct CoopGroupingSchedule:Codable{
-    let bannerImage:Icon
+    let bannerImage:Icon?
     let regularSchedules:CoopRegularSchedulesConnection
     let bigRunSchedules:BigRunSchedulesConnection
     let teamContestSchedules:TeamContestSchedulesConnection

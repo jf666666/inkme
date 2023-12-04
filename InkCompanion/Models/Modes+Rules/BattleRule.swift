@@ -15,7 +15,7 @@ enum BattleRule: String, Identifiable, CaseIterable, Equatable,Codable {
   case towerControl = "LOFT"
   case rainmaker = "GOAL"
   case clamBlitz = "CLAM"
-
+  case triColor = "TRI_COLOR"
   var id: String { rawValue }
 }
 
@@ -27,6 +27,8 @@ extension BattleRule {
     case .towerControl: "tower_control"
     case .rainmaker: "rainmaker"
     case .clamBlitz: "clam_blitz"
+    case .triColor:
+      "tri_color"
     }
   }
 }
@@ -39,6 +41,8 @@ extension BattleRule {
     case .splatZones: Image(.splatZones)
     case .towerControl: Image(.towerControl)
     case .turfWar: Image(.turfWar)
+    case .triColor:
+      Image(.league)
     }
   }
 }
@@ -51,6 +55,8 @@ extension BattleRule {
     case .towerControl: "Tower Control".localizedString
     case .rainmaker: "Rainmaker".localizedString
     case .clamBlitz: "Clam Blitz".localizedString
+    case .triColor:
+      "Tri Color".localizedString
     }
   }
 
@@ -61,6 +67,7 @@ extension BattleRule {
     case .towerControl: "TC"
     case .rainmaker: "RM"
     case .clamBlitz: "CB"
+    case .triColor: "TC"
     }
   }
 }
@@ -81,6 +88,8 @@ extension BattleRule {
       "towards their respective pedestal wins."
     case .clamBlitz: "Players pick up clams scattered around the stage and try to score " +
       "as many points as they can by throwing the clams in their respective goal."
+    case .triColor:
+      ""
     }
   }
 }
@@ -93,6 +102,8 @@ extension BattleRule {
     case .towerControl: "07/02/2015"
     case .rainmaker: "08/15/2015"
     case .clamBlitz: "12/13/2017"
+    case .triColor:
+      ""
     }
   }
 }

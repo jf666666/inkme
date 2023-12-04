@@ -22,6 +22,9 @@
 		8B0B2AE62B1CA15F00FDA4B5 /* VsHistoryDetailQuery.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B0B2AE52B1CA15F00FDA4B5 /* VsHistoryDetailQuery.json */; };
 		8B0B2AE92B1CA90400FDA4B5 /* VsHistoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B2AE82B1CA90400FDA4B5 /* VsHistoryDetail.swift */; };
 		8B0B2AED2B1CB0B800FDA4B5 /* VsStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B2AEC2B1CB0B800FDA4B5 /* VsStage.swift */; };
+		8B0B2AF02B1D5A5200FDA4B5 /* BattleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B2AEF2B1D5A5200FDA4B5 /* BattleModel.swift */; };
+		8B0B2AF22B1D5ADD00FDA4B5 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B2AF12B1D5ADD00FDA4B5 /* BattleView.swift */; };
+		8B0B2AF42B1D8BC800FDA4B5 /* GeneralBattleHistories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B2AF32B1D8BC800FDA4B5 /* GeneralBattleHistories.swift */; };
 		8B17F0272B16BB6900A3C46A /* OverlayDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8B17F0262B16BB6900A3C46A /* OverlayDatePicker */; };
 		8B1A23EB2B194E78002498DC /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23EA2B194E78002498DC /* ScheduleView.swift */; };
 		8B1A23ED2B194F1C002498DC /* ScheduleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23EC2B194F1C002498DC /* ScheduleRow.swift */; };
@@ -33,6 +36,8 @@
 		8B1A23F92B19B08A002498DC /* StageTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23F82B19B08A002498DC /* StageTitleLabel.swift */; };
 		8B1A23FB2B19B0BF002498DC /* ScheduleCellSecondary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A23FA2B19B0BF002498DC /* ScheduleCellSecondary.swift */; };
 		8B1D5C812AF8403400F9C92B /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 8B1D5C802AF8403400F9C92B /* Hero */; };
+		8B1E450A2B1DAB4B00773CD6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E45092B1DAB4B00773CD6 /* Status.swift */; };
+		8B1E450C2B1DE4B800773CD6 /* BattleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E450B2B1DE4B800773CD6 /* BattleItem.swift */; };
 		8B2A5EB32B15C21F0022817E /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A5EB22B15C21F0022817E /* ImportView.swift */; };
 		8B33B5E72B048187002BEBBE /* InkNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B33B5E62B048187002BEBBE /* InkNet.swift */; };
 		8B33B5EA2B0487AB002BEBBE /* InkPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B33B5E92B0487AB002BEBBE /* InkPreference.swift */; };
@@ -53,7 +58,7 @@
 		8B46A5652AF6002E001FB5E2 /* Splatoon1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B46A5642AF6002E001FB5E2 /* Splatoon1.otf */; };
 		8B4ABEC52AF8F9F30017E6E6 /* CoopResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B4ABEC42AF8F9F30017E6E6 /* CoopResult.json */; };
 		8B4ABECD2AF9C9110017E6E6 /* CoopStageHolder.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B4ABECC2AF9C9110017E6E6 /* CoopStageHolder.json */; };
-		8B4ABECF2AF9D1590017E6E6 /* CoopHistoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4ABECE2AF9D1590017E6E6 /* CoopHistoryListItem.swift */; };
+		8B4ABECF2AF9D1590017E6E6 /* CoopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4ABECE2AF9D1590017E6E6 /* CoopItem.swift */; };
 		8B596B882AF34025006FA8F8 /* RequestID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B596B872AF34025006FA8F8 /* RequestID.swift */; };
 		8B596B8A2AF34076006FA8F8 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B596B892AF34076006FA8F8 /* FriendList.swift */; };
 		8B596B8C2AF35465006FA8F8 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B596B8B2AF35465006FA8F8 /* FriendsView.swift */; };
@@ -133,7 +138,7 @@
 		8BB7D1F22B008F250021CF39 /* IdealFontLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1F12B008F250021CF39 /* IdealFontLayout.swift */; };
 		8BCD71522AF667B200EE3F4A /* CoopDetailHolder.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BCD71512AF667B200EE3F4A /* CoopDetailHolder.json */; };
 		8BCD99A42B0AE51F00829AF5 /* NintendoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD99A32B0AE51F00829AF5 /* NintendoAccount.swift */; };
-		8BCF4B9E2B0739A6009FAB9B /* CoopHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF4B9D2B0739A6009FAB9B /* CoopHistoryList.swift */; };
+		8BCF4B9E2B0739A6009FAB9B /* CoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF4B9D2B0739A6009FAB9B /* CoopView.swift */; };
 		8BDBC4462B0B6E4800A4258E /* CoopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBC4452B0B6E4800A4258E /* CoopDetailView.swift */; };
 		8BE74AD82B0E3329001796DF /* FixSafeareaBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE74AD72B0E3329001796DF /* FixSafeareaBackgroundModifier.swift */; };
 		8BE74ADB2B0ECB0D001796DF /* CoopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE74ADA2B0ECB0D001796DF /* CoopModel.swift */; };
@@ -177,6 +182,9 @@
 		8B0B2AE82B1CA90400FDA4B5 /* VsHistoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VsHistoryDetail.swift; sourceTree = "<group>"; };
 		8B0B2AEA2B1CAAAC00FDA4B5 /* types.d.ts */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.typescript; path = types.d.ts; sourceTree = "<group>"; };
 		8B0B2AEC2B1CB0B800FDA4B5 /* VsStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VsStage.swift; sourceTree = "<group>"; };
+		8B0B2AEF2B1D5A5200FDA4B5 /* BattleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleModel.swift; sourceTree = "<group>"; };
+		8B0B2AF12B1D5ADD00FDA4B5 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
+		8B0B2AF32B1D8BC800FDA4B5 /* GeneralBattleHistories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralBattleHistories.swift; sourceTree = "<group>"; };
 		8B1A23EA2B194E78002498DC /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		8B1A23EC2B194F1C002498DC /* ScheduleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRow.swift; sourceTree = "<group>"; };
 		8B1A23EE2B194F32002498DC /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
@@ -187,6 +195,8 @@
 		8B1A23F82B19B08A002498DC /* StageTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageTitleLabel.swift; sourceTree = "<group>"; };
 		8B1A23FA2B19B0BF002498DC /* ScheduleCellSecondary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellSecondary.swift; sourceTree = "<group>"; };
 		8B1D5C822AF867EF00F9C92B /* SpecialWeaponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialWeaponsView.swift; sourceTree = "<group>"; };
+		8B1E45092B1DAB4B00773CD6 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		8B1E450B2B1DE4B800773CD6 /* BattleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleItem.swift; sourceTree = "<group>"; };
 		8B2A5EB22B15C21F0022817E /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
 		8B33B5E62B048187002BEBBE /* InkNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNet.swift; sourceTree = "<group>"; };
 		8B33B5E92B0487AB002BEBBE /* InkPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkPreference.swift; sourceTree = "<group>"; };
@@ -208,7 +218,7 @@
 		8B46A5642AF6002E001FB5E2 /* Splatoon1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splatoon1.otf; sourceTree = "<group>"; };
 		8B4ABEC42AF8F9F30017E6E6 /* CoopResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoopResult.json; sourceTree = "<group>"; };
 		8B4ABECC2AF9C9110017E6E6 /* CoopStageHolder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoopStageHolder.json; sourceTree = "<group>"; };
-		8B4ABECE2AF9D1590017E6E6 /* CoopHistoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopHistoryListItem.swift; sourceTree = "<group>"; };
+		8B4ABECE2AF9D1590017E6E6 /* CoopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopItem.swift; sourceTree = "<group>"; };
 		8B596B872AF34025006FA8F8 /* RequestID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestID.swift; sourceTree = "<group>"; };
 		8B596B892AF34076006FA8F8 /* FriendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
 		8B596B8B2AF35465006FA8F8 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
@@ -300,7 +310,7 @@
 		8BB7D1F12B008F250021CF39 /* IdealFontLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdealFontLayout.swift; sourceTree = "<group>"; };
 		8BCD71512AF667B200EE3F4A /* CoopDetailHolder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoopDetailHolder.json; sourceTree = "<group>"; };
 		8BCD99A32B0AE51F00829AF5 /* NintendoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NintendoAccount.swift; sourceTree = "<group>"; };
-		8BCF4B9D2B0739A6009FAB9B /* CoopHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopHistoryList.swift; sourceTree = "<group>"; };
+		8BCF4B9D2B0739A6009FAB9B /* CoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopView.swift; sourceTree = "<group>"; };
 		8BDBC4452B0B6E4800A4258E /* CoopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopDetailView.swift; sourceTree = "<group>"; };
 		8BE74AD72B0E3329001796DF /* FixSafeareaBackgroundModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixSafeareaBackgroundModifier.swift; sourceTree = "<group>"; };
 		8BE74ADA2B0ECB0D001796DF /* CoopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopModel.swift; sourceTree = "<group>"; };
@@ -356,6 +366,7 @@
 			children = (
 				8B46A5522AF507F1001FB5E2 /* BattleHistories.swift */,
 				8B0B2AE82B1CA90400FDA4B5 /* VsHistoryDetail.swift */,
+				8B0B2AF32B1D8BC800FDA4B5 /* GeneralBattleHistories.swift */,
 			);
 			path = BattleHistory;
 			sourceTree = "<group>";
@@ -369,12 +380,22 @@
 			path = Stages;
 			sourceTree = "<group>";
 		};
+		8B0B2AEE2B1D5A3A00FDA4B5 /* Battle */ = {
+			isa = PBXGroup;
+			children = (
+				8B0B2AF12B1D5ADD00FDA4B5 /* BattleView.swift */,
+				8B1E450B2B1DE4B800773CD6 /* BattleItem.swift */,
+			);
+			path = Battle;
+			sourceTree = "<group>";
+		};
 		8B0F48A52B02F5EC009FF1DD /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				8B9BFDFC2AF20BCE005F5FB8 /* Persistence.swift */,
 				8B9BFE822AF20BF7005F5FB8 /* UserDefault.swift */,
 				8B5DD3E92B083ED700EDD673 /* InkData.swift */,
+				8B1E45092B1DAB4B00773CD6 /* Status.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -404,8 +425,8 @@
 		8B33B5E52B04816E002BEBBE /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				8B9BFE7A2AF20BF3005F5FB8 /* API */,
 				8B33B5E62B048187002BEBBE /* InkNet.swift */,
+				8B9BFE7A2AF20BF3005F5FB8 /* API */,
 				8BCD99A32B0AE51F00829AF5 /* NintendoAccount.swift */,
 			);
 			path = Network;
@@ -589,10 +610,11 @@
 		8B9BFE602AF20BF0005F5FB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8BCD714A2AF64D3500EE3F4A /* Coop */,
+				8B0B2AEE2B1D5A3A00FDA4B5 /* Battle */,
 				8B0B2AD02B1C07AB00FDA4B5 /* Shift */,
 				8B9BFE632AF20BF0005F5FB8 /* Components */,
 				8B1A23E92B194D62002498DC /* Schedules */,
-				8BCD714A2AF64D3500EE3F4A /* Job */,
 				8B9BFE612AF20BF0005F5FB8 /* LoginView.swift */,
 				8B9BFE6D2AF20BF0005F5FB8 /* ContentView.swift */,
 				8B596B8F2AF38634006FA8F8 /* Style.swift */,
@@ -743,8 +765,8 @@
 		8BB7D1E82B0080A60021CF39 /* MockData */ = {
 			isa = PBXGroup;
 			children = (
-				8BB7D1E92B0080BF0021CF39 /* json */,
 				8BB7D1EC2B0081260021CF39 /* MockData.swift */,
+				8BB7D1E92B0080BF0021CF39 /* json */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -778,23 +800,24 @@
 			path = Layouts;
 			sourceTree = "<group>";
 		};
-		8BCD714A2AF64D3500EE3F4A /* Job */ = {
+		8BCD714A2AF64D3500EE3F4A /* Coop */ = {
 			isa = PBXGroup;
 			children = (
+				8BCF4B9D2B0739A6009FAB9B /* CoopView.swift */,
 				8B7B3B832B117E2F00E81ED5 /* CoopDetailView */,
-				8B4ABECE2AF9D1590017E6E6 /* CoopHistoryListItem.swift */,
-				8BCF4B9D2B0739A6009FAB9B /* CoopHistoryList.swift */,
+				8B4ABECE2AF9D1590017E6E6 /* CoopItem.swift */,
 				8B6A07FE2B10C1E600C8BDC9 /* WaveShape.swift */,
 				8BE74ADC2B0ECDAF001796DF /* CoopSummaryCard.swift */,
 				8BF742D12B15ACBA00382A0E /* CoopSummaryDetail.swift */,
 			);
-			path = Job;
+			path = Coop;
 			sourceTree = "<group>";
 		};
 		8BE74AD92B0ECAFD001796DF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				8BE74ADA2B0ECB0D001796DF /* CoopModel.swift */,
+				8B0B2AEF2B1D5A5200FDA4B5 /* BattleModel.swift */,
 				8B34793C2B18B322001F7737 /* HomeViewModel.swift */,
 				8B1A23EE2B194F32002498DC /* ScheduleViewModel.swift */,
 			);
@@ -985,13 +1008,15 @@
 				8B6A07F72B103ADB00C8BDC9 /* GrayscaleTextureView.swift in Sources */,
 				8B7B3B892B11838900E81ED5 /* CoopDetailTopCard.swift in Sources */,
 				8B01F85F2B174F830031044D /* DocumentPicker.swift in Sources */,
-				8B4ABECF2AF9D1590017E6E6 /* CoopHistoryListItem.swift in Sources */,
+				8B1E450C2B1DE4B800773CD6 /* BattleItem.swift in Sources */,
+				8B4ABECF2AF9D1590017E6E6 /* CoopItem.swift in Sources */,
 				8B1A23F32B1995D4002498DC /* ScheduleList.swift in Sources */,
 				8BB5A8132AFD8B940095E0E9 /* Stage.swift in Sources */,
 				8BB7D1CA2AFF5A7F0021CF39 /* GameMode.swift in Sources */,
 				8B6A5E502AFC64FE00C76B70 /* FestSchedules.swift in Sources */,
 				8B33B5E72B048187002BEBBE /* InkNet.swift in Sources */,
 				8B1A23FB2B19B0BF002498DC /* ScheduleCellSecondary.swift in Sources */,
+				8B0B2AF02B1D5A5200FDA4B5 /* BattleModel.swift in Sources */,
 				8BB7D1F22B008F250021CF39 /* IdealFontLayout.swift in Sources */,
 				8B6A5E4A2AFC5F4700C76B70 /* AnarchySchedules.swift in Sources */,
 				8B3479382B182965001F7737 /* RotationSection.swift in Sources */,
@@ -999,6 +1024,7 @@
 				8BB7D1E72B0073360021CF39 /* ScaledLimitedLine.swift in Sources */,
 				8B46A5592AF52E91001FB5E2 /* CoopHistories.swift in Sources */,
 				8B9BFE522AF20BDC005F5FB8 /* Collection.swift in Sources */,
+				8B0B2AF22B1D5ADD00FDA4B5 /* BattleView.swift in Sources */,
 				8B6A73C22B059BAB00361CF6 /* DateFormatter+Ext.swift in Sources */,
 				8BE74ADB2B0ECB0D001796DF /* CoopModel.swift in Sources */,
 				8BDBC4462B0B6E4800A4258E /* CoopDetailView.swift in Sources */,
@@ -1022,6 +1048,7 @@
 				8B9BFE532AF20BDC005F5FB8 /* SwiftJSON.swift in Sources */,
 				8B6A73B32B058B2400361CF6 /* IconView.swift in Sources */,
 				8B1A23EB2B194E78002498DC /* ScheduleView.swift in Sources */,
+				8B0B2AF42B1D8BC800FDA4B5 /* GeneralBattleHistories.swift in Sources */,
 				8BF742D22B15ACBA00382A0E /* CoopSummaryDetail.swift in Sources */,
 				8B0B2AD22B1C0B5A00FDA4B5 /* ShiftCell.swift in Sources */,
 				8B1A23F92B19B08A002498DC /* StageTitleLabel.swift in Sources */,
@@ -1050,6 +1077,7 @@
 				8B9BFE792AF20BF0005F5FB8 /* ContentView.swift in Sources */,
 				8B46A5532AF507F1001FB5E2 /* BattleHistories.swift in Sources */,
 				8BB7D1CB2AFF5A7F0021CF39 /* BattleRule.swift in Sources */,
+				8B1E450A2B1DAB4B00773CD6 /* Status.swift in Sources */,
 				8B46A54F2AF4CA0F001FB5E2 /* DetailVotingStatusQuery.swift in Sources */,
 				8B6A5E522AFC653B00C76B70 /* EventSchedules.swift in Sources */,
 				8B0B2ADC2B1C50DE00FDA4B5 /* SalmonStageAndWeaponsLayout.swift in Sources */,
@@ -1084,7 +1112,7 @@
 				8B9BFDFD2AF20BCE005F5FB8 /* Persistence.swift in Sources */,
 				8B596B8E2AF35671006FA8F8 /* FriendView.swift in Sources */,
 				8B7B3B872B117E9000E81ED5 /* PlayerView.swift in Sources */,
-				8BCF4B9E2B0739A6009FAB9B /* CoopHistoryList.swift in Sources */,
+				8BCF4B9E2B0739A6009FAB9B /* CoopView.swift in Sources */,
 				8B1A23F72B19B05F002498DC /* StageCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

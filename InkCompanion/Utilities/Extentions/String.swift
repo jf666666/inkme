@@ -35,6 +35,20 @@ extension String {
 
 }
 
+extension String {
+    // Base64 编码
+    func base64Encoded() -> String {
+        return self.data(using: .utf8)?.base64EncodedString() ?? "nil"
+    }
+
+    // Base64 解码
+    func base64Decoded() -> String {
+        guard let data = Data(base64Encoded: self) else { return "nil" }
+      return String(data: data, encoding: .utf8) ?? "nil"
+    }
+}
+
+
 extension Array where Element == String {
     func concate(delimiter: String) -> String {
         var result = ""

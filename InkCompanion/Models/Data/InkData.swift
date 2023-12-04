@@ -75,7 +75,26 @@ class InkData{
     entity.weapon = try? encoder.encode(detail.myResult.weapons.map{$0.image?.url ?? ""})
     entity.player = try? encoder.encode(detail.memberResults.map{$0.player.id} + [detail.myResult.player.id])
 
-    var waveLen: Int {detail.rule == .TEAM_CONTEST ? 5 : 3}
+//    var waveLen: Int {detail.rule == .TEAM_CONTEST ? 5 : 3}
+
+    await save()
+  }
+
+  func addBattle(detail:VsHistoryDetail)async{
+    if await isExist(id: detail.id){
+      return
+    }
+    let encoder = JSONEncoder()
+    let entity = DetailEntity(context:context)
+    entity.id = detail.id
+    entity.time = detail.playedTime.asDate
+    entity.detail = try? encoder.encode(detail)
+    entity.stage = detail.vsStage.id
+    entity.mode = detail.vsMode.id
+    entity.rule = detail.vsRule.id
+    entity.stats = try? encoder.encode(detail.status)
+    entity.weapon = try? encoder.encode(detail.myTeam.players.filter{$0.isMyself}[0].weapon.id)
+    entity.player = try? encoder.encode(detail.myTeam.players.map{$0.id}+detail.otherTeams.map{$0.players.map{$0.id}}.flatMap{$0})
 
     await save()
   }
@@ -103,10 +122,6 @@ class InkData{
       print("Error deleting DetailEntity objects: \(error)")
     }
   }
-
-
-
-
 
 
   func queryDetail<T:Codable>(offset: Int, limit: Int, filter: FilterProps? = nil) async -> [T] {
@@ -220,155 +235,8 @@ struct ShiftInfo{
 
 
 
-func getCoopStats(coop:CoopHistoryDetail) -> CoopStatus{
-  var exempt = false
-  if coop.resultWave < 0 {
-    exempt = true
-  }
-  var wave = 0
-  if coop.resultWave == 0{
-    wave = coop.waveResults.count
-    switch coop.rule{
-    case .BIG_RUN, .REGULAR, .ALL:
-      if (coop.bossResult != nil){
-        wave -= 1
-      }
-      break
-    case .TEAM_CONTEST:
-      break
-    }
-  }else {
-    wave = coop.resultWave - 1
-  }
-  var grade:CoopStatus.Grade? = nil
-  if let afterGrade = coop.afterGrade,let afterGradePoint = coop.afterGradePoint{
-    grade = CoopStatus.Grade(name: afterGrade.id ?? "", point: afterGradePoint)
-  }
-  let bosses = coop.enemyResults.map { BossSalmonidStats(id: $0.enemy.id, appear: $0.popCount, defeat: $0.defeatCount, defeatTeam: $0.teamDefeatCount)}
-  var waves:[WaveStats] = []
-  var king:CoopStatus.King?
-  if let bossResult = coop.bossResult {
-    let waveResult = coop.waveResults[3]
-    waves.append(WaveStats(id: bossResult.boss.id, levels: [WaveStats.Level(id: waveResult.waterLevel, appear: 1, clear: (bossResult.hasDefeatBoss) ? 1:0)]))
-    king = CoopStatus.King(id: bossResult.boss.id, defeat: bossResult.hasDefeatBoss)
-  }
-  for (i,result) in coop.waveResults.enumerated() {
-    waves.append(WaveStats(id: result.eventWave?.id ?? "-", levels: [WaveStats.Level(id: result.waterLevel, appear: 1, clear: (coop.resultWave == 0 || coop.resultWave > i + 1) ? 1 : 0)]))
-  }
-  let selfResult = getCoopPlayerStats(player: coop.myResult)
-  return CoopStatus(time: coop.playedTime.asDate,
-                   exempt: exempt,
-                   clear: coop.resultWave == 0,
-                   wave: wave,
-                   dangerRate: coop.dangerRate,
-                   myself: selfResult,
-                   member: coop.memberResults.count+1,
-                   team: coop.memberResults.map{getCoopPlayerStats(player: $0)}.sum()+selfResult,
-                   bosses: bosses,
-                   king: king,
-                   scale: coop.scale != nil ? CoopStatus.Scale(gold: coop.scale?.gold ?? 0, silver: coop.scale?.silver ?? 0, bronze: coop.scale?.bronze ?? 0) : nil,
-                   waves: waves,
-                   rule: coop.rule.rawValue,
-                   stage: coop.coopStage.id,
-                   weapons: coop.myResult.weapons.map{$0.image?.url ?? ""},
-                   specialWeapon: coop.myResult.specialWeapon?.id,
-                   suppliedWeapon: coop.weapons.map{$0.image?.url ?? ""},
-                   jobPoint: coop.jobPoint,
-                   jobScore: coop.jobScore,
-                   jobRate: coop.jobRate,
-                   jobBonus: coop.jobBonus,
-                   grade: grade
-  )
-}
-
-extension Array where Element == CoopPlayerStats {
-  func sum() -> CoopPlayerStats {
-    return self.reduce(CoopPlayerStats(defeat: 0, golden: 0, assist: 0, power: 0, rescue: 0, rescued: 0)) { $0 + $1 }
-  }
-}
 
 
-func getCoopPlayerStats(player:CoopPlayerResult) -> CoopPlayerStats{
-  return CoopPlayerStats(defeat: player.defeatEnemyCount, golden: player.goldenDeliverCount, assist: player.goldenAssistCount, power: player.deliverCount, rescue: player.rescueCount, rescued: player.rescuedCount)
-}
 
 
-struct CoopStatus:Codable{
-  struct King:Codable{
-    let id:String
-    let defeat:Bool
-  }
 
-  struct Scale: Codable {
-    static func + (left:Scale, right:Scale) -> Scale{
-      return Scale(gold: left.gold+right.gold, silver: left.silver+right.silver, bronze: left.bronze+right.bronze)
-    }
-    var gold: Int
-    var silver: Int
-    var bronze: Int
-  }
-  struct Grade:Codable{
-    let name:String
-    let point:Int
-  }
-
-  let time:Date
-  let exempt:Bool
-  let clear:Bool
-  let wave:Int
-  let dangerRate:Double
-  let myself:CoopPlayerStats
-  let member:Int
-  let team:CoopPlayerStats
-  let bosses:[BossSalmonidStats]
-  let king:King?
-  let scale:Scale?
-  let waves:[WaveStats]
-  let rule:String
-  let stage:String
-  let weapons:[String]
-  let specialWeapon:String?
-  let suppliedWeapon:[String]
-  let jobPoint: Int
-  let jobScore: Int
-  let jobRate: Double
-  let jobBonus: Int
-  let grade:Grade?
-}
-
-
-struct CoopPlayerStats:Codable {
-  static func + (lhs: CoopPlayerStats, rhs: CoopPlayerStats) -> CoopPlayerStats {
-    return CoopPlayerStats(
-      defeat: lhs.defeat + rhs.defeat,
-      golden: lhs.golden + rhs.golden,
-      assist: lhs.assist + rhs.assist,
-      power: lhs.power + rhs.power,
-      rescue: lhs.rescue + rhs.rescue,
-      rescued: lhs.rescued + rhs.rescued
-    )
-  }
-  let defeat: Int
-  let golden: Int
-  let assist: Int
-  let power: Int
-  let rescue: Int
-  let rescued: Int
-}
-
-struct BossSalmonidStats:Codable {
-  let id: String
-  let appear: Int
-  let defeat: Int
-  let defeatTeam: Int
-}
-
-struct WaveStats:Codable {
-  struct Level:Codable{
-    let id:Int
-    let appear:Int
-    let clear:Int
-  }
-  let id: String
-  let levels:[Level]
-}

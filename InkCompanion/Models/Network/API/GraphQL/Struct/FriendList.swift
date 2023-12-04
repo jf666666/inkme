@@ -62,5 +62,5 @@ struct FriendListResult: Codable {
 struct VsMode: Codable, Equatable {
     var id: String
     var mode: String
-    var name: String
+//    var name: String
 }

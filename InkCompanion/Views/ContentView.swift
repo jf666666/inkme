@@ -23,10 +23,13 @@ struct ContentView: View {
   @State private var updating: Bool = false
   @State private var updateFailed: Bool = false
   @State private var updateSuccess: Bool = false
+
+//  @AppStorage("content_tab_selection") var selectedTab:Int = 0
+
   var body: some View {
     ZStack {
 
-      TabView {
+      TabView/*(selection: $selectedTab)*/ {
 
         NavigationView {
           HomePage()
@@ -38,14 +41,19 @@ struct ContentView: View {
         }
         .tag(0)
 
-
-
-        CoopHistoryList()
-//          .navigationViewStyle(StackNavigationViewStyle())
+        BattleView()
           .tabItem {
-            Label("打工记录", systemImage: "lifepreserver")
+            Label("对战", systemImage: "lifepreserver")
           }
           .tag(1)
+
+
+        CoopView()
+//          .navigationViewStyle(StackNavigationViewStyle())
+          .tabItem {
+            Label("打工", systemImage: "lifepreserver")
+          }
+          .tag(2)
 
         NavigationView {
           LoginView()
@@ -53,9 +61,8 @@ struct ContentView: View {
         .navigationViewStyle(.stack)
         .tabItem {
           Label("调试", systemImage: "info.circle")
-
         }
-        .tag(2)
+        .tag(3)
       }
 
 

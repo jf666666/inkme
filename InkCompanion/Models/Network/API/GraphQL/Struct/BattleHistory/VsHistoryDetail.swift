@@ -16,7 +16,7 @@ struct VsHistoryDetail: Codable {
     var playedTime: String
     var duration: Int
     var judgement: Judgement
-    var player: VsPlayer
+//    var player: VsPlayer
 
     var knockout: JudgementKnockout?
 
