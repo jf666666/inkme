@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct BattleView: View {
   @EnvironmentObject var model:BattleModel
@@ -48,6 +49,9 @@ struct BattleView: View {
       }
       .refreshable {
         await model.loadFromNet()
+      }
+      .toast(isPresenting: $model.fetching, tapToDismiss: true){
+        AlertToast(displayMode: .hud, type: .regular, title: "加载记录中")
       }
     }
 }

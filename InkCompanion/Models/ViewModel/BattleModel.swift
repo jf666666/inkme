@@ -10,6 +10,7 @@ import SwiftUI
 
 class BattleModel:ObservableObject{
   @Published var rows:[[VsHistoryDetail]] = []
+  @Published var fetching:Bool = false
   private let inkNet = InkNet.shared
   private let inkData = InkData.shared
 
@@ -28,21 +29,52 @@ class BattleModel:ObservableObject{
     }
     self.stats = .refreshing
     guard let histories = await inkNet.fetchBattleHistory(for: .Latest)?.historyGroups.nodes?[0].historyDetails.nodes else {return}
-//    histories.map{ModeSelection(rawValue: $0.vsMode.id) == .anarchy}
+    var modeShouldSkip:[ModeSelection:Bool] = [:]
+    for mode in ModeSelection.allCases{
+      modeShouldSkip[mode] = true
+    }
+    for history in histories {
+      let id = history.id.base64Decoded().replacingOccurrences(of: "RECENT", with: ModeSelection(rawValue: history.vsMode.id).replacement).base64Encoded()
+      if await !inkData.isExist(id: id){
+        modeShouldSkip[ModeSelection(rawValue: history.vsMode.id)] = false
+      }
+    }
 
+    await self.loadFromNet(modeShouldSkip: modeShouldSkip)
+    await MainActor.run {
+      withAnimation {
+        self.fetching = false
+      }
+    }
+    self.stats = .none
+  }
+
+  private func loadFromNet(modeShouldSkip:[ModeSelection:Bool]) async {
     await withTaskGroup(of: VsHistoryDetail?.self) { group in
-      for history in histories {
-        let id = history.id.base64Decoded().replacingOccurrences(of: "RECENT", with: ModeSelection(rawValue: history.vsMode.id).replacement).base64Encoded()
-        group.addTask {
-          if await self.inkData.isExist(id: id){
-            return nil
-          }
-          if let completeDetail = await self.inkNet.fetchVsHistoryDetail(id: id){
-            return completeDetail
-          }
-          return nil
+      DispatchQueue.main.async {
+        withAnimation {
+          self.fetching = true
         }
       }
+      for skip in modeShouldSkip{
+        if skip.value{
+          continue
+        }
+
+        guard let tempNodes = await inkNet.fetchBattleHistory(for: skip.key.fetchEnum)?.historyGroups.nodes, !tempNodes.isEmpty, let his = tempNodes[0].historyDetails.nodes else {continue}
+        for h in his{
+          group.addTask {
+            if await self.inkData.isExist(id: h.id){
+              return nil
+            }
+            if let completeDetail = await self.inkNet.fetchVsHistoryDetail(id: h.id){
+              return completeDetail
+            }
+            return nil
+          }
+        }
+      }
+
       for await result in group{
         if let completeDetail = result{
           await inkData.addBattle(detail: completeDetail)
@@ -59,8 +91,10 @@ class BattleModel:ObservableObject{
           }
         }
       }
-    }
 
+
+
+    }
   }
 
   func loadFromData(length:Int, filter: FilterProps? = nil)async {
@@ -91,7 +125,7 @@ class BattleModel:ObservableObject{
     }
   }
 
-  private enum ModeSelection:String{
+  private enum ModeSelection:String,CaseIterable{
     case regular = "REGULAR"
     case anarchy = "BANKARA"
     case xMatch = "XMATCH"
@@ -115,6 +149,21 @@ class BattleModel:ObservableObject{
       }
     }
     var replacement:String{self.rawValue}
+
+    var fetchEnum:InkNet.BattleHistoryFetchType{
+      switch self {
+      case .regular:
+        return .Regular
+      case .anarchy:
+        return .Bankara
+      case .xMatch:
+        return .XMatch
+      case .league:
+        return .Event
+      case .privateMatch:
+        return .Private
+      }
+    }
   }
 
 

@@ -243,7 +243,7 @@ struct LoginView: View {
 
       Button("删除前10个Detail"){
         Task{
-         await InkData.shared.deleteDetail(count: 3)
+         await InkData.shared.deleteDetail(count: 50)
         }
       }
 

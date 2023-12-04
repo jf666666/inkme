@@ -32,7 +32,7 @@ final class InkNet {
       let decoder = JSONDecoder()
       decoder.userInfo[.dynamicCodingKey] = kind.key
       let data =  try await fetchGraphQL(hash: kind.hash,decoder: decoder) as HistoriesQuery
-      let detail = data.data.latestBattleHistories
+      let detail = data.data.battleHistories
       return detail
     }catch let error as NSError{
       print("failed \(error): \(error.userInfo)")
@@ -174,14 +174,14 @@ final class InkNet {
 
 private struct HistoriesQuery:Codable{
   struct Data:Codable{
-    let latestBattleHistories:GeneralBattleHistories
+    let battleHistories:GeneralBattleHistories
     init(from decoder: Decoder) throws {
       guard let codingKey = decoder.userInfo[.dynamicCodingKey] as? String else {
         throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Dynamic coding key not found"))
       }
 
       let container = try decoder.container(keyedBy: DynamicCodingKey.self)
-      self.latestBattleHistories = try container.decode(GeneralBattleHistories.self, forKey: DynamicCodingKey(stringValue: codingKey)!)
+      self.battleHistories = try container.decode(GeneralBattleHistories.self, forKey: DynamicCodingKey(stringValue: codingKey)!)
     }
   }
   let data:Data

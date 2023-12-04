@@ -107,6 +107,7 @@ class InkData{
     fetchRequest.sortDescriptors = [sortDescriptor]
     // 限制获取的结果数量
     fetchRequest.fetchLimit = count
+    fetchRequest.predicate = convertFilter(FilterProps(modes: ["salmon_run"], inverted: true))
     do {
       // 执行请求
       let results = try context.fetch(fetchRequest)
