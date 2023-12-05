@@ -8,6 +8,7 @@
 import Foundation
 import AnyCodable
 import CoreData
+import SwiftUI
 
 struct Icon: Codable,Hashable {
     let url: String?
@@ -96,6 +97,10 @@ struct SN3Color: Codable {
     let r: Double
     let g: Double
     let b: Double
+
+  var swiftColor:Color{
+    Color(red: r, green: g, blue: b, opacity: a)
+  }
 }
 
 

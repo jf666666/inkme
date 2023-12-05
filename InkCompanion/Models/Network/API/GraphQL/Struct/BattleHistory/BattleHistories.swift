@@ -7,6 +7,7 @@
 
 import Foundation
 import AnyCodable
+import SwiftUI
 
 enum BankaraMatchMode: String, Codable,CaseIterable {
 
@@ -49,6 +50,25 @@ enum Judgement: String, Codable {
   case EXEMPTED_LOSE = "EXEMPTED_LOSE"
   case DEEMED_LOSE = "DEEMED_LOSE"
   case DRAW = "DRAW"
+
+  var name:String{
+    switch self {
+    case .WIN:
+      return rawValue+"!"
+    case .LOSE,.EXEMPTED_LOSE,.DEEMED_LOSE:
+      return Judgement.LOSE.rawValue+"..."
+    case .DRAW:
+      return rawValue
+    }
+  }
+  var color:Color{
+    switch self {
+    case .WIN:
+      return Color.spLightGreen
+    default:
+      return Color.spPink
+    }
+  }
 }
 
 enum LeagueMatchTeamComposition:String,Codable {
@@ -266,6 +286,41 @@ struct VsPlayerResult: Codable {
 enum Species:String,Codable {
   case INKLING = "INKLING"
   case OCTOLING = "OCTOLING"
+
+  var icon: iIcon {
+    return iIcon(species: self)
+  }
+
+  struct iIcon {
+    let species: Species
+
+    var kill: Image {
+      switch species {
+      case .INKLING:
+        return Image(.ikaK)
+      case .OCTOLING:
+        return Image(.takoK)
+      }
+    }
+
+    var dead: Image {
+      switch species {
+      case .INKLING:
+        return Image(.ikaD)
+      case .OCTOLING:
+        return Image(.takoD)
+      }
+    }
+
+    var kd: Image {
+      switch species {
+      case .INKLING:
+        return Image(.ikaKd)
+      case .OCTOLING:
+        return Image(.takoKd)
+      }
+    }
+  }
 }
 
 

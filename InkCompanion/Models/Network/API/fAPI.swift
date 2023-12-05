@@ -8,7 +8,7 @@
 import Foundation
 
 let USER_AGENT = "ConchBay/1.10.0"
-let NSO_VERSION = "2.7.1"
+let NSO_VERSION = "2.8.0"
 let SPLATNET_VERSION = "6.0.0-e135295b"
 let AXIOS_TOKEN_TIMEOUT: TimeInterval = 30 // Replace with your actual timeout
 

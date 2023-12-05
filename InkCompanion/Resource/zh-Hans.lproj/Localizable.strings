@@ -324,6 +324,14 @@
 "Tower Control" = "真格塔楼";
 "Rainmaker" = "真格鱼虎";
 "Clam Blitz" = "真格蛤蜊";
+"Tri Color" = "三色夺宝对战";
+
+"REGULAR" = "一般比赛";
+"BANKARA" = "蛮颓比赛";
+"XMATCH" = "X比赛";
+"LEAGUE" = "活动比赛";
+"PRIVATE" = "私人比赛";
+
 
 //Enemy
 "Q29vcEVuZW15LTQ=" = "炸弹鱼";

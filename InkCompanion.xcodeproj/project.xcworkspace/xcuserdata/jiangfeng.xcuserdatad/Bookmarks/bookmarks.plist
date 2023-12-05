@@ -189,6 +189,45 @@ let AXIOS_TOKEN_TIMEOUT: TimeInterval = 30 // Replace with your actual timeout
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingLineNumber</key>
+					<string>205</string>
+					<key>StartingLineNumber</key>
+					<string>205</string>
+					<key>Timestamp</key>
+					<string>723447486.410436</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>InkCompanion/Models/ViewModel/BattleModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>  }
+}
+</string>
+				<key>trailing</key>
+				<string></string>
+			</dict>
+			<key>title</key>
+			<string>处理私人比赛</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
 	</array>
 </dict>
 </plist>

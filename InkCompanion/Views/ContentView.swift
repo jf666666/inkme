@@ -37,13 +37,13 @@ struct ContentView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .tabItem {
-          Label("schedule", systemImage: "calendar")
+          Label("主页", image: "TabBarHome")
         }
         .tag(0)
 
         BattleView()
           .tabItem {
-            Label("对战", systemImage: "lifepreserver")
+            Label("对战", image: "TabBarBattle")
           }
           .tag(1)
 
@@ -51,7 +51,7 @@ struct ContentView: View {
         CoopView()
 //          .navigationViewStyle(StackNavigationViewStyle())
           .tabItem {
-            Label("打工", systemImage: "lifepreserver")
+            Label("鲑鱼跑", image: "TabBarSalmonRun")
           }
           .tag(2)
 
@@ -60,7 +60,7 @@ struct ContentView: View {
         }
         .navigationViewStyle(.stack)
         .tabItem {
-          Label("调试", systemImage: "info.circle")
+          Label("我", image: "TabBarMe")
         }
         .tag(3)
       }

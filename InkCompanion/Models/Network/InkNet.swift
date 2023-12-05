@@ -52,7 +52,7 @@ final class InkNet {
 
 
 
-  func fetchVsHistoryDetail(id:String) async ->VsHistoryDetail?{
+  func fetchVsHistoryDetail(id:String,udemae:String? = nil) async ->VsHistoryDetail?{
     struct DetailQuery:Codable{
       struct Data:Codable{
         let vsHistoryDetail:VsHistoryDetail
@@ -61,7 +61,10 @@ final class InkNet {
     }
     do {
       let data =  try await fetchGraphQL(hash: .VsHistoryDetailQuery,variables: ["vsResultId": id]) as DetailQuery
-      let detail = data.data.vsHistoryDetail
+      var detail = data.data.vsHistoryDetail
+      if let udemae = udemae{
+        detail.udemae = udemae
+      }
       return detail
     }catch let error as NSError{
       print("failed \(error): \(error.userInfo)")

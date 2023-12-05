@@ -8,11 +8,12 @@
 import Foundation
 
 struct VsStage: Codable,Stage {
-    var id: String
-    var name: String
-    var image: Icon?
-//    let originalImage:Icon?
-    let stats: VsStageRecordStats?
+  var id: String
+  var name: String
+  var image: Icon?
+  //    let originalImage:Icon?
+  let stats: VsStageRecordStats?
+  var localizedName:String{id.localizedString}
 }
 
 

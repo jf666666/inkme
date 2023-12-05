@@ -118,6 +118,9 @@
 		8B9BFE832AF20BF7005F5FB8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE822AF20BF7005F5FB8 /* UserDefault.swift */; };
 		8B9BFE8D2AF20C55005F5FB8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8B9BFE8C2AF20C55005F5FB8 /* Kingfisher */; };
 		8B9BFE902AF20C5C005F5FB8 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8B9BFE8F2AF20C5C005F5FB8 /* SwiftyJSON */; };
+		8B9DC0592B1EC0A70014F87A /* ConvenientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DC0582B1EC0A70014F87A /* ConvenientColors.swift */; };
+		8B9DC05B2B1EC2D60014F87A /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DC05A2B1EC2D60014F87A /* Operator.swift */; };
+		8B9DC05D2B1EE9A70014F87A /* RegularHistoryQuery.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B9DC05C2B1EE9A60014F87A /* RegularHistoryQuery.json */; };
 		8B9E0E762B09CCFE007700D0 /* InkCompanion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E0E742B09CCFE007700D0 /* InkCompanion.xcdatamodeld */; };
 		8BA5C14F2B147A8B001CA89D /* InkAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF4BDFB2B1362CB00E5C6B5 /* InkAppDelegate.swift */; };
 		8BB5A7F42AFD07870095E0E9 /* TimePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A7F32AFD07870095E0E9 /* TimePublisher.swift */; };
@@ -178,7 +181,7 @@
 		8B0B2ADF2B1C619600FDA4B5 /* stageScheduleQuery12.2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stageScheduleQuery12.2.json; sourceTree = "<group>"; };
 		8B0B2AE12B1C9D2200FDA4B5 /* HistoryRecordQuery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HistoryRecordQuery.json; sourceTree = "<group>"; };
 		8B0B2AE32B1C9E8B00FDA4B5 /* LatestBattleHistoriesQuery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LatestBattleHistoriesQuery.json; sourceTree = "<group>"; };
-		8B0B2AE52B1CA15F00FDA4B5 /* VsHistoryDetailQuery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VsHistoryDetailQuery.json; sourceTree = "<group>"; };
+		8B0B2AE52B1CA15F00FDA4B5 /* VsHistoryDetailQuery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VsHistoryDetailQuery.json; sourceTree = "<group>"; usesTabs = 0; };
 		8B0B2AE82B1CA90400FDA4B5 /* VsHistoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VsHistoryDetail.swift; sourceTree = "<group>"; };
 		8B0B2AEA2B1CAAAC00FDA4B5 /* types.d.ts */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.typescript; path = types.d.ts; sourceTree = "<group>"; };
 		8B0B2AEC2B1CB0B800FDA4B5 /* VsStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VsStage.swift; sourceTree = "<group>"; };
@@ -292,6 +295,9 @@
 		8B9BFE7C2AF20BF3005F5FB8 /* fAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fAPI.swift; sourceTree = "<group>"; };
 		8B9BFE7D2AF20BF3005F5FB8 /* Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetch.swift; sourceTree = "<group>"; };
 		8B9BFE822AF20BF7005F5FB8 /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		8B9DC0582B1EC0A70014F87A /* ConvenientColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenientColors.swift; sourceTree = "<group>"; };
+		8B9DC05A2B1EC2D60014F87A /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		8B9DC05C2B1EE9A60014F87A /* RegularHistoryQuery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RegularHistoryQuery.json; sourceTree = "<group>"; };
 		8B9E0E752B09CCFE007700D0 /* InkCompanion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InkCompanion.xcdatamodel; sourceTree = "<group>"; };
 		8BB5A7F32AFD07870095E0E9 /* TimePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePublisher.swift; sourceTree = "<group>"; };
 		8BB5A7FA2AFD0F2E0095E0E9 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -698,6 +704,8 @@
 				8BB7D1C02AFE60650021CF39 /* Extentions */,
 				8BB7D1E32B0070930021CF39 /* Modifiers */,
 				8B9BFE3E2AF20BDC005F5FB8 /* API.swift */,
+				8B9DC0582B1EC0A70014F87A /* ConvenientColors.swift */,
+				8B9DC05A2B1EC2D60014F87A /* Operator.swift */,
 				8B5FB86A2B1312C200709CD6 /* TrackableScrollView.swift */,
 				8B6A07F82B103BB200C8BDC9 /* AppColor.swift */,
 			);
@@ -774,6 +782,7 @@
 		8BB7D1E92B0080BF0021CF39 /* json */ = {
 			isa = PBXGroup;
 			children = (
+				8B9DC05C2B1EE9A60014F87A /* RegularHistoryQuery.json */,
 				8B0B2AE52B1CA15F00FDA4B5 /* VsHistoryDetailQuery.json */,
 				8B0B2AE32B1C9E8B00FDA4B5 /* LatestBattleHistoriesQuery.json */,
 				8B0B2AE12B1C9D2200FDA4B5 /* HistoryRecordQuery.json */,
@@ -960,6 +969,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B9DC05D2B1EE9A70014F87A /* RegularHistoryQuery.json in Resources */,
 				8B0B2AE42B1C9E8B00FDA4B5 /* LatestBattleHistoriesQuery.json in Resources */,
 				8BFE694C2AF8B40100370F8F /* Splatoon2.otf in Resources */,
 				8BCD71522AF667B200EE3F4A /* CoopDetailHolder.json in Resources */,
@@ -1039,6 +1049,7 @@
 				8B6A07F92B103BB200C8BDC9 /* AppColor.swift in Sources */,
 				8B6A08012B10C65A00C8BDC9 /* CornerRadiusModifier.swift in Sources */,
 				8B596B882AF34025006FA8F8 /* RequestID.swift in Sources */,
+				8B9DC05B2B1EC2D60014F87A /* Operator.swift in Sources */,
 				8BA5C14F2B147A8B001CA89D /* InkAppDelegate.swift in Sources */,
 				8B5DD3EA2B083ED700EDD673 /* InkData.swift in Sources */,
 				8B9BFE7F2AF20BF3005F5FB8 /* fAPI.swift in Sources */,
@@ -1066,6 +1077,7 @@
 				8B33B5EA2B0487AB002BEBBE /* InkPreference.swift in Sources */,
 				8B1A23EF2B194F32002498DC /* ScheduleViewModel.swift in Sources */,
 				8B5FB8622B11C58F00709CD6 /* WaveView.swift in Sources */,
+				8B9DC0592B1EC0A70014F87A /* ConvenientColors.swift in Sources */,
 				8BB7D1EF2B0082370021CF39 /* Date+Ext.swift in Sources */,
 				8BB7D1CC2AFF5A7F0021CF39 /* ScheduleMode.swift in Sources */,
 				8B5FB8642B122F2700709CD6 /* CoopPlayerPreview.swift in Sources */,

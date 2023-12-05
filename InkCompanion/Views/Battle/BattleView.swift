@@ -20,10 +20,9 @@ struct BattleView: View {
               ForEach(model.rows[index],id:\.id){ detail in
                 NavigationLink(value: detail.id) {
                   VStack {
-                    Text(detail.playedTime)
+                    BattleItem(detail: detail)
                       .padding([.leading, .trailing])
-                    .padding(.top,3)
-                    Text(detail.vsMode.mode)
+                      .padding(.top,3)
                   }
                 }
                 .buttonStyle(PlainButtonStyle())
@@ -33,7 +32,7 @@ struct BattleView: View {
           .padding(.bottom, 16)
         }
         .fixSafeareaBackground()
-        .navigationBarTitle("熊先生商会", displayMode: .inline)
+        .navigationBarTitle("对战", displayMode: .inline)
         .navigationDestination(for: String.self) { id in
           if let detail = model.rows.first(where: { $0.contains(where: {$0.id == id}) })?.first(where: {$0.id == id}) {
             EmptyView()
@@ -44,7 +43,7 @@ struct BattleView: View {
         }
       }
       .task {
-        await model.loadFromData(length: 100, filter: model.ruleFilter)
+        await model.loadFromData(length: 300, filter: model.ruleFilter)
         await model.loadFromNet()
       }
       .refreshable {

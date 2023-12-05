@@ -15,7 +15,6 @@ struct FriendView: View {
     @State private var image: Image?
     @State private var isLoading = true
     @State private var error: Error?
-    
     var body: some View {
         VStack {
             ZStack{

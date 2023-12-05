@@ -90,8 +90,8 @@ class InkData{
     entity.time = detail.playedTime.asDate
     entity.detail = try? encoder.encode(detail)
     entity.stage = detail.vsStage.id
-    entity.mode = detail.vsMode.id
-    entity.rule = detail.vsRule.id
+    entity.mode = detail.vsMode.mode
+    entity.rule = detail.vsRule.rule.rawValue
     entity.stats = try? encoder.encode(detail.status)
     entity.weapon = try? encoder.encode(detail.myTeam.players.filter{$0.isMyself}[0].weapon.id)
     entity.player = try? encoder.encode(detail.myTeam.players.map{$0.id}+detail.otherTeams.map{$0.players.map{$0.id}}.flatMap{$0})
@@ -145,7 +145,13 @@ class InkData{
       let decoder = JSONDecoder()
       return results.compactMap{
         if let detail = $0.detail{
-          return try? decoder.decode(T.self, from: detail)
+          do{
+            let data = try decoder.decode(T.self, from: detail)
+            return data
+          }catch let error as NSError{
+            print("decode failed for: \(error), \(error.userInfo)" )
+            return nil
+          }
         }
         return nil
       }
