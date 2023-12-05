@@ -172,5 +172,68 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D3254A6-D7C9-4D5C-A1B6-7FB81DCA5E08"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InkCompanion/Models/Data/InkData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "queryDetail(offset:limit:filter:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9D3254A6-D7C9-4D5C-A1B6-7FB81DCA5E08 - a554f8db6c2caf10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (InkCompanion.DetailEntity) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt; in InkCompanion.InkData.queryDetail&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(offset: Swift.Int, limit: Swift.Int, filter: Swift.Optional&lt;InkCompanion.FilterProps&gt;) async -&gt; Swift.Array&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/Models/Data/InkData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "1652">
+               </Location>
+               <Location
+                  uuid = "9D3254A6-D7C9-4D5C-A1B6-7FB81DCA5E08 - a554f8db6c2caf10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (InkCompanion.DetailEntity) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt; in InkCompanion.InkData.queryDetail&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(offset: Swift.Int, limit: Swift.Int, filter: Swift.Optional&lt;InkCompanion.FilterProps&gt;) async -&gt; Swift.Array&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/Models/Data/InkData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "1732">
+               </Location>
+               <Location
+                  uuid = "9D3254A6-D7C9-4D5C-A1B6-7FB81DCA5E08 - a554f8db6c2caff3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (InkCompanion.DetailEntity) -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt; in InkCompanion.InkData.queryDetail&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(offset: Swift.Int, limit: Swift.Int, filter: Swift.Optional&lt;InkCompanion.FilterProps&gt;) async -&gt; Swift.Array&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/Models/Data/InkData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "1652">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

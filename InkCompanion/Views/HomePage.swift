@@ -32,12 +32,12 @@ struct HomePage: View {
       .padding(.horizontal,15)
     }
 
-    .navigationBarTitle("Home", displayMode: .inline)
+    .navigationBarTitle("主页", displayMode: .inline)
     .frame(maxWidth: .infinity)
     .fixSafeareaBackground()
-    .task {
-      await viewModel.loadSchedules()
-    }
+//    .task {
+//      await viewModel.loadSchedules()
+//    }
     .refreshable {
       await viewModel.loadSchedules()
     }

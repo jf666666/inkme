@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 extension CodingUserInfoKey {
-    static let dynamicCodingKey = CodingUserInfoKey(rawValue: "dynamicCodingKey")!
+  static let dynamicCodingKey = CodingUserInfoKey(rawValue: "dynamicCodingKey")!
 }
 
 final class InkNet {
@@ -35,7 +35,7 @@ final class InkNet {
       let detail = data.data.battleHistories
       return detail
     }catch let error as NSError{
-      print("failed \(error): \(error.userInfo)")
+      print("Failed fetchBattleHistory \(error): \(error.userInfo)")
       return nil
     }
   }
@@ -45,12 +45,10 @@ final class InkNet {
       let data = try await fetchGraphQL(hash: .CoopHistoryQuery) as CoopHistories
       return data.data.coopResult
     }catch let error as NSError{
-      print("failed \(error): \(error.userInfo)")
+      print("Failed fetchCoopHistories \(error): \(error.userInfo)")
       return nil
     }
   }
-
-
 
   func fetchVsHistoryDetail(id:String,udemae:String? = nil) async ->VsHistoryDetail?{
     struct DetailQuery:Codable{
@@ -84,15 +82,14 @@ final class InkNet {
     }
   }
 
-
   func fetchSchedule() async->StageSchedules?{
     do{
-//      return try await fetchScheduleFromSplatoon3DotInk()
+      //      return try await fetchScheduleFromSplatoon3DotInk()
       return try await fetchGraphQL(hash: .StageScheduleQuery) as StageSchedules
     }catch let error as NSError{
       print("\(error) \(error.userInfo)")
       do{
-          return try await fetchGraphQL(hash: .StageScheduleQuery) as StageSchedules
+        return try await fetchGraphQL(hash: .StageScheduleQuery) as StageSchedules
       }catch{
         return nil
       }
@@ -124,18 +121,17 @@ final class InkNet {
     variables: [String:Any]? = nil,
     decoder:JSONDecoder? = nil
   ) async throws -> T{
-
-    guard let webServiceToken:WebServiceTokenStruct = UserDefaultsManager.object(forKey: .WebServiceToken),let bulletToken = UserDefaultsManager.string(forKey: .BulletToken) else {
+    guard let webServiceToken:WebServiceTokenStruct = AppUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self),let bulletToken = AppUserDefaults.shared.bulletToken else {
       throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "获取会话令牌失败"])
     }
     let body: [String: Any] = [
-        "extensions": [
-            "persistedQuery": [
-                "sha256Hash": hash.rawValue,
-                "version": 1
-            ]
-        ],
-        "variables":variables ?? ""
+      "extensions": [
+        "persistedQuery": [
+          "sha256Hash": hash.rawValue,
+          "version": 1
+        ]
+      ],
+      "variables":variables ?? ""
     ]
 
 
@@ -165,7 +161,7 @@ final class InkNet {
     request.addValue(SPLATNET_VERSION, forHTTPHeaderField: "X-Web-View-Ver")
     // 发送请求
     let (data, _) = try await URLSession.shared.data(for: request)
-    
+
     if let decoder = decoder{
       let result = try decoder.decode(T.self, from: data)
       return result
@@ -175,22 +171,20 @@ final class InkNet {
     return result
   }
 
-private struct HistoriesQuery:Codable{
-  struct Data:Codable{
-    let battleHistories:GeneralBattleHistories
-    init(from decoder: Decoder) throws {
-      guard let codingKey = decoder.userInfo[.dynamicCodingKey] as? String else {
-        throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Dynamic coding key not found"))
+  private struct HistoriesQuery:Codable{
+    struct Data:Codable{
+      let battleHistories:GeneralBattleHistories
+      init(from decoder: Decoder) throws {
+        guard let codingKey = decoder.userInfo[.dynamicCodingKey] as? String else {
+          throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Dynamic coding key not found"))
+        }
+
+        let container = try decoder.container(keyedBy: DynamicCodingKey.self)
+        self.battleHistories = try container.decode(GeneralBattleHistories.self, forKey: DynamicCodingKey(stringValue: codingKey)!)
       }
-
-      let container = try decoder.container(keyedBy: DynamicCodingKey.self)
-      self.battleHistories = try container.decode(GeneralBattleHistories.self, forKey: DynamicCodingKey(stringValue: codingKey)!)
     }
+    let data:Data
   }
-  let data:Data
-}
-
-
 }
 
 
@@ -215,7 +209,7 @@ extension InkNet.BattleHistoryFetchType{
   var key:String{
     switch self {
     case .Latest:
-        return "latestBattleHistories"
+      return "latestBattleHistories"
     case .Bankara:
       return "bankaraBattleHistories"
     case .XMatch:

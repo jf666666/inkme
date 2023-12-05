@@ -55,7 +55,7 @@ func getCoopStats(coop:CoopHistoryDetail) -> CoopStatus{
                    king: king,
                    scale: coop.scale != nil ? CoopStatus.Scale(gold: coop.scale?.gold ?? 0, silver: coop.scale?.silver ?? 0, bronze: coop.scale?.bronze ?? 0) : nil,
                    waves: waves,
-                   rule: coop.rule.rawValue,
+                    rule: coop.rule.rawValue,
                    stage: coop.coopStage.id,
                    weapons: coop.myResult.weapons.map{$0.image?.url ?? ""},
                    specialWeapon: coop.myResult.specialWeapon?.id,

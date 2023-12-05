@@ -99,7 +99,7 @@ struct BattleItem: View {
                     .resizable()
                     .frame(width: 14, height: 14)
                     .foregroundColor(.systemGray3)
-                var death = detail.player.result?.death ?? 1
+              let death = detail.player.result?.death ?? 1
               Text("\(Double(detail.player.result?.kill ?? 0) -/ Double(death == 0 ? 1 : death), places: 1)")
                 .inkFont(.font1, size: 10, relativeTo: .body)
             }

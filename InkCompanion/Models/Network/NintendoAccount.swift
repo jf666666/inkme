@@ -26,7 +26,7 @@ extension InkNet{
     }
 
 
-    var sessionToken: String {UserDefaultsManager.string(forKey: .SessionToken) ?? ""}
+    var sessionToken: String {AppUserDefaults.shared.sessionToken ?? ""}
     let clientId = "71b963c1b7b6d119"
     let timeoutInterval: TimeInterval = 30
 
@@ -133,7 +133,6 @@ extension InkNet{
 
       return (url ?? URL(string: "www.baidu.com")!, cv ?? "")
     }
-
 
     private func getToken() async throws -> (accessToken: String, idToken: String) {
       let url = URL(string: "https://accounts.nintendo.com/connect/1.0.0/api/token")!
@@ -408,7 +407,8 @@ extension InkNet{
         }
 
         // 存储session token
-        UserDefaultsManager.set(value: sessionToken, forKey: .SessionToken)
+//        UserDefaultsManager.set(value: sessionToken, forKey: .SessionToken)
+        AppUserDefaults.shared.sessionToken = sessionToken
 
         try await self.updateTokens()
 
@@ -430,20 +430,23 @@ extension InkNet{
     func updateWebServiceToken() async throws{
       do{
         let webServiceToken = try await getWebServiceToken()
-        UserDefaultsManager.set(object: webServiceToken, forKey: .WebServiceToken)
+//        UserDefaultsManager.set(object: webServiceToken, forKey: .WebServiceToken)
+        AppUserDefaults.shared.webServiceToken = webServiceToken.encode()
       }catch{
         logger.error("update WebServiceToken failed due to: \(error)")
         throw error
       }
     }
 
-    func updateBulletToken(language: String? = "zh_CN") async ->Bool{
+    func updateBulletToken(language: String? = AppUserDefaults.shared.currentLanguage) async ->Bool{
       do{
-        let webServiceToken:WebServiceTokenStruct? = UserDefaultsManager.object(forKey: .WebServiceToken)
-        if let webServiceToken = webServiceToken{
-          let bulletToken = try await getBulletToken(webServiceToken: webServiceToken)
-          UserDefaultsManager.set(value: bulletToken, forKey: .BulletToken)
-          UserDefaultsManager.set(value: Date(), forKey: .LastRefreshTime)
+//        let webServiceToken:WebServiceTokenStruct? = UserDefaultsManager.object(forKey: .WebServiceToken)
+        if let webServiceToken = AppUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self){
+          let bulletToken = try await getBulletToken(webServiceToken: webServiceToken,language: language)
+//          UserDefaultsManager.set(value: bulletToken, forKey: .BulletToken)
+//          UserDefaultsManager.set(value: Date(), forKey: .LastRefreshTime)
+          AppUserDefaults.shared.bulletToken = bulletToken
+          AppUserDefaults.shared.tokensLastRefreshTime = Date.now
           return true
         }
       }catch{
@@ -453,7 +456,6 @@ extension InkNet{
       }
       return false
     }
-
 
     func presentLoginSession(url: URL) async throws -> URL? {
       return try await withCheckedThrowingContinuation { continuation in
@@ -468,7 +470,6 @@ extension InkNet{
         authSession.start()
       }
     }
-
 
   }
 }

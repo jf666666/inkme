@@ -4,7 +4,7 @@ import CoreData
 import AlertToast
 import UniformTypeIdentifiers
 
-struct LoginView: View {
+struct DebugView: View {
 
   @Environment(\.managedObjectContext) var managedObjectContext
   @State private var got:Bool = false
@@ -15,7 +15,6 @@ struct LoginView: View {
   var body: some View {
     VStack{
       Button("登录") {
-        //                    authSessionManager.login()
         Task{
           await Nintendo.initiateLoginProcess()
         }
@@ -247,6 +246,10 @@ struct LoginView: View {
         }
       }
 
+      Text("鲑鱼跑记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["salmon_run"])))")
+      
+      Text("对战记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["salmon_run"],inverted: true)))")
+
       Button("查看data地址"){
         if let url = PersistenceController.shared.container.persistentStoreDescriptions.first?.url {
           print("Database URL: \(url.path)")
@@ -308,7 +311,7 @@ struct LoginView_Previews: PreviewProvider {
   static var previews: some View {
 
     // 使用该上下文来创建 LoginView
-    LoginView()
+    DebugView()
       .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
   }
 }

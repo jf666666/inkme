@@ -10,6 +10,7 @@ import Combine
 import CoreData
 import SwiftUI
 
+
 var BATCH_SIZE:Int { Int((Double(ProcessInfo.processInfo.physicalMemory) / 1024.0 / 1024.0 / 1024.0) * 150.0)}
 
 class CoopModel:ObservableObject{
@@ -79,15 +80,15 @@ class CoopModel:ObservableObject{
     self.stats = .none
   }
 
-  func loadFromData(length:Int, filter: FilterProps? = nil)async {
+  func loadFromData(length:Int)async {
     let count = self.rows.flatMap { $0 }.count
     let offset = count
     let limit = length - count
     var read = 0
     var details:[CoopHistoryDetail] = []
     while read < limit{
-      details += await self.inkData.queryDetail(offset: offset+read,limit: min(limit-read,BATCH_SIZE), filter: filter)
-      if self.rows.count < min(BATCH_SIZE, limit-read){
+      details += await self.inkData.queryDetail(offset: offset+read,limit: min(limit-read,Int((Double(ProcessInfo.processInfo.physicalMemory) / 1024.0 / 1024.0 / 1024.0) * 150.0)), filter: self.ruleFilter)
+      if self.rows.count < min(Int((Double(ProcessInfo.processInfo.physicalMemory) / 1024.0 / 1024.0 / 1024.0) * 150.0), limit-read){
         break
       }
       read += self.rows.count
@@ -126,7 +127,7 @@ extension CoopModel{
   func selectRule(rule:CoopRule) async{
     self.rows = []
     setRuleFilter(rule: rule)
-    await self.loadFromData(length: 300, filter: self.ruleFilter)
+    await self.loadFromData(length: 300)
   }
 
   func selectTimeRange(start:Date?, end:Date?) async{
@@ -134,6 +135,6 @@ extension CoopModel{
     if let start = start, let end = end{
       self.ruleFilter.dateRange = [start,end]
     }
-    await self.loadFromData(length: 300, filter: self.ruleFilter)
+    await self.loadFromData(length: 300)
   }
 }

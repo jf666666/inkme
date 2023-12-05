@@ -33,7 +33,7 @@ func digestString(_ input: String) -> String? {
 
 
 func shouldUpdate()->Bool{
-    let lastUpdate = UserDefaultsManager.date(forkey: .LastRefreshTime)
+  guard let lastUpdate = AppUserDefaults.shared.tokensLastRefreshTime else {return true}
     let currentTime = Date()
     let updateInterval = 1 * 60 * 60 // 1小时
 

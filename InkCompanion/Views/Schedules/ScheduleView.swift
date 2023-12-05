@@ -16,8 +16,17 @@ struct ScheduleView: View {
     viewModel.scheduleDict[mode] ?? []
   }
   var body: some View {
-    Group{
+    if viewModel.regularShift.count == 0{
+      makeLoadingView(isFailed: false) {
 
+      }
+    }else{
+      content
+    }
+  }
+
+  var content:some View{
+    Group{
       if let schedules = schedules as? [Battle2CasesSchedule]{
         if viewModel.currentMode == .anarchy{
           if viewModel.anarchyMode == .CHALLENGE{
@@ -39,12 +48,29 @@ struct ScheduleView: View {
       }else if let schedules = schedules as? [BattleRegularSchedule]{
         ScheduleList(schedules: schedules)
       }
-
     }
     .animation(
       .bouncy,
       value: schedules.map { $0.startTime })
-//    .frame(width: 377)
+  }
+
+  func makeLoadingView(isFailed: Bool, onReload: @escaping () -> Void) -> some View {
+    HStack {
+      Spacer()
+      if isFailed {
+        Text("Reload")
+          .foregroundColor(.accentColor)
+      } else {
+        ProgressView()
+      }
+      Spacer()
+    }
+    .padding()
+    .background(AppColor.listItemBackgroundColor)
+    .continuousCornerRadius(10)
+    .onTapGesture {
+      onReload()
+    }
   }
 }
 

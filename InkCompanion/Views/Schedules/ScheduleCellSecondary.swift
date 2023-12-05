@@ -126,7 +126,7 @@ struct BattleRotationStageCardSecondary: View {
         .scaledToFit()
       //        .alignmentGuide(.battleStagesImageAlignment) { $0[.bottom]}
       //        .layoutPriority(1)
-      Text(stage.name ?? "nil")
+      Text(stage.name )
         .scaledLimitedLine()
         .inkFont(.font1, size: Scoped.FONT_SIZE, relativeTo: .body)
     }

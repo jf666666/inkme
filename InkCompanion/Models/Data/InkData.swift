@@ -15,33 +15,33 @@ class InkData{
   var context:NSManagedObjectContext {PersistenceController.shared.container.viewContext}
 
   private func save() async {
-      if context.hasChanges {
-          do {
-              try await context.perform {
-                  try self.context.save()
-                  print("saved!!")
-              }
-          } catch let error as NSError {
-              print("failed!!")
-              print(error.userInfo)
-          }
+    if context.hasChanges {
+      do {
+        try await context.perform {
+          try self.context.save()
+          print("saved!!")
+        }
+      } catch let error as NSError {
+        print("failed!!")
+        print(error.userInfo)
       }
+    }
   }
 
 
   func isExist(id: String) async -> Bool {
-      let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
-      fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-      fetchRequest.fetchLimit = 1
+    let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
+    fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+    fetchRequest.fetchLimit = 1
 
-      do {
-          let result = try await context.perform {
-              try self.context.fetch(fetchRequest)
-          }
-          return !result.isEmpty
-      } catch {
-          return false
+    do {
+      let result = try await context.perform {
+        try self.context.fetch(fetchRequest)
       }
+      return !result.isEmpty
+    } catch {
+      return false
+    }
   }
 
 
@@ -57,6 +57,7 @@ class InkData{
       return false
     }
   }
+
 
   func addCoop(detail:CoopHistoryDetail) async{
     if await isExist(id: detail.id){
@@ -74,8 +75,7 @@ class InkData{
     entity.stats = try? encoder.encode(getCoopStats(coop: detail))
     entity.weapon = try? encoder.encode(detail.myResult.weapons.map{$0.image?.url ?? ""})
     entity.player = try? encoder.encode(detail.memberResults.map{$0.player.id} + [detail.myResult.player.id])
-
-//    var waveLen: Int {detail.rule == .TEAM_CONTEST ? 5 : 3}
+    //    var waveLen: Int {detail.rule == .TEAM_CONTEST ? 5 : 3}
 
     await save()
   }
@@ -124,6 +124,23 @@ class InkData{
     }
   }
 
+  func countDetailsMatchingFilter(filter: FilterProps?)  -> Int {
+    let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
+
+    // 应用过滤条件
+    if let filter = filter {
+      fetchRequest.predicate = convertFilter(filter)
+    }
+
+    do {
+      let count = try context.count(for: fetchRequest)
+      return count
+    } catch {
+      print("计数错误: \(error)")
+      return 0
+    }
+  }
+
 
   func queryDetail<T:Codable>(offset: Int, limit: Int, filter: FilterProps? = nil) async -> [T] {
     let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
@@ -149,7 +166,10 @@ class InkData{
             let data = try decoder.decode(T.self, from: detail)
             return data
           }catch let error as NSError{
-            print("decode failed for: \(error), \(error.userInfo)" )
+            if let jsonString = String(data: detail, encoding: .utf8) {
+              print("原始 JSON: \(jsonString)")
+            }
+            print("解码 \(String(describing: T.self)) 失败: \(error), \(error.userInfo)")
             return nil
           }
         }

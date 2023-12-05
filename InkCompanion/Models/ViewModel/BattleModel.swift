@@ -104,8 +104,8 @@ class BattleModel:ObservableObject{
     var read = 0
     var details:[VsHistoryDetail] = []
     while read < limit{
-      details += await self.inkData.queryDetail(offset: offset+read,limit: min(limit-read,BATCH_SIZE), filter: filter)
-      if self.rows.count < min(BATCH_SIZE, limit-read){
+      details += await self.inkData.queryDetail(offset: offset+read,limit: min(limit-read,Int((Double(ProcessInfo.processInfo.physicalMemory) / 1024.0 / 1024.0 / 1024.0) * 150.0)), filter: filter)
+      if self.rows.count < min(Int((Double(ProcessInfo.processInfo.physicalMemory) / 1024.0 / 1024.0 / 1024.0) * 150.0), limit-read){
         break
       }
       read += self.rows.count

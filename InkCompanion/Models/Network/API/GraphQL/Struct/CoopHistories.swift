@@ -10,22 +10,22 @@ import CoreData
 import SwiftUI
 
 struct CoopHistories:Codable{
-    struct Data:Codable{
-        let coopResult:CoopResult?
-    }
-    let data: Data
+  struct Data:Codable{
+    let coopResult:CoopResult?
+  }
+  let data: Data
 }
 
 
 
 struct CoopResult: Codable {
-    let regularAverageClearWave: Double?
-    let regularGrade: CoopGrade?
-    let regularGradePoint: Double?
-    let monthlyGear: Gear?
-    let scale: CoopScale?
-    let pointCard: CoopPointCard?
-    let historyGroups: CoopHistoryGroupConnection?
+  let regularAverageClearWave: Double?
+  let regularGrade: CoopGrade?
+  let regularGradePoint: Double?
+  let monthlyGear: Gear?
+  let scale: CoopScale?
+  let pointCard: CoopPointCard?
+  let historyGroups: CoopHistoryGroupConnection?
 
 }
 
@@ -64,30 +64,30 @@ struct CoopHistoryDetail: Codable,Equatable,Identifiable,Hashable {
     hasher.combine(id)
   }
 
-    let id: String
-    let rule: CoopRule
-    let weapons: [CoopSupplyWeapon]
-    let nextHistoryDetail: NextPreviousHistory?
-    let previousHistoryDetail: NextPreviousHistory?
-    let resultWave: Int
-    let coopStage: CoopStage
-    // in team contest, there is no grade and grade point, it will be nil
-    let afterGrade: CoopGrade?
-    let afterGradePoint: Int?
-    var gradePointDiff: CoopGradePointDiff?
-    let bossResult: CoopBossResult?
-    let myResult: CoopPlayerResult
-    let memberResults: [CoopPlayerResult]
-    let enemyResults: [CoopEnemyResult]
-    let waveResults: [CoopWaveResult]
-    let playedTime: String
-    let dangerRate: Double
-    let smellMeter: Int?
-    let scale: CoopScale?
-    let jobPoint: Int
-    let jobScore: Int
-    let jobRate: Double
-    let jobBonus: Int
+  let id: String
+  let rule: CoopRule
+  let weapons: [CoopSupplyWeapon]
+  let nextHistoryDetail: NextPreviousHistory?
+  let previousHistoryDetail: NextPreviousHistory?
+  let resultWave: Int
+  let coopStage: CoopStage
+  // in team contest, there is no grade and grade point, it will be nil
+  let afterGrade: CoopGrade?
+  let afterGradePoint: Int?
+  var gradePointDiff: CoopGradePointDiff?
+  let bossResult: CoopBossResult?
+  let myResult: CoopPlayerResult
+  let memberResults: [CoopPlayerResult]
+  let enemyResults: [CoopEnemyResult]
+  let waveResults: [CoopWaveResult]
+  let playedTime: String
+  let dangerRate: Double
+  let smellMeter: Int?
+  let scale: CoopScale?
+  let jobPoint: Int
+  let jobScore: Int
+  let jobRate: Double
+  let jobBonus: Int
 
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -171,110 +171,110 @@ extension CoopRule{
 }
 
 struct CoopSupplyWeapon: Codable,Hashable {
-    let name: String?
-    let image: Icon?
+  let name: String?
+  let image: Icon?
 }
 
 struct NextPreviousHistory:Codable,Hashable{
-    let id:String?
+  let id:String?
 }
 
 struct CoopGrade: Codable {
-    let id: String?
-    let name: String?
+  let id: String?
+  let name: String?
 }
 
 struct CoopStage: Codable,Equatable,Stage,Hashable {
 
-    static func == (lhs: CoopStage, rhs: CoopStage) -> Bool {
-        return lhs.image?.url == rhs.image?.url
-    }
-    
-    let __typename: String?
-    var id: String
-    var name: String
-    let coopStageId: Int?
-    var image: Icon?
-    let thumbnailImage: Icon?
+  static func == (lhs: CoopStage, rhs: CoopStage) -> Bool {
+    return lhs.image?.url == rhs.image?.url
+  }
 
-    
+  let __typename: String?
+  var id: String
+  var name: String
+  let coopStageId: Int?
+  var image: Icon?
+  let thumbnailImage: Icon?
+
+
 }
 
 struct CoopWaveResult: Codable,Hashable {
 
-    let waveNumber: Int
-    let waterLevel: Int
-    let eventWave: CoopEventWave?
-    let deliverNorm: Int?
-    let goldenPopCount: Int
-    let teamDeliverCount: Int?
-    let specialWeapons: [SpecialWeapon]
+  let waveNumber: Int
+  let waterLevel: Int
+  let eventWave: CoopEventWave?
+  let deliverNorm: Int?
+  let goldenPopCount: Int
+  let teamDeliverCount: Int?
+  let specialWeapons: [SpecialWeapon]
 
 }
 
 struct CoopScale: Codable {
-    let gold: Int
-    let silver: Int
-    let bronze: Int
+  let gold: Int
+  let silver: Int
+  let bronze: Int
 
 }
 
 struct CoopEnemyResult: Codable,Hashable {
-    let defeatCount: Int
-    let teamDefeatCount: Int
-    let popCount: Int
-    let enemy: CoopEnemy
-    
+  let defeatCount: Int
+  let teamDefeatCount: Int
+  let popCount: Int
+  let enemy: CoopEnemy
+
 
 }
 
 struct CoopBossResult: Codable {
-    let boss: CoopEnemy
-    let hasDefeatBoss: Bool
+  let boss: CoopEnemy
+  let hasDefeatBoss: Bool
 
 }
 
 struct CoopPlayerResult: Codable {
-    let player: CoopPlayer
-    let weapons: [CoopSupplyWeapon]
-    let specialWeapon: SpecialWeapon?
-    let defeatEnemyCount: Int
-    let deliverCount: Int
-    let goldenAssistCount: Int
-    let goldenDeliverCount: Int
-    let rescueCount: Int
-    let rescuedCount: Int
+  let player: CoopPlayer
+  let weapons: [CoopSupplyWeapon]
+  let specialWeapon: SpecialWeapon?
+  let defeatEnemyCount: Int
+  let deliverCount: Int
+  let goldenAssistCount: Int
+  let goldenDeliverCount: Int
+  let rescueCount: Int
+  let rescuedCount: Int
 
 }
 
 
 struct CoopHistoryDetailQuery:Codable{
-    struct Data:Codable{
-        let coopHistoryDetail:CoopHistoryDetail
-    }
-    let data:Data
+  struct Data:Codable{
+    let coopHistoryDetail:CoopHistoryDetail
+  }
+  let data:Data
 }
 
 struct CoopUniform: Codable {
-    let id: String
-    let name: String
-    let image: Icon
+  let id: String
+  let name: String
+  let image: Icon
 }
 
 
 
 struct CoopEventWave: Codable,Hashable {
-    let id: String
-    let name: String
+  let id: String
+  let name: String
 }
 
 
 
 struct CoopEnemy: Codable,Hashable {
-    let id: String
-    let name: String
-    let image: Icon?
-    var enemy:Enemy{Enemy(rawValue: id) ?? .unknown}
+  let id: String
+  let name: String
+  let image: Icon?
+  var enemy:Enemy{Enemy(rawValue: id) ?? .unknown}
 }
 
 extension CoopEnemy{
@@ -298,7 +298,7 @@ extension CoopEnemy{
     case Griller = "Q29vcEVuZW15LTE3"
     case unknown = "??"
   }
-  
+
 }
 
 extension CoopEnemy.Enemy{
@@ -350,49 +350,49 @@ extension CoopEnemy.Enemy{
 
 
 struct CoopPlayer: Codable {
-    
-    let id: String
-    let name: String
-    let nameId: String
-    let byname: String
-    let nameplate: Nameplate
-    let uniform: CoopUniform
-    let isMyself: Bool?
-    let species: Species
+
+  let id: String
+  let name: String
+  let nameId: String
+  let byname: String
+  let nameplate: Nameplate
+  let uniform: CoopUniform
+  let isMyself: Bool?
+  let species: Species
 
 }
 
 
 
 enum CoopGradePointDiff:String,Codable {
-    case UP = "UP"
-    case DOWN = "DOWN"
-    case KEEP = "KEEP"
+  case UP = "UP"
+  case DOWN = "DOWN"
+  case KEEP = "KEEP"
   case NONE = "NONE"
 }
 
 
 struct CoopGroupHighestResult: Codable {
-    let grade: CoopGrade?
-    let gradePoint: Double?
-    let jobScore: Double?
-    let trophy: CoopTrophy?
+  let grade: CoopGrade?
+  let gradePoint: Double?
+  let jobScore: Double?
+  let trophy: CoopTrophy?
 
 }
 
 enum CoopTrophy:String,Codable {
-    case GOLD = "GOLD"
-    case SILVER = "SILVER"
-    case BRONZE = "BRONZE"
+  case GOLD = "GOLD"
+  case SILVER = "SILVER"
+  case BRONZE = "BRONZE"
 }
 
 // Assuming the structure of CoopGrade, CoopTrophy
 
 enum CoopMode:String,Codable,CaseIterable {
-    case REGULAR = "REGULAR"
-    case PRIVATE_CUSTOM = "PRIVATE_CUSTOM"
-    case PRIVATE_SCENARIO = "PRIVATE_SCENARIO"
-    case LIMITED = "LIMITED"
+  case REGULAR = "REGULAR"
+  case PRIVATE_CUSTOM = "PRIVATE_CUSTOM"
+  case PRIVATE_SCENARIO = "PRIVATE_SCENARIO"
+  case LIMITED = "LIMITED"
 }
 
 // Assuming the structure of CoopMode, CoopRule, CoopGroupHighestResult, CoopHistoryDetailConnection
@@ -402,12 +402,12 @@ enum CoopMode:String,Codable,CaseIterable {
 
 
 struct CoopPointCard: Codable {
-    let defeatBossCount: Double?
-    let deliverCount: Double?
-    let goldenDeliverCount: Double?
-    let playCount: Double?
-    let rescueCount: Double?
-    let regularPoint: Double?
-    let totalPoint: Double?
-    let limitedPoint: Int? // Assuming limitedPoint is a string type
+  let defeatBossCount: Double?
+  let deliverCount: Double?
+  let goldenDeliverCount: Double?
+  let playCount: Double?
+  let rescueCount: Double?
+  let regularPoint: Double?
+  let totalPoint: Double?
+  let limitedPoint: Int? // Assuming limitedPoint is a string type
 }

@@ -23,6 +23,7 @@ struct ContentView: View {
   @State private var updating: Bool = false
   @State private var updateFailed: Bool = false
   @State private var updateSuccess: Bool = false
+  @EnvironmentObject var homeViewModel: HomeViewModel
 
 //  @AppStorage("content_tab_selection") var selectedTab:Int = 0
 
@@ -55,10 +56,11 @@ struct ContentView: View {
           }
           .tag(2)
 
-        NavigationView {
-          LoginView()
-        }
-        .navigationViewStyle(.stack)
+//        NavigationView {
+//          DebugView()
+//        }
+//        .navigationViewStyle(.stack)
+        MePage()
         .tabItem {
           Label("我", image: "TabBarMe")
         }
@@ -95,6 +97,7 @@ struct ContentView: View {
           self.updateFailed = false
         }
       }
+      await homeViewModel.loadSchedules()
     }
   }
 }
@@ -102,5 +105,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+      .environmentObject(HomeViewModel())
   }
 }
