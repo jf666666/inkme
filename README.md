@@ -15,4 +15,5 @@ imink for splatoon3
 
 2023.12.5
 - battle page
+## Initial progress has been made in creating the battle history list, and the list items have been completed, but the details interface has not been finished yet
 ![simulator_screenshot_925ABD7F-6D04-470B-8231-6BE861FA5D78](https://github.com/jf666666/imink3/assets/63494980/8aaf1e40-4343-4881-932b-9cd3de36241f)
