@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ShiftView: View {
+struct CoopScheduleView: View {
   @EnvironmentObject var viewModel:HomeViewModel
   @EnvironmentObject private var timePublisher: TimePublisher
 //  let shifts:CoopGroupingSchedule
@@ -19,12 +19,12 @@ struct ShiftView: View {
     var body: some View {
       VStack(spacing:15){
         if let bigRunSchedule = bigRunSchedule{
-          ShiftCell(shift: bigRunSchedule)
+          CoopScheduleCell(shift: bigRunSchedule)
             .padding(10)
             .textureBackground(texture: .streak, radius: 18)
         }
         ForEach(regularSchedules,id:\.startTime){ schedule in
-          ShiftCell(shift: schedule)
+          CoopScheduleCell(shift: schedule)
             .padding(10)
             .textureBackground(texture: .streak, radius: 18)
         }
@@ -33,7 +33,7 @@ struct ShiftView: View {
 }
 
 #Preview {
-  ShiftView(/*shifts: MockData.getStageQuery().data.coopGroupingSchedule!*/)
+  CoopScheduleView(/*shifts: MockData.getStageQuery().data.coopGroupingSchedule!*/)
     .environmentObject(HomeViewModel())
     .environmentObject(TimePublisher.shared)
 }

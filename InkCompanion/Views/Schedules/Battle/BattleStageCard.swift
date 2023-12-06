@@ -9,7 +9,7 @@
 import SwiftUI
 import Kingfisher
 
-struct StageCard:View {
+struct BattleStageCard:View {
   typealias Scoped = Constants.Style.Rotation.Battle.Card.Primary
 
   let stage:Stage

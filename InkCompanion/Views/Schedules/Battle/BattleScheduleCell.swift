@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ScheduleCellPrimary: View {
+struct BattleScheduleCell: View {
   @EnvironmentObject var timePublisher:TimePublisher
   typealias Scoped = Constants.Style.Rotation.Battle.Cell.Primary
   let schedule:BattleRegularSchedule
@@ -51,8 +51,8 @@ struct ScheduleCellPrimary: View {
       .tint(schedule.mode.themeColor)
       }
       HStack{
-        StageCard(stage: schedule.stages[0])
-        StageCard(stage: schedule.stages[1])
+        BattleStageCard(stage: schedule.stages[0])
+        BattleStageCard(stage: schedule.stages[1])
       }
     }
   }
@@ -122,6 +122,6 @@ struct ScheduleCellPrimary: View {
 }
 
 #Preview {
-  ScheduleCellPrimary(schedule: (MockData.getStageQuery().data.regularSchedules?.nodes![0].toSchedule())!,scheduleType: .primary)
+  BattleScheduleCell(schedule: (MockData.getStageQuery().data.regularSchedules?.nodes![0].toSchedule())!,scheduleType: .primary)
     .environmentObject(TimePublisher.shared)
 }

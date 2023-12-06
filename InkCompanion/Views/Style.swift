@@ -8,8 +8,6 @@
 import SwiftUI
 
 
-
-
 enum SplatColor: String {
     // UI.
     case AccentColor = "#6b84f5"

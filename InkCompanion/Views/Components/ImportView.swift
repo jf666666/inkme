@@ -19,6 +19,7 @@ func importJsonData(from url: URL)  {
     let coops:[temp1]
   }
   Task{
+    print("开始导入")
     do {
       let jsonData = try Data(contentsOf: url)
       let decoder = JSONDecoder()

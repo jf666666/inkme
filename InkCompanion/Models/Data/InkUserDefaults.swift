@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-class AppUserDefaults:ObservableObject{
-  static let shared = AppUserDefaults()
+class InkUserDefaults:ObservableObject{
+  static let shared = InkUserDefaults()
   private init() {}
 
   @AppStorage("firstLaunch")
@@ -29,7 +29,13 @@ class AppUserDefaults:ObservableObject{
       }
     }
   }
-  
+
+  @AppStorage("currentUserKey")
+  var currentUserKey:String?
+
+  @AppStorage("inkPlayers")
+  var inkPlayers:Data?
+
   @AppStorage("webServiceToken")
   var webServiceToken:Data?
 

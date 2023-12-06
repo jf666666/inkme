@@ -35,7 +35,8 @@ struct BattleView: View {
         .navigationBarTitle("对战", displayMode: .inline)
         .navigationDestination(for: String.self) { id in
           if let detail = model.rows.first(where: { $0.contains(where: {$0.id == id}) })?.first(where: {$0.id == id}) {
-            EmptyView()
+            Text(InkUserDefaults.shared.currentUserKey ?? "no key")
+
           }
         }
         .navigationDestination(for: Int.self){ index in

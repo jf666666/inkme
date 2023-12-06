@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "alertkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sparrowcode/AlertKit.git",
+      "state" : {
+        "revision" : "17939549b8a7c7574c8de5b4f0c017cbbc5c79d2",
+        "version" : "3.5.1"
+      }
+    },
+    {
       "identity" : "alerttoast",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/elai950/AlertToast.git",

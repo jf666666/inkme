@@ -121,7 +121,8 @@ final class InkNet {
     variables: [String:Any]? = nil,
     decoder:JSONDecoder? = nil
   ) async throws -> T{
-    guard let webServiceToken:WebServiceTokenStruct = AppUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self),let bulletToken = AppUserDefaults.shared.bulletToken else {
+    guard let webServiceToken:WebServiceTokenStruct = InkUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self),let bulletToken = InkUserDefaults.shared.bulletToken else {
+      try await NintendoService.shared.updateTokens()
       throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "获取会话令牌失败"])
     }
     let body: [String: Any] = [
@@ -158,7 +159,7 @@ final class InkNet {
     request.addValue("same-origin", forHTTPHeaderField: "Sec-Fetch-Site")
     request.addValue("Mozilla/5.0 (Linux; Android 11; sdk_gphone_arm64 Build/RSR1.210722.013.A6; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/91.0.4472.114 Mobile Safari/537.36", forHTTPHeaderField: "User-Agent")
     request.addValue("com.nintendo.znca", forHTTPHeaderField: "X-Requested-With")
-    request.addValue(SPLATNET_VERSION, forHTTPHeaderField: "X-Web-View-Ver")
+    request.addValue(InkUserDefaults.shared.SplatNetVersion, forHTTPHeaderField: "X-Web-View-Ver")
     // 发送请求
     let (data, _) = try await URLSession.shared.data(for: request)
 

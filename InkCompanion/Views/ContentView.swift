@@ -25,22 +25,16 @@ struct ContentView: View {
   @State private var updateSuccess: Bool = false
   @EnvironmentObject var homeViewModel: HomeViewModel
 
-//  @AppStorage("content_tab_selection") var selectedTab:Int = 0
+  //  @AppStorage("content_tab_selection") var selectedTab:Int = 0
 
   var body: some View {
     ZStack {
-
-      TabView/*(selection: $selectedTab)*/ {
-
-        NavigationView {
-          HomePage()
-//          ImportView()
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
-        .tabItem {
-          Label("主页", image: "TabBarHome")
-        }
-        .tag(0)
+      TabView{
+        HomePage()
+          .tabItem {
+            Label("主页", image: "TabBarHome")
+          }
+          .tag(0)
 
         BattleView()
           .tabItem {
@@ -50,26 +44,18 @@ struct ContentView: View {
 
 
         CoopView()
-//          .navigationViewStyle(StackNavigationViewStyle())
           .tabItem {
             Label("鲑鱼跑", image: "TabBarSalmonRun")
           }
           .tag(2)
 
-//        NavigationView {
-//          DebugView()
-//        }
-//        .navigationViewStyle(.stack)
+
         MePage()
-        .tabItem {
-          Label("我", image: "TabBarMe")
-        }
-        .tag(3)
+          .tabItem {
+            Label("我", image: "TabBarMe")
+          }
+          .tag(3)
       }
-
-
-
-
     }
     .toast(isPresenting: self.$updating, tapToDismiss: true){
       AlertToast(displayMode: .hud, type: .loading, title: "Updating")
@@ -104,7 +90,14 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
+    @StateObject var timePublisher: TimePublisher = .shared
+    @StateObject var coopModel = CoopModel()
+    @StateObject var homeViewModel = HomeViewModel()
+    @StateObject var battleModel = BattleModel()
     ContentView()
-      .environmentObject(HomeViewModel())
+      .environmentObject(timePublisher)
+      .environmentObject(coopModel)
+      .environmentObject(homeViewModel)
+      .environmentObject(battleModel)
   }
 }

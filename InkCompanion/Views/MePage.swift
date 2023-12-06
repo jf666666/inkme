@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct MePage: View {
   @StateObject var model:MeViewModel = MeViewModel()
@@ -15,22 +16,31 @@ struct MePage: View {
     NavigationStack {
       ScrollView{
         VStack{
-          HStack{
-            Text("hello world")
+          VStack{
+            if let inkPlayers = InkUserDefaults.shared.inkPlayers?.decode(InkPlayers.self)?.inkPlayers{
+              Text("有\(inkPlayers.count)个账号已登陆")
+              ForEach(0..<inkPlayers.count,id:\.self){ idx in
+                KFImage(URL(string: inkPlayers[idx].avatarUrl))
+                Text(inkPlayers[idx].name)
+                Text("SW-\(inkPlayers[idx].friendCode)")
+                Text(inkPlayers[idx].sessionToken)
+
+              }
+            }
 
           }
           .modifier(LoginViewModifier(isLogined: model.isLoggedin))
-          if let sessionToken = AppUserDefaults.shared.sessionToken{
+          if let sessionToken = InkUserDefaults.shared.sessionToken{
             Text(sessionToken)
           }
         }
       }
-      .navigationBarTitle("我",displayMode: .inline)
+      .navigationTitle("我")
+      .navigationBarTitleDisplayMode(.inline)
       .navigationBarItems(trailing: settingButton)
-
     }
     .sheet(isPresented: $showSettings, content: {
-      EmptyView()
+      SettingView(showSettings:$showSettings)
   })
   }
 
@@ -45,6 +55,12 @@ struct MePage: View {
           .frame(width: 22, height: 22)
       }
       .frame(width: 38, height: 40)
+    }
+  }
+
+  var playerInformation:some View{
+    HStack{
+
     }
   }
 }

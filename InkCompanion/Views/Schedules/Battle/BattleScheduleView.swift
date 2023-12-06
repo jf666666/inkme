@@ -8,7 +8,7 @@
 import SwiftUI
 import Kingfisher
 
-struct ScheduleView: View {
+struct BattleScheduleView: View {
   @EnvironmentObject var viewModel:HomeViewModel
 
   var mode:ScheduleMode{viewModel.currentMode}
@@ -31,22 +31,22 @@ struct ScheduleView: View {
         if viewModel.currentMode == .anarchy{
           if viewModel.anarchyMode == .CHALLENGE{
             let challengeSchedules = schedules.map{$0.toRegularSchedule(isChallenge: true)}
-            ScheduleList(schedules: challengeSchedules)
+            BattleScheduleList(schedules: challengeSchedules)
           }else{
             let openSchedules = schedules.map{$0.toRegularSchedule(isChallenge: false)}
-            ScheduleList(schedules: openSchedules)
+            BattleScheduleList(schedules: openSchedules)
           }
         }else{
           if viewModel.festMode == .challenge{
             let challengeSchedules = schedules.map{$0.toRegularSchedule(isChallenge: true)}
-            ScheduleList(schedules: challengeSchedules)
+            BattleScheduleList(schedules: challengeSchedules)
           }else{
             let regularSchedules = schedules.map{$0.toRegularSchedule(isChallenge: false)}
-            ScheduleList(schedules: regularSchedules)
+            BattleScheduleList(schedules: regularSchedules)
           }
         }
       }else if let schedules = schedules as? [BattleRegularSchedule]{
-        ScheduleList(schedules: schedules)
+        BattleScheduleList(schedules: schedules)
       }
     }
     .animation(
@@ -76,7 +76,7 @@ struct ScheduleView: View {
 
 
 #Preview {
-  ScheduleView()
+  BattleScheduleView()
     .environmentObject(HomeViewModel())
     .environmentObject(TimePublisher.shared)
 }

@@ -66,7 +66,7 @@ func FetchGraphQl<T: Codable>(
         request.addValue("same-origin", forHTTPHeaderField: "Sec-Fetch-Site")
         request.addValue("Mozilla/5.0 (Linux; Android 11; sdk_gphone_arm64 Build/RSR1.210722.013.A6; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/91.0.4472.114 Mobile Safari/537.36", forHTTPHeaderField: "User-Agent")
         request.addValue("com.nintendo.znca", forHTTPHeaderField: "X-Requested-With")
-        request.addValue(SPLATNET_VERSION, forHTTPHeaderField: "X-Web-View-Ver")
+        request.addValue(InkUserDefaults.shared.SplatNetVersion, forHTTPHeaderField: "X-Web-View-Ver")
         
         
         // 发送请求

@@ -8,7 +8,7 @@
 import SwiftUI
 import Kingfisher
 
-struct ShiftCell: View {
+struct CoopScheduleCell: View {
   @EnvironmentObject private var timePublisher: TimePublisher
 
   let shift:CoopSchedule
@@ -153,7 +153,7 @@ struct ShiftCell: View {
 }
 
 #Preview {
-  ShiftCell(shift: MockData.getStageQuery().data.coopGroupingSchedule!.bigRunSchedules.nodes![0])
+  CoopScheduleCell(shift: MockData.getStageQuery().data.coopGroupingSchedule!.bigRunSchedules.nodes![0])
     .padding(8)
     .textureBackground(texture: .bubble, radius: 18)
     .frame(width: 366,height: 180)

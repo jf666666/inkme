@@ -11,6 +11,6 @@ class MeViewModel:ObservableObject{
   @Published var isLoggedin:Bool = false
 
   init() {
-    self.isLoggedin = AppUserDefaults.shared.sessionToken != nil
+    self.isLoggedin = InkUserDefaults.shared.sessionToken != nil
   }
 }

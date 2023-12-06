@@ -85,3 +85,20 @@ extension String {
                    .replacingOccurrences(of: "=", with: "")
     }
 }
+
+extension String{
+  var userKey:String?{
+    let pattern = "(VsHistoryDetail-u-|CoopHistoryDetail-u-)([^:]+)"
+    guard let regex = try? NSRegularExpression(pattern: pattern) else { return nil }
+
+    let nsRange = NSRange(self.startIndex..<self.endIndex, in: self)
+    let matches = regex.matches(in: self, range: nsRange)
+
+    guard let match = matches.first,
+          let range = Range(match.range(at: 2), in: self) else {
+        return nil
+    }
+
+    return String(self[range])
+  }
+}

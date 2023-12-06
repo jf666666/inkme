@@ -10,36 +10,35 @@ import SwiftUI
 struct HomePage: View {
   @EnvironmentObject var viewModel: HomeViewModel
   var body: some View {
-    ScrollView{
-      VStack(alignment: .center,spacing: 20){
-        EmptyView()
-          .textureBackground(texture: .streak, radius: 18)
-          .frame(height: 200)
-        VStack(spacing:5){
-          scheduleTitle
-          modePicker
-          subModePicker
-          if viewModel.currentMode != .salmonRun{
-            ScheduleView()
-          }else{
-            ShiftView()
+    NavigationStack {
+      ScrollView{
+        VStack(alignment: .center,spacing: 20){
+          EmptyView()
+            .textureBackground(texture: .streak, radius: 18)
+            .frame(height: 200)
+          VStack(spacing:5){
+            scheduleTitle
+            modePicker
+            subModePicker
+            if viewModel.currentMode != .salmonRun{
+              BattleScheduleView()
+            }else{
+              CoopScheduleView()
+            }
           }
-
         }
-
+        .frame(maxWidth: .infinity)
+        .padding(.horizontal,15)
       }
+      .navigationBarTitle("主页", displayMode: .inline)
       .frame(maxWidth: .infinity)
-      .padding(.horizontal,15)
+      .fixSafeareaBackground()
+  //    .task {
+  //      await viewModel.loadSchedules()
+  //    }
+      .refreshable {
+        await viewModel.loadSchedules()
     }
-
-    .navigationBarTitle("主页", displayMode: .inline)
-    .frame(maxWidth: .infinity)
-    .fixSafeareaBackground()
-//    .task {
-//      await viewModel.loadSchedules()
-//    }
-    .refreshable {
-      await viewModel.loadSchedules()
     }
   }
 

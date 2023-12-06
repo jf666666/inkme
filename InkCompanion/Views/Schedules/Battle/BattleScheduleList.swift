@@ -8,7 +8,7 @@
 import SwiftUI
 import Kingfisher
 
-struct ScheduleList: View {
+struct BattleScheduleList: View {
   @EnvironmentObject private var timePublisher: TimePublisher
 
   let schedules:[BattleRegularSchedule]
@@ -20,9 +20,9 @@ struct ScheduleList: View {
   var body: some View {
     VStack(alignment: .center,spacing: 10){
       ForEach(validSchedules, id:\.startTime) { schedule in
-        var type:ScheduleCellPrimary.type{schedule.isCurrent(timePublisher.currentTime) ? .primary : .secondary}
+        var type:BattleScheduleCell.type{schedule.isCurrent(timePublisher.currentTime) ? .primary : .secondary}
         VStack{
-          ScheduleCellPrimary(schedule: schedule,scheduleType:type)
+          BattleScheduleCell(schedule: schedule,scheduleType:type)
             .padding(.all,20)
             .textureBackground(texture: .bubble, radius: 18)
         }
@@ -39,7 +39,7 @@ struct ScheduleList: View {
 #Preview {
 
   ScrollView {
-    ScheduleList(schedules: MockData.getStageQuery().data.regularSchedules?.nodes?.compactMap{$0.toSchedule()} ?? [])
+    BattleScheduleList(schedules: MockData.getStageQuery().data.regularSchedules?.nodes?.compactMap{$0.toSchedule()} ?? [])
       .environmentObject(TimePublisher.shared)
   }
 }

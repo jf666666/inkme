@@ -8,8 +8,6 @@
 import Foundation
 
 let USER_AGENT = "ConchBay/1.10.0"
-let NSO_VERSION = "2.8.0"
-let SPLATNET_VERSION = "6.0.0-e135295b"
 let AXIOS_TOKEN_TIMEOUT: TimeInterval = 30 // Replace with your actual timeout
 
 struct IminkResponse: Decodable {
@@ -71,7 +69,7 @@ func callNxapiZncaApi(step: Int, idToken: String, naId: String, coralUserId: Str
     request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
     request.addValue(USER_AGENT, forHTTPHeaderField: "User-Agent")
     request.addValue("Android", forHTTPHeaderField: "X-znca-Platform")
-    request.addValue(NSO_VERSION, forHTTPHeaderField: "X-znca-Version")
+  request.addValue(InkUserDefaults.shared.NSOVersion, forHTTPHeaderField: "X-znca-Version")
 
     var body: [String: Any] = [
         "hash_method": step,
