@@ -88,7 +88,9 @@ struct CoopView: View {
   private var titleMenu: some View {
     ForEach(CoopRule.allCases, id:\.rawValue) { rule in
       Button {
-        model.selectedRule = rule
+        DispatchQueue.main.async {
+          model.selectedRule = rule
+        }
         model.navigationTitle = rule.name
         Task{
           await model.selectRule(rule: rule)

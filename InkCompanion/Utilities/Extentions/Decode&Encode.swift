@@ -32,7 +32,7 @@ extension Data {
         do {
             return try decoder.decode(type.self, from: self)
         } catch {
-            os_log("Decode Error: \(error.localizedDescription)")
+            os_log("Decode \(String(describing: T.self)) Error: \(error.localizedDescription)")
             return nil
         }
     }

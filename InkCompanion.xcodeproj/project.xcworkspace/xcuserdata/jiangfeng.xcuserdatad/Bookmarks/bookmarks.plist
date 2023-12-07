@@ -228,6 +228,53 @@ let AXIOS_TOKEN_TIMEOUT: TimeInterval = 30 // Replace with your actual timeout
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>277</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>276</string>
+					<key>Timestamp</key>
+					<string>723644486.3881969</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>InkCompanion/Models/Network/NintendoAccount.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>    func callNxapiZncaApi(step: Int, idToken: String, naId: String, coralUserId: String? = nil) async throws -&gt; IminkResponse {
+</string>
+				<key>leading</key>
+				<string>    }
+
+</string>
+				<key>trailing</key>
+				<string>      let url = URL(string: "https://nxapi-znca-api.fancy.org.uk/api/znca/f")!
+      var request = URLRequest(url: url)
+      request.httpMethod = "POST"
+</string>
+			</dict>
+			<key>title</key>
+			<string>"If your project authenticates as the user's Nintendo Account you must explain that their id_token will be sent to a third-party API, and include a link to here." :https://github.com/samuelthomas2774/nxapi-znca-api</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
 	</array>
 </dict>
 </plist>

@@ -37,7 +37,7 @@
 		8B1E450A2B1DAB4B00773CD6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E45092B1DAB4B00773CD6 /* Status.swift */; };
 		8B1E450C2B1DE4B800773CD6 /* BattleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E450B2B1DE4B800773CD6 /* BattleItem.swift */; };
 		8B2A5EB32B15C21F0022817E /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A5EB22B15C21F0022817E /* ImportView.swift */; };
-		8B2FC7B02B200EBA000EDD0A /* InkPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FC7AF2B200EBA000EDD0A /* InkPlayers.swift */; };
+		8B2FC7B02B200EBA000EDD0A /* InkAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FC7AF2B200EBA000EDD0A /* InkAccounts.swift */; };
 		8B33B5E72B048187002BEBBE /* InkNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B33B5E62B048187002BEBBE /* InkNet.swift */; };
 		8B33B5EA2B0487AB002BEBBE /* InkPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B33B5E92B0487AB002BEBBE /* InkPreference.swift */; };
 		8B3479352B175A5D001F7737 /* DetailScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3479342B175A5D001F7737 /* DetailScrollView.swift */; };
@@ -95,6 +95,8 @@
 		8B7B3B872B117E9000E81ED5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B3B862B117E9000E81ED5 /* PlayerView.swift */; };
 		8B7B3B892B11838900E81ED5 /* CoopDetailTopCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B3B882B11838900E81ED5 /* CoopDetailTopCard.swift */; };
 		8B8F20632B1FFCFF00230D37 /* SPAlert in Frameworks */ = {isa = PBXBuildFile; productRef = 8B8F20622B1FFCFF00230D37 /* SPAlert */; };
+		8B964E2C2B21AAD800019CCF /* InkAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B964E2B2B21AAD800019CCF /* InkAccountManager.swift */; };
+		8B964E2E2B21CA2900019CCF /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B964E2D2B21CA2900019CCF /* AccountViewModel.swift */; };
 		8B9BFDFB2AF20BCE005F5FB8 /* InkCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFDFA2AF20BCE005F5FB8 /* InkCompanionApp.swift */; };
 		8B9BFDFD2AF20BCE005F5FB8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFDFC2AF20BCE005F5FB8 /* Persistence.swift */; };
 		8B9BFE082AF20BD0005F5FB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9BFE072AF20BD0005F5FB8 /* Preview Assets.xcassets */; };
@@ -114,8 +116,6 @@
 		8B9BFE792AF20BF0005F5FB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE6D2AF20BF0005F5FB8 /* ContentView.swift */; };
 		8B9BFE7E2AF20BF3005F5FB8 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE7B2AF20BF3005F5FB8 /* LoginAPI.swift */; };
 		8B9BFE7F2AF20BF3005F5FB8 /* fAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE7C2AF20BF3005F5FB8 /* fAPI.swift */; };
-		8B9BFE802AF20BF3005F5FB8 /* Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE7D2AF20BF3005F5FB8 /* Fetch.swift */; };
-		8B9BFE832AF20BF7005F5FB8 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE822AF20BF7005F5FB8 /* UserDefault.swift */; };
 		8B9BFE8D2AF20C55005F5FB8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8B9BFE8C2AF20C55005F5FB8 /* Kingfisher */; };
 		8B9BFE902AF20C5C005F5FB8 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8B9BFE8F2AF20C5C005F5FB8 /* SwiftyJSON */; };
 		8B9DC0592B1EC0A70014F87A /* ConvenientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DC0582B1EC0A70014F87A /* ConvenientColors.swift */; };
@@ -204,7 +204,7 @@
 		8B1E45092B1DAB4B00773CD6 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		8B1E450B2B1DE4B800773CD6 /* BattleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleItem.swift; sourceTree = "<group>"; };
 		8B2A5EB22B15C21F0022817E /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
-		8B2FC7AF2B200EBA000EDD0A /* InkPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkPlayers.swift; sourceTree = "<group>"; };
+		8B2FC7AF2B200EBA000EDD0A /* InkAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkAccounts.swift; sourceTree = "<group>"; };
 		8B33B5E62B048187002BEBBE /* InkNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNet.swift; sourceTree = "<group>"; };
 		8B33B5E92B0487AB002BEBBE /* InkPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkPreference.swift; sourceTree = "<group>"; };
 		8B3479342B175A5D001F7737 /* DetailScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScrollView.swift; sourceTree = "<group>"; };
@@ -259,6 +259,8 @@
 		8B7B3B842B117E6000E81ED5 /* StageSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSelection.swift; sourceTree = "<group>"; };
 		8B7B3B862B117E9000E81ED5 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		8B7B3B882B11838900E81ED5 /* CoopDetailTopCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopDetailTopCard.swift; sourceTree = "<group>"; };
+		8B964E2B2B21AAD800019CCF /* InkAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkAccountManager.swift; sourceTree = "<group>"; };
+		8B964E2D2B21CA2900019CCF /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		8B9BFDF72AF20BCE005F5FB8 /* InkCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InkCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9BFDFA2AF20BCE005F5FB8 /* InkCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkCompanionApp.swift; sourceTree = "<group>"; };
 		8B9BFDFC2AF20BCE005F5FB8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -297,8 +299,6 @@
 		8B9BFE6D2AF20BF0005F5FB8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8B9BFE7B2AF20BF3005F5FB8 /* LoginAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		8B9BFE7C2AF20BF3005F5FB8 /* fAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fAPI.swift; sourceTree = "<group>"; };
-		8B9BFE7D2AF20BF3005F5FB8 /* Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetch.swift; sourceTree = "<group>"; };
-		8B9BFE822AF20BF7005F5FB8 /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		8B9DC0582B1EC0A70014F87A /* ConvenientColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenientColors.swift; sourceTree = "<group>"; };
 		8B9DC05A2B1EC2D60014F87A /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		8B9DC05C2B1EE9A60014F87A /* RegularHistoryQuery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RegularHistoryQuery.json; sourceTree = "<group>"; };
@@ -409,11 +409,11 @@
 			isa = PBXGroup;
 			children = (
 				8B9BFDFC2AF20BCE005F5FB8 /* Persistence.swift */,
-				8B9BFE822AF20BF7005F5FB8 /* UserDefault.swift */,
 				8B5DD3E92B083ED700EDD673 /* InkData.swift */,
 				8B1E45092B1DAB4B00773CD6 /* Status.swift */,
 				8B9DC0622B1F351F0014F87A /* InkUserDefaults.swift */,
-				8B2FC7AF2B200EBA000EDD0A /* InkPlayers.swift */,
+				8B2FC7AF2B200EBA000EDD0A /* InkAccounts.swift */,
+				8B964E2B2B21AAD800019CCF /* InkAccountManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -488,7 +488,6 @@
 			isa = PBXGroup;
 			children = (
 				8B596B912AF3CD18006FA8F8 /* Struct */,
-				8B9BFE7D2AF20BF3005F5FB8 /* Fetch.swift */,
 				8B596B872AF34025006FA8F8 /* RequestID.swift */,
 			);
 			path = GraphQL;
@@ -851,6 +850,7 @@
 				8B34793C2B18B322001F7737 /* HomeViewModel.swift */,
 				8B1A23EE2B194F32002498DC /* ScheduleViewModel.swift */,
 				8B9DC0602B1F32B40014F87A /* MeViewModel.swift */,
+				8B964E2D2B21CA2900019CCF /* AccountViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1042,6 +1042,7 @@
 				8B6A07F72B103ADB00C8BDC9 /* GrayscaleTextureView.swift in Sources */,
 				8B7B3B892B11838900E81ED5 /* CoopDetailTopCard.swift in Sources */,
 				8B01F85F2B174F830031044D /* DocumentPicker.swift in Sources */,
+				8B964E2E2B21CA2900019CCF /* AccountViewModel.swift in Sources */,
 				8B1E450C2B1DE4B800773CD6 /* BattleItem.swift in Sources */,
 				8B4ABECF2AF9D1590017E6E6 /* CoopItem.swift in Sources */,
 				8B1A23F32B1995D4002498DC /* BattleScheduleList.swift in Sources */,
@@ -1129,6 +1130,7 @@
 				8BB5A7F62AFD0AA30095E0E9 /* SpecialWeaponsView.swift in Sources */,
 				8B0B2AED2B1CB0B800FDA4B5 /* VsStage.swift in Sources */,
 				8B6A07F32B10228200C8BDC9 /* Array.swift in Sources */,
+				8B964E2C2B21AAD800019CCF /* InkAccountManager.swift in Sources */,
 				8B596B902AF38634006FA8F8 /* Style.swift in Sources */,
 				8B7B3B852B117E6000E81ED5 /* StageSelection.swift in Sources */,
 				8B6A07FF2B10C1E600C8BDC9 /* WaveShape.swift in Sources */,
@@ -1137,7 +1139,7 @@
 				8BB5A7F42AFD07870095E0E9 /* TimePublisher.swift in Sources */,
 				8B9DC0612B1F32B40014F87A /* MeViewModel.swift in Sources */,
 				8BB7D1E52B0070AB0021CF39 /* InkFont.swift in Sources */,
-				8B2FC7B02B200EBA000EDD0A /* InkPlayers.swift in Sources */,
+				8B2FC7B02B200EBA000EDD0A /* InkAccounts.swift in Sources */,
 				8B0B2AE92B1CA90400FDA4B5 /* VsHistoryDetail.swift in Sources */,
 				8B9E0E762B09CCFE007700D0 /* InkCompanion.xcdatamodeld in Sources */,
 				8BB7D1ED2B0081260021CF39 /* MockData.swift in Sources */,
@@ -1146,8 +1148,6 @@
 				8BE74ADD2B0ECDAF001796DF /* CoopSummaryCard.swift in Sources */,
 				8B46A54B2AF4962F001FB5E2 /* WeaponRecord.swift in Sources */,
 				8B46A54D2AF4BE99001FB5E2 /* EquipmentsQuery.swift in Sources */,
-				8B9BFE802AF20BF3005F5FB8 /* Fetch.swift in Sources */,
-				8B9BFE832AF20BF7005F5FB8 /* UserDefault.swift in Sources */,
 				8B9BFDFD2AF20BCE005F5FB8 /* Persistence.swift in Sources */,
 				8B9DC0632B1F351F0014F87A /* InkUserDefaults.swift in Sources */,
 				8B596B8E2AF35671006FA8F8 /* FriendView.swift in Sources */,

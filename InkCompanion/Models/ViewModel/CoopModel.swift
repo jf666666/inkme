@@ -11,7 +11,6 @@ import CoreData
 import SwiftUI
 
 
-var BATCH_SIZE:Int { Int((Double(ProcessInfo.processInfo.physicalMemory) / 1024.0 / 1024.0 / 1024.0) * 150.0)}
 
 class CoopModel:ObservableObject{
   
@@ -125,7 +124,9 @@ extension CoopModel{
   }
 
   func selectRule(rule:CoopRule) async{
-    self.rows = []
+    DispatchQueue.main.async {
+      self.rows = []
+    }
     setRuleFilter(rule: rule)
     await self.loadFromData(length: 300)
   }

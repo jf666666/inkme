@@ -24,6 +24,7 @@ struct ContentView: View {
   @State private var updateFailed: Bool = false
   @State private var updateSuccess: Bool = false
   @EnvironmentObject var homeViewModel: HomeViewModel
+  @EnvironmentObject var accountViewModel:AccountViewModel
 
   //  @AppStorage("content_tab_selection") var selectedTab:Int = 0
 
@@ -67,10 +68,12 @@ struct ContentView: View {
       AlertToast(displayMode: .hud, type: .error(Color.red), title: "Update Failed")
     }
     .task{
-      if shouldUpdate(){
+      await accountViewModel.loadAccount()
+      if accountViewModel.shouldUpdate(){
         self.updating = true
         do{
           try await InkNet.NintendoService().updateTokens()
+          accountViewModel.selectedAccount?.lastRefreshTime = Date.now
           self.updating = false
           self.updateSuccess = true
         }catch{
@@ -94,10 +97,12 @@ struct ContentView_Previews: PreviewProvider {
     @StateObject var coopModel = CoopModel()
     @StateObject var homeViewModel = HomeViewModel()
     @StateObject var battleModel = BattleModel()
+    @StateObject var accountViewModel = AccountViewModel()
     ContentView()
       .environmentObject(timePublisher)
       .environmentObject(coopModel)
       .environmentObject(homeViewModel)
       .environmentObject(battleModel)
+      .environmentObject(accountViewModel)
   }
 }

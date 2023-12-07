@@ -14,6 +14,11 @@ struct SettingView: View {
   @State var showLogginActionSheet:Bool = false
   @State var showAlert:Bool = false
   @State var userInput:String = ""
+
+  @ObservedObject var inkUserDefaults = InkUserDefaults.shared
+
+  @EnvironmentObject var accountViewModel:AccountViewModel
+
   let Nintendo = InkNet.NintendoService()
   var isLoggedin:Bool{InkUserDefaults.shared.sessionToken != nil}
 
@@ -22,19 +27,24 @@ struct SettingView: View {
       List{
 
         Section {
-          if let inkPlayers = InkUserDefaults.shared.inkPlayers?.decode(InkPlayers.self)?.inkPlayers,!inkPlayers.isEmpty{
-            ForEach(inkPlayers, id:\.id){player in
-              AccountRow(player: player)
-                .swipeActions{
-                  Button{
 
-                  } label: {
-                    Label("删除",systemImage: "trash")
+          ForEach(accountViewModel.accounts){player in
+            AccountRow(player: player)
+              .swipeActions{
+                Button{
+                  DispatchQueue.main.sync {
+                    withAnimation {
+                      accountViewModel.selectedAccount = player
+                    }
                   }
+                } label: {
+                  Label("删除",systemImage: "trash")
                 }
-                .tint(.red)
-            }
+              }
+              .tint(.red)
           }
+
+
           addAccount
             .onTapGesture {
               showLogginActionSheet = true
@@ -47,13 +57,12 @@ struct SettingView: View {
               }
               Button("通过会话令牌登陆"){
                 if let token = UIPasteboard.general.string{
+                  print(token)
                   Task{
-                    await InkNet.NintendoService().logginWithSessionToken(sessionToken:token)
+                    await accountViewModel.addAccount(sessionToken: token)
                   }
                 }
               }
-
-
             }
 
         } header: {
@@ -97,6 +106,12 @@ struct SettingView: View {
         Button("登录") {
           Task{
             await Nintendo.initiateLoginProcess()
+          }
+        }
+
+        Button("处理数据"){
+          Task{
+            await InkData.shared.processOldData()
           }
         }
 
@@ -179,6 +194,7 @@ struct SettingView_Previews: PreviewProvider {
   static var previews: some View {
     StatefulPreviewWrapper(true) { showSettings in
       SettingView(showSettings: .constant(true))
+        .environmentObject(AccountViewModel())
     }
   }
 }
@@ -187,9 +203,11 @@ struct SettingView_Previews: PreviewProvider {
 
 
 struct AccountRow:View {
-  let player:InkPlayer
+  let player:InkAccount
+  @ObservedObject var inkUserDefaults = InkUserDefaults.shared
+  @EnvironmentObject var accountViewModel:AccountViewModel
   var isSelected:Bool{
-    player.sessionToken == InkUserDefaults.shared.sessionToken
+    player.sessionToken == inkUserDefaults.sessionToken
   }
   var body: some View {
     HStack(spacing:10){
@@ -209,18 +227,20 @@ struct AccountRow:View {
           .font(.system(size: 12))
       }
       Spacer()
-      if isSelected{
+      if accountViewModel.selectedAccount == player{
         Image(systemName: "checkmark")
           .foregroundStyle(.spGreen)
       }
     }
     .onTapGesture {
-      InkUserDefaults.shared.sessionToken = player.sessionToken
-      InkUserDefaults.shared.webServiceToken = nil
-      InkUserDefaults.shared.bulletToken = nil
-      Task{
-       try await InkNet.NintendoService.shared.updateTokens()
+      DispatchQueue.main.async {
+        InkUserDefaults.shared.sessionToken = player.sessionToken
+        InkUserDefaults.shared.webServiceToken = player.webServiceToken.encode()
+        InkUserDefaults.shared.bulletToken = player.bulletToken
+        InkUserDefaults.shared.currentUserKey = String(player.id)
       }
+
+      accountViewModel.selectedAccount = player
     }
   }
 }

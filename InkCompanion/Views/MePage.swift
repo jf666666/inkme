@@ -11,26 +11,31 @@ import Kingfisher
 struct MePage: View {
   @StateObject var model:MeViewModel = MeViewModel()
   @State var showSettings = false
+  @ObservedObject var inkUserDefaults = InkUserDefaults.shared
+  @EnvironmentObject var accountViewModel:AccountViewModel
   var body: some View {
 
     NavigationStack {
       ScrollView{
         VStack{
           VStack{
-            if let inkPlayers = InkUserDefaults.shared.inkPlayers?.decode(InkPlayers.self)?.inkPlayers{
-              Text("有\(inkPlayers.count)个账号已登陆")
-              ForEach(0..<inkPlayers.count,id:\.self){ idx in
-                KFImage(URL(string: inkPlayers[idx].avatarUrl))
-                Text(inkPlayers[idx].name)
-                Text("SW-\(inkPlayers[idx].friendCode)")
-                Text(inkPlayers[idx].sessionToken)
-
+            if !accountViewModel.accounts.isEmpty{
+              Text("有\(accountViewModel.accounts.count)个账号已登陆")
+              ForEach(accountViewModel.accounts){ account in
+                KFImage(URL(string: account.avatarUrl))
+                Text(account.name)
+                Text("SW-\(account.friendCode)")
+                //                Text(inkPlayers[idx].sessionToken)
+                Text("\(account.id)")
+                
+                
               }
             }
 
+
           }
           .modifier(LoginViewModifier(isLogined: model.isLoggedin))
-          if let sessionToken = InkUserDefaults.shared.sessionToken{
+          if let sessionToken = inkUserDefaults.sessionToken{
             Text(sessionToken)
           }
         }

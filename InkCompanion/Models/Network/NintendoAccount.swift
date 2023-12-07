@@ -14,6 +14,7 @@ extension InkNet{
   class NintendoService:NSObject,ASWebAuthenticationPresentationContextProviding{
     let logger = Logger(.custom(InkNet.NintendoService.self))
     static let shared = NintendoService()
+    
     func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
         // 确保在主线程上返回UIWindow
         if Thread.isMainThread {
@@ -27,7 +28,7 @@ extension InkNet{
         }
     }
 
-
+    
     var sessionToken: String {InkUserDefaults.shared.sessionToken ?? ""}
     let clientId = "71b963c1b7b6d119"
     let timeoutInterval: TimeInterval = 30
@@ -71,15 +72,16 @@ extension InkNet{
       let correlationId: String
     }
 
-    func getWebServiceToken() async throws -> WebServiceTokenStruct {
-      let (accessToken, idToken) = try await getToken()
+    func getWebServiceStruct() async throws -> WebServiceTokenStruct {
+      let (accessToken, idToken) = try await getAccessAndIdToken(sessionToken: InkUserDefaults.shared.sessionToken ?? "")
       let userInfo = try await getUserInfo(accessToken: accessToken)
-      let loginData = try await getAccountLogin(idToken: idToken, userInfo: userInfo)
-      let (idToken2, coralUserId) = loginData
-      let webAccessToken = try await getAccessToken(idToken2: idToken2, id: userInfo.id, coralUserId: coralUserId)
+      let accountLoginResponse = try await getAccountLoginResponse(idToken: idToken, userInfo: userInfo)
+      let (webApiAccessToken, userId) = getWebApiAccessTokenAndUserId(loginResponse: accountLoginResponse)
+      let webAccessToken = try await getWebServiceToken(webApiAccessToken: webApiAccessToken, userId: userInfo.id, coralUserId: userId)
 
       return WebServiceTokenStruct(accessToken: webAccessToken, country: userInfo.country, language: userInfo.language)
     }
+
 
     func getSessionToken(from url: URL, cv: String) async throws -> String? {
       let sessionTokenCode = getParam(from: url, param: "session_token_code")
@@ -146,7 +148,7 @@ extension InkNet{
       return (url ?? URL(string: "www.baidu.com")!, cv ?? "")
     }
 
-    private func getToken() async throws -> (accessToken: String, idToken: String) {
+    private func getAccessAndIdToken(sessionToken:String) async throws -> (accessToken: String, idToken: String) {
       let url = URL(string: "https://accounts.nintendo.com/connect/1.0.0/api/token")!
       var request = URLRequest(url: url)
       request.httpMethod = "POST"
@@ -276,7 +278,6 @@ extension InkNet{
       let url = URL(string: "https://nxapi-znca-api.fancy.org.uk/api/znca/f")!
       var request = URLRequest(url: url)
       request.httpMethod = "POST"
-      request.httpMethod = "POST"
       request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
       request.addValue(USER_AGENT, forHTTPHeaderField: "User-Agent")
       request.addValue("Android", forHTTPHeaderField: "X-znca-Platform")
@@ -303,19 +304,40 @@ extension InkNet{
       return zncaResponse
     }
 
-    private func getAccountLogin(idToken: String, userInfo: (birthday: String, language: String, country: String, id: String)) async throws -> (idToken2: String, coralUserId: String) {
+
+    private func fetchFResponse(step:Int,idToken: String, userInfo: (birthday: String, language: String, country: String, id: String)) async throws-> IminkResponse {
+        do {
+            let fResponse = try await callIminkFApi(step: step, idToken: idToken, naId: userInfo.id, coralUserId: nil)
+            return fResponse
+        } catch let iminkError as NSError{
+          logger.error("call Imink API failed for: \(iminkError.localizedDescription)")
+            do {
+                let fResponse = try await callNxapiZncaApi(step: step, idToken: idToken, naId: userInfo.id, coralUserId: nil)
+                return fResponse
+            } catch let nxApiError as NSError{
+              logger.error("call NxapiZnca API failed for: \(nxApiError.localizedDescription)")
+              throw NSError(domain: "InkNet.\(#function)", code: nxApiError.code, userInfo: nxApiError.userInfo)
+            }
+        }
+    }
+
+
+    private func getAccountInfo(idToken: String, userInfo: (birthday: String, language: String, country: String, id: String)) async throws -> AccountLoginResponse {
+      let data = try await getAccountLoginData(idToken: idToken, userInfo: userInfo)
       do {
-        // 尝试第一个API调用
-        let fResponse = try await callIminkFApi(step: 1, idToken: idToken, naId: userInfo.id, coralUserId: nil)
-        return try await performAccountLogin(with: fResponse, idToken: idToken, userInfo: userInfo)
-      } catch {
-        // 如果第一个API调用失败，则尝试第二个API调用
-        let fResponse = try await callNxapiZncaApi(step: 1, idToken: idToken, naId: userInfo.id, coralUserId: nil)
-        return try await performAccountLogin(with: fResponse, idToken: idToken, userInfo: userInfo)
+        let decoder = JSONDecoder()
+        let loginResponse = try decoder.decode(AccountLoginResponse.self, from: data)
+        return loginResponse
+      }catch let error as NSError{
+        logger.error("InkNet.\(#function) failed for: \(error.localizedDescription)")
+        throw NSError(domain: "InkNet.\(#function)", code: 0, userInfo:error.userInfo )
       }
     }
 
-    private func performAccountLogin(with fResponse: IminkResponse, idToken: String, userInfo: (birthday: String, language: String, country: String, id: String)) async throws -> (idToken2: String, coralUserId: String) {
+    
+    private func getAccountLoginData(idToken: String, userInfo: (birthday: String, language: String, country: String, id: String)) async throws ->Data{
+      let fResponse = try await fetchFResponse(step:1, idToken: idToken, userInfo: userInfo)
+
       let url = URL(string: "https://api-lp1.znc.srv.nintendo.net/v3/Account/Login")!
       var request = URLRequest(url: url)
       request.httpMethod = "POST"
@@ -340,51 +362,37 @@ extension InkNet{
 
       let (data, response) = try await URLSession.shared.data(for: request)
       guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-        throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "performAccountLogin Invalid response from server"])
+        throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "getWebApiAccessTokenAndUserId Invalid response from server"])
       }
-      do {
+      return data
+    }
+
+    private func getAccountLoginResponse(idToken: String, userInfo: (birthday: String, language: String, country: String, id: String)) async throws ->AccountLoginResponse{
+      do{
+        let data = try await getAccountLoginData(idToken: idToken, userInfo: userInfo)
         let decoder = JSONDecoder()
         let loginResponse = try decoder.decode(AccountLoginResponse.self, from: data)
-        let inkPlayer = loginResponse.toInkPlayer(sessionToken: sessionToken)
-        if var inkPlayers = InkUserDefaults.shared.inkPlayers?.decode(InkPlayers.self){
-          if let idx = inkPlayers.inkPlayers.firstIndex(where: {$0.id == inkPlayer.id}){
-            inkPlayers.inkPlayers[idx] = inkPlayer
-          }else{
-            inkPlayers.inkPlayers.append(inkPlayer)
-          }
-          InkUserDefaults.shared.inkPlayers = inkPlayers.encode()
-        }else{
-          let inkPlayers = InkPlayers(inkPlayers: [inkPlayer])
-          InkUserDefaults.shared.inkPlayers = inkPlayers.encode()
-        }
-        InkUserDefaults.shared.currentUserKey = String(inkPlayer.id)
+        return loginResponse
+      }catch let error as NSError{
+        throw error
+      }
+    }
+
+    private func getWebApiAccessTokenAndUserId(loginResponse:AccountLoginResponse) -> (webApiAccessToken: String, userId: String) {
         let idToken2 = loginResponse.result.webApiServerCredential.accessToken
         let coralUserId = loginResponse.result.user.id
-        return (idToken2: idToken2, coralUserId: String(coralUserId))
-      }catch{
-        throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "performAccountLogin Invalid data received"])
-      }
+        return (webApiAccessToken: idToken2, userId: String(coralUserId))
     }
 
-    private func getAccessToken(idToken2: String, id: String, coralUserId: String) async throws -> String {
-      do {
-        // 尝试第一个API调用
-        let fResponse = try await callIminkFApi(step: 2, idToken: idToken2, naId: id, coralUserId: coralUserId)
-        return try await self.performGetWebServiceToken(idToken2: idToken2, id: id, coralUserId: coralUserId, fResponse: fResponse)
-      } catch {
-        // 如果第一个API调用失败，则尝试第二个API调用
-        let fResponse = try await callNxapiZncaApi(step: 2, idToken: idToken2, naId: id, coralUserId: coralUserId)
-        return try await self.performGetWebServiceToken(idToken2: idToken2, id: id, coralUserId: coralUserId, fResponse: fResponse)
-      }
-    }
-
-    private func performGetWebServiceToken(idToken2: String, id: String, coralUserId: String, fResponse: IminkResponse) async throws -> String {
+    private func getWebServiceToken(webApiAccessToken: String, userId:String, coralUserId: String) async throws -> String {
+      let userInfo = ("","","",userId)
+      let fResponse = try await fetchFResponse(step: 2, idToken: webApiAccessToken, userInfo: userInfo)
       let url = URL(string: "https://api-lp1.znc.srv.nintendo.net/v2/Game/GetWebServiceToken")!
       var request = URLRequest(url: url)
       request.httpMethod = "POST"
       request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
       request.addValue("com.nintendo.znca/\(InkUserDefaults.shared.NSOVersion)(Android/11)", forHTTPHeaderField: "User-Agent")
-      request.addValue("Bearer \(idToken2)", forHTTPHeaderField: "Authorization")
+      request.addValue("Bearer \(webApiAccessToken)", forHTTPHeaderField: "Authorization")
       request.addValue("gzip", forHTTPHeaderField: "Accept-Encoding")
       request.addValue("Android", forHTTPHeaderField: "X-Platform")
       request.addValue(InkUserDefaults.shared.NSOVersion, forHTTPHeaderField: "X-ProductVersion")
@@ -416,7 +424,6 @@ extension InkNet{
       }
     }
 
-
     func initiateLoginProcess() async {
       do {
         let (loginURL, cv) = generateLogIn()
@@ -432,34 +439,28 @@ extension InkNet{
 
         try await self.updateTokens()
 
-
-//        if let inkPlayers = InkUserDefaults.shared.inkPlayers?.decode(InkPlayers.self){
-//
-//        }else{
-////          let inkPlayer = InkPlayer(key: "", sessionToken: "", avatarUrl: "", playerName: "", lastRefreshTime: Date.now)
-////          let inkPlayers = InkPlayers(inkPlayers: [inkPlayer])
-////          InkUserDefaults.shared.inkPlayers = inkPlayers.encode()
-//        }
-
       } catch {
         print("Error during login process: \(error)")
       }
     }
 
-    func logginWithSessionToken(sessionToken:String) async{
-      let tmpSessionToken = InkUserDefaults.shared.sessionToken
-      let tmpBulletToken = InkUserDefaults.shared.bulletToken
-      let tmpWebServiceToken = InkUserDefaults.shared.webServiceToken
-      do {
-        InkUserDefaults.shared.sessionToken = sessionToken
-        InkUserDefaults.shared.bulletToken = nil
-        InkUserDefaults.shared.webServiceToken = nil
-        try await self.updateTokens()
+
+    func loginWithSessionToken(sessionToken:String) async ->(inkAccount:InkAccount, webServiceTokenStruct:WebServiceTokenStruct, bulletToken:String)?{
+      do{
+        let (accessToken, idToken) = try await getAccessAndIdToken(sessionToken: sessionToken)
+        let userInfo = try await getUserInfo(accessToken: accessToken)
+        let accountLoginResponse = try await getAccountLoginResponse(idToken: idToken, userInfo: userInfo)
+        let (webApiAccessToken, userId) = getWebApiAccessTokenAndUserId(loginResponse: accountLoginResponse)
+        let webAccessToken = try await getWebServiceToken(webApiAccessToken: webApiAccessToken, userId: userInfo.id, coralUserId: userId)
+
+
+        let webServiceToken = WebServiceTokenStruct(accessToken: webAccessToken, country: userInfo.country, language: userInfo.language)
+        let bulletToken = try await getBulletToken(webServiceToken: webServiceToken,language: InkUserDefaults.shared.currentLanguage)
+        let inkAccount = accountLoginResponse.toInkAccount(sessionToken: sessionToken, web: webServiceToken, bullet: bulletToken)
+        return (inkAccount, webServiceToken, bulletToken)
       }catch{
-        InkUserDefaults.shared.sessionToken = tmpSessionToken
-        InkUserDefaults.shared.bulletToken = tmpBulletToken
-        InkUserDefaults.shared.webServiceToken = tmpWebServiceToken
-        SPAlert.present(message: "登陆失败", haptic: .error)
+        logger.error("InkNet.NintendoAccount\(#function)")
+        return nil
       }
     }
 
@@ -477,8 +478,11 @@ extension InkNet{
     
     func updateWebServiceToken() async throws{
       do{
-        let webServiceToken = try await getWebServiceToken()
-        InkUserDefaults.shared.webServiceToken = webServiceToken.encode()
+        let webServiceToken = try await getWebServiceStruct()
+        DispatchQueue.main.sync {
+          InkUserDefaults.shared.webServiceToken = webServiceToken.encode()
+        }
+
       }catch{
         logger.error("update WebServiceToken failed due to: \(error)")
         throw error
@@ -489,8 +493,11 @@ extension InkNet{
       do{
         if let webServiceToken = InkUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self){
           let bulletToken = try await getBulletToken(webServiceToken: webServiceToken,language: language)
-          InkUserDefaults.shared.bulletToken = bulletToken
-          InkUserDefaults.shared.tokensLastRefreshTime = Date.now
+          DispatchQueue.main.sync {
+            InkUserDefaults.shared.bulletToken = bulletToken
+            InkUserDefaults.shared.tokensLastRefreshTime = Date.now
+          }
+
           return true
         }
       }catch{
@@ -529,7 +536,7 @@ extension InkNet{
 
 
 extension InkNet.NintendoService.AccountLoginResponse{
-  func toInkPlayer(sessionToken:String)->InkPlayer{
-    return InkPlayer(id: self.result.user.id, sessionToken: sessionToken, avatarUrl: self.result.user.imageUri, name: self.result.user.name, lastRefreshTime: Date.now, friendCode: self.result.user.links.friendCode.id)
+  func toInkAccount(sessionToken:String,web:WebServiceTokenStruct,bullet:String)->InkAccount{
+    return InkAccount(id: self.result.user.id,  avatarUrl: self.result.user.imageUri, name: self.result.user.name, lastRefreshTime: Date.now, friendCode: self.result.user.links.friendCode.id,sessionToken: sessionToken, bulletToken: bullet, webServiceToken: web)
   }
 }

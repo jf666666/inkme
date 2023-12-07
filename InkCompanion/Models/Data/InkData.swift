@@ -14,7 +14,7 @@ class InkData{
 
   var context:NSManagedObjectContext {PersistenceController.shared.container.viewContext}
 
-  private func save() async {
+  func save() async {
     if context.hasChanges {
       do {
         try await context.perform {
@@ -75,8 +75,9 @@ class InkData{
     entity.stats = try? encoder.encode(getCoopStats(coop: detail))
     entity.weapon = try? encoder.encode(detail.myResult.weapons.map{$0.image?.url ?? ""})
     entity.player = try? encoder.encode(detail.memberResults.map{$0.player.id} + [detail.myResult.player.id])
-    //    var waveLen: Int {detail.rule == .TEAM_CONTEST ? 5 : 3}
-
+    if let currentUserKey = InkUserDefaults.shared.currentUserKey, let playerId = Int64(currentUserKey){
+      entity.playerId = playerId
+    }
     await save()
   }
 
@@ -95,6 +96,9 @@ class InkData{
     entity.stats = try? encoder.encode(detail.status)
     entity.weapon = try? encoder.encode(detail.myTeam.players.filter{$0.isMyself}[0].weapon.id)
     entity.player = try? encoder.encode(detail.myTeam.players.map{$0.id}+detail.otherTeams.map{$0.players.map{$0.id}}.flatMap{$0})
+    if let currentUserKey = InkUserDefaults.shared.currentUserKey, let playerId = Int64(currentUserKey){
+      entity.playerId = playerId
+    }
 
     await save()
   }
@@ -121,6 +125,32 @@ class InkData{
       await save()
     } catch {
       print("Error deleting DetailEntity objects: \(error)")
+    }
+  }
+  
+  func processOldData() async{
+
+    let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
+    do{
+      let result = try context.fetch(fetchRequest)
+      for detail in result{
+        if let userKey = detail.id?.base64Decoded().userKey, userKey == "qaenpmwwot2cvyq3qpmm"{
+          detail.playerId = 5366484838940672
+          await save()
+        }
+        if let userKey = detail.id?.base64Decoded().userKey, userKey == "q4hxd36lzgos5xtmjtom"{
+          detail.playerId = 4936207332311040
+          await save()
+        }
+
+        if let userKey = detail.id?.base64Decoded().userKey, userKey == "acprc5gvph3wozi5zcum"{
+          detail.playerId = 6578101926264832
+          await save()
+        }
+      }
+      print("done!!!!")
+    }catch{
+      
     }
   }
 
@@ -213,7 +243,9 @@ struct FilterProps {
 
 func convertFilter(_ filter: FilterProps) -> NSPredicate? {
   var predicates: [NSPredicate] = []
-
+  if let userKey = InkUserDefaults.shared.currentUserKey, let playerId = Int64(userKey){
+    predicates.append(NSPredicate(format: "playerId == %ld",playerId))
+  }
   if let modes = filter.modes, !modes.isEmpty {
     predicates.append(NSPredicate(format: "mode IN %@", modes))
   }

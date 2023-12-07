@@ -100,8 +100,8 @@ struct CoopItem: View {
 
   var item:some View{
     VStack(spacing: 0){
+      
       HStack(spacing:6){
-        
         if let afterGradeName = historyDetail.afterGrade?.id, let afterGradePoint = historyDetail.afterGradePoint{
           Text(afterGradeName.localizedString)
             .inkFont(.font1, size: 12, relativeTo: .body)
