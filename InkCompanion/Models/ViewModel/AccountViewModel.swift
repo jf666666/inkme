@@ -12,21 +12,26 @@ class AccountViewModel:ObservableObject{
   let inkNet = InkNet.shared
   let nintendo = InkNet.NintendoService()
   let inkUserDefaults = InkUserDefaults.shared
+
+  @Published var changingAccount:Bool = false
+  @Published var changingAccountFailed:Bool = false
+  @Published var changingAccountSuccess:Bool = false
+
   @Published var accounts:[InkAccount] = []
   @Published var selectedAccount:InkAccount?
 
-//  init() {
-//    Task{
-//      await self.accounts = inkData.getAllAccounts()
-//      self.selectedAccount = self.accounts.first(where: {$0.sessionToken == inkUserDefaults.sessionToken})
-//    }
-//  }
 
   func loadAccount() async{
     let aaccounts = await inkData.getAllAccounts()
     DispatchQueue.main.async {
       self.accounts = aaccounts
       self.selectedAccount = self.accounts.first(where: {$0.sessionToken == self.inkUserDefaults.sessionToken})
+    }
+  }
+
+  func updateAccountInCoreData() async {
+    if let account = selectedAccount{
+      await inkData.updateAccount(account: account)
     }
   }
 
@@ -44,9 +49,9 @@ class AccountViewModel:ObservableObject{
   }
 
   func shouldUpdate()->Bool{
-    guard let lastUpdate = selectedAccount?.lastRefreshTime else {return true}
+    guard let lastUpdate = self.selectedAccount?.lastRefreshTime else {return false}
     let currentTime = Date()
-    let updateInterval = 1 * 60 * 60 // 1小时
+    let updateInterval = 1 * 60 * 60  // 1小时
 
     if currentTime.timeIntervalSince(lastUpdate) > TimeInterval(updateInterval) {
       return true

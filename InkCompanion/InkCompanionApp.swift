@@ -21,24 +21,26 @@ struct InkCompanionApp: App {
   @StateObject var homeViewModel = HomeViewModel()
   @StateObject var battleModel = BattleModel()
   @StateObject var accountViewModel = AccountViewModel()
+  @StateObject var mainViewModel = MainViewModel()
   private let refresher:InkBackgroundRefresher = .shared
 
   init() {
     KingfisherManager.shared.downloader.downloadTimeout = 60
     KingfisherManager.shared.cache.diskStorage.config.expiration = .never
-
+    InkNet.shared.bulletToken = InkUserDefaults.shared.bulletToken
+    InkNet.shared.webServiceToken = InkUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self)
   }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(timePublisher)
                 .environmentObject(coopModel)
                 .environmentObject(homeViewModel)
                 .environmentObject(battleModel)
                 .environmentObject(accountViewModel)
-
+                .environmentObject(mainViewModel)
         }
         .backgroundTask(.appRefresh("InkCompanionRefresh"),action: refresher.handleAppRefresh)
         .onChange(of: phase) { newPhase in

@@ -79,7 +79,7 @@ class CoopModel:ObservableObject{
     self.stats = .none
   }
 
-  func loadFromData(length:Int)async {
+  func loadFromData(length:Int) async {
     let count = self.rows.flatMap { $0 }.count
     let offset = count
     let limit = length - count
@@ -123,10 +123,9 @@ extension CoopModel{
     self.ruleFilter.rules = [rule.rawValue]
   }
 
+  @MainActor
   func selectRule(rule:CoopRule) async{
-    DispatchQueue.main.async {
-      self.rows = []
-    }
+    self.rows = []
     setRuleFilter(rule: rule)
     await self.loadFromData(length: 300)
   }

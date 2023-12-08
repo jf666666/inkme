@@ -26,13 +26,14 @@ final class InkBackgroundRefresher {
   @Sendable
   nonisolated func handleAppRefresh() async{
     scheduleAppRefresh()
-    if await !nintendo.updateBulletToken(){
+
       do{
+        try await nintendo.updateBulletToken()
         try await nintendo.updateWebServiceToken()
       }catch{
         return
       }
-    }
+    
     let coopCount = await self.fetchCoopHistory()
     if coopCount > 0{
       postUserNotification(title: "新记录", body: "InkCompanion已在后台加载\(coopCount)个打工记录，请打开应用以确认。", interval: 1)

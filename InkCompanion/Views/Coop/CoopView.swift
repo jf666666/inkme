@@ -72,6 +72,9 @@ struct CoopView: View {
       .padding()
     }
     .task {
+
+      model.rows = []
+
       await model.loadFromData(length: 500)
       await model.loadFromNet()
     }
@@ -111,7 +114,7 @@ struct CoopView: View {
       Button {
         showingDateRangePicker = true
       } label: {
-        Label("ContentView.NavigationButton.Settings", systemImage: "calendar")
+        Label("MainView.NavigationButton.Settings", systemImage: "calendar")
       }
     }
   }

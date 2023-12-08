@@ -11,12 +11,15 @@ import OSLog
 import SPAlert
 
 extension InkNet{
+  static let nintendo = NintendoService()
+
   class NintendoService:NSObject,ASWebAuthenticationPresentationContextProviding{
+
     let logger = Logger(.custom(InkNet.NintendoService.self))
-    static let shared = NintendoService()
+
+//    static let shared = NintendoService()
     
     func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
-        // 确保在主线程上返回UIWindow
         if Thread.isMainThread {
             return ASPresentationAnchor()
         } else {
@@ -28,14 +31,9 @@ extension InkNet{
         }
     }
 
-    
     var sessionToken: String {InkUserDefaults.shared.sessionToken ?? ""}
     let clientId = "71b963c1b7b6d119"
     let timeoutInterval: TimeInterval = 30
-
-    struct BulletTokenResponse:Decodable{
-      let bulletToken:String?
-    }
 
     struct AccountLoginResponse: Decodable {
       struct Result: Decodable {
@@ -81,7 +79,6 @@ extension InkNet{
 
       return WebServiceTokenStruct(accessToken: webAccessToken, country: userInfo.country, language: userInfo.language)
     }
-
 
     func getSessionToken(from url: URL, cv: String) async throws -> String? {
       let sessionTokenCode = getParam(from: url, param: "session_token_code")
@@ -208,13 +205,10 @@ extension InkNet{
         throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "BulletToken Invalid response from server"])
       }
 
-      let decoder = JSONDecoder()
-      let tokenResponse = try decoder.decode(BulletTokenResponse.self, from: data)
-      if let accessToken = tokenResponse.bulletToken {
-        return accessToken
-      } else {
-        throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "BulletToken Invalid data received"])
-      }
+      guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+            let bulletToken = json["bulletToken"] as? String else {throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "BulletToken Invalid data received"])}
+      return bulletToken
+
     }
 
     private func getUserInfo(accessToken: String) async throws -> (birthday: String, language: String, country: String, id: String) {
@@ -321,19 +315,6 @@ extension InkNet{
         }
     }
 
-
-    private func getAccountInfo(idToken: String, userInfo: (birthday: String, language: String, country: String, id: String)) async throws -> AccountLoginResponse {
-      let data = try await getAccountLoginData(idToken: idToken, userInfo: userInfo)
-      do {
-        let decoder = JSONDecoder()
-        let loginResponse = try decoder.decode(AccountLoginResponse.self, from: data)
-        return loginResponse
-      }catch let error as NSError{
-        logger.error("InkNet.\(#function) failed for: \(error.localizedDescription)")
-        throw NSError(domain: "InkNet.\(#function)", code: 0, userInfo:error.userInfo )
-      }
-    }
-
     
     private func getAccountLoginData(idToken: String, userInfo: (birthday: String, language: String, country: String, id: String)) async throws ->Data{
       let fResponse = try await fetchFResponse(step:1, idToken: idToken, userInfo: userInfo)
@@ -437,13 +418,12 @@ extension InkNet{
         InkUserDefaults.shared.sessionToken = sessionToken
         InkUserDefaults.shared.webServiceToken = nil
 
-        try await self.updateTokens()
+        _ = try await self.updateTokens()
 
       } catch {
         print("Error during login process: \(error)")
       }
     }
-
 
     func loginWithSessionToken(sessionToken:String) async ->(inkAccount:InkAccount, webServiceTokenStruct:WebServiceTokenStruct, bulletToken:String)?{
       do{
@@ -464,18 +444,30 @@ extension InkNet{
       }
     }
 
-    func updateTokens() async throws{
+    func updateTokens() async throws ->(webServiceToken:WebServiceTokenStruct?, bulletToken:String?) {
+      let bulletToken:String?
+      let webServiceToken:WebServiceTokenStruct?
       do{
-        if await !self.updateBulletToken(){
-          try await self.updateWebServiceToken()
-          _ = await self.updateBulletToken()
+        if let w = InkUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self){
+          bulletToken = try await self.getBulletToken(webServiceToken: w)
+          return (nil,bulletToken)
+        }else{
+          throw NSError(domain: "没有webServiceToken", code: 1  )
         }
-      }catch let error as NSError{
-        logger.error("update token failed due to: \(error)")
-        throw error
+      }catch{
+        do{
+          webServiceToken = try await self.getWebServiceStruct()
+          bulletToken = try await self.getBulletToken(webServiceToken: webServiceToken!)
+          return (webServiceToken,bulletToken)
+        }catch{
+          logger.error("update token failed due to: \(error)")
+          throw error
+        }
       }
     }
-    
+
+
+
     func updateWebServiceToken() async throws{
       do{
         let webServiceToken = try await getWebServiceStruct()
@@ -489,23 +481,21 @@ extension InkNet{
       }
     }
 
-    func updateBulletToken(language: String? = InkUserDefaults.shared.currentLanguage) async ->Bool{
+    func updateBulletToken(language: String? = InkUserDefaults.shared.currentLanguage) async throws{
       do{
         if let webServiceToken = InkUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self){
           let bulletToken = try await getBulletToken(webServiceToken: webServiceToken,language: language)
           DispatchQueue.main.sync {
             InkUserDefaults.shared.bulletToken = bulletToken
-            InkUserDefaults.shared.tokensLastRefreshTime = Date.now
           }
-
-          return true
+        }else{
+          throw NSError(domain: "No WebServiceToken", code: 1, userInfo: nil)
         }
       }catch{
         logger.error("update bullet token failed due to: \(error)")
-
-        return false
+        throw error
       }
-      return false
+
     }
 
     func presentLoginSession(url: URL) async throws -> URL? {

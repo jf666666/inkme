@@ -17,7 +17,7 @@ enum UpdateStatus {
 }
 
 
-struct ContentView: View {
+struct MainView: View {
 
   @State private var updateStatus: UpdateStatus = .none
   @State private var updating: Bool = false
@@ -25,8 +25,7 @@ struct ContentView: View {
   @State private var updateSuccess: Bool = false
   @EnvironmentObject var homeViewModel: HomeViewModel
   @EnvironmentObject var accountViewModel:AccountViewModel
-
-  //  @AppStorage("content_tab_selection") var selectedTab:Int = 0
+  @EnvironmentObject var mainViewModel:MainViewModel
 
   var body: some View {
     ZStack {
@@ -58,51 +57,53 @@ struct ContentView: View {
           .tag(3)
       }
     }
-    .toast(isPresenting: self.$updating, tapToDismiss: true){
-      AlertToast(displayMode: .hud, type: .loading, title: "Updating")
+    .toast(isPresenting: $mainViewModel.isUpdateToken, tapToDismiss: true){
+      AlertToast(displayMode: .hud, type: .loading, title: "更新令牌")
     }
-    .toast(isPresenting: self.$updateSuccess, tapToDismiss: true){
-      AlertToast(displayMode: .hud, type: .complete(Color.green), title: "Update Successful!")
+    .toast(isPresenting: $mainViewModel.updateTokenSuccess,duration: 3,  tapToDismiss: true){
+      AlertToast(displayMode: .hud, type: .complete(Color.green), title: "更新成功")
     }
-    .toast(isPresenting: self.$updateFailed, tapToDismiss: true){
-      AlertToast(displayMode: .hud, type: .error(Color.red), title: "Update Failed")
+    .toast(isPresenting: $mainViewModel.updateTokenFailed, duration: 3, tapToDismiss: true){
+      AlertToast(displayMode: .hud, type: .error(.red), title: "更新失败")
     }
     .task{
-      await accountViewModel.loadAccount()
-      if accountViewModel.shouldUpdate(){
-        self.updating = true
-        do{
-          try await InkNet.NintendoService().updateTokens()
-          accountViewModel.selectedAccount?.lastRefreshTime = Date.now
-          self.updating = false
-          self.updateSuccess = true
-        }catch{
-          self.updating = false
-          self.updateFailed = true
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-          self.updating = false
-          self.updateSuccess = false
-          self.updateFailed = false
-        }
-      }
       await homeViewModel.loadSchedules()
+      await accountViewModel.loadAccount()
+      await update()
+    }
+  }
+
+
+  func update() async {
+    if accountViewModel.shouldUpdate(){
+      mainViewModel.isUpdateToken = true
+      do{
+        try await InkNet.NintendoService().updateTokens()
+        accountViewModel.selectedAccount?.lastRefreshTime = Date.now
+        await accountViewModel.updateAccountInCoreData()
+        mainViewModel.updateTokenSuccess = true
+      }catch{
+        mainViewModel.updateTokenFailed = true
+      }
+      mainViewModel.isUpdateToken = false
     }
   }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
   static var previews: some View {
     @StateObject var timePublisher: TimePublisher = .shared
     @StateObject var coopModel = CoopModel()
     @StateObject var homeViewModel = HomeViewModel()
     @StateObject var battleModel = BattleModel()
     @StateObject var accountViewModel = AccountViewModel()
-    ContentView()
+    @StateObject var mainViewModel = MainViewModel()
+    MainView()
       .environmentObject(timePublisher)
       .environmentObject(coopModel)
       .environmentObject(homeViewModel)
       .environmentObject(battleModel)
       .environmentObject(accountViewModel)
+      .environmentObject(mainViewModel)
   }
 }

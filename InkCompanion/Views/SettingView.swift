@@ -6,6 +6,7 @@ import AlertToast
 //import SPAlert
 import Kingfisher
 
+
 struct SettingView: View {
   @State private var isPickerPresented = false
 
@@ -14,10 +15,11 @@ struct SettingView: View {
   @State var showLogginActionSheet:Bool = false
   @State var showAlert:Bool = false
   @State var userInput:String = ""
-
+  @State var showToast:Bool = false
+  
   @ObservedObject var inkUserDefaults = InkUserDefaults.shared
-
   @EnvironmentObject var accountViewModel:AccountViewModel
+  @EnvironmentObject var mainViewModel:MainViewModel
 
   let Nintendo = InkNet.NintendoService()
   var isLoggedin:Bool{InkUserDefaults.shared.sessionToken != nil}
@@ -25,30 +27,77 @@ struct SettingView: View {
   var body: some View {
     NavigationStack {
       List{
+        Button {
+          showToast = true
+        } label: {
+          Text("测试")
+        }
+
 
         Section {
 
           ForEach(accountViewModel.accounts){player in
-            AccountRow(player: player)
+            Button {
+
+              accountViewModel.changingAccount = true
+              InkNet.shared.bulletToken = player.bulletToken
+              InkNet.shared.webServiceToken = player.webServiceToken
+              DispatchQueue.main.async {
+                InkUserDefaults.shared.sessionToken = player.sessionToken
+                InkUserDefaults.shared.webServiceToken = player.webServiceToken.encode()
+                InkUserDefaults.shared.bulletToken = player.bulletToken
+                InkUserDefaults.shared.currentUserKey = String(player.id)
+              }
+              accountViewModel.selectedAccount = player
+              if accountViewModel.shouldUpdate(){
+                Task{ @MainActor in
+                  do{
+                    let (w, b) = try await Nintendo.updateTokens()
+
+                    if let w = w{
+                      InkNet.shared.webServiceToken = w
+                      accountViewModel.selectedAccount?.webServiceToken = w
+                    }
+                    if let b = b{
+                      InkNet.shared.bulletToken = b
+                      accountViewModel.selectedAccount?.bulletToken = b
+                      accountViewModel.selectedAccount?.lastRefreshTime = Date.now
+                    }
+
+                    await accountViewModel.updateAccountInCoreData()
+                    accountViewModel.changingAccountSuccess = true
+                  }catch{
+                    accountViewModel.changingAccountFailed = true
+                  }
+                  accountViewModel.changingAccount = false
+                }
+              }else{
+                accountViewModel.changingAccount = false
+                accountViewModel.changingAccountSuccess = true
+              }
+
+            } label: {
+              AccountRow(player: player)
+            }
+
+
               .swipeActions{
                 Button{
-                  DispatchQueue.main.sync {
-                    withAnimation {
-                      accountViewModel.selectedAccount = player
-                    }
-                  }
+//                  DispatchQueue.main.sync {
+//                    withAnimation {
+//                      accountViewModel.selectedAccount = player
+//                    }
+//                  }
                 } label: {
                   Label("删除",systemImage: "trash")
                 }
+                .tint(.red)
               }
-              .tint(.red)
+
           }
 
 
           addAccount
-            .onTapGesture {
-              showLogginActionSheet = true
-            }
             .confirmationDialog("登陆账号", isPresented: $showLogginActionSheet) {
               Button("通过网页登陆"){
                 Task{
@@ -91,9 +140,9 @@ struct SettingView: View {
         }
 
         Section {
-          Text("鲑鱼跑记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["salmon_run"])))")
+          Text("鲑鱼跑记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["salmon_run"],accountId: accountViewModel.selectedAccount?.id)))")
 
-          Text("对战记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["salmon_run"],inverted: true)))")
+          Text("对战记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["REGULAR","BANKARA","XMATCH","LEAGUE","PRIVATE"],accountId: accountViewModel.selectedAccount?.id)))")
 
           if let url = PersistenceController.shared.container.persistentStoreDescriptions.first?.url {
             Text(url.path())
@@ -138,7 +187,7 @@ struct SettingView: View {
 
         Button("删除前10个Detail"){
           Task{
-            await InkData.shared.deleteDetail(count: 50)
+            await InkData.shared.deleteDetail(count: 3)
           }
         }
 
@@ -160,29 +209,45 @@ struct SettingView: View {
 
 
     }
+    .toast(isPresenting: $accountViewModel.changingAccount,  tapToDismiss: false) {
+      AlertToast(displayMode: .alert, type: .loading, title: "正在切换账号...")
+    }
+    .toast(isPresenting: $accountViewModel.changingAccountSuccess,duration: 1.5,  tapToDismiss: false) {
+      AlertToast(displayMode: .alert, type: .complete(.green), title: "切换成功")
+    }
+    .toast(isPresenting: $accountViewModel.changingAccountFailed,duration: 1.5,  tapToDismiss: false) {
+      AlertToast(displayMode: .alert, type: .error(.red), title: "切换失败")
+    }
+
   }
 
   var addAccount:some View{
-    HStack(spacing:10){
-      Image(systemName: "plus")
-        .resizable()
-        .scaledToFit()
-        .foregroundStyle(.accent)
-        .padding(10)
-        .frame(width: 40, height: 40)
-        .background(Circle().fill(Color.gray))
-        .overlay(Circle().stroke(Color.accentColor, lineWidth: 2))
-        .shadow(radius: 5)
-      VStack(alignment: .leading){
-        Text("***")
-          .font(.system(size: 20))
-          .bold()
-        Text("SW-XXXX-XXXX-XXXX")
-          .foregroundStyle(.secondary)
-          .font(.system(size: 12))
+    Button {
+      showLogginActionSheet = true
+    } label: {
+      HStack(spacing:10){
+        Image(systemName: "plus")
+          .resizable()
+          .scaledToFit()
+          .foregroundStyle(.accent)
+          .padding(10)
+          .frame(width: 40, height: 40)
+          .background(Circle().fill(Color.gray))
+          .overlay(Circle().stroke(Color.accentColor, lineWidth: 2))
+          .shadow(radius: 5)
+        VStack(alignment: .leading){
+          Text("***")
+            .font(.system(size: 20))
+            .bold()
+          Text("SW-XXXX-XXXX-XXXX")
+            .foregroundStyle(.secondary)
+            .font(.system(size: 12))
+        }
+        Spacer()
       }
-      Spacer()
     }
+
+
   }
 }
 
@@ -195,6 +260,7 @@ struct SettingView_Previews: PreviewProvider {
     StatefulPreviewWrapper(true) { showSettings in
       SettingView(showSettings: .constant(true))
         .environmentObject(AccountViewModel())
+        .environmentObject(MainViewModel())
     }
   }
 }
@@ -206,41 +272,29 @@ struct AccountRow:View {
   let player:InkAccount
   @ObservedObject var inkUserDefaults = InkUserDefaults.shared
   @EnvironmentObject var accountViewModel:AccountViewModel
-  var isSelected:Bool{
-    player.sessionToken == inkUserDefaults.sessionToken
-  }
   var body: some View {
-    HStack(spacing:10){
-      KFImage(URL(string: player.avatarUrl))
-        .resizable()
-        .resizedToFit()
-        .clipShape(Circle())
-        .frame(width: 40, height: 40)
-        .overlay(Circle().stroke(Color.accentColor, lineWidth: 2))
-        .shadow(radius: 5)
-      VStack(alignment: .leading){
-        Text(player.name)
-          .font(.system(size: 20))
-          .bold()
-        Text("SW-\(player.friendCode)")
-          .foregroundStyle(.secondary)
-          .font(.system(size: 12))
-      }
-      Spacer()
-      if accountViewModel.selectedAccount == player{
-        Image(systemName: "checkmark")
-          .foregroundStyle(.spGreen)
-      }
-    }
-    .onTapGesture {
-      DispatchQueue.main.async {
-        InkUserDefaults.shared.sessionToken = player.sessionToken
-        InkUserDefaults.shared.webServiceToken = player.webServiceToken.encode()
-        InkUserDefaults.shared.bulletToken = player.bulletToken
-        InkUserDefaults.shared.currentUserKey = String(player.id)
+      HStack(spacing:10){
+        KFImage(URL(string: player.avatarUrl))
+          .resizable()
+          .resizedToFit()
+          .clipShape(Circle())
+          .frame(width: 40, height: 40)
+          .overlay(Circle().stroke(Color.accentColor, lineWidth: 2))
+          .shadow(radius: 5)
+        VStack(alignment: .leading){
+          Text(player.name)
+            .font(.system(size: 20))
+            .bold()
+          Text("SW-\(player.friendCode)")
+            .foregroundStyle(.secondary)
+            .font(.system(size: 12))
+        }
+        Spacer()
+        if accountViewModel.selectedAccount == player{
+          Image(systemName: "checkmark")
+            .foregroundStyle(.spGreen)
+        }
       }
 
-      accountViewModel.selectedAccount = player
-    }
   }
 }

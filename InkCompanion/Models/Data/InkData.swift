@@ -111,7 +111,7 @@ class InkData{
     fetchRequest.sortDescriptors = [sortDescriptor]
     // 限制获取的结果数量
     fetchRequest.fetchLimit = count
-    fetchRequest.predicate = convertFilter(FilterProps(modes: ["salmon_run"], inverted: true))
+    fetchRequest.predicate = convertFilter(FilterProps(modes: ["salmon_run"], accountId: Int64(InkUserDefaults.shared.currentUserKey ?? "")))
     do {
       // 执行请求
       let results = try context.fetch(fetchRequest)
@@ -183,7 +183,10 @@ class InkData{
     fetchRequest.fetchOffset = offset
     fetchRequest.fetchLimit = limit
     // 应用过滤条件
-    if let filter = filter {
+    if var filter = filter {
+      if let userKey = InkUserDefaults.shared.currentUserKey, let userID = Int64(userKey){
+        filter.accountId = userID
+      }
       fetchRequest.predicate = convertFilter(filter)
     }
 
@@ -239,13 +242,16 @@ struct FilterProps {
   var weapons: [String]?
   var dateRange: [Date]?
   var inverted: Bool?
+  var accountId:Int64?
 }
 
 func convertFilter(_ filter: FilterProps) -> NSPredicate? {
   var predicates: [NSPredicate] = []
-  if let userKey = InkUserDefaults.shared.currentUserKey, let playerId = Int64(userKey){
-    predicates.append(NSPredicate(format: "playerId == %ld",playerId))
-  }
+//  if let userKey = InkUserDefaults.shared.currentUserKey, let playerId = Int64(userKey){
+//    predicates.append(NSPredicate(format: "playerId == %ld",playerId))
+//  }
+
+
   if let modes = filter.modes, !modes.isEmpty {
     predicates.append(NSPredicate(format: "mode IN %@", modes))
   }
@@ -270,8 +276,14 @@ func convertFilter(_ filter: FilterProps) -> NSPredicate? {
   }
 
   if filter.inverted ?? false {
+    if let accountId = filter.accountId{
+      predicates.append(NSPredicate(format: "playerId != %ld", accountId))
+    }
     return NSCompoundPredicate(notPredicateWithSubpredicate: NSCompoundPredicate(andPredicateWithSubpredicates: predicates))
   } else {
+    if let accountId = filter.accountId{
+      predicates.append(NSPredicate(format: "playerId == %ld", accountId))
+    }
     return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
   }
 }

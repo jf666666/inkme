@@ -7,16 +7,20 @@
 
 import Foundation
 import Combine
+import OSLog
 
-extension CodingUserInfoKey {
-  static let dynamicCodingKey = CodingUserInfoKey(rawValue: "dynamicCodingKey")!
-}
 
 final class InkNet {
 
   static let shared = InkNet()
 
+  let logger = Logger(.custom(InkNet.self))
+
   private init() {}
+
+  var sessionToken:String?
+  var webServiceToken:WebServiceTokenStruct?
+  var bulletToken:String?
 
   enum BattleHistoryFetchType{
     case Latest
@@ -35,7 +39,7 @@ final class InkNet {
       let detail = data.data.battleHistories
       return detail
     }catch let error as NSError{
-      print("Failed fetchBattleHistory \(error): \(error.userInfo)")
+      logger.error("\(#fileID)->\(#line)->\(#function) Failed: \(error.localizedDescription)")
       return nil
     }
   }
@@ -45,7 +49,7 @@ final class InkNet {
       let data = try await fetchGraphQL(hash: .CoopHistoryQuery) as CoopHistories
       return data.data.coopResult
     }catch let error as NSError{
-      print("Failed fetchCoopHistories \(error): \(error.userInfo)")
+      logger.error("\(#fileID)->line:\(#line)->\(#function) Failed: \(error.localizedDescription)")
       return nil
     }
   }
@@ -84,8 +88,8 @@ final class InkNet {
 
   func fetchSchedule() async->StageSchedules?{
     do{
-      //      return try await fetchScheduleFromSplatoon3DotInk()
-      return try await fetchGraphQL(hash: .StageScheduleQuery) as StageSchedules
+      return try await fetchScheduleFromSplatoon3DotInk()
+//      return try await fetchGraphQL(hash: .StageScheduleQuery) as StageSchedules
     }catch let error as NSError{
       print("\(error) \(error.userInfo)")
       do{
@@ -111,6 +115,7 @@ final class InkNet {
     do {
       return try await fetchGraphQL(hash: .FriendListQuery) as FriendListResult
     }catch{
+      logger.error("\(#fileID)->\(#line)->\(#function)->\(error.localizedDescription)")
       return nil
     }
   }
@@ -121,8 +126,12 @@ final class InkNet {
     variables: [String:Any]? = nil,
     decoder:JSONDecoder? = nil
   ) async throws -> T{
-    guard let webServiceToken:WebServiceTokenStruct = InkUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self),let bulletToken = InkUserDefaults.shared.bulletToken else {
-      try await NintendoService.shared.updateTokens()
+//    guard let webServiceToken:WebServiceTokenStruct = InkUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self),let bulletToken = InkUserDefaults.shared.bulletToken else {
+//      try await InkNet.nintendo.updateTokens()
+//      throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "获取会话令牌失败"])
+//    }
+    guard let webServiceToken = self.webServiceToken, let bulletToken = self.bulletToken else {
+      logger.error("InkNet的webServiceToken和bulletToken未初始化")
       throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "获取会话令牌失败"])
     }
     let body: [String: Any] = [
@@ -136,8 +145,9 @@ final class InkNet {
     ]
 
 
-    // 将请求体转换为 JSON 数据
+
     guard let jsonData = try? JSONSerialization.data(withJSONObject: body, options: []) else {
+      logger.error("\(#function)在处理\(String(describing: T.self))时，序列化请求体为JSON时失败")
       throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "将请求体转换为 JSON 数据失败"])
     }
 
@@ -172,7 +182,7 @@ final class InkNet {
     return result
   }
 
-  private struct HistoriesQuery:Codable{
+  struct HistoriesQuery:Codable{
     struct Data:Codable{
       let battleHistories:GeneralBattleHistories
       init(from decoder: Decoder) throws {
@@ -225,19 +235,6 @@ extension InkNet.BattleHistoryFetchType{
   }
 }
 
-extension InkNet{
-  private struct DynamicCodingKey: CodingKey {
-    var stringValue: String
-    var intValue: Int?
 
-    init?(stringValue: String) {
-      self.stringValue = stringValue
-      self.intValue = nil
-    }
 
-    init?(intValue: Int) {
-      self.stringValue = "\(intValue)"
-      self.intValue = intValue
-    }
-  }
-}
+

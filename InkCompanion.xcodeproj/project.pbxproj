@@ -57,6 +57,7 @@
 		8B4ABEC52AF8F9F30017E6E6 /* CoopResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B4ABEC42AF8F9F30017E6E6 /* CoopResult.json */; };
 		8B4ABECD2AF9C9110017E6E6 /* CoopStageHolder.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B4ABECC2AF9C9110017E6E6 /* CoopStageHolder.json */; };
 		8B4ABECF2AF9D1590017E6E6 /* CoopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4ABECE2AF9D1590017E6E6 /* CoopItem.swift */; };
+		8B4B2DA72B22DF50004E333B /* InkNet+DynamicCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B2DA62B22DF50004E333B /* InkNet+DynamicCodingKey.swift */; };
 		8B5254B12B206BDB00118B4E /* FilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5254B02B206BDB00118B4E /* FilePickerView.swift */; };
 		8B596B882AF34025006FA8F8 /* RequestID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B596B872AF34025006FA8F8 /* RequestID.swift */; };
 		8B596B8A2AF34076006FA8F8 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B596B892AF34076006FA8F8 /* FriendList.swift */; };
@@ -97,6 +98,7 @@
 		8B8F20632B1FFCFF00230D37 /* SPAlert in Frameworks */ = {isa = PBXBuildFile; productRef = 8B8F20622B1FFCFF00230D37 /* SPAlert */; };
 		8B964E2C2B21AAD800019CCF /* InkAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B964E2B2B21AAD800019CCF /* InkAccountManager.swift */; };
 		8B964E2E2B21CA2900019CCF /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B964E2D2B21CA2900019CCF /* AccountViewModel.swift */; };
+		8B964E302B22886900019CCF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B964E2F2B22886800019CCF /* MainViewModel.swift */; };
 		8B9BFDFB2AF20BCE005F5FB8 /* InkCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFDFA2AF20BCE005F5FB8 /* InkCompanionApp.swift */; };
 		8B9BFDFD2AF20BCE005F5FB8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFDFC2AF20BCE005F5FB8 /* Persistence.swift */; };
 		8B9BFE082AF20BD0005F5FB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9BFE072AF20BD0005F5FB8 /* Preview Assets.xcassets */; };
@@ -113,7 +115,7 @@
 		8B9BFE532AF20BDC005F5FB8 /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE3C2AF20BDC005F5FB8 /* SwiftJSON.swift */; };
 		8B9BFE542AF20BDC005F5FB8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE3D2AF20BDC005F5FB8 /* String.swift */; };
 		8B9BFE6E2AF20BF0005F5FB8 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE612AF20BF0005F5FB8 /* SettingView.swift */; };
-		8B9BFE792AF20BF0005F5FB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE6D2AF20BF0005F5FB8 /* ContentView.swift */; };
+		8B9BFE792AF20BF0005F5FB8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE6D2AF20BF0005F5FB8 /* MainView.swift */; };
 		8B9BFE7E2AF20BF3005F5FB8 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE7B2AF20BF3005F5FB8 /* LoginAPI.swift */; };
 		8B9BFE7F2AF20BF3005F5FB8 /* fAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BFE7C2AF20BF3005F5FB8 /* fAPI.swift */; };
 		8B9BFE8D2AF20C55005F5FB8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8B9BFE8C2AF20C55005F5FB8 /* Kingfisher */; };
@@ -225,6 +227,7 @@
 		8B4ABEC42AF8F9F30017E6E6 /* CoopResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoopResult.json; sourceTree = "<group>"; };
 		8B4ABECC2AF9C9110017E6E6 /* CoopStageHolder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoopStageHolder.json; sourceTree = "<group>"; };
 		8B4ABECE2AF9D1590017E6E6 /* CoopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopItem.swift; sourceTree = "<group>"; };
+		8B4B2DA62B22DF50004E333B /* InkNet+DynamicCodingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InkNet+DynamicCodingKey.swift"; sourceTree = "<group>"; };
 		8B5254B02B206BDB00118B4E /* FilePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePickerView.swift; sourceTree = "<group>"; };
 		8B596B872AF34025006FA8F8 /* RequestID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestID.swift; sourceTree = "<group>"; };
 		8B596B892AF34076006FA8F8 /* FriendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
@@ -261,6 +264,7 @@
 		8B7B3B882B11838900E81ED5 /* CoopDetailTopCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopDetailTopCard.swift; sourceTree = "<group>"; };
 		8B964E2B2B21AAD800019CCF /* InkAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkAccountManager.swift; sourceTree = "<group>"; };
 		8B964E2D2B21CA2900019CCF /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		8B964E2F2B22886800019CCF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		8B9BFDF72AF20BCE005F5FB8 /* InkCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InkCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9BFDFA2AF20BCE005F5FB8 /* InkCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkCompanionApp.swift; sourceTree = "<group>"; };
 		8B9BFDFC2AF20BCE005F5FB8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -296,7 +300,7 @@
 		8B9BFE682AF20BF0005F5FB8 /* ScheduleBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleBaseView.swift; sourceTree = "<group>"; };
 		8B9BFE692AF20BF0005F5FB8 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		8B9BFE6B2AF20BF0005F5FB8 /* SchedulesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
-		8B9BFE6D2AF20BF0005F5FB8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8B9BFE6D2AF20BF0005F5FB8 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8B9BFE7B2AF20BF3005F5FB8 /* LoginAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		8B9BFE7C2AF20BF3005F5FB8 /* fAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fAPI.swift; sourceTree = "<group>"; };
 		8B9DC0582B1EC0A70014F87A /* ConvenientColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenientColors.swift; sourceTree = "<group>"; };
@@ -453,6 +457,7 @@
 				8B33B5E62B048187002BEBBE /* InkNet.swift */,
 				8B9BFE7A2AF20BF3005F5FB8 /* API */,
 				8BCD99A32B0AE51F00829AF5 /* NintendoAccount.swift */,
+				8B4B2DA62B22DF50004E333B /* InkNet+DynamicCodingKey.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -639,7 +644,7 @@
 				8B0B2AEE2B1D5A3A00FDA4B5 /* Battle */,
 				8B1A23E92B194D62002498DC /* Schedules */,
 				8B9BFE612AF20BF0005F5FB8 /* SettingView.swift */,
-				8B9BFE6D2AF20BF0005F5FB8 /* ContentView.swift */,
+				8B9BFE6D2AF20BF0005F5FB8 /* MainView.swift */,
 				8B596B8F2AF38634006FA8F8 /* Style.swift */,
 				8B34793A2B18AD69001F7737 /* HomePage.swift */,
 				8B9DC0662B1F46030014F87A /* MePage.swift */,
@@ -851,6 +856,7 @@
 				8B1A23EE2B194F32002498DC /* ScheduleViewModel.swift */,
 				8B9DC0602B1F32B40014F87A /* MeViewModel.swift */,
 				8B964E2D2B21CA2900019CCF /* AccountViewModel.swift */,
+				8B964E2F2B22886800019CCF /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1078,6 +1084,7 @@
 				8B9DC05B2B1EC2D60014F87A /* Operator.swift in Sources */,
 				8BA5C14F2B147A8B001CA89D /* InkAppDelegate.swift in Sources */,
 				8B5DD3EA2B083ED700EDD673 /* InkData.swift in Sources */,
+				8B964E302B22886900019CCF /* MainViewModel.swift in Sources */,
 				8B9BFE7F2AF20BF3005F5FB8 /* fAPI.swift in Sources */,
 				8BB7D1D52AFFAEDE0021CF39 /* Constants.swift in Sources */,
 				8B9BFE6E2AF20BF0005F5FB8 /* SettingView.swift in Sources */,
@@ -1113,7 +1120,7 @@
 				8B596B932AF3CD39006FA8F8 /* HistoryRecord.swift in Sources */,
 				8B9DC05F2B1F30A40014F87A /* LoginView.swift in Sources */,
 				8B9BFDFB2AF20BCE005F5FB8 /* InkCompanionApp.swift in Sources */,
-				8B9BFE792AF20BF0005F5FB8 /* ContentView.swift in Sources */,
+				8B9BFE792AF20BF0005F5FB8 /* MainView.swift in Sources */,
 				8B46A5532AF507F1001FB5E2 /* BattleHistories.swift in Sources */,
 				8BB7D1CB2AFF5A7F0021CF39 /* BattleRule.swift in Sources */,
 				8B1E450A2B1DAB4B00773CD6 /* Status.swift in Sources */,
@@ -1153,6 +1160,7 @@
 				8B596B8E2AF35671006FA8F8 /* FriendView.swift in Sources */,
 				8B7B3B872B117E9000E81ED5 /* PlayerView.swift in Sources */,
 				8BCF4B9E2B0739A6009FAB9B /* CoopView.swift in Sources */,
+				8B4B2DA72B22DF50004E333B /* InkNet+DynamicCodingKey.swift in Sources */,
 				8B1A23F72B19B05F002498DC /* BattleStageCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
