@@ -29,14 +29,14 @@ class BattleModel:ObservableObject{
     }
     self.stats = .refreshing
     guard let histories = await inkNet.fetchBattleHistory(for: .Latest)?.historyGroups.nodes?[0].historyDetails.nodes else {return}
-    var modeShouldSkip:[ModeSelection:Bool] = [:]
-    for mode in ModeSelection.allCases{
+    var modeShouldSkip:[BattleMode:Bool] = [:]
+    for mode in BattleMode.allCases{
       modeShouldSkip[mode] = true
     }
     for history in histories {
-      let id = history.id.base64Decoded().replacingOccurrences(of: "RECENT", with: ModeSelection(rawValue: history.vsMode.id).replacement).base64Encoded()
+      let id = history.id.base64Decoded().replacingOccurrences(of: "RECENT", with: BattleMode(rawValue: history.vsMode.id).replacement).base64Encoded()
       if await !inkData.isExist(id: id){
-        modeShouldSkip[ModeSelection(rawValue: history.vsMode.id)] = false
+        modeShouldSkip[BattleMode(rawValue: history.vsMode.id)] = false
       }
     }
 
@@ -49,7 +49,7 @@ class BattleModel:ObservableObject{
     self.stats = .none
   }
 
-  private func loadFromNet(modeShouldSkip:[ModeSelection:Bool]) async {
+  private func loadFromNet(modeShouldSkip:[BattleMode:Bool]) async {
     await withTaskGroup(of: VsHistoryDetail?.self) { group in
       DispatchQueue.main.async {
         withAnimation {
@@ -133,7 +133,7 @@ class BattleModel:ObservableObject{
   }
 }
 
-enum ModeSelection:String,CaseIterable{
+enum BattleMode:String,CaseIterable{
   case regular = "REGULAR"
   case anarchy = "BANKARA"
   case xMatch = "XMATCH"

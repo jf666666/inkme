@@ -44,27 +44,39 @@ struct BattleScheduleCell: View {
         }
       }
       if scheduleType == .primary {
-        ProgressView(
+        CustomProgressView(
           value: min(timePublisher.currentTime, schedule.endTime) - schedule.startTime,
-          total: schedule.endTime - schedule.startTime)
-        .padding(.bottom, 8)
-      .tint(schedule.mode.themeColor)
+          total: schedule.endTime - schedule.startTime,
+          color: schedule.mode.themeColor
+        )
+      }else{
+        CustomProgressView(
+          value: 0,
+          total: 1,
+          color:Color.secondary
+        )
+        .tint(schedule.mode.themeColor)
       }
+
       HStack{
         BattleStageCard(stage: schedule.stages[0])
         BattleStageCard(stage: schedule.stages[1])
       }
     }
+    .padding(.all,10)
+    .background(.listItemBackground)
+    .continuousCornerRadius(18)
   }
 
 
   private var ruleIcon: some View {
     schedule.rule.image
+      .resizable()
       .antialiased(true)
-//      .resizable()
-//      .scaledToFit()
+      .scaledToFit()
+      .frame(width: 30,height: 30)
       .shadow(radius: 4)
-//      .layoutPriority(1)
+
 
   }
   var timeRangeSection:some View{
@@ -74,6 +86,7 @@ struct BattleScheduleCell: View {
         .font1,
         size: 16,
         relativeTo: .headline)
+      .foregroundStyle(.secondary)
   }
   private var ruleSection: some View {
     HStack(
@@ -83,21 +96,14 @@ struct BattleScheduleCell: View {
       ruleIcon
       ruleTitle
     }
-//    .frame(
-//      width: 400 * 0.45,
-//      height: 400 * 0.115,
-//      alignment: .leading)
-//    .hAlignment(.leading)
   }
 
   private var ruleTitle: some View {
     IdealFontLayout(anchor: .leading) {
-      // actual rule title
       Text(schedule.rule.name)
         .scaledLimitedLine()
-        .inkFont(.font1, size: Scoped.RULE_TITLE_FONT_SIZE_MAX, relativeTo: Scoped.RULE_TITLE_TEXT_STYLE_RELATIVE_TO)
+        .inkFont(.font1, size: 22, relativeTo: Scoped.RULE_TITLE_TEXT_STYLE_RELATIVE_TO)
 
-      // all other possible rule titles for the layout to compute ideal size
       ForEach(BattleRule.allCases) { rule in
         Text(rule.name)
           .scaledLimitedLine()
@@ -114,14 +120,76 @@ struct BattleScheduleCell: View {
       .animation(.snappy, value: timePublisher.currentTime)
       .scaledLimitedLine()
       .foregroundStyle(Color.secondary)
-      .inkFont(.font1, size: 25, relativeTo: .headline)
-      .frame(
-        width: 400 * 0.32,
-        alignment: .trailing)
+      .inkFont(.font1, size: 16, relativeTo: .headline)
+      .frame(alignment: .trailing)
   }
 }
 
-#Preview {
-  BattleScheduleCell(schedule: (MockData.getStageQuery().data.regularSchedules?.nodes![0].toSchedule())!,scheduleType: .primary)
-    .environmentObject(TimePublisher.shared)
+struct BattleScheduleCell_Previews: PreviewProvider {
+
+  static var previews: some View {
+    ScheduleWrapper{
+      let schedules = MockData.getBattleSchedules(preferredMode: .regular)
+      VStack(alignment: .center,spacing: 10) {
+        BattleScheduleCell(schedule: schedules[0],scheduleType: .primary)
+
+
+        ForEach(schedules[1..<schedules.count]) { item in
+          BattleScheduleCell(schedule: item,scheduleType: .secondary)
+
+        }
+      }
+    }
+  }
+}
+
+struct CustomProgressView: View {
+  var value: CGFloat  // 当前进度值
+  var total: CGFloat  // 总进度值
+  var color:Color = Color.init(.sRGB, white: 0.8, opacity: 0.3)
+      private var progress: CGFloat {
+          1 - max(0, min(value / total, 1))
+      }
+
+    var body: some View {
+        GeometryReader { geo in
+            ZStack(alignment: .leading) {
+                // 背景线
+                Path { path in
+                    path.move(to: .init(x: 0, y: 0))
+                    path.addLine(to: .init(x: geo.size.width * progress, y: 0))
+                }
+                .stroke(style: StrokeStyle(lineWidth: 3, dash: [3.5, 3.5]))
+                .foregroundColor(color) // 背景颜色设置为更透明
+
+//                // 填充线
+//                Path { path in
+//                    path.move(to: .init(x: 0, y: 0))
+//                    path.addLine(to: .init(x: geo.size.width * progress, y: 0))
+//                }
+//                .stroke(style: StrokeStyle(lineWidth: 2))
+//                .foregroundColor(Color.init(.sRGB, white: 0.2, opacity: 1)) // 填充颜色保持不变
+            }
+        }
+        .frame(height: 1)
+    }
+}
+
+struct ScheduleWrapper<Content:View>:View {
+  @ViewBuilder let content: () -> Content
+  var body: some View {
+    NavigationStack {
+      ScrollView {
+        VStack(alignment: .center,spacing: 10) {
+          VStack(spacing:5) {
+            content()
+              .environmentObject(TimePublisher.shared)
+          }
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.horizontal,15)
+      }
+      .fixSafeareaBackground()
+    }
+  }
 }

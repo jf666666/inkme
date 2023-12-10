@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 import AlertToast
 
+
 enum UpdateStatus {
   case none
   case updating
@@ -69,6 +70,7 @@ struct MainView: View {
     .task{
       await homeViewModel.loadSchedules()
       await accountViewModel.loadAccount()
+      
       await update()
     }
   }
@@ -78,7 +80,7 @@ struct MainView: View {
     if accountViewModel.shouldUpdate(){
       mainViewModel.isUpdateToken = true
       do{
-        try await InkNet.NintendoService().updateTokens()
+        _ = try await InkNet.NintendoService().updateTokens()
         accountViewModel.selectedAccount?.lastRefreshTime = Date.now
         await accountViewModel.updateAccountInCoreData()
         mainViewModel.updateTokenSuccess = true

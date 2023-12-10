@@ -14,7 +14,7 @@ struct CoopScheduleCell: View {
   let shift:CoopSchedule
   var stage:StageSelection{StageSelection(rawValue: shift.setting.coopStage.id) ?? .unknown}
   var timeString:String{
-    shift.startTime.asDate.toSalmonTimeString() + " - " + shift.endTime.asDate.toSalmonTimeString()
+    shift.startTime.asDate.toSalmonTimeString(includeWeekday: true) + " - " + shift.endTime.asDate.toSalmonTimeString()
   }
   var weapons:[String]{shift.setting.weapons.map{$0.image?.url ?? ""}}
   var boss:CoopEnemy{shift.setting.boss}
@@ -22,18 +22,23 @@ struct CoopScheduleCell: View {
   var body: some View {
     VStack{
       titleSection
+      line
       stageAndWeaponSection
-      if shift.isCurrent(timePublisher.currentTime){
-        VStack(alignment: .trailing){
-          remainingTimeSection
-          ProgressView(
-            value: min(timePublisher.currentTime, shift.endTime.asDate) - shift.startTime.asDate,
-            total: shift.endTime.asDate - shift.startTime.asDate)
-//          .padding(.bottom, 8)
-          .tint(ScheduleMode.salmonRun.themeColor)
-        }
-      }
+//      if shift.isCurrent(timePublisher.currentTime){
+//        VStack(alignment: .trailing){
+//          remainingTimeSection
+//          ProgressView(
+//            value: min(timePublisher.currentTime, shift.endTime.asDate) - shift.startTime.asDate,
+//            total: shift.endTime.asDate - shift.startTime.asDate)
+//          .tint(ScheduleMode.salmonRun.themeColor)
+//        }
+//      }
     }
+    .padding(10)
+    .background(.listItemBackground)
+    .continuousCornerRadius(18)
+    .frame(height: 180)
+
   }
 
   private var remainingTimeSection: some View {
@@ -47,19 +52,27 @@ struct CoopScheduleCell: View {
   }
 
   var titleSection:some View{
-    HStack{
-      rule.icon
+    HStack {
+      HStack(spacing:0){
+        rule.icon
+          .resizable()
+          .scaledToFit()
+          .frame(width: 35)
+
+        Text(timeString)
+//          .colorInvert()
+  //        .scaledLimitedLine()
+          .foregroundStyle(.appLabel)
+          .inkFont(.font1, size: 15, relativeTo: .body)
+          .padding(5)
+//          .background(Color.secondary)
+          .continuousCornerRadius(4)
+      }
+      Spacer()
+      boss.enemy.image
         .resizable()
         .scaledToFit()
-        .frame(width: 35)
-      Spacer()
-      Text(timeString)
-        .colorInvert()
-//        .scaledLimitedLine()
-        .inkFont(.font1, size: 15, relativeTo: .body)
-        .padding(5)
-        .background(Color.secondary)
-        .continuousCornerRadius(4)
+
     }
   }
   var stageSection:some View{
@@ -111,15 +124,18 @@ struct CoopScheduleCell: View {
   }
 
   var line:some View{
-    GeometryReader { geo in
-      Path { path in
-        path.move(to: .init(x: 0, y: 0))
-        path.addLine(to: .init(x: geo.size.width, y: 0))
+    VStack {
+      if shift.isCurrent(timePublisher.currentTime) {
+        CustomProgressView(value: min(timePublisher.currentTime, shift.endTime.asDate) - shift.startTime.asDate, total: shift.endTime.asDate - shift.startTime.asDate,
+          color: ScheduleMode.salmonRun.themeColor
+        )
+      } else {
+        CustomProgressView(value: 0,
+                           total: 1,
+                           color: .secondary
+        )
       }
-      .stroke(style: StrokeStyle(lineWidth: 1))
-      .foregroundColor(Color.waveDefeat)
     }
-    .frame(height: 1)
   }
   var bossSection:some View{
 //    VStack{
@@ -129,19 +145,12 @@ struct CoopScheduleCell: View {
       VStack {
         Spacer()
         HStack(alignment: .bottom) {
+          Spacer()
           Text(stage.name)
             .inkFont(.font1, size: geo.size.height*0.12, relativeTo: .body)
             .padding(geo.size.height*0.02)
             .background(.ultraThinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 3))
-          Spacer()
-          boss.enemy.image
-            .resizable()
-            .scaledToFit()
-            .padding(geo.size.height*0.008)
-            .background(.ultraThinMaterial)
-            .continuousCornerRadius(geo.size.height*0.03)
-          .frame(height: geo.size.height*0.25)
         }
       }
       .padding(geo.size.height*0.025)
@@ -153,9 +162,8 @@ struct CoopScheduleCell: View {
 }
 
 #Preview {
-  CoopScheduleCell(shift: MockData.getStageQuery().data.coopGroupingSchedule!.bigRunSchedules.nodes![0])
-    .padding(8)
-    .textureBackground(texture: .bubble, radius: 18)
-    .frame(width: 366,height: 180)
-    .environmentObject(TimePublisher.shared)
+  ScheduleWrapper {
+    CoopScheduleCell(shift: MockData.getStageQuery().data.coopGroupingSchedule!.regularSchedules.nodes![2])
+      .environmentObject(TimePublisher.shared)
+  }
 }

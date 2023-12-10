@@ -17,8 +17,14 @@ class HomeViewModel: ObservableObject{
   @Published var regularShift:[CoopSchedule] = []
   @Published var bigrunShift:[CoopSchedule] = []
   @Published var teamContestShift:[CoopSchedule] = []
-  
+  @Published var coopWinLoseDrawResult:[Judgement] = []
+  @Published var battleWinLoseDrawResult:[Judgement] = []
+  @Published var todayCoop:TodayCoop = TodayCoop()
+  @Published var todayBattle:TodayBattle = TodayBattle()
+
   private var inkNet = InkNet.shared
+  private var inkData = InkData.shared
+
   init() {
     self.scheduleDict = [:]
     for mode in ScheduleMode.allCases {
@@ -35,6 +41,22 @@ class HomeViewModel: ObservableObject{
       self.scheduleDict[.x] = (data?.data.xSchedules?.nodes ?? []).compactMap{ $0.toSchedule()}
       self.regularShift = (data?.data.coopGroupingSchedule?.regularSchedules.nodes ?? [])
       self.bigrunShift = (data?.data.coopGroupingSchedule?.bigRunSchedules.nodes ?? [])
+    }
+  }
+  
+  @MainActor
+  func loadGirds(){
+    if let userKey = InkUserDefaults.shared.currentUserKey, let id = Int64(userKey){
+      self.coopWinLoseDrawResult = inkData.coopStatus(accountId: id)
+      self.battleWinLoseDrawResult = inkData.battleStatus(accountId: id)
+    }
+  }
+
+  @MainActor
+  func loadTodayCoop(){
+    if let userKey = InkUserDefaults.shared.currentUserKey, let id = Int64(userKey){
+      self.todayCoop = inkData.todayCoop(accountId: id)
+      self.todayBattle = inkData.todayBattle(accountId: id)
     }
   }
 

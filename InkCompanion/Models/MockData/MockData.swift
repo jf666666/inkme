@@ -94,7 +94,30 @@ struct MockData {
 
     return try! JSONDecoder().decode(StageSchedules.self, from: data!)
   }
-  
+
+  static func getBattleSchedules(preferredMode: ScheduleMode = .regular,
+                                 preferredRule: BattleRule = .turfWar,
+                           rawStartTime: Date = Date())->[BattleRegularSchedule]{
+    var startTime = rawStartTime/*.removeMinutes()!*/
+    var endTime =
+      Calendar.current.date(
+        byAdding: .minute,
+        value: 1,
+        to: startTime)!
+    var schedules:[BattleRegularSchedule] = []
+    for _ in Array(0..<13){
+      let stageA = VsStage(id: StageSelection.allCases.randomElement()!.rawValue, name: "", stats: nil)
+      let stageB = VsStage(id: StageSelection.allCases.randomElement()!.rawValue, name: "", stats: nil)
+      let schedule = BattleRegularSchedule(mode: preferredMode, rule: BattleRule.allCases.randomElement()!, startTime: startTime, endTime: endTime, stages: [stageA,stageB])
+      startTime = endTime
+      endTime = endTime.addingTimeInterval(7200)
+      schedules.append(schedule)
+    }
+    return schedules
+  }
+
+
+
   static func getVsHistoryDetail()->VsHistoryDetail?{
     struct DetailQuery:Codable{
       struct Data:Codable{

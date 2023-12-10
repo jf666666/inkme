@@ -13,7 +13,7 @@ import SwiftUI
 enum InkFont: String {
   case font1 = "DFPZongYiW7"
   case Splatoon1 = "Splatoon2"
-  case Splatoon2 = "Splatoon1"
+  case Splatoon2 = "Splatfont 1 v1.008"
 }
 
 extension View {

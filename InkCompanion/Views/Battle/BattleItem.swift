@@ -11,7 +11,7 @@ import Kingfisher
 struct BattleItem: View {
   let detail:VsHistoryDetail
 
-  var mode:ModeSelection{ModeSelection(rawValue: detail.vsMode.id)}
+  var mode:BattleMode{BattleMode(rawValue: detail.vsMode.id)}
   var rule:BattleRule{detail.vsRule.rule}
   var species:Species {detail.player.species}
   var myTeamColor:Color{detail.myTeam.color.swiftColor}

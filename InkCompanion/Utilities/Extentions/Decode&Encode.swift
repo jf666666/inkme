@@ -24,7 +24,7 @@ extension String {
 }
 
 extension Data {
-    
+
     func decode<T>(_ type: T.Type) -> T? where T : Decodable {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -32,12 +32,16 @@ extension Data {
         do {
             return try decoder.decode(type.self, from: self)
         } catch {
-            os_log("Decode \(String(describing: T.self)) Error: \(error.localizedDescription)")
+            if let jsonString = String(data: self, encoding: .utf8) {
+                os_log("Decode \(String(describing: T.self)) Error: \(error.localizedDescription), Data: \(jsonString)")
+            } else {
+                os_log("Decode \(String(describing: T.self)) Error: \(error.localizedDescription), Data could not be serialized")
+            }
             return nil
         }
     }
-    
 }
+
 
 
 extension Encodable {

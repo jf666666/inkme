@@ -27,8 +27,6 @@ struct MePage: View {
                 Text("SW-\(account.friendCode)")
                 //                Text(inkPlayers[idx].sessionToken)
                 Text("\(account.id)")
-                
-                
               }
             }
 

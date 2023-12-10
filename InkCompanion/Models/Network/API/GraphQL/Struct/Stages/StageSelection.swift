@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum StageSelection:String {
+enum StageSelection:String,CaseIterable {
   case MaroonersBay = "Q29vcFN0YWdlLTY="
   case SalmonidSmokeyard = "Q29vcFN0YWdlLTQ="
   case GoneFissionHydropplant = "Q29vcFN0YWdlLTc="

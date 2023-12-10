@@ -23,8 +23,7 @@ struct BattleScheduleList: View {
         var type:BattleScheduleCell.type{schedule.isCurrent(timePublisher.currentTime) ? .primary : .secondary}
         VStack{
           BattleScheduleCell(schedule: schedule,scheduleType:type)
-            .padding(.all,20)
-            .textureBackground(texture: .bubble, radius: 18)
+            
         }
       }
     }

@@ -53,7 +53,6 @@
 		8B46A5532AF507F1001FB5E2 /* BattleHistories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46A5522AF507F1001FB5E2 /* BattleHistories.swift */; };
 		8B46A5592AF52E91001FB5E2 /* CoopHistories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46A5582AF52E91001FB5E2 /* CoopHistories.swift */; };
 		8B46A55D2AF5CCF1001FB5E2 /* NameplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46A55C2AF5CCF1001FB5E2 /* NameplateView.swift */; };
-		8B46A5652AF6002E001FB5E2 /* Splatoon1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B46A5642AF6002E001FB5E2 /* Splatoon1.otf */; };
 		8B4ABEC52AF8F9F30017E6E6 /* CoopResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B4ABEC42AF8F9F30017E6E6 /* CoopResult.json */; };
 		8B4ABECD2AF9C9110017E6E6 /* CoopStageHolder.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B4ABECC2AF9C9110017E6E6 /* CoopStageHolder.json */; };
 		8B4ABECF2AF9D1590017E6E6 /* CoopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4ABECE2AF9D1590017E6E6 /* CoopItem.swift */; };
@@ -149,10 +148,16 @@
 		8BCD71522AF667B200EE3F4A /* CoopDetailHolder.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BCD71512AF667B200EE3F4A /* CoopDetailHolder.json */; };
 		8BCD99A42B0AE51F00829AF5 /* NintendoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD99A32B0AE51F00829AF5 /* NintendoAccount.swift */; };
 		8BCF4B9E2B0739A6009FAB9B /* CoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF4B9D2B0739A6009FAB9B /* CoopView.swift */; };
+		8BD1EB302B244847000B609D /* VDGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD1EB2F2B244847000B609D /* VDGridView.swift */; };
 		8BDBC4462B0B6E4800A4258E /* CoopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBC4452B0B6E4800A4258E /* CoopDetailView.swift */; };
 		8BE74AD82B0E3329001796DF /* FixSafeareaBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE74AD72B0E3329001796DF /* FixSafeareaBackgroundModifier.swift */; };
 		8BE74ADB2B0ECB0D001796DF /* CoopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE74ADA2B0ECB0D001796DF /* CoopModel.swift */; };
 		8BE74ADD2B0ECDAF001796DF /* CoopSummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE74ADC2B0ECDAF001796DF /* CoopSummaryCard.swift */; };
+		8BF2D4E22B25292B0017B1E0 /* TabBar in Frameworks */ = {isa = PBXBuildFile; productRef = 8BF2D4E12B25292B0017B1E0 /* TabBar */; };
+		8BF2D4E42B2535730017B1E0 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E32B2535730017B1E0 /* TodayView.swift */; };
+		8BF2D4E62B2535890017B1E0 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E52B2535880017B1E0 /* PieView.swift */; };
+		8BF2D4E82B255F6C0017B1E0 /* Splatoon1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E72B255F6C0017B1E0 /* Splatoon1.otf */; };
+		8BF2D4EA2B2570870017B1E0 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E92B2570870017B1E0 /* ScheduleView.swift */; };
 		8BF742D22B15ACBA00382A0E /* CoopSummaryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF742D12B15ACBA00382A0E /* CoopSummaryDetail.swift */; };
 		8BFE69482AF8A69100370F8F /* EnemyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE69472AF8A69100370F8F /* EnemyView.swift */; };
 		8BFE694C2AF8B40100370F8F /* Splatoon2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BFE694B2AF8B40100370F8F /* Splatoon2.otf */; };
@@ -223,7 +228,6 @@
 		8B46A5522AF507F1001FB5E2 /* BattleHistories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleHistories.swift; sourceTree = "<group>"; };
 		8B46A5582AF52E91001FB5E2 /* CoopHistories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopHistories.swift; sourceTree = "<group>"; };
 		8B46A55C2AF5CCF1001FB5E2 /* NameplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameplateView.swift; sourceTree = "<group>"; };
-		8B46A5642AF6002E001FB5E2 /* Splatoon1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splatoon1.otf; sourceTree = "<group>"; };
 		8B4ABEC42AF8F9F30017E6E6 /* CoopResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoopResult.json; sourceTree = "<group>"; };
 		8B4ABECC2AF9C9110017E6E6 /* CoopStageHolder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoopStageHolder.json; sourceTree = "<group>"; };
 		8B4ABECE2AF9D1590017E6E6 /* CoopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopItem.swift; sourceTree = "<group>"; };
@@ -330,10 +334,15 @@
 		8BCD71512AF667B200EE3F4A /* CoopDetailHolder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoopDetailHolder.json; sourceTree = "<group>"; };
 		8BCD99A32B0AE51F00829AF5 /* NintendoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NintendoAccount.swift; sourceTree = "<group>"; };
 		8BCF4B9D2B0739A6009FAB9B /* CoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopView.swift; sourceTree = "<group>"; };
+		8BD1EB2F2B244847000B609D /* VDGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDGridView.swift; sourceTree = "<group>"; };
 		8BDBC4452B0B6E4800A4258E /* CoopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopDetailView.swift; sourceTree = "<group>"; };
 		8BE74AD72B0E3329001796DF /* FixSafeareaBackgroundModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixSafeareaBackgroundModifier.swift; sourceTree = "<group>"; };
 		8BE74ADA2B0ECB0D001796DF /* CoopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopModel.swift; sourceTree = "<group>"; };
 		8BE74ADC2B0ECDAF001796DF /* CoopSummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopSummaryCard.swift; sourceTree = "<group>"; };
+		8BF2D4E32B2535730017B1E0 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		8BF2D4E52B2535880017B1E0 /* PieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
+		8BF2D4E72B255F6C0017B1E0 /* Splatoon1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splatoon1.otf; sourceTree = "<group>"; };
+		8BF2D4E92B2570870017B1E0 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		8BF4BDFB2B1362CB00E5C6B5 /* InkAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkAppDelegate.swift; sourceTree = "<group>"; };
 		8BF742D12B15ACBA00382A0E /* CoopSummaryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopSummaryDetail.swift; sourceTree = "<group>"; };
 		8BFE69472AF8A69100370F8F /* EnemyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyView.swift; sourceTree = "<group>"; };
@@ -347,6 +356,7 @@
 			files = (
 				8B8F20632B1FFCFF00230D37 /* SPAlert in Frameworks */,
 				8B9BFE902AF20C5C005F5FB8 /* SwiftyJSON in Frameworks */,
+				8BF2D4E22B25292B0017B1E0 /* TabBar in Frameworks */,
 				8B596B9B2AF4567E006FA8F8 /* AlertToast in Frameworks */,
 				8B596B962AF3D6A4006FA8F8 /* AnyCodable in Frameworks */,
 				8B17F0272B16BB6900A3C46A /* OverlayDatePicker in Frameworks */,
@@ -435,6 +445,7 @@
 			children = (
 				8B2FC7AE2B20099A000EDD0A /* Battle */,
 				8B0B2AD02B1C07AB00FDA4B5 /* Coop */,
+				8BF2D4E92B2570870017B1E0 /* ScheduleView.swift */,
 			);
 			path = Schedules;
 			sourceTree = "<group>";
@@ -483,8 +494,8 @@
 			isa = PBXGroup;
 			children = (
 				8B7B3B812B10E19400E81ED5 /* DFPZongYiW7-GB.ttf */,
+				8BF2D4E72B255F6C0017B1E0 /* Splatoon1.otf */,
 				8BFE694B2AF8B40100370F8F /* Splatoon2.otf */,
-				8B46A5642AF6002E001FB5E2 /* Splatoon1.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -655,6 +666,8 @@
 		8B9BFE632AF20BF0005F5FB8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8BF2D4E52B2535880017B1E0 /* PieView.swift */,
+				8BD1EB2F2B244847000B609D /* VDGridView.swift */,
 				8B5254B02B206BDB00118B4E /* FilePickerView.swift */,
 				8B6A07F62B103ADB00C8BDC9 /* GrayscaleTextureView.swift */,
 				8BB5A7F52AFD09F60095E0E9 /* Deprecated */,
@@ -664,6 +677,7 @@
 				8B2A5EB22B15C21F0022817E /* ImportView.swift */,
 				8B01F85E2B174F830031044D /* DocumentPicker.swift */,
 				8B9DC05E2B1F30A40014F87A /* LoginView.swift */,
+				8BF2D4E32B2535730017B1E0 /* TodayView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -896,6 +910,7 @@
 				8B1D5C802AF8403400F9C92B /* Hero */,
 				8B17F0262B16BB6900A3C46A /* OverlayDatePicker */,
 				8B8F20622B1FFCFF00230D37 /* SPAlert */,
+				8BF2D4E12B25292B0017B1E0 /* TabBar */,
 			);
 			productName = InkCompanion;
 			productReference = 8B9BFDF72AF20BCE005F5FB8 /* InkCompanion.app */;
@@ -982,6 +997,7 @@
 				8B17F01E2B16271B00A3C46A /* XCRemoteSwiftPackageReference "Fastis" */,
 				8B3479762B18BAA9001F7737 /* XCLocalSwiftPackageReference "../../../GolandProjects/SplatNet3" */,
 				8B8F20612B1FFCFF00230D37 /* XCRemoteSwiftPackageReference "AlertKit" */,
+				8BF2D4E02B25292B0017B1E0 /* XCRemoteSwiftPackageReference "TabBar" */,
 			);
 			productRefGroup = 8B9BFDF82AF20BCE005F5FB8 /* Products */;
 			projectDirPath = "";
@@ -1009,10 +1025,10 @@
 				8B0B2AD92B1C30FE00FDA4B5 /* StageRecordQuery_en.json in Resources */,
 				8B0B2AE22B1C9D2200FDA4B5 /* HistoryRecordQuery.json in Resources */,
 				8B7B3B822B10E19400E81ED5 /* DFPZongYiW7-GB.ttf in Resources */,
+				8BF2D4E82B255F6C0017B1E0 /* Splatoon1.otf in Resources */,
 				8B4ABECD2AF9C9110017E6E6 /* CoopStageHolder.json in Resources */,
 				8B4ABEC52AF8F9F30017E6E6 /* CoopResult.json in Resources */,
 				8B0B2AD62B1C20CB00FDA4B5 /* CoopRecordQuery_EN.json in Resources */,
-				8B46A5652AF6002E001FB5E2 /* Splatoon1.otf in Resources */,
 				8B0B2ADA2B1C30FE00FDA4B5 /* StageRecordsRefetchQuery_en.json in Resources */,
 				8BB7D1EB2B00810C0021CF39 /* StageScheduleQuery.json in Resources */,
 				8B0B2AE62B1CA15F00FDA4B5 /* VsHistoryDetailQuery.json in Resources */,
@@ -1071,6 +1087,7 @@
 				8BDBC4462B0B6E4800A4258E /* CoopDetailView.swift in Sources */,
 				8B6A07F52B10351C00C8BDC9 /* StringInterpolation.swift in Sources */,
 				8B6A5E4E2AFC649900C76B70 /* XSchedules.swift in Sources */,
+				8BF2D4E62B2535890017B1E0 /* PieView.swift in Sources */,
 				8B9DC0652B1F3F4F0014F87A /* Decode&Encode.swift in Sources */,
 				8B46A55D2AF5CCF1001FB5E2 /* NameplateView.swift in Sources */,
 				8B6A73B52B058EA400361CF6 /* Color+Ext.swift in Sources */,
@@ -1110,6 +1127,7 @@
 				8B33B5EA2B0487AB002BEBBE /* InkPreference.swift in Sources */,
 				8B1A23EF2B194F32002498DC /* ScheduleViewModel.swift in Sources */,
 				8B5FB8622B11C58F00709CD6 /* WaveView.swift in Sources */,
+				8BF2D4E42B2535730017B1E0 /* TodayView.swift in Sources */,
 				8B9DC0592B1EC0A70014F87A /* ConvenientColors.swift in Sources */,
 				8BB7D1EF2B0082370021CF39 /* Date+Ext.swift in Sources */,
 				8BB7D1CC2AFF5A7F0021CF39 /* ScheduleMode.swift in Sources */,
@@ -1125,6 +1143,7 @@
 				8BB7D1CB2AFF5A7F0021CF39 /* BattleRule.swift in Sources */,
 				8B1E450A2B1DAB4B00773CD6 /* Status.swift in Sources */,
 				8B46A54F2AF4CA0F001FB5E2 /* DetailVotingStatusQuery.swift in Sources */,
+				8BD1EB302B244847000B609D /* VDGridView.swift in Sources */,
 				8B6A5E522AFC653B00C76B70 /* EventSchedules.swift in Sources */,
 				8B0B2ADC2B1C50DE00FDA4B5 /* SalmonStageAndWeaponsLayout.swift in Sources */,
 				8BCD99A42B0AE51F00829AF5 /* NintendoAccount.swift in Sources */,
@@ -1137,6 +1156,7 @@
 				8BB5A7F62AFD0AA30095E0E9 /* SpecialWeaponsView.swift in Sources */,
 				8B0B2AED2B1CB0B800FDA4B5 /* VsStage.swift in Sources */,
 				8B6A07F32B10228200C8BDC9 /* Array.swift in Sources */,
+				8BF2D4EA2B2570870017B1E0 /* ScheduleView.swift in Sources */,
 				8B964E2C2B21AAD800019CCF /* InkAccountManager.swift in Sources */,
 				8B596B902AF38634006FA8F8 /* Style.swift in Sources */,
 				8B7B3B852B117E6000E81ED5 /* StageSelection.swift in Sources */,
@@ -1636,6 +1656,14 @@
 				minimumVersion = 5.6.0;
 			};
 		};
+		8BF2D4E02B25292B0017B1E0 /* XCRemoteSwiftPackageReference "TabBar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onl1ner/TabBar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1673,6 +1701,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B9BFE8E2AF20C5C005F5FB8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		8BF2D4E12B25292B0017B1E0 /* TabBar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BF2D4E02B25292B0017B1E0 /* XCRemoteSwiftPackageReference "TabBar" */;
+			productName = TabBar;
 		};
 /* End XCSwiftPackageProductDependency section */
 

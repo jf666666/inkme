@@ -86,10 +86,10 @@ struct CoopSummaryCard: View {
           VStack(alignment: .leading,spacing: 3){
             HStack(spacing: 16){
               HStack(spacing: 3){
-                Image(systemName: "checkmark")
+                Image(.salmonRun)
                   .resizable()
                   .bold()
-                  .foregroundStyle(Color(.spGreen))
+                  .foregroundStyle(Color.spGreen)
                   .frame(width: 12,height: 12)
                 Text("\(averageClear, places:1)")
                   .inkFont(.Splatoon1, size: 12, relativeTo: .body)

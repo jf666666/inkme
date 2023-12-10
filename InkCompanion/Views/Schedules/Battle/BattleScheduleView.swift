@@ -18,7 +18,6 @@ struct BattleScheduleView: View {
   var body: some View {
     if viewModel.regularShift.count == 0{
       makeLoadingView(isFailed: false) {
-
       }
     }else{
       content
@@ -53,7 +52,7 @@ struct BattleScheduleView: View {
       .bouncy,
       value: schedules.map { $0.startTime })
   }
-
+  
   func makeLoadingView(isFailed: Bool, onReload: @escaping () -> Void) -> some View {
     HStack {
       Spacer()

@@ -20,20 +20,18 @@ struct CoopScheduleView: View {
       VStack(spacing:15){
         if let bigRunSchedule = bigRunSchedule{
           CoopScheduleCell(shift: bigRunSchedule)
-            .padding(10)
-            .textureBackground(texture: .streak, radius: 18)
+
         }
         ForEach(regularSchedules,id:\.startTime){ schedule in
           CoopScheduleCell(shift: schedule)
-            .padding(10)
-            .textureBackground(texture: .streak, radius: 18)
+
         }
       }
     }
 }
 
 #Preview {
-  CoopScheduleView(/*shifts: MockData.getStageQuery().data.coopGroupingSchedule!*/)
+  CoopScheduleView()
     .environmentObject(HomeViewModel())
     .environmentObject(TimePublisher.shared)
 }

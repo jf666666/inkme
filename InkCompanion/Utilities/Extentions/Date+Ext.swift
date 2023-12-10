@@ -52,13 +52,13 @@ extension Date {
     else { return timeString }
 
     guard !Calendar.current.isDateInToday(self)
-    else { return String(localized: "Today") + " " + timeString }
+    else { return String(localized: "今天") + " " + timeString }
 
     guard !Calendar.current.isDateInYesterday(self)
-    else { return String(localized: "Yesterday") + " " + timeString }
+    else { return String(localized: "昨天") + " " + timeString }
 
     guard !Calendar.current.isDateInTomorrow(self)
-    else { return String(localized: "Tomorrow") + " " + timeString }
+    else { return String(localized: "明天") + " " + timeString }
 
     // should not happen, but in case other than Today, Yesterday or Tomorrow
     return timeString
@@ -69,13 +69,22 @@ extension Date {
   ///   - shouldIncludeDate: If including the date in the time string (default to false).
   ///   parameter has changed.
   /// - Returns: The salmon time string.
-  func toSalmonTimeString()
-    -> String
-  {
-    let timeString = Date.inkTimeFormatter.string(from: self)
-    let dateString = Date.inkDateFormatter.string(from: self)
-    return dateString + timeString
+  func toSalmonTimeString(includeWeekday: Bool = false) -> String {
+      let timeString = Date.inkTimeFormatter.string(from: self)
+      let dateString = Date.inkDateFormatter.string(from: self)
+      var result = dateString
+
+      if includeWeekday {
+          let weekdayFormatter = DateFormatter()
+          weekdayFormatter.locale = Locale(identifier: "zh_CN")
+          weekdayFormatter.dateFormat = "E"
+          let weekdayString = weekdayFormatter.string(from: self)
+          result = result +  weekdayString + " "
+      }
+
+      return result + timeString
   }
+
 
   /// Convert a Date to the string key for the remaining time.
   /// - Parameter deadline: The deadline to compute the remaining time from.
@@ -92,7 +101,7 @@ extension Date {
     let timeLength = TimeLength(days: days, hours: hours, minutes: minutes, seconds: seconds)
     let timeLengthString = timeLength.getLocalizedDescriptionString()
 
-    return "剩余\(timeLengthString)"
+    return "还剩\(timeLengthString)"
   }
 
   /// Convert a Date to the string key for the until time.

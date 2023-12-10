@@ -7,9 +7,11 @@
 
 import Foundation
 import CoreData
+import OSLog
 
 class InkData{
   static let shared = InkData()
+  let logger = Logger(.custom(InkData.self))
   private init() {}
 
   var context:NSManagedObjectContext {PersistenceController.shared.container.viewContext}
@@ -81,6 +83,127 @@ class InkData{
     await save()
   }
 
+  func coopStatus(accountId:Int64) ->[Judgement]{
+    let fetchRequest = DetailEntity.fetchRequest()
+    let sortDescriptor = NSSortDescriptor(key: "time", ascending: false)
+    fetchRequest.sortDescriptors = [sortDescriptor]
+    let filter = FilterProps(modes: ["salmon_run"],accountId: accountId)
+    fetchRequest.predicate = convertFilter(filter)
+    fetchRequest.fetchLimit = 500
+    do{
+      let results = try context.fetch(fetchRequest)
+      return results.compactMap{
+        if let stats = $0.stats?.decode(CoopStatus.self){
+          if stats.exempt{
+            return .DRAW
+          }
+          if stats.clear{
+            return .WIN
+          }
+          return .LOSE
+        }
+        return nil
+      }
+    }catch{
+      logger.error("InkData.\(#function) failed: \(error.localizedDescription)")
+    }
+    return []
+  }
+  
+  func todayBattle(accountId: Int64) -> TodayBattle{
+    let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
+
+
+    let calendar = Calendar.current
+    let startDate = calendar.startOfDay(for: Date())
+    let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)!
+
+    let filter = FilterProps(modes: ["REGULAR","BANKARA","XMATCH","LEAGUE","PRIVATE"],dateRange:[startDate,endDate],accountId: accountId)
+    fetchRequest.predicate = convertFilter(filter)
+    do {
+      let results = try context.fetch(fetchRequest)
+      if results.isEmpty{
+        return TodayBattle()
+      }else{
+        let statuses = results.compactMap { entity in
+          entity.stats?.decode(BattleStatus.self)
+        }
+        let victory = statuses.filter{$0.win}.count
+        let defeat = statuses.filter{$0.loss}.count
+        let kill = statuses.map{$0.myself.kill}.sum()
+        let assist = statuses.map{$0.myself.assist}.sum()
+        let death = statuses.map{$0.myself.death}.sum()
+        return TodayBattle(victoryCount: victory, defeatCount: defeat, killCount: kill, assistCount: assist, deathCount: death)
+      }
+    } catch {
+      print("Error fetching data: \(error)")
+      return TodayBattle()
+    }
+  }
+
+  func todayCoop(accountId: Int64) -> TodayCoop {
+
+    let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
+
+
+    let calendar = Calendar.current
+    let startDate = calendar.startOfDay(for: Date())
+    let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)!
+
+    let filter = FilterProps(modes: ["salmon_run"],dateRange:[startDate,endDate],accountId: accountId)
+    fetchRequest.predicate = convertFilter(filter)
+    do {
+      let results = try context.fetch(fetchRequest)
+      if results.isEmpty{
+        return TodayCoop()
+      }else{
+        let statuses = results.compactMap { entity in
+          entity.stats?.decode(CoopStatus.self)
+        }
+        let kill = statuses.map{$0.myself.defeat}.average()
+        let egg = statuses.map{$0.myself.golden}.average()
+        let clear = statuses.filter{$0.clear}.count
+        let abort = statuses.filter{$0.exempt}.count
+        let failure = statuses.count - clear - abort
+        let rescue = statuses.map{$0.myself.rescue}.average()
+        let rescued = statuses.map{$0.myself.rescued}.average()
+        return TodayCoop(clear: clear, failure: failure, abort: abort, kill: kill, egg: egg, rescue: rescue, rescued: rescued)
+      }
+    } catch {
+      print("Error fetching data: \(error)")
+      return TodayCoop()
+    }
+  }
+
+  func battleStatus(accountId:Int64) ->[Judgement]{
+    let fetchRequest = DetailEntity.fetchRequest()
+    let sortDescriptor = NSSortDescriptor(key: "time", ascending: false)
+    fetchRequest.sortDescriptors = [sortDescriptor]
+    let filter = FilterProps(modes: ["REGULAR","BANKARA","XMATCH","LEAGUE","PRIVATE"],accountId: accountId)
+    fetchRequest.predicate = convertFilter(filter)
+    fetchRequest.fetchLimit = 500
+    do{
+      let results = try context.fetch(fetchRequest)
+      return results.compactMap{
+        if let stats = $0.stats?.decode(BattleStatus.self){
+          if stats.exempt{
+            return .DRAW
+          }
+          if stats.win{
+            return .WIN
+          }
+          return .LOSE
+        }
+        return nil
+      }
+    }catch{
+      logger.error("InkData.\(#function) failed: \(error.localizedDescription)")
+    }
+    return []
+  }
+
+
+
   func addBattle(detail:VsHistoryDetail)async{
     if await isExist(id: detail.id){
       return
@@ -134,19 +257,12 @@ class InkData{
     do{
       let result = try context.fetch(fetchRequest)
       for detail in result{
-        if let userKey = detail.id?.base64Decoded().userKey, userKey == "qaenpmwwot2cvyq3qpmm"{
-          detail.playerId = 5366484838940672
-          await save()
+        if detail.id!.base64Decoded().hasPrefix("Vs"){
+          detail.stats = detail.detail?.decode(VsHistoryDetail.self)?.status.encode()
+        }else{
+          detail.stats = detail.detail?.decode(CoopHistoryDetail.self)?.status.encode()
         }
-        if let userKey = detail.id?.base64Decoded().userKey, userKey == "q4hxd36lzgos5xtmjtom"{
-          detail.playerId = 4936207332311040
-          await save()
-        }
-
-        if let userKey = detail.id?.base64Decoded().userKey, userKey == "acprc5gvph3wozi5zcum"{
-          detail.playerId = 6578101926264832
-          await save()
-        }
+        await save()
       }
       print("done!!!!")
     }catch{
