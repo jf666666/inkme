@@ -153,6 +153,7 @@
 		8BE74AD82B0E3329001796DF /* FixSafeareaBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE74AD72B0E3329001796DF /* FixSafeareaBackgroundModifier.swift */; };
 		8BE74ADB2B0ECB0D001796DF /* CoopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE74ADA2B0ECB0D001796DF /* CoopModel.swift */; };
 		8BE74ADD2B0ECDAF001796DF /* CoopSummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE74ADC2B0ECDAF001796DF /* CoopSummaryCard.swift */; };
+		8BECD0D12B25D5AF00AAAA2F /* README_CN.md in Resources */ = {isa = PBXBuildFile; fileRef = 8BECD0D02B25D5AF00AAAA2F /* README_CN.md */; };
 		8BF2D4E22B25292B0017B1E0 /* TabBar in Frameworks */ = {isa = PBXBuildFile; productRef = 8BF2D4E12B25292B0017B1E0 /* TabBar */; };
 		8BF2D4E42B2535730017B1E0 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E32B2535730017B1E0 /* TodayView.swift */; };
 		8BF2D4E62B2535890017B1E0 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E52B2535880017B1E0 /* PieView.swift */; };
@@ -339,6 +340,7 @@
 		8BE74AD72B0E3329001796DF /* FixSafeareaBackgroundModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixSafeareaBackgroundModifier.swift; sourceTree = "<group>"; };
 		8BE74ADA2B0ECB0D001796DF /* CoopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopModel.swift; sourceTree = "<group>"; };
 		8BE74ADC2B0ECDAF001796DF /* CoopSummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopSummaryCard.swift; sourceTree = "<group>"; };
+		8BECD0D02B25D5AF00AAAA2F /* README_CN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README_CN.md; sourceTree = "<group>"; };
 		8BF2D4E32B2535730017B1E0 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		8BF2D4E52B2535880017B1E0 /* PieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		8BF2D4E72B255F6C0017B1E0 /* Splatoon1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splatoon1.otf; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 		8B9BFDEE2AF20BCE005F5FB8 = {
 			isa = PBXGroup;
 			children = (
+				8BECD0D02B25D5AF00AAAA2F /* README_CN.md */,
 				8B9BFDF92AF20BCE005F5FB8 /* InkCompanion */,
 				8B9BFE112AF20BD0005F5FB8 /* InkCompanionTests */,
 				8B9BFE1B2AF20BD0005F5FB8 /* InkCompanionUITests */,
@@ -1032,6 +1035,7 @@
 				8B0B2ADA2B1C30FE00FDA4B5 /* StageRecordsRefetchQuery_en.json in Resources */,
 				8BB7D1EB2B00810C0021CF39 /* StageScheduleQuery.json in Resources */,
 				8B0B2AE62B1CA15F00FDA4B5 /* VsHistoryDetailQuery.json in Resources */,
+				8BECD0D12B25D5AF00AAAA2F /* README_CN.md in Resources */,
 				8B0B2AD42B1C1CE200FDA4B5 /* CoopRecordQuery_CN.json in Resources */,
 				8B9BFE4D2AF20BDC005F5FB8 /* Assets.xcassets in Resources */,
 			);
