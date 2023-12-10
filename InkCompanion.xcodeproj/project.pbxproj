@@ -154,6 +154,7 @@
 		8BE74ADB2B0ECB0D001796DF /* CoopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE74ADA2B0ECB0D001796DF /* CoopModel.swift */; };
 		8BE74ADD2B0ECDAF001796DF /* CoopSummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE74ADC2B0ECDAF001796DF /* CoopSummaryCard.swift */; };
 		8BECD0D12B25D5AF00AAAA2F /* README_CN.md in Resources */ = {isa = PBXBuildFile; fileRef = 8BECD0D02B25D5AF00AAAA2F /* README_CN.md */; };
+		8BECD0D32B25DF2200AAAA2F /* FestIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD0D22B25DF2200AAAA2F /* FestIcon.swift */; };
 		8BF2D4E22B25292B0017B1E0 /* TabBar in Frameworks */ = {isa = PBXBuildFile; productRef = 8BF2D4E12B25292B0017B1E0 /* TabBar */; };
 		8BF2D4E42B2535730017B1E0 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E32B2535730017B1E0 /* TodayView.swift */; };
 		8BF2D4E62B2535890017B1E0 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E52B2535880017B1E0 /* PieView.swift */; };
@@ -341,6 +342,7 @@
 		8BE74ADA2B0ECB0D001796DF /* CoopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopModel.swift; sourceTree = "<group>"; };
 		8BE74ADC2B0ECDAF001796DF /* CoopSummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopSummaryCard.swift; sourceTree = "<group>"; };
 		8BECD0D02B25D5AF00AAAA2F /* README_CN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README_CN.md; sourceTree = "<group>"; };
+		8BECD0D22B25DF2200AAAA2F /* FestIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestIcon.swift; sourceTree = "<group>"; };
 		8BF2D4E32B2535730017B1E0 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		8BF2D4E52B2535880017B1E0 /* PieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		8BF2D4E72B255F6C0017B1E0 /* Splatoon1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splatoon1.otf; sourceTree = "<group>"; };
@@ -681,6 +683,7 @@
 				8B01F85E2B174F830031044D /* DocumentPicker.swift */,
 				8B9DC05E2B1F30A40014F87A /* LoginView.swift */,
 				8BF2D4E32B2535730017B1E0 /* TodayView.swift */,
+				8BECD0D22B25DF2200AAAA2F /* FestIcon.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1087,6 +1090,7 @@
 				8B9BFE522AF20BDC005F5FB8 /* Collection.swift in Sources */,
 				8B0B2AF22B1D5ADD00FDA4B5 /* BattleView.swift in Sources */,
 				8B6A73C22B059BAB00361CF6 /* DateFormatter+Ext.swift in Sources */,
+				8BECD0D32B25DF2200AAAA2F /* FestIcon.swift in Sources */,
 				8BE74ADB2B0ECB0D001796DF /* CoopModel.swift in Sources */,
 				8BDBC4462B0B6E4800A4258E /* CoopDetailView.swift in Sources */,
 				8B6A07F52B10351C00C8BDC9 /* StringInterpolation.swift in Sources */,
