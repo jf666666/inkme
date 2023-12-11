@@ -79,31 +79,42 @@ class CoopModel:ObservableObject{
     self.stats = .none
   }
 
+  @MainActor
   func loadFromData(length:Int) async {
-    let count = self.rows.flatMap { $0 }.count
-    let offset = count
-    let limit = length - count
-    var read = 0
-    var details:[CoopHistoryDetail] = []
-    while read < limit{
-      details += await self.inkData.queryDetail(offset: offset+read,limit: min(limit-read,Int((Double(ProcessInfo.processInfo.physicalMemory) / 1024.0 / 1024.0 / 1024.0) * 150.0)), filter: self.ruleFilter)
-      if self.rows.count < min(Int((Double(ProcessInfo.processInfo.physicalMemory) / 1024.0 / 1024.0 / 1024.0) * 150.0), limit-read){
-        break
-      }
-      read += self.rows.count
-    }
-    
-    let tempDetails = details
-    DispatchQueue.main.async {
-      withAnimation {
-        for detail in tempDetails{
-          if self.rows.isEmpty || !self.coopCanGroup(current: self.rows.last![0], new: detail){
-            self.rows.append([detail])
-          }else{
-            self.rows[self.rows.count-1].append(detail)
-          }
-        }
-      }
+//    let count = self.rows.flatMap { $0 }.count
+//    let offset = count
+//    let limit = length - count
+//    var read = 0
+//    var details:[CoopHistoryDetail] = []
+//    while read < limit{
+//      details += await self.inkData.queryDetail(offset: offset+read,limit: min(limit-read,Int((Double(ProcessInfo.processInfo.physicalMemory) / 1024.0 / 1024.0 / 1024.0) * 150.0)), filter: self.ruleFilter)
+//      if self.rows.count < min(Int((Double(ProcessInfo.processInfo.physicalMemory) / 1024.0 / 1024.0 / 1024.0) * 150.0), limit-read){
+//        break
+//      }
+//      read += self.rows.count
+//    }
+    await self.rows = inkData.queryDetailGroup(totalGroup: 5,filter: self.ruleFilter, canGroup: coopCanGroup)
+
+//    let tempDetails = details
+//    DispatchQueue.main.async {
+//      withAnimation {
+//        for detail in tempDetails{
+//          if self.rows.isEmpty || !self.coopCanGroup(current: self.rows.last![0], new: detail){
+//            self.rows.append([detail])
+//          }else{
+//            self.rows[self.rows.count-1].append(detail)
+//          }
+//        }
+//      }
+//    }
+  }
+
+  @MainActor
+  func reloadFromData() async {
+    if let date = self.rows.last?.last?.playedTime.asDate{
+      var filter = self.ruleFilter
+      filter.dateRange = [Date.distantPast, date]
+      await self.rows += inkData.queryDetailGroup(totalGroup: 1, filter: filter, canGroup: coopCanGroup)
     }
   }
 

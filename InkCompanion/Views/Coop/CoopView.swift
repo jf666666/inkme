@@ -42,6 +42,15 @@ struct CoopView: View {
               .buttonStyle(PlainButtonStyle())
             }
           }
+          Button {
+            Task{
+             await model.reloadFromData()
+            }
+          } label: {
+            Text("加载更多")
+              .inkFont(.font1, size: 12, relativeTo: .body)
+          }
+
         }
         .padding(.bottom, 16)
       }

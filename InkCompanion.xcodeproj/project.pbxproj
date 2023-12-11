@@ -155,6 +155,7 @@
 		8BE74ADD2B0ECDAF001796DF /* CoopSummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE74ADC2B0ECDAF001796DF /* CoopSummaryCard.swift */; };
 		8BECD0D12B25D5AF00AAAA2F /* README_CN.md in Resources */ = {isa = PBXBuildFile; fileRef = 8BECD0D02B25D5AF00AAAA2F /* README_CN.md */; };
 		8BECD0D32B25DF2200AAAA2F /* FestIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD0D22B25DF2200AAAA2F /* FestIcon.swift */; };
+		8BECD0D52B25F73D00AAAA2F /* FestRecordQuery.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BECD0D42B25F73C00AAAA2F /* FestRecordQuery.json */; };
 		8BF2D4E22B25292B0017B1E0 /* TabBar in Frameworks */ = {isa = PBXBuildFile; productRef = 8BF2D4E12B25292B0017B1E0 /* TabBar */; };
 		8BF2D4E42B2535730017B1E0 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E32B2535730017B1E0 /* TodayView.swift */; };
 		8BF2D4E62B2535890017B1E0 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E52B2535880017B1E0 /* PieView.swift */; };
@@ -343,6 +344,7 @@
 		8BE74ADC2B0ECDAF001796DF /* CoopSummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopSummaryCard.swift; sourceTree = "<group>"; };
 		8BECD0D02B25D5AF00AAAA2F /* README_CN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README_CN.md; sourceTree = "<group>"; };
 		8BECD0D22B25DF2200AAAA2F /* FestIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestIcon.swift; sourceTree = "<group>"; };
+		8BECD0D42B25F73C00AAAA2F /* FestRecordQuery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FestRecordQuery.json; sourceTree = "<group>"; };
 		8BF2D4E32B2535730017B1E0 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		8BF2D4E52B2535880017B1E0 /* PieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		8BF2D4E72B255F6C0017B1E0 /* Splatoon1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splatoon1.otf; sourceTree = "<group>"; };
@@ -828,6 +830,7 @@
 			isa = PBXGroup;
 			children = (
 				8B9DC05C2B1EE9A60014F87A /* RegularHistoryQuery.json */,
+				8BECD0D42B25F73C00AAAA2F /* FestRecordQuery.json */,
 				8B0B2AE52B1CA15F00FDA4B5 /* VsHistoryDetailQuery.json */,
 				8B0B2AE32B1C9E8B00FDA4B5 /* LatestBattleHistoriesQuery.json */,
 				8B0B2AE12B1C9D2200FDA4B5 /* HistoryRecordQuery.json */,
@@ -1030,6 +1033,7 @@
 				8B9BFE4C2AF20BDC005F5FB8 /* Localizable.strings in Resources */,
 				8B0B2AD92B1C30FE00FDA4B5 /* StageRecordQuery_en.json in Resources */,
 				8B0B2AE22B1C9D2200FDA4B5 /* HistoryRecordQuery.json in Resources */,
+				8BECD0D52B25F73D00AAAA2F /* FestRecordQuery.json in Resources */,
 				8B7B3B822B10E19400E81ED5 /* DFPZongYiW7-GB.ttf in Resources */,
 				8BF2D4E82B255F6C0017B1E0 /* Splatoon1.otf in Resources */,
 				8B4ABECD2AF9C9110017E6E6 /* CoopStageHolder.json in Resources */,

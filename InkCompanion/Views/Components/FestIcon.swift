@@ -188,5 +188,5 @@ struct FestIcon: View {
 }
 
 #Preview {
-  FestIcon()
+  FestIcon(color1: Color(#colorLiteral(red: 0.6043365598, green: 0.1695636213, blue: 0.3733027875, alpha: 1)), color2: Color(#colorLiteral(red: 0.8892669082, green: 0.6943174005, blue: 0.4936971068, alpha: 1)), color3: Color(#colorLiteral(red: 0.3980279863, green: 0.6735672355, blue: 0.08811444789, alpha: 1)), colorCircle: .secondary)
 }

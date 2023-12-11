@@ -287,6 +287,50 @@ class InkData{
     }
   }
 
+  func queryDetailGroup<T: Codable>(totalGroup:Int, offset:Int = 0, filter: FilterProps? = nil, canGroup: @escaping (T, T) -> Bool) async -> [[T]] {
+      var groups: [[T]] = []
+      var currentGroup: [T] = []
+      var offset = offset
+      let limit = 30
+      var keepFetching = true
+
+      while keepFetching {
+          let details: [T] = await queryDetail(offset: offset, limit: limit, filter: filter)
+
+          // 如果没有更多的数据，停止获取
+        if details.isEmpty  {
+              keepFetching = false
+              continue
+          }
+
+          for detail in details {
+              // 检查是否应该开始新的组
+              if let last = currentGroup.last, !canGroup(last, detail) {
+                  // 当前元素不符合分组条件，开始新的组
+                  groups.append(currentGroup)
+                if groups.count >= totalGroup{
+                  keepFetching = false
+                  break
+                }
+                  currentGroup = [detail]
+              } else {
+                  // 当前元素符合分组条件，加入当前组
+                  currentGroup.append(detail)
+              }
+          }
+
+
+          offset += limit
+      }
+
+      // 添加最后一组（如果存在）
+      if !currentGroup.isEmpty {
+          groups.append(currentGroup)
+      }
+
+      return groups
+  }
+
 
   func queryDetail<T:Codable>(offset: Int, limit: Int, filter: FilterProps? = nil) async -> [T] {
     let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
@@ -295,9 +339,7 @@ class InkData{
     let sortDescriptor = NSSortDescriptor(key: "time", ascending: false)
     fetchRequest.sortDescriptors = [sortDescriptor]
 
-    // 设置分页
-    fetchRequest.fetchOffset = offset
-    fetchRequest.fetchLimit = limit
+
     // 应用过滤条件
     if var filter = filter {
       if let userKey = InkUserDefaults.shared.currentUserKey, let userID = Int64(userKey){
@@ -305,6 +347,9 @@ class InkData{
       }
       fetchRequest.predicate = convertFilter(filter)
     }
+    // 设置分页
+    fetchRequest.fetchOffset = offset
+    fetchRequest.fetchLimit = limit
 
     do {
       let results = try context.fetch(fetchRequest)
@@ -381,7 +426,7 @@ func convertFilter(_ filter: FilterProps) -> NSPredicate? {
   if let dateRange = filter.dateRange, dateRange.count == 2 {
     let startDate = dateRange[0]
     let endDate = dateRange[1]
-    predicates.append(NSPredicate(format: "(time >= %@) AND (time <= %@)", startDate as NSDate, endDate as NSDate))
+    predicates.append(NSPredicate(format: "(time >= %@) AND (time < %@)", startDate as NSDate, endDate as NSDate))
   }
 
   // 武器逻辑可能需要根据你的具体需求进行调整
