@@ -17,17 +17,6 @@ extension Array where Element: BinaryInteger {
 
 
 
-//struct CoopHistoryDetail: Codable,Equatable,Identifiable,Hashable {
-//    let playedTime: String
-//    let dangerRate: Double
-//}
-
-//extension String {
-//  var asDate:Date{
-//      utcToDate(date: self) ?? Date()
-//  }
-//}
-
 extension Array where Element == CoopHistoryDetail {
     mutating func insert<S>(contentsOf newElements: S) where S: Collection, CoopHistoryDetail == S.Element {
         // 遍历新元素
@@ -80,4 +69,137 @@ extension Array where Element == Int {
     }
     return num
   }
+}
+
+extension Array where Element == Double {
+  func sum()->Double{
+    var num = 0.0
+    for i in self{
+      num += i
+    }
+    return num
+  }
+}
+
+extension Array where Element == BossSalmonidStats {
+    func sum() -> [BossSalmonidStats] {
+        var dict = [String: BossSalmonidStats]()
+
+        for boss in self {
+            if let existingBoss = dict[boss.id] {
+                let newBoss = BossSalmonidStats(
+                    id: boss.id,
+                    appear: existingBoss.appear + boss.appear,
+                    defeat: existingBoss.defeat + boss.defeat,
+                    defeatTeam: existingBoss.defeatTeam + boss.defeatTeam
+                )
+                dict[boss.id] = newBoss
+            } else {
+                dict[boss.id] = boss
+            }
+        }
+
+      return Array(dict.values).sorted { $0.id.base64Index < $1.id.base64Index }
+    }
+}
+
+extension Array where Element == CoopStatus.King{
+
+  func sum() -> [CoopsStatus.King] {
+    var dict = [String:CoopsStatus.King]()
+    for king in self{
+      if let existingKing = dict[king.id]{
+        let newKing = CoopsStatus.King(
+          id: king.id,
+          appear: existingKing.appear + 1,
+          defeat: existingKing.defeat + (king.defeat ? 1 : 0)
+        )
+        dict[king.id] = newKing
+      }else{
+        dict[king.id] = CoopsStatus.King(
+          id: king.id,
+          appear: 1,
+          defeat: king.defeat ? 1 : 0
+        )
+      }
+    }
+    let array = Array<CoopsStatus.King>(dict.values)
+    return array.sorted{ $0.id.base64Index < $1.id.base64Index }
+  }
+
+}
+
+extension Array where Element: Summable{
+  func sum() -> Element {
+          return self.reduce(Element.zero, +)
+  }
+}
+
+
+extension Array where Element == WaveStats{
+
+  func sum() -> [WaveStats]{
+    var dict = [String: WaveStats]()
+
+    for wave in self {
+        if let existingWave = dict[wave.id] {
+          let newWave = WaveStats(id: wave.id, levels: (existingWave.levels+wave.levels).sum())
+            dict[wave.id] = newWave
+        } else {
+            dict[wave.id] = wave
+        }
+    }
+    
+    return Array(dict.values).sorted {
+      if $0.id == "-" {
+        return false
+      }
+      if $1.id == "-"{
+        return true
+      }
+      if $0.id.hasPrefix("Q29vcEVu") && !$1.id.hasPrefix("Q29vcEVu"){
+        return true
+      }
+      if !$0.id.hasPrefix("Q29vcEVu") && $1.id.hasPrefix("Q29vcEVu"){
+        return false
+      }
+      return $0.id.base64Index < $1.id.base64Index
+    }
+  }
+
+}
+
+
+extension Array where Element == WaveStats.Level{
+  func sum() -> [WaveStats.Level]{
+    var dict = [Int: WaveStats.Level]()
+
+    for wave in self {
+        if let existingWave = dict[wave.id] {
+          let newWave = WaveStats.Level(id: wave.id, appear: wave.appear + existingWave.appear, clear: wave.clear+existingWave.clear)
+            dict[wave.id] = newWave
+        } else {
+            dict[wave.id] = wave
+        }
+    }
+    return Array(dict.values).sorted { $0.id < $1.id }
+  }
+}
+
+extension Array where Element == String{
+  func countWeapons() -> [CoopsStatus.Weapon] {
+      var counts = [String: Int]()
+      for string in self {
+          counts[string, default: 0] += 1
+      }
+    return counts.map { CoopsStatus.Weapon(id: $0.key, count: $0.value) }
+  }
+
+  func countSpecialWeapons() -> [CoopsStatus.SpecialWeapon]{
+    var counts = [String: Int]()
+    for string in self {
+        counts[string, default: 0] += 1
+    }
+  return counts.map { CoopsStatus.SpecialWeapon(id: $0.key, count: $0.value) }
+}
 }

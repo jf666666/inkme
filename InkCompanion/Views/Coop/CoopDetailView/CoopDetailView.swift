@@ -63,7 +63,7 @@ struct CoopDetailView: View {
   }
 
   var enemy:some View {
-    VStack(spacing:2){
+    VStack{
       ForEach(detail.enemyResults,id: \.enemy.id){ enemy in
         if enemy.enemy.id != detail.enemyResults[0].enemy.id{
           line
@@ -89,7 +89,7 @@ struct CoopDetailView: View {
   }
 
   var member:some View{
-    VStack(spacing:2){
+    VStack{
       Group {
         playerResult(result: detail.myResult)
         ForEach(detail.memberResults,id: \.player.id){ result in

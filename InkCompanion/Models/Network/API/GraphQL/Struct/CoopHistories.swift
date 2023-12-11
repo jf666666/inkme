@@ -224,8 +224,6 @@ struct CoopEnemyResult: Codable,Hashable {
   let teamDefeatCount: Int
   let popCount: Int
   let enemy: CoopEnemy
-
-
 }
 
 struct CoopBossResult: Codable {

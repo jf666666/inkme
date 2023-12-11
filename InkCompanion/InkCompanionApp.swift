@@ -27,8 +27,6 @@ struct InkCompanionApp: App {
   init() {
     KingfisherManager.shared.downloader.downloadTimeout = 60
     KingfisherManager.shared.cache.diskStorage.config.expiration = .never
-    InkNet.shared.bulletToken = InkUserDefaults.shared.bulletToken
-    InkNet.shared.webServiceToken = InkUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self)
   }
 
     var body: some Scene {

@@ -8,114 +8,64 @@
 import SwiftUI
 import Kingfisher
 
-//extension CoopShiftCard{
-//  var enemies:[CoopEnemyResult] {[]}
-//  var detail:some View{
-//    VStack{
-//
-//    }
-//  }
-//}
+
 
 struct CoopSummaryDetail:View {
+
   let details:[CoopHistoryDetail]
-  var stats:[CoopStatus] {details.map{$0.status}.filter{!$0.exempt}}
-  var weapons:[String] {details[0].weapons.map{$0.image!.url!}}
-  var stage:StageSelection{StageSelection(rawValue: stats[0].stage) ?? .MaroonersBay}
-  var timeSpanText:String {
-    let start = stats.min { $0.time < $1.time }!.time
-    let end = stats.max { $0.time < $1.time }!.time
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy MM/dd HH:mm"
-    return "\(formatter.string(from: start)) - \(formatter.string(from: end))"
-  }
-  var wave:Double {stats.map { stat in
-    stat.wave
-  }.average()}
-  var rescue:Double {
-    stats.map { stat in
-      stat.myself.rescue
-    }
-    .average()
-  }
-  var rescued:Double {
-    stats.map { stat in
-      stat.myself.rescued
-    }
-    .average()
-  }
-  var goldenAssist:Double {
-    stats.map { stat in
-      stat.myself.assist
-    }
-    .average()
-  }
-  var goldenDeliver:Double {
-    stats.map { stat in
-      stat.myself.golden
-    }
-    .average()
-  }
-  var normalDeliver:Double {
-    stats.map { stat in
-      stat.myself.power
-    }
-    .average()
-  }
-  var averageClear:Double {
-    stats.map { stat in
-      stat.myself.defeat
-    }
-    .average()
-  }
-  var maxScore:Int? {
-    stats.max{
-      if let left = $0.grade?.point, let right = $1.grade?.point{
-        return left < right
-      }
-      return false
-    }?.grade?.point
-  }
-  var maxGolden:Int{
-    stats.max{
-      $0.team.golden < $1.team.golden
-    }!
-    .team.golden
-  }
-  var specie:[Image]{
-    switch details[0].myResult.player.species{
-    case .OCTOLING:
-      return [Image(.helpOcto),Image(.helpedOcto)]
-    case .INKLING:
-      return [Image(.helpSquid),Image(.helpedSquid)]
-    }
-  }
-  var goldenScale:Int {stats.compactMap{$0.scale?.gold}.sum()}
-  var silverScale:Int {stats.compactMap{$0.scale?.silver}.sum()}
-  var bronzeScale:Int {stats.compactMap{$0.scale?.bronze}.sum()}
-  var scales:[Int]{
-    [bronzeScale,silverScale,goldenScale]
-  }
+
+
+  @AppStorage("showTeamResultInCoopSummaryDetail")
+  private var showTeamResult: Bool = false
+
   var body: some View {
     DetailScrollView(horizontalPadding: 8){
       VStack(spacing:30) {
         card
 
         enemy
+
+        king
+      }
+    }
+    .fixSafeareaBackground()
+  }
+
+  var king:some View{
+    HStack{
+      ForEach(status.kings,id:\.id){k in
+        if let king = CoopEnemy.Enemy(rawValue: k.id){
+          VStack{
+            king.image
+              .resizable()
+              .scaledToFit()
+              .frame(width: 50, height: 50)
+            Text("\(k.defeat)/\(k.appear)")
+              .inkFont(.font1, size: 12, relativeTo: .body)
+          }
+        }
       }
     }
   }
-  
+
   var enemy:some View{
     VStack{
-      
+      ForEach(bossesResult, id:\.id){boss in
+        if boss.id != bossesResult.first?.id{
+          line
+        }
+        CoopDetailView.enemyResult(result: CoopEnemyResult(
+          defeatCount: boss.defeat,
+          teamDefeatCount: boss.defeatTeam,
+          popCount: boss.appear,
+          enemy: CoopEnemy(id: boss.id, name: "", image: nil)))
+        .frame(height: 40)
+        
+      }
     }
-    .padding([.leading, .trailing], 12)
-    .padding(.top, 9)
-    .padding(.bottom, 8)
+    .padding(.all, 10)
     .textureBackground(texture: .bubble, radius: 18)
   }
-
   var card:some View{
     VStack {
       VStack{
@@ -179,7 +129,7 @@ struct CoopSummaryDetail:View {
           Spacer()
           HStack{
             ForEach(0..<4,id: \.self){ i in
-              KFImage(URL(string: weapons[i]))
+              KFImage(URL(string: suppliedWeapons[i]))
                 .resizable()
                 .scaledToFit()
                 .frame(width: 30, height: 30)
@@ -249,6 +199,7 @@ struct CoopSummaryDetail:View {
 
 
   }
+
   var line:some View{
     GeometryReader { geo in
       Path { path in
@@ -260,79 +211,78 @@ struct CoopSummaryDetail:View {
     }
     .frame(height: 1)
   }
+
+  var stats:[CoopStatus] {details.map{$0.status}.filter{!$0.exempt}}
+  var status:CoopsStatus{
+    addCoopStatus(coops: details.map{$0.status}.filter{!$0.exempt})
+  }
+  var bossesResult:[BossSalmonidStats]{
+    status.bosses
+  }
+  var suppliedWeapons:[String] {details[0].weapons.map{$0.image!.url!}}
+  var weaponUsages:[CoopsStatus.Weapon]{status.weapons}
+  var stage:StageSelection{StageSelection(rawValue: stats[0].stage) ?? .unknown}
+  var timeSpanText:String {
+    let start = stats.min { $0.time < $1.time }!.time
+    let end = stats.max { $0.time < $1.time }!.time
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy MM/dd HH:mm"
+    return "\(formatter.string(from: start)) - \(formatter.string(from: end))"
+  }
+  var wave:Double {
+    Double(status.wave)/Double(status.count)
+  }
+  var rescue:Double {
+    Double(status.selfStats.rescue)/Double(status.count)
+  }
+  var rescued:Double {
+    Double(status.selfStats.rescued)/Double(status.count)
+  }
+  var goldenAssist:Double {
+    Double(status.selfStats.assist)/Double(status.count)
+  }
+  var goldenDeliver:Double {
+    Double(status.selfStats.golden)/Double(status.count)
+  }
+  var normalDeliver:Double {
+    Double(status.selfStats.power)/Double(status.count)
+  }
+  var defeat:Double {
+    Double(status.selfStats.defeat)/Double(status.count)
+  }
+  var maxScore:Int? {
+    stats.max{
+      if let left = $0.grade?.point, let right = $1.grade?.point{
+        return left < right
+      }
+      return false
+    }?.grade?.point
+  }
+  var maxGolden:Int{
+    stats.max{
+      $0.team.golden < $1.team.golden
+    }!
+    .team.golden
+  }
+  var specie:[Image]{
+    switch details[0].myResult.player.species{
+    case .OCTOLING:
+      return [Image(.helpOcto),Image(.helpedOcto)]
+    case .INKLING:
+      return [Image(.helpSquid),Image(.helpedSquid)]
+    }
+  }
+  var goldenScale:Int {status.scales.gold}
+  var silverScale:Int {status.scales.silver}
+  var bronzeScale:Int {status.scales.bronze}
+  var scales:[Int]{
+    [bronzeScale,silverScale,goldenScale]
+  }
+
 }
 
 #Preview {
   CoopSummaryDetail(details: [MockData.getCoopHistoryDetail()])
+
 }
 
-//extension CoopStats{
-//  static func + (left:CoopStats, right:CoopStats) ->CoopStats{
-//
-//    let wave = left.wave + right.wave
-//    let myself = left.myself + right.myself
-//    let team = left.team + right.team
-//
-//    var scales = [0,0,0]
-//    if let leftScale = left.scale{
-//      scales[0] += leftScale.bronze
-//      scales[1] += leftScale.silver
-//      scales[2] += leftScale.gold
-//    }
-//    if let rightScale = right.scale{
-//      scales[0] += rightScale.bronze
-//      scales[1] += rightScale.silver
-//      scales[2] += rightScale.gold
-//    }
-//
-//    let waves = right.waves + left.waves
-//    var scale = CoopStats.Scale(gold: scales[2], silver: scales[1], bronze: scales[0])
-//
-//    let suppliedWeapon = left.suppliedWeapon + right.suppliedWeapon
-//    let jobPoint = right.jobPoint + left.jobPoint
-//    let jobScore = left.jobScore + right.jobScore
-//    let jobRate = left.jobRate + right.jobRate
-//    let jobBonus = left.jobBonus + right.jobBonus
-//
-//    // 合并两个数组
-//    let combinedBosses = left.bosses + right.bosses
-//
-//    // 构建字典并累加值
-//    let summedBosses = combinedBosses.reduce(into: [String: BossSalmonidStats]()) { (dict, stats) in
-//      if let existing = dict[stats.id] {
-//            dict[stats.id] = BossSalmonidStats(
-//                id: stats.id,
-//                appear: existing.appear + stats.appear,
-//                defeat: existing.defeat + stats.defeat,
-//                defeatTeam: existing.defeatTeam + stats.defeatTeam
-//            )
-//        } else {
-//            dict[stats.id] = stats
-//        }
-//    }
-//
-//    return CoopStats(time: left.time,
-//                     exempt: left.exempt,
-//                     clear: left.clear,
-//                     wave: wave,
-//                     dangerRate: left.dangerRate,
-//                     myself: myself,
-//                     member: left.member + right.member,
-//                     team: team,
-//                     bosses: [],
-//                     king: nil,
-//                     scale: scale,
-//                     waves: wave,
-//                     rule: <#T##String#>,
-//                     stage: <#T##String#>,
-//                     weapons: <#T##[String]#>,
-//                     specialWeapon: <#T##String?#>,
-//                     suppliedWeapon: <#T##[String]#>,
-//                     jobPoint: jobPoint,
-//                     jobScore: jobScore,
-//                     jobRate: jobRate,
-//                     jobBonus: jobBonus,
-//                     grade: left.grade
-//                  )
-//  }
-//}

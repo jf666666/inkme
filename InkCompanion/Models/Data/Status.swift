@@ -57,9 +57,9 @@ func getCoopStats(coop:CoopHistoryDetail) -> CoopStatus{
                    waves: waves,
                     rule: coop.rule.rawValue,
                    stage: coop.coopStage.id,
-                   weapons: coop.myResult.weapons.map{$0.image?.url ?? ""},
+                    weapons: coop.myResult.weapons.map{$0.image?.url ?? ""},
                    specialWeapon: coop.myResult.specialWeapon?.id,
-                   suppliedWeapon: coop.weapons.map{$0.image?.url ?? ""},
+                    suppliedWeapon: coop.weapons.map{$0.image?.url ?? ""},
                    jobPoint: coop.jobPoint,
                    jobScore: coop.jobScore,
                    jobRate: coop.jobRate,
@@ -74,24 +74,6 @@ func getCoopPlayerStats(player:CoopPlayerResult) -> CoopPlayerStats{
 
 
 struct CoopStatus:Codable{
-  struct King:Codable{
-    let id:String
-    let defeat:Bool
-  }
-
-  struct Scale: Codable {
-    static func + (left:Scale, right:Scale) -> Scale{
-      return Scale(gold: left.gold+right.gold, silver: left.silver+right.silver, bronze: left.bronze+right.bronze)
-    }
-    var gold: Int
-    var silver: Int
-    var bronze: Int
-  }
-  struct Grade:Codable{
-    let name:String
-    let point:Int
-  }
-
   let time:Date
   let exempt:Bool
   let clear:Bool
@@ -114,6 +96,26 @@ struct CoopStatus:Codable{
   let jobRate: Double
   let jobBonus: Int
   let grade:Grade?
+
+  struct King:Codable{
+    let id:String
+    let defeat:Bool
+  }
+
+  struct Scale: Codable, Summable {
+    static var zero: CoopStatus.Scale = CoopStatus.Scale(gold: 0, silver: 0, bronze: 0)
+    static func + (left:Scale, right:Scale) -> Scale{
+      return Scale(gold: left.gold+right.gold, silver: left.silver+right.silver, bronze: left.bronze+right.bronze)
+    }
+
+    var gold: Int
+    var silver: Int
+    var bronze: Int
+  }
+  struct Grade:Codable{
+    let name:String
+    let point:Int
+  }
 }
 
 struct CoopPlayerStats:Codable {

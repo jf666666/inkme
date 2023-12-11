@@ -28,8 +28,13 @@ final class InkBackgroundRefresher {
     scheduleAppRefresh()
 
       do{
-        try await nintendo.updateBulletToken()
-        try await nintendo.updateWebServiceToken()
+        let (web,bullet) = try await nintendo.updateTokens()
+        if let web = web{
+          inkNet.webServiceToken = web
+        }
+        if let bullet = bullet{
+          inkNet.bulletToken = bullet
+        }
       }catch{
         return
       }

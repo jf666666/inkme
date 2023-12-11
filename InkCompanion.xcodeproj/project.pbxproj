@@ -44,6 +44,16 @@
 		8B3479382B182965001F7737 /* RotationSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3479372B182965001F7737 /* RotationSection.swift */; };
 		8B34793B2B18AD69001F7737 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34793A2B18AD69001F7737 /* HomePage.swift */; };
 		8B34793D2B18B322001F7737 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34793C2B18B322001F7737 /* HomeViewModel.swift */; };
+		8B39000C2B26DD6200EEF849 /* Summable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B39000B2B26DD6200EEF849 /* Summable.swift */; };
+		8B39001B2B26EEF800EEF849 /* LocalizedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B39000F2B26EEF800EEF849 /* LocalizedType.swift */; };
+		8B39001C2B26EEF800EEF849 /* NameplateId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900112B26EEF800EEF849 /* NameplateId.swift */; };
+		8B39001D2B26EEF800EEF849 /* SpecialId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900122B26EEF800EEF849 /* SpecialId.swift */; };
+		8B39001E2B26EEF800EEF849 /* BadgeId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900132B26EEF800EEF849 /* BadgeId.swift */; };
+		8B39001F2B26EEF800EEF849 /* WeaponId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900142B26EEF800EEF849 /* WeaponId.swift */; };
+		8B3900202B26EEF800EEF849 /* NameplateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900162B26EEF800EEF849 /* NameplateKey.swift */; };
+		8B3900212B26EEF800EEF849 /* BadgeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900172B26EEF800EEF849 /* BadgeKey.swift */; };
+		8B3900222B26EEF800EEF849 /* SpecialKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900182B26EEF800EEF849 /* SpecialKey.swift */; };
+		8B3900232B26EEF800EEF849 /* WeaponKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900192B26EEF800EEF849 /* WeaponKey.swift */; };
 		8B40D07F2B14BD0700608971 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40D07E2B14BD0700608971 /* Bundle+.swift */; };
 		8B40D0812B14BF4200608971 /* Logger+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40D0802B14BF4200608971 /* Logger+.swift */; };
 		8B46A54B2AF4962F001FB5E2 /* WeaponRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46A54A2AF4962F001FB5E2 /* WeaponRecord.swift */; };
@@ -156,6 +166,7 @@
 		8BECD0D12B25D5AF00AAAA2F /* README_CN.md in Resources */ = {isa = PBXBuildFile; fileRef = 8BECD0D02B25D5AF00AAAA2F /* README_CN.md */; };
 		8BECD0D32B25DF2200AAAA2F /* FestIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD0D22B25DF2200AAAA2F /* FestIcon.swift */; };
 		8BECD0D52B25F73D00AAAA2F /* FestRecordQuery.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BECD0D42B25F73C00AAAA2F /* FestRecordQuery.json */; };
+		8BECD0D72B26CFA600AAAA2F /* addCoopStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD0D62B26CFA600AAAA2F /* addCoopStatus.swift */; };
 		8BF2D4E22B25292B0017B1E0 /* TabBar in Frameworks */ = {isa = PBXBuildFile; productRef = 8BF2D4E12B25292B0017B1E0 /* TabBar */; };
 		8BF2D4E42B2535730017B1E0 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E32B2535730017B1E0 /* TodayView.swift */; };
 		8BF2D4E62B2535890017B1E0 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E52B2535880017B1E0 /* PieView.swift */; };
@@ -222,6 +233,16 @@
 		8B3479392B187716001F7737 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8B34793A2B18AD69001F7737 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		8B34793C2B18B322001F7737 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8B39000B2B26DD6200EEF849 /* Summable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summable.swift; sourceTree = "<group>"; };
+		8B39000F2B26EEF800EEF849 /* LocalizedType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedType.swift; sourceTree = "<group>"; };
+		8B3900112B26EEF800EEF849 /* NameplateId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameplateId.swift; sourceTree = "<group>"; };
+		8B3900122B26EEF800EEF849 /* SpecialId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialId.swift; sourceTree = "<group>"; };
+		8B3900132B26EEF800EEF849 /* BadgeId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeId.swift; sourceTree = "<group>"; };
+		8B3900142B26EEF800EEF849 /* WeaponId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponId.swift; sourceTree = "<group>"; };
+		8B3900162B26EEF800EEF849 /* NameplateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameplateKey.swift; sourceTree = "<group>"; };
+		8B3900172B26EEF800EEF849 /* BadgeKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeKey.swift; sourceTree = "<group>"; };
+		8B3900182B26EEF800EEF849 /* SpecialKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialKey.swift; sourceTree = "<group>"; };
+		8B3900192B26EEF800EEF849 /* WeaponKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponKey.swift; sourceTree = "<group>"; };
 		8B40D07E2B14BD0700608971 /* Bundle+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		8B40D0802B14BF4200608971 /* Logger+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logger+.swift"; sourceTree = "<group>"; };
 		8B46A54A2AF4962F001FB5E2 /* WeaponRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponRecord.swift; sourceTree = "<group>"; };
@@ -345,6 +366,7 @@
 		8BECD0D02B25D5AF00AAAA2F /* README_CN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README_CN.md; sourceTree = "<group>"; };
 		8BECD0D22B25DF2200AAAA2F /* FestIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestIcon.swift; sourceTree = "<group>"; };
 		8BECD0D42B25F73C00AAAA2F /* FestRecordQuery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FestRecordQuery.json; sourceTree = "<group>"; };
+		8BECD0D62B26CFA600AAAA2F /* addCoopStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCoopStatus.swift; sourceTree = "<group>"; };
 		8BF2D4E32B2535730017B1E0 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		8BF2D4E52B2535880017B1E0 /* PieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		8BF2D4E72B255F6C0017B1E0 /* Splatoon1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splatoon1.otf; sourceTree = "<group>"; };
@@ -494,6 +516,38 @@
 				8B3479372B182965001F7737 /* RotationSection.swift */,
 			);
 			path = ViewBuilder;
+			sourceTree = "<group>";
+		};
+		8B39000D2B26EEF800EEF849 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				8B39000F2B26EEF800EEF849 /* LocalizedType.swift */,
+				8B3900102B26EEF800EEF849 /* Ids */,
+				8B3900152B26EEF800EEF849 /* Keys */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		8B3900102B26EEF800EEF849 /* Ids */ = {
+			isa = PBXGroup;
+			children = (
+				8B3900112B26EEF800EEF849 /* NameplateId.swift */,
+				8B3900122B26EEF800EEF849 /* SpecialId.swift */,
+				8B3900132B26EEF800EEF849 /* BadgeId.swift */,
+				8B3900142B26EEF800EEF849 /* WeaponId.swift */,
+			);
+			path = Ids;
+			sourceTree = "<group>";
+		};
+		8B3900152B26EEF800EEF849 /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				8B3900162B26EEF800EEF849 /* NameplateKey.swift */,
+				8B3900172B26EEF800EEF849 /* BadgeKey.swift */,
+				8B3900182B26EEF800EEF849 /* SpecialKey.swift */,
+				8B3900192B26EEF800EEF849 /* WeaponKey.swift */,
+			);
+			path = Keys;
 			sourceTree = "<group>";
 		};
 		8B46A5602AF5F362001FB5E2 /* Fonts */ = {
@@ -738,6 +792,7 @@
 				8BB5A8122AFD8B940095E0E9 /* Stage.swift */,
 				8B1A23F02B196255002498DC /* BattleSchedule.swift */,
 				8B0B2ADD2B1C59CC00FDA4B5 /* ShiftSchedule.swift */,
+				8B39000B2B26DD6200EEF849 /* Summable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -745,6 +800,7 @@
 		8BB7D1BF2AFE605E0021CF39 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8B39000D2B26EEF800EEF849 /* Enum */,
 				8B3479332B1759ED001F7737 /* ViewBuilder */,
 				8B9BFE372AF20BDC005F5FB8 /* UI */,
 				8BB7D1C02AFE60650021CF39 /* Extentions */,
@@ -866,6 +922,7 @@
 				8B6A07FE2B10C1E600C8BDC9 /* WaveShape.swift */,
 				8BE74ADC2B0ECDAF001796DF /* CoopSummaryCard.swift */,
 				8BF742D12B15ACBA00382A0E /* CoopSummaryDetail.swift */,
+				8BECD0D62B26CFA600AAAA2F /* addCoopStatus.swift */,
 			);
 			path = Coop;
 			sourceTree = "<group>";
@@ -1073,6 +1130,7 @@
 				8BB7D1C22AFE608B0021CF39 /* View.swift in Sources */,
 				8B596B9D2AF46489006FA8F8 /* CatalogQuery.swift in Sources */,
 				8B6A07F72B103ADB00C8BDC9 /* GrayscaleTextureView.swift in Sources */,
+				8BECD0D72B26CFA600AAAA2F /* addCoopStatus.swift in Sources */,
 				8B7B3B892B11838900E81ED5 /* CoopDetailTopCard.swift in Sources */,
 				8B01F85F2B174F830031044D /* DocumentPicker.swift in Sources */,
 				8B964E2E2B21CA2900019CCF /* AccountViewModel.swift in Sources */,
@@ -1084,10 +1142,12 @@
 				8B6A5E502AFC64FE00C76B70 /* FestSchedules.swift in Sources */,
 				8B33B5E72B048187002BEBBE /* InkNet.swift in Sources */,
 				8B0B2AF02B1D5A5200FDA4B5 /* BattleModel.swift in Sources */,
+				8B3900232B26EEF800EEF849 /* WeaponKey.swift in Sources */,
 				8B5254B12B206BDB00118B4E /* FilePickerView.swift in Sources */,
 				8BB7D1F22B008F250021CF39 /* IdealFontLayout.swift in Sources */,
 				8B6A5E4A2AFC5F4700C76B70 /* AnarchySchedules.swift in Sources */,
 				8B3479382B182965001F7737 /* RotationSection.swift in Sources */,
+				8B39001E2B26EEF800EEF849 /* BadgeId.swift in Sources */,
 				8B9BFE7E2AF20BF3005F5FB8 /* LoginAPI.swift in Sources */,
 				8BB7D1E72B0073360021CF39 /* ScaledLimitedLine.swift in Sources */,
 				8B46A5592AF52E91001FB5E2 /* CoopHistories.swift in Sources */,
@@ -1106,6 +1166,7 @@
 				8B1A23F12B196255002498DC /* BattleSchedule.swift in Sources */,
 				8B34793D2B18B322001F7737 /* HomeViewModel.swift in Sources */,
 				8B9BFE542AF20BDC005F5FB8 /* String.swift in Sources */,
+				8B39001C2B26EEF800EEF849 /* NameplateId.swift in Sources */,
 				8B40D07F2B14BD0700608971 /* Bundle+.swift in Sources */,
 				8B6A07F92B103BB200C8BDC9 /* AppColor.swift in Sources */,
 				8B6A08012B10C65A00C8BDC9 /* CornerRadiusModifier.swift in Sources */,
@@ -1119,6 +1180,7 @@
 				8B9BFE6E2AF20BF0005F5FB8 /* SettingView.swift in Sources */,
 				8B596B8A2AF34076006FA8F8 /* FriendList.swift in Sources */,
 				8B9BFE532AF20BDC005F5FB8 /* SwiftJSON.swift in Sources */,
+				8B3900222B26EEF800EEF849 /* SpecialKey.swift in Sources */,
 				8B6A73B32B058B2400361CF6 /* IconView.swift in Sources */,
 				8B1A23EB2B194E78002498DC /* BattleScheduleView.swift in Sources */,
 				8B0B2AF42B1D8BC800FDA4B5 /* GeneralBattleHistories.swift in Sources */,
@@ -1142,6 +1204,7 @@
 				8BF2D4E42B2535730017B1E0 /* TodayView.swift in Sources */,
 				8B9DC0592B1EC0A70014F87A /* ConvenientColors.swift in Sources */,
 				8BB7D1EF2B0082370021CF39 /* Date+Ext.swift in Sources */,
+				8B39001F2B26EEF800EEF849 /* WeaponId.swift in Sources */,
 				8BB7D1CC2AFF5A7F0021CF39 /* ScheduleMode.swift in Sources */,
 				8B5FB8642B122F2700709CD6 /* CoopPlayerPreview.swift in Sources */,
 				8B9BFE4E2AF20BDC005F5FB8 /* Date.swift in Sources */,
@@ -1150,6 +1213,7 @@
 				8B596B932AF3CD39006FA8F8 /* HistoryRecord.swift in Sources */,
 				8B9DC05F2B1F30A40014F87A /* LoginView.swift in Sources */,
 				8B9BFDFB2AF20BCE005F5FB8 /* InkCompanionApp.swift in Sources */,
+				8B3900202B26EEF800EEF849 /* NameplateKey.swift in Sources */,
 				8B9BFE792AF20BF0005F5FB8 /* MainView.swift in Sources */,
 				8B46A5532AF507F1001FB5E2 /* BattleHistories.swift in Sources */,
 				8BB7D1CB2AFF5A7F0021CF39 /* BattleRule.swift in Sources */,
@@ -1177,6 +1241,7 @@
 				8B6A5E452AFC554A00C76B70 /* CoopSchedule.swift in Sources */,
 				8BB5A7F42AFD07870095E0E9 /* TimePublisher.swift in Sources */,
 				8B9DC0612B1F32B40014F87A /* MeViewModel.swift in Sources */,
+				8B39000C2B26DD6200EEF849 /* Summable.swift in Sources */,
 				8BB7D1E52B0070AB0021CF39 /* InkFont.swift in Sources */,
 				8B2FC7B02B200EBA000EDD0A /* InkAccounts.swift in Sources */,
 				8B0B2AE92B1CA90400FDA4B5 /* VsHistoryDetail.swift in Sources */,
@@ -1186,13 +1251,16 @@
 				8B6A5E4C2AFC632500C76B70 /* RegularSchedules.swift in Sources */,
 				8BE74ADD2B0ECDAF001796DF /* CoopSummaryCard.swift in Sources */,
 				8B46A54B2AF4962F001FB5E2 /* WeaponRecord.swift in Sources */,
+				8B3900212B26EEF800EEF849 /* BadgeKey.swift in Sources */,
 				8B46A54D2AF4BE99001FB5E2 /* EquipmentsQuery.swift in Sources */,
 				8B9BFDFD2AF20BCE005F5FB8 /* Persistence.swift in Sources */,
 				8B9DC0632B1F351F0014F87A /* InkUserDefaults.swift in Sources */,
+				8B39001D2B26EEF800EEF849 /* SpecialId.swift in Sources */,
 				8B596B8E2AF35671006FA8F8 /* FriendView.swift in Sources */,
 				8B7B3B872B117E9000E81ED5 /* PlayerView.swift in Sources */,
 				8BCF4B9E2B0739A6009FAB9B /* CoopView.swift in Sources */,
 				8B4B2DA72B22DF50004E333B /* InkNet+DynamicCodingKey.swift in Sources */,
+				8B39001B2B26EEF800EEF849 /* LocalizedType.swift in Sources */,
 				8B1A23F72B19B05F002498DC /* BattleStageCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,6 +33,7 @@ extension String {
       utcToDate(date: self) ?? Date()
   }
 
+
 }
 
 extension String {
@@ -101,4 +102,18 @@ extension String{
 
     return String(self[range])
   }
+}
+
+extension String{
+  var base64Index:Int{
+    Int(self.base64Decoded().split(separator: "-")[1]) ?? 0
+  }
+}
+
+extension String {
+    var imageHash: String {
+        let path = self.components(separatedBy: "?")[0]
+        let split = path.components(separatedBy: "/")
+        return split.last?.components(separatedBy: "_")[0] ?? ""
+    }
 }

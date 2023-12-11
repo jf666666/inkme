@@ -68,9 +68,11 @@ struct MainView: View {
       AlertToast(displayMode: .hud, type: .error(.red), title: "更新失败")
     }
     .task{
+      InkNet.shared.sessionToken = InkUserDefaults.shared.sessionToken
+      InkNet.shared.bulletToken = InkUserDefaults.shared.bulletToken
+      InkNet.shared.webServiceToken = InkUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self)
       await homeViewModel.loadSchedules()
       await accountViewModel.loadAccount()
-      
       await update()
     }
   }
@@ -80,7 +82,13 @@ struct MainView: View {
     if accountViewModel.shouldUpdate(){
       mainViewModel.isUpdateToken = true
       do{
-        _ = try await InkNet.NintendoService().updateTokens()
+        let (web,bullet) = try await InkNet.nintendo.updateTokens()
+        if let web = web{
+          InkNet.shared.webServiceToken = web
+        }
+        if let bullet = bullet{
+          InkNet.shared.bulletToken = bullet
+        }
         accountViewModel.selectedAccount?.lastRefreshTime = Date.now
         await accountViewModel.updateAccountInCoreData()
         mainViewModel.updateTokenSuccess = true

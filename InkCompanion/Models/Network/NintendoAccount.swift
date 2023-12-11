@@ -468,35 +468,6 @@ extension InkNet{
 
 
 
-    func updateWebServiceToken() async throws{
-      do{
-        let webServiceToken = try await getWebServiceStruct()
-        DispatchQueue.main.sync {
-          InkUserDefaults.shared.webServiceToken = webServiceToken.encode()
-        }
-
-      }catch{
-        logger.error("update WebServiceToken failed due to: \(error)")
-        throw error
-      }
-    }
-
-    func updateBulletToken(language: String? = InkUserDefaults.shared.currentLanguage) async throws{
-      do{
-        if let webServiceToken = InkUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self){
-          let bulletToken = try await getBulletToken(webServiceToken: webServiceToken,language: language)
-          DispatchQueue.main.sync {
-            InkUserDefaults.shared.bulletToken = bulletToken
-          }
-        }else{
-          throw NSError(domain: "No WebServiceToken", code: 1, userInfo: nil)
-        }
-      }catch{
-        logger.error("update bullet token failed due to: \(error)")
-        throw error
-      }
-
-    }
 
     func presentLoginSession(url: URL) async throws -> URL? {
       return try await withCheckedThrowingContinuation { continuation in
