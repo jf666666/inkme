@@ -23,14 +23,16 @@ struct TextureBackgroundModifier: ViewModifier {
   let backgroundColor: Color
   func body(content: Content) -> some View {
     ZStack {
-      GrayscaleTextureView(
-        texture: texture,
-        foregroundColor: foregroundColor,
-        backgroundColor: backgroundColor
-      )
-      .continuousCornerRadius(radius)
-      content
 
+      content
+        .background(
+          GrayscaleTextureView(
+            texture: texture,
+            foregroundColor: foregroundColor,
+            backgroundColor: backgroundColor
+          )
+          .continuousCornerRadius(radius)
+        )
     }
   }
 }

@@ -142,6 +142,9 @@ struct BossSalmonidStats:Codable {
   let appear: Int
   let defeat: Int
   let defeatTeam: Int
+  var enemy:CoopEnemy{
+    CoopEnemy(id: id, name: "", image: nil)
+  }
 }
 
 struct WaveStats:Codable {

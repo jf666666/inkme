@@ -14,13 +14,12 @@ struct CoopPlayerPreview: View {
   let specialWeapon:SpecialWeapon?
     var body: some View {
       GeometryReader{ geo in
-          VStack(alignment: .center){
+        VStack(spacing: geo.size.height*0.03){
             NameplateView(coopPlayer: player)
-              .frame(width: geo.size.width*0.8)
             KFImage(URL(string: player.uniform.image.url ?? ""))
               .resizable()
               .scaledToFit()
-              .frame(width: geo.size.width*0.5,height: geo.size.width*0.4)
+//              .frame(width: geo.size.width*0.5,height: geo.size.width*0.4)
             Text(player.uniform.name)
               .inkFont(.font1, size: geo.size.width*0.04, relativeTo: .body)
             HStack{
@@ -48,10 +47,10 @@ struct CoopPlayerPreview: View {
 
 
             }
-            .padding(.top,geo.size.width * 0.015)
-          }
-          .textureBackground(texture: .bubble, radius: 18)
 
+          }
+          .padding(.all)
+          .textureBackground(texture: .bubble, radius: 18)
       }
     }
 }

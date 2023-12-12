@@ -29,6 +29,7 @@ public struct GrayscaleTextureView: View {
             .resizable(resizingMode: .tile)
             .foregroundColor(foregroundColor)
             .background(backgroundColor)
+            .frame(minWidth: 0, minHeight: 0)
             .unredacted()
     }
 }

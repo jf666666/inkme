@@ -20,17 +20,27 @@ struct CoopSummaryDetail:View {
 
   var body: some View {
     DetailScrollView(horizontalPadding: 8){
-      VStack(spacing:30) {
+      VStack(spacing:20) {
         card
-
+        wave
         enemy
-
+        
         king
       }
     }
     .fixSafeareaBackground()
   }
+  var wave:some View{
+    VStack{
+      ForEach(status.waves.reversed(), id: \.id){result in
+        WaveRow(wave: result)
+          .frame(height: 20)
+      }
+    }
+    .padding(.all, 10)
+    .textureBackground(texture: .bubble, radius: 18)
 
+  }
   var king:some View{
     HStack{
       ForEach(status.kings,id:\.id){k in
@@ -47,20 +57,15 @@ struct CoopSummaryDetail:View {
       }
     }
   }
-
   var enemy:some View{
     VStack{
       ForEach(bossesResult, id:\.id){boss in
         if boss.id != bossesResult.first?.id{
           line
         }
-        CoopDetailView.enemyResult(result: CoopEnemyResult(
-          defeatCount: boss.defeat,
-          teamDefeatCount: boss.defeatTeam,
-          popCount: boss.appear,
-          enemy: CoopEnemy(id: boss.id, name: "", image: nil)))
+        EnemyRow(result: boss)
         .frame(height: 40)
-        
+
       }
     }
     .padding(.all, 10)
@@ -229,7 +234,7 @@ struct CoopSummaryDetail:View {
     formatter.dateFormat = "yyyy MM/dd HH:mm"
     return "\(formatter.string(from: start)) - \(formatter.string(from: end))"
   }
-  var wave:Double {
+  var averageWave:Double {
     Double(status.wave)/Double(status.count)
   }
   var rescue:Double {
@@ -286,3 +291,42 @@ struct CoopSummaryDetail:View {
 
 }
 
+extension CoopSummaryDetail{
+
+  struct EnemyRow:View {
+    let result:BossSalmonidStats
+
+    var body: some View {
+      HStack{
+        result.enemy.enemy.image
+          .resizable()
+          .scaledToFit()
+        Text("\(result.enemy.id.localizedString)")
+          .inkFont(.font1, size: 15, relativeTo: .body)
+        Spacer()
+        Group{
+          Text("\(result.defeatTeam)").font(.custom(InkFont.font1.rawValue, size: 15)) + Text(result.defeat == 0 ? "" : "(\(result.defeat))").font(.custom(InkFont.font1.rawValue, size: 12))
+          Text("/")
+            .inkFont(.font1, size: 16, relativeTo: .body)
+          Text("出现数量x").font(.custom(InkFont.font1.rawValue, size: 12)) + Text("\(result.appear)").font(.custom(InkFont.font1.rawValue, size: 15))
+        }
+
+      }
+    }
+  }
+}
+
+extension CoopSummaryDetail{
+  struct WaveRow:View {
+    let wave:WaveStats
+    var body: some View {
+      HStack{
+        Text(wave.id.localizedString)
+          .inkFont(.font1, size: 15, relativeTo: .body)
+        Spacer()
+        Text("\(wave.levels.map{$0.clear}.sum())/\(wave.levels.map{$0.appear}.sum())")
+          .inkFont(.font1, size: 15, relativeTo: .body)
+      }
+    }
+  }
+}
