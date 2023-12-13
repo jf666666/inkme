@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import AlertToast
+import IndicatorsKit
 
 
 enum UpdateStatus {
@@ -24,12 +25,11 @@ struct MainView: View {
   @State private var updating: Bool = false
   @State private var updateFailed: Bool = false
   @State private var updateSuccess: Bool = false
-  @EnvironmentObject var homeViewModel: HomeViewModel
-  @EnvironmentObject var accountViewModel:AccountViewModel
-  @EnvironmentObject var mainViewModel:MainViewModel
+
+
 
   var body: some View {
-    ZStack {
+
       TabView{
         HomePage()
           .tabItem {
@@ -57,47 +57,12 @@ struct MainView: View {
           }
           .tag(3)
       }
-    }
-    .toast(isPresenting: $mainViewModel.isUpdateToken, tapToDismiss: true){
-      AlertToast(displayMode: .hud, type: .loading, title: "更新令牌")
-    }
-    .toast(isPresenting: $mainViewModel.updateTokenSuccess,duration: 3,  tapToDismiss: true){
-      AlertToast(displayMode: .hud, type: .complete(Color.green), title: "更新成功")
-    }
-    .toast(isPresenting: $mainViewModel.updateTokenFailed, duration: 3, tapToDismiss: true){
-      AlertToast(displayMode: .hud, type: .error(.red), title: "更新失败")
-    }
-    .task{
-      InkNet.shared.sessionToken = InkUserDefaults.shared.sessionToken
-      InkNet.shared.bulletToken = InkUserDefaults.shared.bulletToken
-      InkNet.shared.webServiceToken = InkUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self)
-      await homeViewModel.loadSchedules()
-      await accountViewModel.loadAccount()
-      await update()
-    }
+
+
   }
 
 
-  func update() async {
-    if accountViewModel.shouldUpdate(){
-      mainViewModel.isUpdateToken = true
-      do{
-        let (web,bullet) = try await InkNet.nintendo.updateTokens()
-        if let web = web{
-          InkNet.shared.webServiceToken = web
-        }
-        if let bullet = bullet{
-          InkNet.shared.bulletToken = bullet
-        }
-        accountViewModel.selectedAccount?.lastRefreshTime = Date.now
-        await accountViewModel.updateAccountInCoreData()
-        mainViewModel.updateTokenSuccess = true
-      }catch{
-        mainViewModel.updateTokenFailed = true
-      }
-      mainViewModel.isUpdateToken = false
-    }
-  }
+
 }
 
 struct MainView_Previews: PreviewProvider {

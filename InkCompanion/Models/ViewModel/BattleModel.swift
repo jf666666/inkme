@@ -19,7 +19,7 @@ class BattleModel:ObservableObject{
     case none
   }
 
-  var ruleFilter:FilterProps = FilterProps(modes: ["salmon_run"], inverted: true)
+  var ruleFilter:FilterProps = FilterProps(modes: ["REGULAR","BANKARA","XMATCH","LEAGUE","PRIVATE"])
 
   var stats:Stats = .none
 
@@ -57,9 +57,9 @@ class BattleModel:ObservableObject{
         }
       }
       for skip in modeShouldSkip{
-//        if skip.value{
-//          continue
-//        }
+        if skip.value{
+          continue
+        }
 
         guard let tempNodes = await inkNet.fetchBattleHistory(for: skip.key.fetchEnum)?.historyGroups.nodes, !tempNodes.isEmpty else {continue}
         for tempNode in tempNodes {

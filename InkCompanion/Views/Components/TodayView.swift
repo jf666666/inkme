@@ -69,7 +69,7 @@ struct TodayCoopView: View {
         }
         Spacer()
         if today.abort != 0{
-          VStack(spacing: -10) {
+          VStack(spacing: 4) {
 
             Text("abort")
               .inkFont(.font1, size: 10, relativeTo: .body)
@@ -135,21 +135,7 @@ struct TodayCoopView: View {
 
         }
         Spacer()
-        if today.abort != 0{
-          VStack(spacing: -10) {
-
-            Text("abort")
-              .inkFont(.font1, size: 10, relativeTo: .body)
-              .foregroundStyle(.secondary)
-
-            Text("\(today.abort)")
-              .inkFont(.font1, size: 24, relativeTo: .body)
-              .foregroundStyle(.waveDefeat)
-              .minimumScaleFactor(0.5)
-
-          }
-          Spacer()
-        }
+        
       }
     }
   }

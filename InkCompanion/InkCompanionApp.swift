@@ -22,6 +22,7 @@ struct InkCompanionApp: App {
   @StateObject var battleModel = BattleModel()
   @StateObject var accountViewModel = AccountViewModel()
   @StateObject var mainViewModel = MainViewModel()
+  @StateObject var sceneDelegate = SceneDelegate()
   private let refresher:InkBackgroundRefresher = .shared
 
   init() {
@@ -31,7 +32,7 @@ struct InkCompanionApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView()
+            ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(timePublisher)
                 .environmentObject(coopModel)
@@ -39,6 +40,8 @@ struct InkCompanionApp: App {
                 .environmentObject(battleModel)
                 .environmentObject(accountViewModel)
                 .environmentObject(mainViewModel)
+                .environmentObject(sceneDelegate)
+                
         }
         .backgroundTask(.appRefresh("InkCompanionRefresh"),action: refresher.handleAppRefresh)
         .onChange(of: phase) { newPhase in

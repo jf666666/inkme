@@ -7,27 +7,48 @@
 
 import SwiftUI
 import Kingfisher
+import IndicatorsKit
 
 struct MePage: View {
   @StateObject var model:MeViewModel = MeViewModel()
   @State var showSettings = false
   @ObservedObject var inkUserDefaults = InkUserDefaults.shared
   @EnvironmentObject var accountViewModel:AccountViewModel
+  @Environment(\.errorHandler) private var errorHandler
+  @Environment(\.loadingHandler) private var loadingHandler
+  @EnvironmentObject var indicators:Indicators
+  @State var id:String = ""
+
   var body: some View {
 
     NavigationStack {
       ScrollView{
         VStack{
           VStack{
+            Button {
+              loadingHandler("测试"){id in
+                print(id)
+                self.id = id
+              }
+            } label: {
+              Label(
+                title: { Text("测试") },
+                icon: { Image(systemName: "checkmark") }
+              )
+            }
+
+            Button {
+              indicators.dismiss(matching: id)
+            } label: {
+              Label(
+                title: { Text("取消") },
+                icon: { Image(systemName: "xmark") }
+              )
+            }
+
             if !accountViewModel.accounts.isEmpty{
               Text("有\(accountViewModel.accounts.count)个账号已登陆")
-              ForEach(accountViewModel.accounts){ account in
-                KFImage(URL(string: account.avatarUrl))
-                Text(account.name)
-                Text("SW-\(account.friendCode)")
-                //                Text(inkPlayers[idx].sessionToken)
-                Text("\(account.id)")
-              }
+            
             }
 
 

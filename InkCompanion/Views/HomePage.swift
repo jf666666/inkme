@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import IndicatorsKit
 
 struct HomePage: View {
+  @EnvironmentObject var accountViewModel:AccountViewModel
+  @Environment(\.loadingHandler) private var loadingHandler
+  @Environment(\.errorHandler) private var errorHandler
+  @Environment(\.informationHandler) private var informationHandler
+  @EnvironmentObject var indicators:Indicators
   @EnvironmentObject var viewModel: HomeViewModel
+
   @State private var vdChartViewHeight: CGFloat = 200
   @State private var vdChartLastBlockWidth: CGFloat = 0
 
+  // MARK: Body
   var body: some View {
     NavigationStack {
       ScrollView{
@@ -26,7 +34,7 @@ struct HomePage: View {
             }else{
               CoopScheduleView()
             }
-//            ScheduleView()
+            //            ScheduleView()
           }
         }
         .frame(maxWidth: .infinity)
@@ -36,12 +44,16 @@ struct HomePage: View {
       .frame(maxWidth: .infinity)
       .fixSafeareaBackground()
       .task {
-        viewModel.loadGirds()
+        viewModel.loadGrids()
         viewModel.loadTodayCoop()
       }
       .refreshable {
         await viewModel.loadSchedules()
+      }
     }
+    .task {
+      await accountViewModel.loadAccount()
+      await update()
     }
   }
 
@@ -65,9 +77,9 @@ struct HomePage: View {
           Text("今日")
             .inkFont(.font1, size: 22, relativeTo: .body)
 
-//          Text("(\(viewModel.resetHour):00 \("reset".localized))")
-//            .inkFont(.Splatoon2, size: 12, relativeTo: .body)
-//            .foregroundStyle(.secondary)
+          //          Text("(\(viewModel.resetHour):00 \("reset".localized))")
+          //            .inkFont(.Splatoon2, size: 12, relativeTo: .body)
+          //            .foregroundStyle(.secondary)
 
           Spacer()
         }
@@ -121,9 +133,9 @@ struct HomePage: View {
           Text("今日")
             .inkFont(.font1, size: 22, relativeTo: .body)
 
-//          Text("(\(viewModel.resetHour):00 \("reset".localized))")
-//            .inkFont(.Splatoon2, size: 12, relativeTo: .body)
-//            .foregroundStyle(.secondary)
+          //          Text("(\(viewModel.resetHour):00 \("reset".localized))")
+          //            .inkFont(.Splatoon2, size: 12, relativeTo: .body)
+          //            .foregroundStyle(.secondary)
 
           Spacer()
         }
@@ -168,8 +180,8 @@ struct HomePage: View {
 
 
       }
-//      .padding(.top)
-//      Spacer()
+      //      .padding(.top)
+      //      Spacer()
     }
   }
 
@@ -190,14 +202,20 @@ struct HomePage: View {
         ScheduleMode.fest.icon
           .tag(ScheduleMode.fest)
       }
-      ForEach(ScheduleMode.allCases.filter{$0 != .fest}){ mode in
+      ForEach(ScheduleMode.allCases.filter{$0 != .fest},id: \.id){ mode in
         mode.icon
+          .resizable()
+          .scaledToFit()
+          .grayscale(10)
           .tag(mode)
       }
+
     }
     .pickerStyle(SegmentedPickerStyle())
-    .frame(width: 200)
+    .frame(width: 180)
   }
+
+  
   var subModePicker: some View{
     VStack{
       if viewModel.currentMode == .anarchy{
@@ -219,8 +237,38 @@ struct HomePage: View {
         }
         .pickerStyle(SegmentedPickerStyle())
         .frame(width: 80)
-
       }
+    }
+  }
+
+  func update() async {
+
+    if accountViewModel.shouldUpdate(){
+      var id:String = ""
+      loadingHandler("正在更新令牌"){ indicatorId in
+        id = indicatorId
+      }
+      do{
+        var bullet:String?
+        try await accountViewModel.updateCurrentAccount { b in
+          bullet = b
+        }
+        let infoId = "\(UUID().uuidString)"
+        let indicator = Indicator(id: infoId, icon: "checkmark", headline: "更新成功",expandedText: bullet == nil ? nil : "Bullet Token: \(bullet ?? ""))", dismissType: .after(3), style: .init(iconColor:.green)) {
+          if let bullet = bullet{
+            indicators.dismiss(matching: infoId)
+            UIPasteboard.general.string = bullet
+            indicators.display(Indicator(id: "\(UUID().uuidString)",
+                                         icon: SFSymbol.copy,
+                                         headline: "Bullet Token Copied",
+                                         style: .default))
+          }
+        }
+        informationHandler(indicator)
+      }catch{
+        errorHandler(error)
+      }
+      indicators.dismiss(matching: id)
     }
   }
 }

@@ -54,6 +54,8 @@
 		8B3900212B26EEF800EEF849 /* BadgeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900172B26EEF800EEF849 /* BadgeKey.swift */; };
 		8B3900222B26EEF800EEF849 /* SpecialKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900182B26EEF800EEF849 /* SpecialKey.swift */; };
 		8B3900232B26EEF800EEF849 /* WeaponKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900192B26EEF800EEF849 /* WeaponKey.swift */; };
+		8B3900302B28884100EEF849 /* IndicatorsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8B39002F2B28884100EEF849 /* IndicatorsKit */; };
+		8B3900422B29353A00EEF849 /* Indicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900412B29353A00EEF849 /* Indicators.swift */; };
 		8B40D07F2B14BD0700608971 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40D07E2B14BD0700608971 /* Bundle+.swift */; };
 		8B40D0812B14BF4200608971 /* Logger+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40D0802B14BF4200608971 /* Logger+.swift */; };
 		8B46A54B2AF4962F001FB5E2 /* WeaponRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46A54A2AF4962F001FB5E2 /* WeaponRecord.swift */; };
@@ -104,7 +106,6 @@
 		8B7B3B852B117E6000E81ED5 /* StageSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B3B842B117E6000E81ED5 /* StageSelection.swift */; };
 		8B7B3B872B117E9000E81ED5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B3B862B117E9000E81ED5 /* PlayerView.swift */; };
 		8B7B3B892B11838900E81ED5 /* CoopDetailTopCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B3B882B11838900E81ED5 /* CoopDetailTopCard.swift */; };
-		8B8F20632B1FFCFF00230D37 /* SPAlert in Frameworks */ = {isa = PBXBuildFile; productRef = 8B8F20622B1FFCFF00230D37 /* SPAlert */; };
 		8B964E2C2B21AAD800019CCF /* InkAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B964E2B2B21AAD800019CCF /* InkAccountManager.swift */; };
 		8B964E2E2B21CA2900019CCF /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B964E2D2B21CA2900019CCF /* AccountViewModel.swift */; };
 		8B964E302B22886900019CCF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B964E2F2B22886800019CCF /* MainViewModel.swift */; };
@@ -138,7 +139,6 @@
 		8B9DC0652B1F3F4F0014F87A /* Decode&Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DC0642B1F3F4F0014F87A /* Decode&Encode.swift */; };
 		8B9DC0672B1F46030014F87A /* MePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DC0662B1F46030014F87A /* MePage.swift */; };
 		8B9E0E762B09CCFE007700D0 /* InkCompanion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E0E742B09CCFE007700D0 /* InkCompanion.xcdatamodeld */; };
-		8BA5C14F2B147A8B001CA89D /* InkAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF4BDFB2B1362CB00E5C6B5 /* InkAppDelegate.swift */; };
 		8BB5A7F42AFD07870095E0E9 /* TimePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A7F32AFD07870095E0E9 /* TimePublisher.swift */; };
 		8BB5A7F62AFD0AA30095E0E9 /* SpecialWeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D5C822AF867EF00F9C92B /* SpecialWeaponsView.swift */; };
 		8BB5A7FB2AFD0F2E0095E0E9 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A7FA2AFD0F2E0095E0E9 /* Schedule.swift */; };
@@ -155,6 +155,16 @@
 		8BB7D1ED2B0081260021CF39 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1EC2B0081260021CF39 /* MockData.swift */; };
 		8BB7D1EF2B0082370021CF39 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1EE2B0082370021CF39 /* Date+Ext.swift */; };
 		8BB7D1F22B008F250021CF39 /* IdealFontLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D1F12B008F250021CF39 /* IdealFontLayout.swift */; };
+		8BC52C802B2942DA008D0D61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C7F2B2942DA008D0D61 /* SceneDelegate.swift */; };
+		8BC52C832B2943A0008D0D61 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C822B2943A0008D0D61 /* Haptics.swift */; };
+		8BC52C852B2943A5008D0D61 /* Haptics+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C842B2943A5008D0D61 /* Haptics+UIKit.swift */; };
+		8BC52C872B294413008D0D61 /* SceneDelegate+Indicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C862B294413008D0D61 /* SceneDelegate+Indicators.swift */; };
+		8BC52C8A2B294447008D0D61 /* Indicator+ErrorInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C892B294447008D0D61 /* Indicator+ErrorInit.swift */; };
+		8BC52C8C2B294479008D0D61 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C8B2B294479008D0D61 /* SFSymbol.swift */; };
+		8BC52C8E2B294592008D0D61 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C8D2B294592008D0D61 /* ErrorHandler.swift */; };
+		8BC52C912B2945D1008D0D61 /* EnvironmentValues+ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C902B2945D1008D0D61 /* EnvironmentValues+ErrorHandler.swift */; };
+		8BC52C932B294615008D0D61 /* EnvironmentValues+ShowIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C922B294615008D0D61 /* EnvironmentValues+ShowIndicator.swift */; };
+		8BC52C952B29CE9B008D0D61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C942B29CE9B008D0D61 /* ContentView.swift */; };
 		8BCD71522AF667B200EE3F4A /* CoopDetailHolder.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BCD71512AF667B200EE3F4A /* CoopDetailHolder.json */; };
 		8BCD99A42B0AE51F00829AF5 /* NintendoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD99A32B0AE51F00829AF5 /* NintendoAccount.swift */; };
 		8BCF4B9E2B0739A6009FAB9B /* CoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF4B9D2B0739A6009FAB9B /* CoopView.swift */; };
@@ -167,7 +177,6 @@
 		8BECD0D32B25DF2200AAAA2F /* FestIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD0D22B25DF2200AAAA2F /* FestIcon.swift */; };
 		8BECD0D52B25F73D00AAAA2F /* FestRecordQuery.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BECD0D42B25F73C00AAAA2F /* FestRecordQuery.json */; };
 		8BECD0D72B26CFA600AAAA2F /* addCoopStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD0D62B26CFA600AAAA2F /* addCoopStatus.swift */; };
-		8BF2D4E22B25292B0017B1E0 /* TabBar in Frameworks */ = {isa = PBXBuildFile; productRef = 8BF2D4E12B25292B0017B1E0 /* TabBar */; };
 		8BF2D4E42B2535730017B1E0 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E32B2535730017B1E0 /* TodayView.swift */; };
 		8BF2D4E62B2535890017B1E0 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E52B2535880017B1E0 /* PieView.swift */; };
 		8BF2D4E82B255F6C0017B1E0 /* Splatoon1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BF2D4E72B255F6C0017B1E0 /* Splatoon1.otf */; };
@@ -243,6 +252,7 @@
 		8B3900172B26EEF800EEF849 /* BadgeKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeKey.swift; sourceTree = "<group>"; };
 		8B3900182B26EEF800EEF849 /* SpecialKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialKey.swift; sourceTree = "<group>"; };
 		8B3900192B26EEF800EEF849 /* WeaponKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponKey.swift; sourceTree = "<group>"; };
+		8B3900412B29353A00EEF849 /* Indicators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicators.swift; sourceTree = "<group>"; };
 		8B40D07E2B14BD0700608971 /* Bundle+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		8B40D0802B14BF4200608971 /* Logger+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logger+.swift"; sourceTree = "<group>"; };
 		8B46A54A2AF4962F001FB5E2 /* WeaponRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponRecord.swift; sourceTree = "<group>"; };
@@ -355,6 +365,16 @@
 		8BB7D1EC2B0081260021CF39 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		8BB7D1EE2B0082370021CF39 /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		8BB7D1F12B008F250021CF39 /* IdealFontLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdealFontLayout.swift; sourceTree = "<group>"; };
+		8BC52C7F2B2942DA008D0D61 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8BC52C822B2943A0008D0D61 /* Haptics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		8BC52C842B2943A5008D0D61 /* Haptics+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Haptics+UIKit.swift"; sourceTree = "<group>"; };
+		8BC52C862B294413008D0D61 /* SceneDelegate+Indicators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SceneDelegate+Indicators.swift"; sourceTree = "<group>"; };
+		8BC52C892B294447008D0D61 /* Indicator+ErrorInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Indicator+ErrorInit.swift"; sourceTree = "<group>"; };
+		8BC52C8B2B294479008D0D61 /* SFSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
+		8BC52C8D2B294592008D0D61 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		8BC52C902B2945D1008D0D61 /* EnvironmentValues+ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ErrorHandler.swift"; sourceTree = "<group>"; };
+		8BC52C922B294615008D0D61 /* EnvironmentValues+ShowIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ShowIndicator.swift"; sourceTree = "<group>"; };
+		8BC52C942B29CE9B008D0D61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8BCD71512AF667B200EE3F4A /* CoopDetailHolder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoopDetailHolder.json; sourceTree = "<group>"; };
 		8BCD99A32B0AE51F00829AF5 /* NintendoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NintendoAccount.swift; sourceTree = "<group>"; };
 		8BCF4B9D2B0739A6009FAB9B /* CoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopView.swift; sourceTree = "<group>"; };
@@ -371,7 +391,6 @@
 		8BF2D4E52B2535880017B1E0 /* PieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		8BF2D4E72B255F6C0017B1E0 /* Splatoon1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splatoon1.otf; sourceTree = "<group>"; };
 		8BF2D4E92B2570870017B1E0 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
-		8BF4BDFB2B1362CB00E5C6B5 /* InkAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkAppDelegate.swift; sourceTree = "<group>"; };
 		8BF742D12B15ACBA00382A0E /* CoopSummaryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopSummaryDetail.swift; sourceTree = "<group>"; };
 		8BFE69472AF8A69100370F8F /* EnemyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyView.swift; sourceTree = "<group>"; };
 		8BFE694B2AF8B40100370F8F /* Splatoon2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splatoon2.otf; sourceTree = "<group>"; };
@@ -382,12 +401,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B8F20632B1FFCFF00230D37 /* SPAlert in Frameworks */,
 				8B9BFE902AF20C5C005F5FB8 /* SwiftyJSON in Frameworks */,
-				8BF2D4E22B25292B0017B1E0 /* TabBar in Frameworks */,
 				8B596B9B2AF4567E006FA8F8 /* AlertToast in Frameworks */,
 				8B596B962AF3D6A4006FA8F8 /* AnyCodable in Frameworks */,
 				8B17F0272B16BB6900A3C46A /* OverlayDatePicker in Frameworks */,
+				8B3900302B28884100EEF849 /* IndicatorsKit in Frameworks */,
 				8B1D5C812AF8403400F9C92B /* Hero in Frameworks */,
 				8B9BFE8D2AF20C55005F5FB8 /* Kingfisher in Frameworks */,
 			);
@@ -512,6 +530,7 @@
 		8B3479332B1759ED001F7737 /* ViewBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				8B5FB86A2B1312C200709CD6 /* TrackableScrollView.swift */,
 				8B3479342B175A5D001F7737 /* DetailScrollView.swift */,
 				8B3479372B182965001F7737 /* RotationSection.swift */,
 			);
@@ -656,6 +675,7 @@
 		8B9BFDF92AF20BCE005F5FB8 /* InkCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				8BC52C7D2B2942A4008D0D61 /* Controller */,
 				8BF4BDFA2B1357CB00E5C6B5 /* Resource */,
 				8B5FB8672B13059200709CD6 /* Background */,
 				8BB7D1F02B008F1D0021CF39 /* Layouts */,
@@ -664,7 +684,6 @@
 				8B9BFE842AF20BFE005F5FB8 /* Models */,
 				8B9BFE602AF20BF0005F5FB8 /* Views */,
 				8B9BFDFA2AF20BCE005F5FB8 /* InkCompanionApp.swift */,
-				8BF4BDFB2B1362CB00E5C6B5 /* InkAppDelegate.swift */,
 				8B9E0E742B09CCFE007700D0 /* InkCompanion.xcdatamodeld */,
 				8B9BFE052AF20BD0005F5FB8 /* InkCompanion.entitlements */,
 				8B9BFE092AF20BD0005F5FB8 /* Info.plist */,
@@ -720,6 +739,7 @@
 				8B596B8F2AF38634006FA8F8 /* Style.swift */,
 				8B34793A2B18AD69001F7737 /* HomePage.swift */,
 				8B9DC0662B1F46030014F87A /* MePage.swift */,
+				8BC52C942B29CE9B008D0D61 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -800,6 +820,7 @@
 		8BB7D1BF2AFE605E0021CF39 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8BC52C8B2B294479008D0D61 /* SFSymbol.swift */,
 				8B39000D2B26EEF800EEF849 /* Enum */,
 				8B3479332B1759ED001F7737 /* ViewBuilder */,
 				8B9BFE372AF20BDC005F5FB8 /* UI */,
@@ -808,7 +829,6 @@
 				8B9BFE3E2AF20BDC005F5FB8 /* API.swift */,
 				8B9DC0582B1EC0A70014F87A /* ConvenientColors.swift */,
 				8B9DC05A2B1EC2D60014F87A /* Operator.swift */,
-				8B5FB86A2B1312C200709CD6 /* TrackableScrollView.swift */,
 				8B6A07F82B103BB200C8BDC9 /* AppColor.swift */,
 			);
 			path = Utilities;
@@ -817,6 +837,8 @@
 		8BB7D1C02AFE60650021CF39 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				8BC52C8F2B2945BB008D0D61 /* EnvironmentValues */,
+				8BC52C882B294447008D0D61 /* IndicatorsKit */,
 				8B9DC0642B1F3F4F0014F87A /* Decode&Encode.swift */,
 				8B40D0802B14BF4200608971 /* Logger+.swift */,
 				8B40D07E2B14BD0700608971 /* Bundle+.swift */,
@@ -830,6 +852,7 @@
 				8BB7D1EE2B0082370021CF39 /* Date+Ext.swift */,
 				8BB7D1C12AFE608B0021CF39 /* View.swift */,
 				8B6A07F22B10228200C8BDC9 /* Array.swift */,
+				8B3900412B29353A00EEF849 /* Indicators.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -913,6 +936,51 @@
 			path = Layouts;
 			sourceTree = "<group>";
 		};
+		8BC52C7D2B2942A4008D0D61 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8BC52C812B294396008D0D61 /* Haptics */,
+				8BC52C7E2B2942B2008D0D61 /* SceneDelegate */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8BC52C7E2B2942B2008D0D61 /* SceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				8BC52C8D2B294592008D0D61 /* ErrorHandler.swift */,
+				8BC52C7F2B2942DA008D0D61 /* SceneDelegate.swift */,
+				8BC52C862B294413008D0D61 /* SceneDelegate+Indicators.swift */,
+			);
+			path = SceneDelegate;
+			sourceTree = "<group>";
+		};
+		8BC52C812B294396008D0D61 /* Haptics */ = {
+			isa = PBXGroup;
+			children = (
+				8BC52C842B2943A5008D0D61 /* Haptics+UIKit.swift */,
+				8BC52C822B2943A0008D0D61 /* Haptics.swift */,
+			);
+			path = Haptics;
+			sourceTree = "<group>";
+		};
+		8BC52C882B294447008D0D61 /* IndicatorsKit */ = {
+			isa = PBXGroup;
+			children = (
+				8BC52C892B294447008D0D61 /* Indicator+ErrorInit.swift */,
+			);
+			path = IndicatorsKit;
+			sourceTree = "<group>";
+		};
+		8BC52C8F2B2945BB008D0D61 /* EnvironmentValues */ = {
+			isa = PBXGroup;
+			children = (
+				8BC52C902B2945D1008D0D61 /* EnvironmentValues+ErrorHandler.swift */,
+				8BC52C922B294615008D0D61 /* EnvironmentValues+ShowIndicator.swift */,
+			);
+			path = EnvironmentValues;
+			sourceTree = "<group>";
+		};
 		8BCD714A2AF64D3500EE3F4A /* Coop */ = {
 			isa = PBXGroup;
 			children = (
@@ -975,8 +1043,7 @@
 				8B596B9A2AF4567E006FA8F8 /* AlertToast */,
 				8B1D5C802AF8403400F9C92B /* Hero */,
 				8B17F0262B16BB6900A3C46A /* OverlayDatePicker */,
-				8B8F20622B1FFCFF00230D37 /* SPAlert */,
-				8BF2D4E12B25292B0017B1E0 /* TabBar */,
+				8B39002F2B28884100EEF849 /* IndicatorsKit */,
 			);
 			productName = InkCompanion;
 			productReference = 8B9BFDF72AF20BCE005F5FB8 /* InkCompanion.app */;
@@ -1061,9 +1128,7 @@
 				8BA5C1492B14699D001CA89D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8B17F01B2B16205B00A3C46A /* XCRemoteSwiftPackageReference "OverlayDatePicker" */,
 				8B17F01E2B16271B00A3C46A /* XCRemoteSwiftPackageReference "Fastis" */,
-				8B3479762B18BAA9001F7737 /* XCLocalSwiftPackageReference "../../../GolandProjects/SplatNet3" */,
-				8B8F20612B1FFCFF00230D37 /* XCRemoteSwiftPackageReference "AlertKit" */,
-				8BF2D4E02B25292B0017B1E0 /* XCRemoteSwiftPackageReference "TabBar" */,
+				8B39002E2B28884100EEF849 /* XCLocalSwiftPackageReference "../IndicatorsKit" */,
 			);
 			productRefGroup = 8B9BFDF82AF20BCE005F5FB8 /* Products */;
 			projectDirPath = "";
@@ -1133,6 +1198,7 @@
 				8BECD0D72B26CFA600AAAA2F /* addCoopStatus.swift in Sources */,
 				8B7B3B892B11838900E81ED5 /* CoopDetailTopCard.swift in Sources */,
 				8B01F85F2B174F830031044D /* DocumentPicker.swift in Sources */,
+				8B3900422B29353A00EEF849 /* Indicators.swift in Sources */,
 				8B964E2E2B21CA2900019CCF /* AccountViewModel.swift in Sources */,
 				8B1E450C2B1DE4B800773CD6 /* BattleItem.swift in Sources */,
 				8B4ABECF2AF9D1590017E6E6 /* CoopItem.swift in Sources */,
@@ -1143,6 +1209,7 @@
 				8B33B5E72B048187002BEBBE /* InkNet.swift in Sources */,
 				8B0B2AF02B1D5A5200FDA4B5 /* BattleModel.swift in Sources */,
 				8B3900232B26EEF800EEF849 /* WeaponKey.swift in Sources */,
+				8BC52C932B294615008D0D61 /* EnvironmentValues+ShowIndicator.swift in Sources */,
 				8B5254B12B206BDB00118B4E /* FilePickerView.swift in Sources */,
 				8BB7D1F22B008F250021CF39 /* IdealFontLayout.swift in Sources */,
 				8B6A5E4A2AFC5F4700C76B70 /* AnarchySchedules.swift in Sources */,
@@ -1152,12 +1219,15 @@
 				8BB7D1E72B0073360021CF39 /* ScaledLimitedLine.swift in Sources */,
 				8B46A5592AF52E91001FB5E2 /* CoopHistories.swift in Sources */,
 				8B9BFE522AF20BDC005F5FB8 /* Collection.swift in Sources */,
+				8BC52C852B2943A5008D0D61 /* Haptics+UIKit.swift in Sources */,
 				8B0B2AF22B1D5ADD00FDA4B5 /* BattleView.swift in Sources */,
 				8B6A73C22B059BAB00361CF6 /* DateFormatter+Ext.swift in Sources */,
+				8BC52C802B2942DA008D0D61 /* SceneDelegate.swift in Sources */,
 				8BECD0D32B25DF2200AAAA2F /* FestIcon.swift in Sources */,
 				8BE74ADB2B0ECB0D001796DF /* CoopModel.swift in Sources */,
 				8BDBC4462B0B6E4800A4258E /* CoopDetailView.swift in Sources */,
 				8B6A07F52B10351C00C8BDC9 /* StringInterpolation.swift in Sources */,
+				8BC52C912B2945D1008D0D61 /* EnvironmentValues+ErrorHandler.swift in Sources */,
 				8B6A5E4E2AFC649900C76B70 /* XSchedules.swift in Sources */,
 				8BF2D4E62B2535890017B1E0 /* PieView.swift in Sources */,
 				8B9DC0652B1F3F4F0014F87A /* Decode&Encode.swift in Sources */,
@@ -1172,15 +1242,16 @@
 				8B6A08012B10C65A00C8BDC9 /* CornerRadiusModifier.swift in Sources */,
 				8B596B882AF34025006FA8F8 /* RequestID.swift in Sources */,
 				8B9DC05B2B1EC2D60014F87A /* Operator.swift in Sources */,
-				8BA5C14F2B147A8B001CA89D /* InkAppDelegate.swift in Sources */,
 				8B5DD3EA2B083ED700EDD673 /* InkData.swift in Sources */,
 				8B964E302B22886900019CCF /* MainViewModel.swift in Sources */,
 				8B9BFE7F2AF20BF3005F5FB8 /* fAPI.swift in Sources */,
 				8BB7D1D52AFFAEDE0021CF39 /* Constants.swift in Sources */,
+				8BC52C8C2B294479008D0D61 /* SFSymbol.swift in Sources */,
 				8B9BFE6E2AF20BF0005F5FB8 /* SettingView.swift in Sources */,
 				8B596B8A2AF34076006FA8F8 /* FriendList.swift in Sources */,
 				8B9BFE532AF20BDC005F5FB8 /* SwiftJSON.swift in Sources */,
 				8B3900222B26EEF800EEF849 /* SpecialKey.swift in Sources */,
+				8BC52C832B2943A0008D0D61 /* Haptics.swift in Sources */,
 				8B6A73B32B058B2400361CF6 /* IconView.swift in Sources */,
 				8B1A23EB2B194E78002498DC /* BattleScheduleView.swift in Sources */,
 				8B0B2AF42B1D8BC800FDA4B5 /* GeneralBattleHistories.swift in Sources */,
@@ -1190,6 +1261,7 @@
 				8B596B8C2AF35465006FA8F8 /* FriendsView.swift in Sources */,
 				8B40D0812B14BF4200608971 /* Logger+.swift in Sources */,
 				8B0B2ACF2B1B53E000FDA4B5 /* CoopScheduleView.swift in Sources */,
+				8BC52C8E2B294592008D0D61 /* ErrorHandler.swift in Sources */,
 				8BFE69482AF8A69100370F8F /* EnemyView.swift in Sources */,
 				8B9BFE502AF20BDC005F5FB8 /* Image.swift in Sources */,
 				8B46A5512AF4D5BB001FB5E2 /* FestRecord.swift in Sources */,
@@ -1200,6 +1272,7 @@
 				8BB5A7FB2AFD0F2E0095E0E9 /* Schedule.swift in Sources */,
 				8B33B5EA2B0487AB002BEBBE /* InkPreference.swift in Sources */,
 				8B1A23EF2B194F32002498DC /* ScheduleViewModel.swift in Sources */,
+				8BC52C8A2B294447008D0D61 /* Indicator+ErrorInit.swift in Sources */,
 				8B5FB8622B11C58F00709CD6 /* WaveView.swift in Sources */,
 				8BF2D4E42B2535730017B1E0 /* TodayView.swift in Sources */,
 				8B9DC0592B1EC0A70014F87A /* ConvenientColors.swift in Sources */,
@@ -1216,6 +1289,7 @@
 				8B3900202B26EEF800EEF849 /* NameplateKey.swift in Sources */,
 				8B9BFE792AF20BF0005F5FB8 /* MainView.swift in Sources */,
 				8B46A5532AF507F1001FB5E2 /* BattleHistories.swift in Sources */,
+				8BC52C872B294413008D0D61 /* SceneDelegate+Indicators.swift in Sources */,
 				8BB7D1CB2AFF5A7F0021CF39 /* BattleRule.swift in Sources */,
 				8B1E450A2B1DAB4B00773CD6 /* Status.swift in Sources */,
 				8B46A54F2AF4CA0F001FB5E2 /* DetailVotingStatusQuery.swift in Sources */,
@@ -1247,6 +1321,7 @@
 				8B0B2AE92B1CA90400FDA4B5 /* VsHistoryDetail.swift in Sources */,
 				8B9E0E762B09CCFE007700D0 /* InkCompanion.xcdatamodeld in Sources */,
 				8BB7D1ED2B0081260021CF39 /* MockData.swift in Sources */,
+				8BC52C952B29CE9B008D0D61 /* ContentView.swift in Sources */,
 				8B5FB8662B12CB0700709CD6 /* TextureBackGround.swift in Sources */,
 				8B6A5E4C2AFC632500C76B70 /* RegularSchedules.swift in Sources */,
 				8BE74ADD2B0ECDAF001796DF /* CoopSummaryCard.swift in Sources */,
@@ -1657,9 +1732,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		8B3479762B18BAA9001F7737 /* XCLocalSwiftPackageReference "../../../GolandProjects/SplatNet3" */ = {
+		8B39002E2B28884100EEF849 /* XCLocalSwiftPackageReference "../IndicatorsKit" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../../GolandProjects/SplatNet3;
+			relativePath = ../IndicatorsKit;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -1704,14 +1779,6 @@
 				minimumVersion = 1.3.9;
 			};
 		};
-		8B8F20612B1FFCFF00230D37 /* XCRemoteSwiftPackageReference "AlertKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparrowcode/AlertKit.git";
-			requirement = {
-				kind = exactVersion;
-				version = 3.5.1;
-			};
-		};
 		8B9BFE8B2AF20C55005F5FB8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1736,14 +1803,6 @@
 				minimumVersion = 5.6.0;
 			};
 		};
-		8BF2D4E02B25292B0017B1E0 /* XCRemoteSwiftPackageReference "TabBar" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onl1ner/TabBar.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1757,6 +1816,10 @@
 			package = 8B1D5C7F2AF8403400F9C92B /* XCRemoteSwiftPackageReference "Hero" */;
 			productName = Hero;
 		};
+		8B39002F2B28884100EEF849 /* IndicatorsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IndicatorsKit;
+		};
 		8B596B952AF3D6A4006FA8F8 /* AnyCodable */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8B596B942AF3D6A4006FA8F8 /* XCRemoteSwiftPackageReference "AnyCodable" */;
@@ -1767,11 +1830,6 @@
 			package = 8B596B992AF4567D006FA8F8 /* XCRemoteSwiftPackageReference "AlertToast" */;
 			productName = AlertToast;
 		};
-		8B8F20622B1FFCFF00230D37 /* SPAlert */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8B8F20612B1FFCFF00230D37 /* XCRemoteSwiftPackageReference "AlertKit" */;
-			productName = SPAlert;
-		};
 		8B9BFE8C2AF20C55005F5FB8 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8B9BFE8B2AF20C55005F5FB8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
@@ -1781,11 +1839,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B9BFE8E2AF20C5C005F5FB8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
-		};
-		8BF2D4E12B25292B0017B1E0 /* TabBar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8BF2D4E02B25292B0017B1E0 /* XCRemoteSwiftPackageReference "TabBar" */;
-			productName = TabBar;
 		};
 /* End XCSwiftPackageProductDependency section */
 

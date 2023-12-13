@@ -8,7 +8,6 @@
 import Foundation
 import AuthenticationServices
 import OSLog
-import SPAlert
 
 extension InkNet{
   static let nintendo = NintendoService()

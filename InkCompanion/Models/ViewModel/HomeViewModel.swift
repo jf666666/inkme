@@ -45,12 +45,22 @@ class HomeViewModel: ObservableObject{
   }
   
   @MainActor
-  func loadGirds(){
-    if let userKey = InkUserDefaults.shared.currentUserKey, let id = Int64(userKey){
-      self.coopWinLoseDrawResult = inkData.coopStatus(accountId: id)
-      self.battleWinLoseDrawResult = inkData.battleStatus(accountId: id)
-    }
+  func loadGrids() {
+      if let userKey = InkUserDefaults.shared.currentUserKey, let id = Int64(userKey) {
+          // 使用后台线程进行数据库操作
+          DispatchQueue.global(qos: .userInitiated).async {
+              let coopResult = self.inkData.coopStatus(accountId: id)
+              let battleResult = self.inkData.battleStatus(accountId: id)
+
+              // 返回主线程更新UI
+              DispatchQueue.main.async {
+                  self.coopWinLoseDrawResult = coopResult
+                  self.battleWinLoseDrawResult = battleResult
+              }
+          }
+      }
   }
+
 
   @MainActor
   func loadTodayCoop(){

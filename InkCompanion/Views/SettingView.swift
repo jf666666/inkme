@@ -2,8 +2,7 @@ import SwiftUI
 import AuthenticationServices
 import CoreData
 import AlertToast
-//import UniformTypeIdentifiers
-//import SPAlert
+
 import Kingfisher
 
 
@@ -36,47 +35,12 @@ struct SettingView: View {
 
         Section {
 
-          ForEach(accountViewModel.accounts){player in
+          ForEach(0..<accountViewModel.accounts.count,id:\.self){index in
             Button {
-
-              accountViewModel.changingAccount = true
-              InkNet.shared.bulletToken = player.bulletToken
-              InkNet.shared.webServiceToken = player.webServiceToken
-              DispatchQueue.main.async {
-                InkUserDefaults.shared.sessionToken = player.sessionToken
-                InkUserDefaults.shared.webServiceToken = player.webServiceToken.encode()
-                InkUserDefaults.shared.bulletToken = player.bulletToken
-                InkUserDefaults.shared.currentUserKey = String(player.id)
-              }
-              accountViewModel.selectedAccount = player
-              if accountViewModel.shouldUpdate(){
-                Task{ @MainActor in
-                  do{
-                    let (w, b) = try await Nintendo.updateTokens()
-
-                    if let w = w{
-                      InkNet.shared.webServiceToken = w
-                      accountViewModel.selectedAccount?.webServiceToken = w
-                    }
-                    if let b = b{
-                      InkNet.shared.bulletToken = b
-                      accountViewModel.selectedAccount?.bulletToken = b
-                      accountViewModel.selectedAccount?.lastRefreshTime = Date.now
-                    }
-
-                    await accountViewModel.updateAccountInCoreData()
-                    accountViewModel.changingAccountSuccess = true
-                  }catch{
-                    accountViewModel.changingAccountFailed = true
-                  }
-                  accountViewModel.changingAccount = false
-                }
-              }else{
-                accountViewModel.changingAccount = false
-                accountViewModel.changingAccountSuccess = true
-              }
-
+              Haptics.generateIfEnabled(.selectionChanged)
+              accountViewModel.changeAccount(to: index)
             } label: {
+              let player = accountViewModel.accounts[index]
               AccountRow(player: player)
             }
 
@@ -140,9 +104,9 @@ struct SettingView: View {
         }
 
         Section {
-          Text("鲑鱼跑记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["salmon_run"],accountId: accountViewModel.selectedAccount?.id)))")
+          Text("鲑鱼跑记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["salmon_run"],accountId: accountViewModel.accounts[accountViewModel.selectedAccount].id)))")
 
-          Text("对战记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["REGULAR","BANKARA","XMATCH","LEAGUE","PRIVATE"],accountId: accountViewModel.selectedAccount?.id)))")
+          Text("对战记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["REGULAR","BANKARA","XMATCH","LEAGUE","PRIVATE"],accountId: accountViewModel.accounts[accountViewModel.selectedAccount].id)))")
 
           if let url = PersistenceController.shared.container.persistentStoreDescriptions.first?.url {
             Text(url.path())
@@ -290,7 +254,7 @@ struct AccountRow:View {
             .font(.system(size: 12))
         }
         Spacer()
-        if accountViewModel.selectedAccount == player{
+        if accountViewModel.accounts[accountViewModel.selectedAccount] == player{
           Image(systemName: "checkmark")
             .foregroundStyle(.spGreen)
         }

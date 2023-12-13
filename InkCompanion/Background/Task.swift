@@ -90,3 +90,25 @@ enum InkBackgroundTaskIdentifier {
   static let backgroundNotification = "inkCompanion.BackgroundNotification"
 }
 
+func postUserNotification(title: String, body: String, interval: TimeInterval) {
+  // 1. 创建通知内容
+  let content = UNMutableNotificationContent()
+  content.title = title
+  content.body = body
+  content.sound = UNNotificationSound.default
+
+  // 2. 设置触发器
+  _ = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
+
+  // 3. 创建请求
+  let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
+
+  // 4. 将请求添加到通知中心
+  UNUserNotificationCenter.current().add(request) { error in
+    if let error = error {
+      print("Error scheduling notification: \(error)")
+      return
+    }
+    print("Notification scheduled: \(request.identifier)")
+  }
+}
