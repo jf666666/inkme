@@ -31,43 +31,56 @@ class AccountViewModel:ObservableObject{
     }
   }
   
-  func changeAccount(to index:Int){
-    if self.selectedAccount == index{
-      return
-    }
-    let player = self.accounts[index]
-    self.selectedAccount = index
-    self.changingAccount = true
-    inkNet.bulletToken = player.bulletToken
-    inkNet.webServiceToken = player.webServiceToken
-    DispatchQueue.main.async {
+  func changeAccount(to index: Int) {
+      guard self.selectedAccount != index else {
+          return
+      }
+
+      let player = self.accounts[index]
+      self.selectedAccount = index
+      self.changingAccount = true
+      inkNet.bulletToken = player.bulletToken
+      inkNet.webServiceToken = player.webServiceToken
+
+
       self.inkUserDefaults.sessionToken = player.sessionToken
       self.inkUserDefaults.webServiceToken = player.webServiceToken.encode()
       self.inkUserDefaults.bulletToken = player.bulletToken
       self.inkUserDefaults.currentUserKey = String(player.id)
-    }
-    self.accounts[index] = player
 
-    if self.shouldUpdate(){
-      Task{
-        do{
-          try await updateCurrentAccount {_ in}
+
+      if self.shouldUpdate() {
+          Task {
+              do {
+                  try await updateCurrentAccount() { bullet in
+                      if let bullet {
+                          print(bullet, terminator: "!")
+                      }
+                  }
+                  DispatchQueue.main.async { [weak self] in
+                      self?.changingAccountSuccess = true
+                      self?.changingAccount = false
+                  }
+              } catch {
+                  DispatchQueue.main.async { [weak self] in
+                      self?.indicators.display(.init(error: error))
+                      self?.changingAccount = false
+                  }
+              }
+          }
+      } else {
           self.changingAccount = false
-          self.changingAccountSuccess = true
-        }catch{
-          indicators.display(.init(error: error))
-        }
       }
-    }
   }
+
   
   func updateCurrentAccount(bullet:(String?)->Void) async throws{
     do{
       let (w, b) = try await nintendo.updateTokens()
 
       if let w = w{
+        self.inkNet.webServiceToken = w
         DispatchQueue.main.async {
-          self.inkNet.webServiceToken = w
           self.inkUserDefaults.webServiceToken = w.encode()
           self.accounts[self.selectedAccount].webServiceToken = w
         }

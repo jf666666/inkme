@@ -26,11 +26,19 @@ struct MainView: View {
   @State private var updateFailed: Bool = false
   @State private var updateSuccess: Bool = false
 
+  @EnvironmentObject var accountViewModel:AccountViewModel
+  @Environment(\.loadingHandler) private var loadingHandler
+  @Environment(\.errorHandler) private var errorHandler
+  @Environment(\.informationHandler) private var informationHandler
+  @EnvironmentObject var indicators:Indicators
+  @EnvironmentObject var viewModel: HomeViewModel
 
+  @AppStorage("mainViewTabSelection")
+  var tabSelection:Int = 0
 
   var body: some View {
 
-      TabView{
+    TabView(selection:$tabSelection){
         HomePage()
           .tabItem {
             Label("主页", image: "TabBarHome")
@@ -57,11 +65,44 @@ struct MainView: View {
           }
           .tag(3)
       }
+      .task {
+        await accountViewModel.loadAccount()
+        await update()
+      }
 
 
   }
 
+  func update() async {
 
+    if accountViewModel.shouldUpdate(){
+      var id:String = ""
+      loadingHandler("正在更新令牌"){ indicatorId in
+        id = indicatorId
+      }
+      do{
+        var bullet:String?
+        try await accountViewModel.updateCurrentAccount { b in
+          bullet = b
+        }
+        let infoId = "\(UUID().uuidString)"
+        let indicator = Indicator(id: infoId, icon: "checkmark", headline: "更新成功",expandedText: bullet == nil ? nil : "Bullet Token: \(bullet ?? ""))", dismissType: .after(3), style: .init(iconColor:.green)) {
+          if let bullet = bullet{
+            indicators.dismiss(matching: infoId)
+            UIPasteboard.general.string = bullet
+            indicators.display(Indicator(id: "\(UUID().uuidString)",
+                                         icon: SFSymbol.copy,
+                                         headline: "Bullet Token Copied",
+                                         style: .default))
+          }
+        }
+        informationHandler(indicator)
+      }catch{
+        errorHandler(error)
+      }
+      indicators.dismiss(matching: id)
+    }
+  }
 
 }
 

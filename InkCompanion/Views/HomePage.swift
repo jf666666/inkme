@@ -7,17 +7,14 @@
 
 import SwiftUI
 import IndicatorsKit
+import Foundation
 
 struct HomePage: View {
-  @EnvironmentObject var accountViewModel:AccountViewModel
-  @Environment(\.loadingHandler) private var loadingHandler
-  @Environment(\.errorHandler) private var errorHandler
-  @Environment(\.informationHandler) private var informationHandler
-  @EnvironmentObject var indicators:Indicators
   @EnvironmentObject var viewModel: HomeViewModel
 
   @State private var vdChartViewHeight: CGFloat = 200
   @State private var vdChartLastBlockWidth: CGFloat = 0
+  
 
   // MARK: Body
   var body: some View {
@@ -41,6 +38,9 @@ struct HomePage: View {
         .padding(.horizontal,15)
       }
       .navigationBarTitle("主页", displayMode: .inline)
+      .toolbar(content: {
+        refreshButton
+      })
       .frame(maxWidth: .infinity)
       .fixSafeareaBackground()
       .task {
@@ -51,10 +51,24 @@ struct HomePage: View {
         await viewModel.loadSchedules()
       }
     }
-    .task {
-      await accountViewModel.loadAccount()
-      await update()
+  }
+
+  var refreshButton:some View{
+    Button {
+      Haptics.generateIfEnabled(.heavy)
+      Task{ @MainActor in
+        await viewModel.loadSchedules()
+      }
+    } label: {
+      Label {
+        Text("refresh")
+      } icon: {
+        Image(systemName: "arrow.triangle.2.circlepath")
+          .frame(width: 22, height: 22)
+      }
+
     }
+
   }
 
   var today:some View{
@@ -76,10 +90,6 @@ struct HomePage: View {
         HStack(alignment: .firstTextBaseline) {
           Text("今日")
             .inkFont(.font1, size: 22, relativeTo: .body)
-
-          //          Text("(\(viewModel.resetHour):00 \("reset".localized))")
-          //            .inkFont(.Splatoon2, size: 12, relativeTo: .body)
-          //            .foregroundStyle(.secondary)
 
           Spacer()
         }
@@ -197,7 +207,8 @@ struct HomePage: View {
       .frame(maxWidth: .infinity, alignment: .leading)
   }
   var modePicker: some View{
-    Picker("", selection: $viewModel.currentMode) {
+
+    Picker("ModePicker", selection: $viewModel.currentMode) {
       if viewModel.shouldShowFestival(){
         ScheduleMode.fest.icon
           .tag(ScheduleMode.fest)
@@ -206,14 +217,17 @@ struct HomePage: View {
         mode.icon
           .resizable()
           .scaledToFit()
-          .grayscale(10)
+          .grayscale(1)
           .tag(mode)
       }
 
+
     }
     .pickerStyle(SegmentedPickerStyle())
-    .frame(width: 180)
+    .frame(width: 170)
   }
+
+
 
   
   var subModePicker: some View{
@@ -241,36 +255,7 @@ struct HomePage: View {
     }
   }
 
-  func update() async {
-
-    if accountViewModel.shouldUpdate(){
-      var id:String = ""
-      loadingHandler("正在更新令牌"){ indicatorId in
-        id = indicatorId
-      }
-      do{
-        var bullet:String?
-        try await accountViewModel.updateCurrentAccount { b in
-          bullet = b
-        }
-        let infoId = "\(UUID().uuidString)"
-        let indicator = Indicator(id: infoId, icon: "checkmark", headline: "更新成功",expandedText: bullet == nil ? nil : "Bullet Token: \(bullet ?? ""))", dismissType: .after(3), style: .init(iconColor:.green)) {
-          if let bullet = bullet{
-            indicators.dismiss(matching: infoId)
-            UIPasteboard.general.string = bullet
-            indicators.display(Indicator(id: "\(UUID().uuidString)",
-                                         icon: SFSymbol.copy,
-                                         headline: "Bullet Token Copied",
-                                         style: .default))
-          }
-        }
-        informationHandler(indicator)
-      }catch{
-        errorHandler(error)
-      }
-      indicators.dismiss(matching: id)
-    }
-  }
+  
 }
 
 #Preview {
@@ -285,3 +270,5 @@ struct ViewWidthKey: PreferenceKey {
     value = nextValue()
   }
 }
+
+

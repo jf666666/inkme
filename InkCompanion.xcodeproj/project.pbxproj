@@ -165,6 +165,7 @@
 		8BC52C912B2945D1008D0D61 /* EnvironmentValues+ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C902B2945D1008D0D61 /* EnvironmentValues+ErrorHandler.swift */; };
 		8BC52C932B294615008D0D61 /* EnvironmentValues+ShowIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C922B294615008D0D61 /* EnvironmentValues+ShowIndicator.swift */; };
 		8BC52C952B29CE9B008D0D61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C942B29CE9B008D0D61 /* ContentView.swift */; };
+		8BC52C972B2A96B4008D0D61 /* HorizontalPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC52C962B2A96B4008D0D61 /* HorizontalPicker.swift */; };
 		8BCD71522AF667B200EE3F4A /* CoopDetailHolder.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BCD71512AF667B200EE3F4A /* CoopDetailHolder.json */; };
 		8BCD99A42B0AE51F00829AF5 /* NintendoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD99A32B0AE51F00829AF5 /* NintendoAccount.swift */; };
 		8BCF4B9E2B0739A6009FAB9B /* CoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF4B9D2B0739A6009FAB9B /* CoopView.swift */; };
@@ -375,6 +376,7 @@
 		8BC52C902B2945D1008D0D61 /* EnvironmentValues+ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ErrorHandler.swift"; sourceTree = "<group>"; };
 		8BC52C922B294615008D0D61 /* EnvironmentValues+ShowIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ShowIndicator.swift"; sourceTree = "<group>"; };
 		8BC52C942B29CE9B008D0D61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8BC52C962B2A96B4008D0D61 /* HorizontalPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPicker.swift; sourceTree = "<group>"; };
 		8BCD71512AF667B200EE3F4A /* CoopDetailHolder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoopDetailHolder.json; sourceTree = "<group>"; };
 		8BCD99A32B0AE51F00829AF5 /* NintendoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NintendoAccount.swift; sourceTree = "<group>"; };
 		8BCF4B9D2B0739A6009FAB9B /* CoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoopView.swift; sourceTree = "<group>"; };
@@ -760,6 +762,7 @@
 				8B9DC05E2B1F30A40014F87A /* LoginView.swift */,
 				8BF2D4E32B2535730017B1E0 /* TodayView.swift */,
 				8BECD0D22B25DF2200AAAA2F /* FestIcon.swift */,
+				8BC52C962B2A96B4008D0D61 /* HorizontalPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1325,6 +1328,7 @@
 				8B5FB8662B12CB0700709CD6 /* TextureBackGround.swift in Sources */,
 				8B6A5E4C2AFC632500C76B70 /* RegularSchedules.swift in Sources */,
 				8BE74ADD2B0ECDAF001796DF /* CoopSummaryCard.swift in Sources */,
+				8BC52C972B2A96B4008D0D61 /* HorizontalPicker.swift in Sources */,
 				8B46A54B2AF4962F001FB5E2 /* WeaponRecord.swift in Sources */,
 				8B3900212B26EEF800EEF849 /* BadgeKey.swift in Sources */,
 				8B46A54D2AF4BE99001FB5E2 /* EquipmentsQuery.swift in Sources */,

@@ -275,6 +275,48 @@ let AXIOS_TOKEN_TIMEOUT: TimeInterval = 30 // Replace with your actual timeout
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>3</string>
+					<key>EndingLineNumber</key>
+					<string>365</string>
+					<key>StartingColumnNumber</key>
+					<string>2</string>
+					<key>StartingLineNumber</key>
+					<string>365</string>
+					<key>Timestamp</key>
+					<string>724246278.0293289</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>InkCompanion/Resource/zh-Hans.lproj/Localizable.strings</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>"Q29vcEdyYWRlLTY=" = "达人+2";
+"Q29vcEdyYWRlLTc=" = "达人+3";
+</string>
+				<key>trailing</key>
+				<string>"Q29vcEdyYWRlLTg=" = "传说";
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
 	</array>
 </dict>
 </plist>
