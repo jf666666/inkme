@@ -56,6 +56,9 @@
 		8B3900232B26EEF800EEF849 /* WeaponKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900192B26EEF800EEF849 /* WeaponKey.swift */; };
 		8B3900302B28884100EEF849 /* IndicatorsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8B39002F2B28884100EEF849 /* IndicatorsKit */; };
 		8B3900422B29353A00EEF849 /* Indicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3900412B29353A00EEF849 /* Indicators.swift */; };
+		8B3EE4312B2B28520019FA08 /* NSOAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3EE4302B2B28520019FA08 /* NSOAPI.swift */; };
+		8B3EE4332B2B28660019FA08 /* APITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3EE4322B2B28660019FA08 /* APITargetType.swift */; };
+		8B3EE4352B2B28960019FA08 /* NSOHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3EE4342B2B28960019FA08 /* NSOHash.swift */; };
 		8B40D07F2B14BD0700608971 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40D07E2B14BD0700608971 /* Bundle+.swift */; };
 		8B40D0812B14BF4200608971 /* Logger+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40D0802B14BF4200608971 /* Logger+.swift */; };
 		8B46A54B2AF4962F001FB5E2 /* WeaponRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46A54A2AF4962F001FB5E2 /* WeaponRecord.swift */; };
@@ -254,6 +257,9 @@
 		8B3900182B26EEF800EEF849 /* SpecialKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialKey.swift; sourceTree = "<group>"; };
 		8B3900192B26EEF800EEF849 /* WeaponKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponKey.swift; sourceTree = "<group>"; };
 		8B3900412B29353A00EEF849 /* Indicators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicators.swift; sourceTree = "<group>"; };
+		8B3EE4302B2B28520019FA08 /* NSOAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOAPI.swift; sourceTree = "<group>"; };
+		8B3EE4322B2B28660019FA08 /* APITargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITargetType.swift; sourceTree = "<group>"; };
+		8B3EE4342B2B28960019FA08 /* NSOHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOHash.swift; sourceTree = "<group>"; };
 		8B40D07E2B14BD0700608971 /* Bundle+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		8B40D0802B14BF4200608971 /* Logger+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logger+.swift"; sourceTree = "<group>"; };
 		8B46A54A2AF4962F001FB5E2 /* WeaponRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponRecord.swift; sourceTree = "<group>"; };
@@ -513,6 +519,9 @@
 		8B33B5E52B04816E002BEBBE /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8B3EE4322B2B28660019FA08 /* APITargetType.swift */,
+				8B3EE4342B2B28960019FA08 /* NSOHash.swift */,
+				8B3EE4302B2B28520019FA08 /* NSOAPI.swift */,
 				8B33B5E62B048187002BEBBE /* InkNet.swift */,
 				8B9BFE7A2AF20BF3005F5FB8 /* API */,
 				8BCD99A32B0AE51F00829AF5 /* NintendoAccount.swift */,
@@ -1266,6 +1275,7 @@
 				8B0B2ACF2B1B53E000FDA4B5 /* CoopScheduleView.swift in Sources */,
 				8BC52C8E2B294592008D0D61 /* ErrorHandler.swift in Sources */,
 				8BFE69482AF8A69100370F8F /* EnemyView.swift in Sources */,
+				8B3EE4332B2B28660019FA08 /* APITargetType.swift in Sources */,
 				8B9BFE502AF20BDC005F5FB8 /* Image.swift in Sources */,
 				8B46A5512AF4D5BB001FB5E2 /* FestRecord.swift in Sources */,
 				8B1A23F52B19B02C002498DC /* BattleScheduleCell.swift in Sources */,
@@ -1275,6 +1285,7 @@
 				8BB5A7FB2AFD0F2E0095E0E9 /* Schedule.swift in Sources */,
 				8B33B5EA2B0487AB002BEBBE /* InkPreference.swift in Sources */,
 				8B1A23EF2B194F32002498DC /* ScheduleViewModel.swift in Sources */,
+				8B3EE4352B2B28960019FA08 /* NSOHash.swift in Sources */,
 				8BC52C8A2B294447008D0D61 /* Indicator+ErrorInit.swift in Sources */,
 				8B5FB8622B11C58F00709CD6 /* WaveView.swift in Sources */,
 				8BF2D4E42B2535730017B1E0 /* TodayView.swift in Sources */,
@@ -1327,6 +1338,7 @@
 				8BC52C952B29CE9B008D0D61 /* ContentView.swift in Sources */,
 				8B5FB8662B12CB0700709CD6 /* TextureBackGround.swift in Sources */,
 				8B6A5E4C2AFC632500C76B70 /* RegularSchedules.swift in Sources */,
+				8B3EE4312B2B28520019FA08 /* NSOAPI.swift in Sources */,
 				8BE74ADD2B0ECDAF001796DF /* CoopSummaryCard.swift in Sources */,
 				8BC52C972B2A96B4008D0D61 /* HorizontalPicker.swift in Sources */,
 				8B46A54B2AF4962F001FB5E2 /* WeaponRecord.swift in Sources */,

@@ -101,7 +101,7 @@ extension InkNet{
 
       let (data, response) = try await URLSession.shared.data(for: request)
       guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-        throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "getSessionToken Invalid response from server"])
+        throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "getSessionToken Invalid response from server, data:\(String(data: data, encoding: .utf8) ?? "")"])
       }
 
       if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
@@ -111,41 +111,28 @@ extension InkNet{
         return nil
       }
     }
+    
+    private func generateLogIn() -> (URL,String) {
+      let codeVerifier = NSOHash.urandom(length: 32).base64EncodedString
+      let authorizeAPI = NSOAPI.authorize(codeVerifier: codeVerifier)
 
-    private func generateLogIn() -> (URL, String) {
-      // 生成随机字节
-      let random36Data = try? SecureRandomNumberGenerator.randomBytes(count: 36)
-      let random32Data = try? SecureRandomNumberGenerator.randomBytes(count: 32)
+      let url = authorizeAPI.baseURL.appendingPathComponent(authorizeAPI.path)
+      var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)!
 
-      // 将随机字节转换为Base64编码的字符串
-      let state = random36Data?.base64EncodedString().base64UrlEncoded()
-      let cv = random32Data?.base64EncodedString().base64UrlEncoded()
-      let cvHash = digestString(cv ?? "")
-
-      // 使用SHA256生成code challenge
-      let codeChallenge = cvHash?.base64UrlEncoded()
-
-      // 构建登录URL
-      var components = URLComponents(string: "https://accounts.nintendo.com/connect/1.0.0/authorize")!
-      let queryItems = [
-        URLQueryItem(name: "state", value: state),
-        URLQueryItem(name: "redirect_uri", value: "npf71b963c1b7b6d119://auth"),
-        URLQueryItem(name: "client_id", value: "71b963c1b7b6d119"),
-        URLQueryItem(name: "scope", value: "openid user user.birthday user.mii user.screenName"),
-        URLQueryItem(name: "response_type", value: "session_token_code"),
-        URLQueryItem(name: "session_token_code_challenge", value: codeChallenge),
-        URLQueryItem(name: "session_token_code_challenge_method", value: "S256"),
-        URLQueryItem(name: "theme", value: "login_form")
-      ]
-      components.queryItems = queryItems
-
-      let url = components.url
-
-      return (url ?? URL(string: "www.baidu.com")!, cv ?? "")
+      if let querys = authorizeAPI.querys {
+          let queryItems = querys.map { name, value in
+              URLQueryItem(name: name, value: value)
+          }
+          urlComponents.queryItems = queryItems
+      }
+      return (urlComponents.url!, codeVerifier)
     }
+
+
 
     private func getAccessAndIdToken(sessionToken:String) async throws -> (accessToken: String, idToken: String) {
       let url = URL(string: "https://accounts.nintendo.com/connect/1.0.0/api/token")!
+      
       var request = URLRequest(url: url)
       request.httpMethod = "POST"
       request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -406,16 +393,18 @@ extension InkNet{
 
     func initiateLoginProcess() async {
       do {
-        let (loginURL, cv) = generateLogIn()
+        let (loginURL, codeVerifier) = generateLogIn()
         let callbackURL = try await presentLoginSession(url: loginURL)
 
-        guard let callbackURL = callbackURL,let sessionToken = try await getSessionToken(from: callbackURL, cv: cv) else {
+        guard let callbackURL = callbackURL,let sessionToken = try await getSessionToken(from: callbackURL, cv: codeVerifier) else {
           print("Failed to get session token")
           return
         }
-
-        InkUserDefaults.shared.sessionToken = sessionToken
-        InkUserDefaults.shared.webServiceToken = nil
+        
+        DispatchQueue.main.async {
+          InkUserDefaults.shared.sessionToken = sessionToken
+          InkUserDefaults.shared.webServiceToken = nil
+        }
 
         _ = try await self.updateTokens()
 

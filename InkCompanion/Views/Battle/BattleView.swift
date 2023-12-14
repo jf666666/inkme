@@ -44,6 +44,7 @@ struct BattleView: View {
         }
       }
       .task {
+        model.rows = []
         await model.loadFromData(length: 300, filter: model.ruleFilter)
         await model.loadFromNet()
       }
