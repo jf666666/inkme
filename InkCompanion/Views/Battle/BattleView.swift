@@ -16,7 +16,7 @@ struct BattleView: View {
         ScrollView {
           LazyVStack {
             ForEach(0..<model.rows.count, id: \.self) { index in
-
+              
               ForEach(model.rows[index],id:\.id){ detail in
                 NavigationLink(value: detail.id) {
                   VStack {
@@ -35,8 +35,7 @@ struct BattleView: View {
         .navigationBarTitle("对战", displayMode: .inline)
         .navigationDestination(for: String.self) { id in
           if let detail = model.rows.first(where: { $0.contains(where: {$0.id == id}) })?.first(where: {$0.id == id}) {
-            Text(InkUserDefaults.shared.currentUserKey ?? "no key")
-
+            BattleDetailView(detail: detail)
           }
         }
         .navigationDestination(for: Int.self){ index in

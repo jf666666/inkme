@@ -14,6 +14,9 @@ struct VsStage: Codable,Stage {
   //    let originalImage:Icon?
   let stats: VsStageRecordStats?
   var localizedName:String{id.localizedString}
+  var stage:StageSelection{
+    StageSelection(rawValue: id) ?? .unknown
+  }
 }
 
 

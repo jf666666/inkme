@@ -65,7 +65,7 @@ class HomeViewModel: ObservableObject{
   @MainActor
   func loadTodayCoop(){
     if let userKey = InkUserDefaults.shared.currentUserKey, let id = Int64(userKey){
-      self.todayCoop = inkData.todayCoop(accountId: id)
+      self.todayCoop = inkData.recentGroupCoop(accountId: id)
       self.todayBattle = inkData.todayBattle(accountId: id)
     }
   }

@@ -8,11 +8,13 @@
 import Foundation
 import CoreData
 import OSLog
+import Combine
 
 class InkData{
   static let shared = InkData()
   let logger = Logger(.custom(InkData.self))
   private init() {}
+  private var cancellables = Set<AnyCancellable>()
 
   var context:NSManagedObjectContext {PersistenceController.shared.container.viewContext}
 
@@ -109,7 +111,7 @@ class InkData{
     }
     return []
   }
-  
+
   func todayBattle(accountId: Int64) -> TodayBattle{
     let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
 
@@ -174,6 +176,62 @@ class InkData{
       return TodayCoop()
     }
   }
+  
+  func recentGroupCoop(accountId: Int64) -> TodayCoop {
+    let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
+
+    // 设置排序，以便最新的记录排在前面
+    let sortDescriptor = NSSortDescriptor(key: "time", ascending: false)
+    fetchRequest.sortDescriptors = [sortDescriptor]
+
+    let filter = FilterProps(modes: ["salmon_run"], accountId: accountId)
+    fetchRequest.predicate = convertFilter(filter)
+
+    do {
+      let fetchResults = try context.fetch(fetchRequest)
+
+      // 检查是否有数据
+      guard !fetchResults.isEmpty else { return TodayCoop() }
+
+      var recentGroup: [DetailEntity] = []
+      for (index, detail) in fetchResults.enumerated() {
+        // 将第一个记录加入最近一轮
+        if index == 0 {
+          recentGroup.append(detail)
+          continue
+        }
+
+        // 检查是否属于同一轮
+        let previousDetail = fetchResults[index - 1]
+        if self.coopCanGroup(current: previousDetail, new: detail) {
+          recentGroup.append(detail)
+        } else {
+          break // 遇到不同轮次，停止添加
+        }
+      }
+      var statuses = recentGroup.compactMap{
+        entity in
+          entity.stats?.decode(CoopStatus.self)
+      }
+      let kill = statuses.map{$0.myself.defeat}.average()
+      let egg = statuses.map{$0.myself.golden}.average()
+      let clear = statuses.filter{$0.clear}.count
+      let abort = statuses.filter{$0.exempt}.count
+      let failure = statuses.count - clear - abort
+      let rescue = statuses.map{$0.myself.rescue}.average()
+      let rescued = statuses.map{$0.myself.rescued}.average()
+      return TodayCoop(clear: clear, failure: failure, abort: abort, kill: kill, egg: egg, rescue: rescue, rescued: rescued)
+
+    } catch {
+      print("查询错误: \(error)")
+      return TodayCoop()
+    }
+  }
+
+  private func coopCanGroup(current detail: DetailEntity,new:DetailEntity)->Bool{
+//    return detail.rule == new.rule && detail.stage == new.coopStage.id && detail.weapons.map{$0.image?.url ?? ""}.joined(separator: ",") == new.weapons.map{$0.image?.url ?? ""}.joined(separator: ",")
+    return detail.stage == new.stage && detail.rule == new.rule
+  }
 
   func battleStatus(accountId:Int64) ->[Judgement]{
     let fetchRequest = DetailEntity.fetchRequest()
@@ -201,8 +259,6 @@ class InkData{
     }
     return []
   }
-
-
 
   func addBattle(detail:VsHistoryDetail)async{
     if await isExist(id: detail.id){
@@ -250,7 +306,7 @@ class InkData{
       print("Error deleting DetailEntity objects: \(error)")
     }
   }
-  
+
   func processOldData() async{
 
     let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
@@ -266,7 +322,7 @@ class InkData{
       }
       print("done!!!!")
     }catch{
-      
+
     }
   }
 
@@ -288,47 +344,45 @@ class InkData{
   }
 
   func queryDetailGroup<T: Codable>(totalGroup:Int, offset:Int = 0, filter: FilterProps? = nil, canGroup: @escaping (T, T) -> Bool) async -> [[T]] {
-      var groups: [[T]] = []
-      var currentGroup: [T] = []
-      var offset = offset
-      let limit = 30
-      var keepFetching = true
+    var groups: [[T]] = []
+    var currentGroup: [T] = []
+    var offset = offset
+    let limit = 30
+    var keepFetching = true
 
-      while keepFetching {
-          let details: [T] = await queryDetail(offset: offset, limit: limit, filter: filter)
+    while keepFetching {
+      let details: [T] = await queryDetail(offset: offset, limit: limit, filter: filter)
 
-          // 如果没有更多的数据，停止获取
-        if details.isEmpty  {
-              keepFetching = false
-              continue
-          }
-
-          for detail in details {
-              // 检查是否应该开始新的组
-              if let last = currentGroup.last, !canGroup(last, detail) {
-                  // 当前元素不符合分组条件，开始新的组
-                  groups.append(currentGroup)
-                if groups.count >= totalGroup{
-                  keepFetching = false
-                  break
-                }
-                  currentGroup = [detail]
-              } else {
-                  // 当前元素符合分组条件，加入当前组
-                  currentGroup.append(detail)
-              }
-          }
-
-
-          offset += limit
+      // 如果没有更多的数据，停止获取
+      if details.isEmpty  {
+        keepFetching = false
+        continue
       }
 
-      // 添加最后一组（如果存在）
-      if !currentGroup.isEmpty {
+      for detail in details {
+        // 检查是否应该开始新的组
+        if let last = currentGroup.last, !canGroup(last, detail) {
+          // 当前元素不符合分组条件，开始新的组
           groups.append(currentGroup)
+          if groups.count >= totalGroup{
+            keepFetching = false
+            break
+          }
+          currentGroup = [detail]
+        } else {
+          // 当前元素符合分组条件，加入当前组
+          currentGroup.append(detail)
+        }
       }
+      offset += limit
+    }
 
-      return groups
+    // 添加最后一组（如果存在）
+    if !currentGroup.isEmpty {
+      groups.append(currentGroup)
+    }
+
+    return groups
   }
 
 
@@ -375,6 +429,44 @@ class InkData{
     }
   }
 
+
+  func queryDetail<T: Codable>(offset: Int, limit: Int, filter: FilterProps? = nil) -> AnyPublisher<[T], Error> {
+    Deferred {
+      Future<[T], Error> { promise in
+        let fetchRequest: NSFetchRequest<DetailEntity> = DetailEntity.fetchRequest()
+
+        // 设置排序
+        let sortDescriptor = NSSortDescriptor(key: "time", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+
+        // 应用过滤条件
+        if var filter = filter {
+          if let userKey = InkUserDefaults.shared.currentUserKey, let userID = Int64(userKey) {
+            filter.accountId = userID
+          }
+          fetchRequest.predicate = convertFilter(filter)
+        }
+        // 设置分页
+        fetchRequest.fetchOffset = offset
+        fetchRequest.fetchLimit = limit
+
+        do {
+          let results = try self.context.fetch(fetchRequest)
+          let decoder = JSONDecoder()
+          let decodedResults = results.compactMap { entity -> T? in
+            guard let detail = entity.detail else { return nil }
+            return try? decoder.decode(T.self, from: detail)
+          }
+          promise(.success(decodedResults))
+        } catch {
+          promise(.failure(error))
+        }
+      }
+    }
+    .eraseToAnyPublisher()
+  }
+
+
   func addShift(group:CoopHistoryGroup) async{
     if self.isShiftExist(id: group.startTime){
       return
@@ -408,9 +500,9 @@ struct FilterProps {
 
 func convertFilter(_ filter: FilterProps) -> NSPredicate? {
   var predicates: [NSPredicate] = []
-//  if let userKey = InkUserDefaults.shared.currentUserKey, let playerId = Int64(userKey){
-//    predicates.append(NSPredicate(format: "playerId == %ld",playerId))
-//  }
+  //  if let userKey = InkUserDefaults.shared.currentUserKey, let playerId = Int64(userKey){
+  //    predicates.append(NSPredicate(format: "playerId == %ld",playerId))
+  //  }
 
 
   if let modes = filter.modes, !modes.isEmpty {

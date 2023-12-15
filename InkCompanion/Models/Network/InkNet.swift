@@ -126,10 +126,6 @@ final class InkNet {
     variables: [String:Any]? = nil,
     decoder:JSONDecoder? = nil
   ) async throws -> T{
-//    guard let webServiceToken:WebServiceTokenStruct = InkUserDefaults.shared.webServiceToken?.decode(WebServiceTokenStruct.self),let bulletToken = InkUserDefaults.shared.bulletToken else {
-//      try await InkNet.nintendo.updateTokens()
-//      throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "获取会话令牌失败"])
-//    }
     guard let webServiceToken = self.webServiceToken, let bulletToken = self.bulletToken else {
       logger.error("InkNet的webServiceToken和bulletToken未初始化")
       throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "获取会话令牌失败"])
@@ -145,7 +141,6 @@ final class InkNet {
     ]
 
 
-
     guard let jsonData = try? JSONSerialization.data(withJSONObject: body, options: []) else {
       logger.error("\(#function)在处理\(String(describing: T.self))时，序列化请求体为JSON时失败")
       throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "将请求体转换为 JSON 数据失败"])
@@ -159,7 +154,7 @@ final class InkNet {
     request.addValue("gzip, deflate", forHTTPHeaderField: "Accept-Encoding")
     request.addValue(language ?? "", forHTTPHeaderField: "Accept-Language")
     request.addValue("Bearer \(bulletToken)", forHTTPHeaderField: "Authorization")
-    request.addValue(String(jsonData.count), forHTTPHeaderField: "Content-Length")
+//    request.addValue(String(jsonData.count), forHTTPHeaderField: "Content-Length")
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.addValue("_dnt=0; _gtoken=\(webServiceToken.accessToken);", forHTTPHeaderField: "Cookie")
     request.addValue("https://api.lp1.av5ja.srv.nintendo.net", forHTTPHeaderField: "Origin")
