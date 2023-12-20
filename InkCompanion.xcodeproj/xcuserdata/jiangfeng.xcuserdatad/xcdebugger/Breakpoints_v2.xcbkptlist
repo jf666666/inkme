@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "17B6E75E-CA40-4D58-9F6F-EEA5B134D3E8"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E7D797AB-9130-4EA3-824A-1455D1457457"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InkCompanion/API/GraphQL.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
+            landmarkName = "fetchFriends(webServiceToken:bulletToken:language:completion:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "E7D797AB-9130-4EA3-824A-1455D1457457 - 96cc067d1ca2b6c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in InkCompanion.fetchFriends(webServiceToken: InkCompanion.WebServiceTokenStruct, bulletToken: Swift.String, language: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;InkCompanion.FriendListResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/API/GraphQL.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "265"
+                  endingLineNumber = "265"
+                  offsetFromSymbolStart = "1292">
+               </Location>
+               <Location
+                  uuid = "E7D797AB-9130-4EA3-824A-1455D1457457 - 96cc067d1ca2b6c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in InkCompanion.fetchFriends(webServiceToken: InkCompanion.WebServiceTokenStruct, bulletToken: Swift.String, language: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;InkCompanion.FriendListResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/API/GraphQL.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "265"
+                  endingLineNumber = "265"
+                  offsetFromSymbolStart = "1724">
+               </Location>
+               <Location
+                  uuid = "E7D797AB-9130-4EA3-824A-1455D1457457 - 96cc067d1ca2b6c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in InkCompanion.fetchFriends(webServiceToken: InkCompanion.WebServiceTokenStruct, bulletToken: Swift.String, language: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;InkCompanion.FriendListResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/API/GraphQL.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "265"
+                  endingLineNumber = "265"
+                  offsetFromSymbolStart = "2132">
+               </Location>
+               <Location
+                  uuid = "E7D797AB-9130-4EA3-824A-1455D1457457 - 96cc067d1ca2b6a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in InkCompanion.fetchFriends(webServiceToken: InkCompanion.WebServiceTokenStruct, bulletToken: Swift.String, language: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;InkCompanion.FriendListResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/API/GraphQL.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  uuid = "E7D797AB-9130-4EA3-824A-1455D1457457 - 96cc067d1ca2b6a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in InkCompanion.fetchFriends(webServiceToken: InkCompanion.WebServiceTokenStruct, bulletToken: Swift.String, language: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;InkCompanion.FriendListResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/API/GraphQL.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "720">
+               </Location>
+               <Location
+                  uuid = "E7D797AB-9130-4EA3-824A-1455D1457457 - 96cc067d1ca2b6a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in InkCompanion.fetchFriends(webServiceToken: InkCompanion.WebServiceTokenStruct, bulletToken: Swift.String, language: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;InkCompanion.FriendListResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/API/GraphQL.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "E7D797AB-9130-4EA3-824A-1455D1457457 - 96cc067d1ca2b6a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in InkCompanion.fetchFriends(webServiceToken: InkCompanion.WebServiceTokenStruct, bulletToken: Swift.String, language: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;InkCompanion.FriendListResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/API/GraphQL.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "708">
+               </Location>
+               <Location
+                  uuid = "E7D797AB-9130-4EA3-824A-1455D1457457 - 96cc067d1ca2b452"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in InkCompanion.fetchFriends(webServiceToken: InkCompanion.WebServiceTokenStruct, bulletToken: Swift.String, language: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;InkCompanion.FriendListResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/API/GraphQL.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "254"
+                  endingLineNumber = "254"
+                  offsetFromSymbolStart = "288">
+               </Location>
+               <Location
+                  uuid = "E7D797AB-9130-4EA3-824A-1455D1457457 - 96cc067d1ca2b452"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in InkCompanion.fetchFriends(webServiceToken: InkCompanion.WebServiceTokenStruct, bulletToken: Swift.String, language: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;InkCompanion.FriendListResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/API/GraphQL.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "254"
+                  endingLineNumber = "254"
+                  offsetFromSymbolStart = "696">
+               </Location>
+               <Location
+                  uuid = "E7D797AB-9130-4EA3-824A-1455D1457457 - 96cc067d1ca2b43d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in InkCompanion.fetchFriends(webServiceToken: InkCompanion.WebServiceTokenStruct, bulletToken: Swift.String, language: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;InkCompanion.FriendListResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "InkCompanion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangfeng/Documents/project/InkCompanion/InkCompanion/API/GraphQL.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "255"
+                  endingLineNumber = "255"
+                  offsetFromSymbolStart = "264">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

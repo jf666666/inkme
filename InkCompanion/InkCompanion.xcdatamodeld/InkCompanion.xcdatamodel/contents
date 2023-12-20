@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="AccountEntity" representedClassName="AccountEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="avatar" optional="YES" attributeType="String"/>
+        <attribute name="bulletToken" optional="YES" attributeType="String"/>
+        <attribute name="friendCode" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lastRefreshTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sessionToken" optional="YES" attributeType="String"/>
+        <attribute name="webServiceToken" optional="YES" attributeType="Binary"/>
+    </entity>
+    <entity name="DetailEntity" representedClassName="DetailEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="detail" optional="YES" attributeType="Binary"/>
+        <attribute name="id" attributeType="String" defaultValueString=""/>
+        <attribute name="mode" attributeType="String" defaultValueString=""/>
+        <attribute name="player" optional="YES" attributeType="Binary"/>
+        <attribute name="playerId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rule" attributeType="String" defaultValueString=""/>
+        <attribute name="stage" attributeType="String" defaultValueString=""/>
+        <attribute name="stats" optional="YES" attributeType="Binary"/>
+        <attribute name="time" attributeType="Date" defaultDateTimeInterval="722052780" usesScalarValueType="NO"/>
+        <attribute name="weapon" optional="YES" attributeType="Binary"/>
+        <relationship name="shift" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShiftEntity" inverseName="details" inverseEntity="ShiftEntity"/>
+    </entity>
+    <entity name="ShiftEntity" representedClassName="ShiftEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="goldenAssist" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="goldenDeliver" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="mode" optional="YES" attributeType="String"/>
+        <attribute name="playCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rescue" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rescued" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rule" optional="YES" attributeType="String"/>
+        <attribute name="stage" optional="YES" attributeType="String"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wave" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="weapons" optional="YES" attributeType="String"/>
+        <relationship name="details" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DetailEntity" inverseName="shift" inverseEntity="DetailEntity"/>
+    </entity>
+</model>
