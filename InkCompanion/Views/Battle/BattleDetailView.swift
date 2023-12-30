@@ -28,6 +28,10 @@ struct BattleDetailView: View {
       $0.judgement == .LOSE
     }
   }
+  var crt:([Color?],[Double?],[String?]){
+    detail.getColorRatioText()
+  }
+
   @State private var myselfPosition:CGFloat = 0
   @State private var hidePlayerNames: Bool = false
   @State private var showPlayerSkill: Bool = false
@@ -82,6 +86,10 @@ struct BattleDetailView: View {
       detail.vsStage.stage.image
         .resizable()
         .scaledToFit()
+        .overlay (
+          WaveOverlay(crt: crt),
+            alignment: .bottom
+        )
 
     }
 
@@ -204,6 +212,35 @@ struct BattleDetailView: View {
 
     }
   }
+  
+  struct WaveOverlay:View {
+    let crt:([Color?],[Double?],[String?])
+
+    var body: some View {
+      WaveBarView(percent:0.1, rightColor: crt.0[2]! ,middleColor:crt.0[1], middleRatio:crt.1[1], leftColor: crt.0[0],leftRatio: crt.1[0])
+        .overlay(
+          Text(crt.2[0]!)
+            .inkFont(.Splatoon2, size: 18, relativeTo: .body)
+            .foregroundStyle(.white)
+            .padding(.leading,10)
+        ,
+              alignment: .leading)
+        .overlay(
+          Text(crt.2[2]!)
+            .inkFont(.Splatoon2, size: 18, relativeTo: .body)
+            .foregroundStyle(.white)
+            .padding(.trailing,10)
+        ,
+              alignment: .trailing)
+        .background(.black.opacity(0.5))
+          .clipShape(RoundedRectangle(cornerRadius: 50.0))
+          .frame(height: 30)
+          .padding(.horizontal,10)
+          .padding(.bottom,10)
+
+
+    }
+  }
 
   struct PlayerRow:View {
     let player:VsPlayer
@@ -216,6 +253,7 @@ struct BattleDetailView: View {
           .background(.black.opacity(0.75))
           .frame(width: 30, height: 30)
           .continuousCornerRadius(.infinity)
+
 
         VStack(alignment: .leading, spacing: 4){
           Text(player.byname)
@@ -287,5 +325,53 @@ struct DividerViewBuilder<Content: View, Item>: View {
         Divider()
       }
     }
+  }
+}
+
+
+extension VsHistoryDetail {
+  func getColorRatioText()->([Color?],[Double?],[String?]){
+    var colors:[Color?] = []
+    var ratios:[Double?] = []
+    var texts:[String?] = []
+    colors.append(self.myTeam.color.swiftColor)
+    if self.vsRule.rule == .triColor{
+      self.otherTeams.forEach { team in
+        colors.append(team.color.swiftColor)
+      }
+    }else{
+      colors.append(nil)
+      colors.append(self.otherTeams[0].color.swiftColor)
+    }
+
+    if self.vsRule.rule == .turfWar || self.vsRule.rule == .triColor {
+      ratios.append(self.myTeam.result!.paintRatio)
+      texts.append("\((self.myTeam.result?.paintRatio)!*100)%")
+      if self.vsRule.rule == .triColor{
+        self.otherTeams.forEach { team in
+          ratios.append(team.result?.paintRatio)
+          texts.append("\((team.result?.paintRatio)!*100)%")
+        }
+      }else{
+        ratios.append(nil)
+        texts.append(nil)
+        self.otherTeams.forEach { team in
+          ratios.append(team.result?.paintRatio)
+          texts.append("\((team.result?.paintRatio)!*100)%")
+        }
+      }
+    }else{
+      var leftScore = self.myTeam.result!.score!/100
+      var rightScore = (self.otherTeams[0].result?.score)!/100
+      ratios.append(leftScore/(leftScore+rightScore))
+      texts.append("\((self.myTeam.result?.score)!)计数")
+      ratios.append(nil)
+      texts.append(nil)
+      ratios.append(rightScore/(leftScore+rightScore))
+      self.otherTeams.forEach { team in
+        texts.append("\((team.result?.score)!)计数")
+      }
+    }
+    return (colors, ratios, texts)
   }
 }

@@ -53,9 +53,18 @@ final class InkNet {
             return nil
     }
   }
+  
+  func fetchHistoryRecord() async -> HistoryRecordQuery?{
+    do {
+      let data:HistoryRecordQuery = try await fetchGraphQL(graphql: .HistoryRecord)
+      return data
+    }catch let error as NSError{
+      logger.error("\(#fileID)->line:\(#line)->\(#function) Failed: \(error.localizedDescription)")
+            return nil
+    }
+  }
 
-
-  func fetchVsHistoryDetail(id:String,udemae:String? = nil) async ->VsHistoryDetail?{
+  func fetchVsHistoryDetail(id:String,udemae:String? = nil, paintPoint:Double? = 0) async ->VsHistoryDetail?{
     struct DetailQuery:Codable{
       struct Data:Codable{
         let vsHistoryDetail:VsHistoryDetail
@@ -67,6 +76,9 @@ final class InkNet {
       var detail = data.data.vsHistoryDetail
       if let udemae = udemae{
         detail.udemae = udemae
+      }
+      if let paintPoint = paintPoint{
+        detail.myTeam.result?.paintPoint = paintPoint
       }
       return detail
     }catch let error as NSError{
@@ -105,7 +117,7 @@ final class InkNet {
   private func fetchScheduleFromSplatoon3DotInk() async throws-> StageSchedules{
     var request = URLRequest(url: URL(string: "https://splatoon3.ink/data/schedules.json")!)
     request.timeoutInterval = 60
-    request.addValue(USER_AGENT, forHTTPHeaderField: "User-Agent")
+//    request.addValue(USER_AGENT, forHTTPHeaderField: "User-Agent")
     let (data, _) = try await URLSession.shared.data(for: request)
 
     // 解析响应数据

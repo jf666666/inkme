@@ -290,7 +290,9 @@ class InkData{
     fetchRequest.sortDescriptors = [sortDescriptor]
     // 限制获取的结果数量
     fetchRequest.fetchLimit = count
-    fetchRequest.predicate = convertFilter(FilterProps(modes: ["salmon_run"], accountId: Int64(InkUserDefaults.shared.currentUserKey ?? "")))
+//    fetchRequest.predicate = convertFilter(FilterProps(modes: ["salmon_run"], accountId: Int64(InkUserDefaults.shared.currentUserKey ?? "")))
+    fetchRequest.predicate = convertFilter(FilterProps(modes: ["REGULAR","BANKARA","XMATCH","LEAGUE","PRIVATE"], accountId: Int64(InkUserDefaults.shared.currentUserKey ?? "")))
+
     do {
       // 执行请求
       let results = try context.fetch(fetchRequest)

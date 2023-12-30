@@ -70,6 +70,19 @@ struct BattleItem: View {
           Text(detail.judgement.name)
             .inkFont(.Splatoon1, size: 14, relativeTo: .body)
             .foregroundStyle(detail.judgement.color)
+          if let k = detail.knockout, k == .WIN {
+            Text("完胜!")
+              .inkFont(.font1, size: 14, relativeTo: .body)
+              .foregroundStyle(.spYellow)
+          }else if detail.vsRule.rule != .turfWar && detail.vsRule.rule != .triColor{
+            Text("\(detail.myTeam.result?.score ?? 0)计数")
+              .inkFont(.font1, size: 14, relativeTo: .body)
+              .foregroundStyle(detail.judgement == .LOSE ? Color.secondary : .spGreen)
+          }else if let point = detail.myTeam.result?.paintPoint{
+            Text("\(point)p")
+              .inkFont(.Splatoon2, size: 14, relativeTo: .body)
+              .foregroundStyle(detail.judgement == .LOSE ? Color.secondary : .spGreen)
+          }
           Spacer()
           HStack{
             HStack(spacing:3){

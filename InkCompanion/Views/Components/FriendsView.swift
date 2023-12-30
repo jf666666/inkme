@@ -14,13 +14,13 @@ struct FriendsView: View {
   var inkNet = InkNet.shared
   var body: some View {
     ScrollView(.horizontal, showsIndicators: false) {
-      HStack(spacing: 20) {
+      HStack(spacing: 3) {
         ForEach(liveFriendsData, id: \.id) { liveFriend in
           FriendView(friend: liveFriend, expandedFriendId: $expandedFriendId)
             .transition(.asymmetric(insertion: .scale.combined(with: .opacity), removal: .opacity))
         }
       }
-      .padding()
+      .frame(height: 50)
       .task {
         let friend = await inkNet.fetchFriend()
         DispatchQueue.main.async {

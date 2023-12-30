@@ -9,16 +9,25 @@ import SwiftUI
 import Kingfisher
 
 struct NameplateView: View {
-  let coopPlayer:CoopPlayer
-  var nameplate: Nameplate {coopPlayer.nameplate}
-  var playerName: String {coopPlayer.name}
-  var byName: String {coopPlayer.byname}
-  var nameId: String {coopPlayer.nameId}
-  var textColor:Color {Color(
-      red: nameplate.background?.textColor?.r ?? 1,
-      green: nameplate.background?.textColor?.g ?? 1,
-      blue: nameplate.background?.textColor?.b ?? 1
-      )}
+  let nameplate: Nameplate
+  let playerName: String
+  let byName: String
+  let nameId: String
+  var textColor:Color {nameplate.background?.textColor?.swiftColor ?? .black}
+
+  init(coopPlayer:CoopPlayer){
+    self.nameplate = coopPlayer.nameplate
+    self.playerName = coopPlayer.name
+    self.byName = coopPlayer.byname
+    self.nameId = coopPlayer.nameId
+  }
+
+  init(currentPlayer:CurrentPlayer){
+    self.nameplate = currentPlayer.nameplate
+    self.playerName = currentPlayer.name
+    self.byName = currentPlayer.byname
+    self.nameId = currentPlayer.nameId
+  }
 
     var body: some View {
         GeometryReader { geometry in
@@ -96,13 +105,13 @@ struct NameplateView: View {
 
 
 
-struct NameplateView_Previews: PreviewProvider {
-    static var previews: some View {
-//      MockData.getCoopHistoryDetail().myResult.player
-        NameplateView(coopPlayer: MockData.getCoopHistoryDetail().myResult.player)
-      NameplateView(coopPlayer: MockData.getCoopHistoryDetail().memberResults[0].player)
-      NameplateView(coopPlayer: MockData.getCoopHistoryDetail().memberResults[1].player)
-      NameplateView(coopPlayer: MockData.getCoopHistoryDetail().memberResults[2].player)
-
-    }
-}
+//struct NameplateView_Previews: PreviewProvider {
+//    static var previews: some View {
+////      MockData.getCoopHistoryDetail().myResult.player
+//        NameplateView(coopPlayer: MockData.getCoopHistoryDetail().myResult.player)
+//      NameplateView(coopPlayer: MockData.getCoopHistoryDetail().memberResults[0].player)
+//      NameplateView(coopPlayer: MockData.getCoopHistoryDetail().memberResults[1].player)
+//      NameplateView(coopPlayer: MockData.getCoopHistoryDetail().memberResults[2].player)
+//
+//    }
+//}

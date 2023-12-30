@@ -72,6 +72,7 @@ public struct SineWaveShape: Shape {
     let height = Double(rect.height)
     let midWidth = width / 2
     let oneOverMidWidth = 1 / midWidth
+    let hWaveLength = height
 
     //根据 波的相速度 / 频率 = 波长
     let wavelength = width / frequency
@@ -79,8 +80,11 @@ public struct SineWaveShape: Shape {
     //从左边的终点开始画
     path.move(to: CGPoint(x: 0, y: height))
 
+
     // 根据x轴,计算每个横向点对应的y位置
-    for x in stride(from: 0, through: Double(rect.width), by: 1) {
+    var lastY:CGFloat = 0
+    var first:Bool = true
+    for x in stride(from: 0, through: Double(rect.width), by: 1 ) {
       //找到当前x相对于波长的位置
       let relativeX = x / wavelength
 
@@ -94,18 +98,41 @@ public struct SineWaveShape: Shape {
 
 
       //计算那个位置的正弦，加上我们的相位偏移
-      let sine = sin(relativeX + phase)
+      let sine = sin(relativeX - phase)
 
       //将计算出来的正弦乘以我们的波浪振幅然后再乘以规则变化系数以确定最终偏移量，然后将其向下移动到midHeight
       let y = parabola * strength * sine + height * percent
-
+      if first{
+        first = false
+        for yy in stride(from: y, to: height, by: 1){
+          let relativeY = yy / hWaveLength
+          let distanceFromMidHeight = yy - height/2
+          let normalDistance = 2 / height * distanceFromMidHeight
+          let parabola = -(normalDistance * normalDistance) + 1
+          let sine = sin(relativeY + phase)
+          let xx = parabola * strength * sine
+          path.addLine(to: CGPoint(x: xx, y: yy))
+        }
+      }
       // 画线
       path.addLine(to: CGPoint(x: x, y: y))
+      lastY = y
     }
+
+    //    path.move(to: CGPoint(x: rect.width, y: lastY))
+    //    for y in stride(from: lastY, to: rect.height, by: 1) {
+    //      let relativeY = y / hWaveLength
+    //      let distanceFromMidHeight = y - height/2
+    //      let normalDistance = 2 / height * distanceFromMidHeight
+    //      let parabola = -(normalDistance * normalDistance) + 1
+    //      let sine = sin(relativeY + phase)
+    //      let x = parabola * strength * sine + rect.width
+    //      path.addLine(to: CGPoint(x: x, y: y))
+    //    }
 
     path.addLine(to: CGPoint(x: rect.width, y: rect.height))
     path.addLine(to: CGPoint(x: 0, y: rect.height))
-    path.closeSubpath()
+    //    path.closeSubpath()
     return path
 
   }
@@ -119,63 +146,82 @@ struct WaveBar:View {
   var body: some View {
     GeometryReader{geo in
       HStack(spacing:0){
-        
+
       }
     }
   }
 }
 
 struct WaveBarView: View {
-    @State  var phase: Double = 0
-    @State  var percent: Double = 0.4
-    @State  var circleLineWidth: CGFloat = 1.0
-    @State  var strokeColor: Color = Color.blue
-    @State  var color1: Color = Color.accent
-    @State  var color2: Color = .blue
-
-     var body: some View {
-        HStack(spacing: 0) {
-            WaveBarUnit(
-                phase: $phase,
-                frequency: 3,
-                duration: 2,
-                strength: 30,
-                percent: $percent,
-                circleLineWidth: $circleLineWidth,
-                strokeColor: $strokeColor,
-                color1: $color1, totalWidth: 350
-            )
-            .frame(width: 250, height: 30)
-            WaveBarUnit(
-                phase: $phase,
-                frequency: 3,
-                duration: 2,
-                strength: 30,
-                percent: $percent,
-                circleLineWidth: $circleLineWidth,
-                strokeColor: $strokeColor,
-                color1: $color2, totalWidth: 350
-            )
-            .frame(width: 100, height: 30)
-
+  @State  var phase: Double = 0
+  @State  var percent: Double = 0.6
+  @State  var circleLineWidth: CGFloat = 1.0
+  @State  var strokeColor: Color = Color.blue
+  var rightColor:Color
+  var middleColor:Color? = nil
+  var middleRatio:Double? = nil
+  var leftColor:Color? = nil
+  var leftRatio:Double? = nil
+  var body: some View {
+    GeometryReader { geo in
+      ZStack(alignment: .leading) {
+        WaveBarUnit(
+          phase: $phase,
+          frequency: 12,
+          duration: 3,
+          strength: 15,
+          percent: $percent,
+          circleLineWidth: $circleLineWidth,
+          strokeColor: $strokeColor,
+          color1: .constant(rightColor), totalWidth: geo.size.width
+        )
+        .frame(width: geo.size.width, height: geo.size.height)
+        if let middleColor, let middleRatio,let leftRatio{
+          WaveBarUnit(
+            phase: $phase,
+            frequency: 12,
+            duration: 3,
+            strength: 15,
+            percent: $percent,
+            circleLineWidth: $circleLineWidth,
+            strokeColor: $strokeColor,
+            color1: .constant(middleColor), totalWidth: geo.size.width
+          )
+          .frame(width: geo.size.width*(leftRatio+middleRatio), height: geo.size.height)
         }
-        .onAppear {
-          withAnimation(.linear(duration: 2).repeatForever(autoreverses: false)) {
-            phase = .pi * 2
-          }
+        if let leftColor, let leftRatio{
+          WaveBarUnit(
+            phase: $phase,
+            frequency: 12,
+            duration: 3,
+            strength: 15,
+            percent: $percent,
+            circleLineWidth: $circleLineWidth,
+            strokeColor: $strokeColor,
+            color1: .constant(leftColor), totalWidth: geo.size.width
+          )
+          .frame(width: geo.size.width*leftRatio, height: geo.size.height)
         }
+
+      }
+      .onAppear {
+        withAnimation(.linear(duration: 2).repeatForever(autoreverses: false)) {
+          phase = .pi * 2
+        }
+      }
     }
+  }
 }
 
 struct WaveBarUnit: View {
   @Binding var phase: Double
-      let frequency: Double
-      let duration: Double
-      let strength: Double
-      @Binding var percent: Double
-      @Binding var circleLineWidth: CGFloat
-      @Binding var strokeColor: Color
-      @Binding var color1: Color
+  let frequency: Double
+  let duration: Double
+  let strength: Double
+  @Binding var percent: Double
+  @Binding var circleLineWidth: CGFloat
+  @Binding var strokeColor: Color
+  @Binding var color1: Color
   var totalWidth: CGFloat
 
 
@@ -185,21 +231,21 @@ struct WaveBarUnit: View {
         .stroke(.clear, lineWidth: circleLineWidth)
         .background(
           ZStack {
-            Color(.white)
-            SineWaveShape(percent: percent, strength: strength * 0.5, frequency: frequency + 2, phase: self.phase, totalWidth: Double(totalWidth))
+            Color(.clear)
+            SineWaveShape(percent: percent+0.1, strength: strength * 0.5, frequency: frequency + 2, phase: self.phase*(-1)+20, totalWidth: Double(totalWidth))
+              .fill(color1)
+              .offset(y: CGFloat(1) * 1)
+              .animation(Animation.linear(duration: duration).repeatForever(autoreverses: false), value: self.phase)
+            SineWaveShape(percent: percent+0.1, strength: strength * 0.5, frequency: frequency + 2, phase: self.phase, totalWidth: Double(totalWidth))
               .fill(color1)
               .offset(y: CGFloat(1) * 1)
               .animation(Animation.linear(duration: duration).repeatForever(autoreverses: false), value: self.phase)
 
-            SineWaveShape(percent: percent, strength: strength * 0.4, frequency: frequency + 1, phase: self.phase, totalWidth: Double(totalWidth))
-              .fill(color1.opacity(0.7))
+            SineWaveShape(percent: percent, strength: strength * 0.6, frequency: frequency + 1, phase: self.phase*(-1), totalWidth: Double(totalWidth))
+              .fill(color1.opacity(0.5))
               .offset(y: CGFloat(2) * 1)
+              .animation(Animation.linear(duration: duration).repeatForever(autoreverses: false), value: self.phase)
 
-              .animation(Animation.linear(duration: duration).repeatForever(autoreverses: false), value: self.phase)
-            SineWaveShape(percent: percent, strength: strength * 0.2, frequency: frequency, phase: self.phase, totalWidth: Double(totalWidth))
-              .fill(color1.opacity(0.4))
-              .offset(y: CGFloat(3) * 1)
-              .animation(Animation.linear(duration: duration).repeatForever(autoreverses: false), value: self.phase)
           }
             .clipShape(RoundedRectangle(cornerRadius: 0))
 
@@ -209,7 +255,8 @@ struct WaveBarUnit: View {
 }
 
 struct ContentViews_Previews: PreviewProvider {
-    static var previews: some View {
-        WaveBarView()
-    }
+  static var previews: some View {
+    WaveBarView(rightColor: .red, middleColor: .blue, middleRatio: 0.3, leftColor: .yellow, leftRatio: 0.4)
+      .frame(width: 366, height: 50)
+  }
 }

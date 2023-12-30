@@ -19,12 +19,12 @@ struct CoopHistories:Codable{
 
 
 struct CoopResult: Codable {
-  let regularAverageClearWave: Double?
-  let regularGrade: CoopGrade?
-  let regularGradePoint: Double?
-  let monthlyGear: Gear?
-  let scale: CoopScale?
-  let pointCard: CoopPointCard?
+  let regularAverageClearWave: Double
+  let regularGrade: CoopGrade
+  let regularGradePoint: Double
+  let monthlyGear: Gear
+  let scale: CoopScale
+  let pointCard: CoopPointCard
   let historyGroups: CoopHistoryGroupConnection?
 
 }
@@ -399,12 +399,12 @@ enum CoopMode:String,Codable,CaseIterable {
 
 
 struct CoopPointCard: Codable {
-  let defeatBossCount: Double?
-  let deliverCount: Double?
-  let goldenDeliverCount: Double?
-  let playCount: Double?
-  let rescueCount: Double?
-  let regularPoint: Double?
-  let totalPoint: Double?
+  let defeatBossCount: Double
+  let deliverCount: Double
+  let goldenDeliverCount: Double
+  let playCount: Double
+  let rescueCount: Double
+  let regularPoint: Double
+  let totalPoint: Double
   let limitedPoint: Int? // Assuming limitedPoint is a string type
 }

@@ -33,6 +33,15 @@ extension GeneralBattleHistories{
     var vsMode:Mode
     var vsRule:Rule
     var udemae:String?
+    var myTeam:MyTeam
+
+    struct MyTeam:Codable{
+      let result:MyResult?
+      struct MyResult:Codable{
+        let score:Double?
+        let paintPoint:Double?
+      }
+    }
   }
 
   struct Summary:Codable{

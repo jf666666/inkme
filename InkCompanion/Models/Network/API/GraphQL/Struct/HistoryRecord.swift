@@ -166,10 +166,10 @@ struct WeaponCategory: Codable {
 }
 
 struct PlayHistoryTrophyRecord:Codable {
-    let attend: Int?
-    let bronze: Int?
-    let gold: Int?
-    let silver: Int?
+    var attend: Int = 0
+    var bronze: Int = 0
+    var gold: Int = 0
+    var silver: Int = 0
 }
 
 
@@ -191,17 +191,17 @@ struct Edge<T:Codable>:Codable {
 }
 
 struct WeaponHistory:Codable {
-    let seasonName: String?
-    let isMonthly: Bool?
-    let startTime: String?
-    let endTime: String?
-    let weaponCategories: [WeaponCategoryUtilRatio]?
-    let weapons: [WeaponUtilRatio]?
+    let seasonName: String
+    let isMonthly: Bool
+    let startTime: String
+    let endTime: String
+    let weaponCategories: [WeaponCategoryUtilRatio]
+    let weapons: [WeaponUtilRatio]
 }
 
 struct WeaponUtilRatio:Codable {
-    let weapon: Weapon?
-    let utilRatio: Double?
+    let weapon: Weapon
+    let utilRatio: Double
 }
 
 typealias WeaponHistoryConnection = Connection<WeaponHistory>
@@ -260,39 +260,39 @@ typealias XMatchSeasonHistoryConnection = Connection<XMatchSeasonHistory>
 struct CurrentPlayer: Codable {
     let clothingGear: Gear?
     let headGear: Gear?
-    let name: String?
+    let name: String
     let shoesGear: Gear?
     let userIcon: Icon?
     let weapon: Weapon?
-    let byname: String?
-    let nameId: String?
-    let nameplate: Nameplate?
+    let byname: String
+    let nameId: String
+    let nameplate: Nameplate
 }
 
 struct PlayHistory: Codable {
     let allBadges: [Badge]
     let badges: [Badge]
-    let bankaraMatchOpenPlayHistory: PlayHistoryTrophyRecord?
-    let currentTime: String?
-    let frequentlyUsedWeapons: [Weapon?]
-    let gameStartTime: String?
-    let leagueMatchPlayHistory: PlayHistoryTrophyRecord?
-    let paintPointTotal: Int?
-    let rank: Int?
+    let bankaraMatchOpenPlayHistory: PlayHistoryTrophyRecord
+    let currentTime: String
+    let frequentlyUsedWeapons: [Weapon]
+    let gameStartTime: String
+    let leagueMatchPlayHistory: PlayHistoryTrophyRecord
+    let paintPointTotal: Int
+    let rank: Int
     let recentBadges: [Badge]
-    let udemae: String?
-    let udemaeMax: String?
-    let weaponHistory: WeaponHistoryConnection?
-    let winCountTotal: Int?
-    let xMatchMaxAr: XMatchMax?
-    let xMatchMaxCl: XMatchMax?
-    let xMatchMaxGl: XMatchMax?
-    let xMatchMaxLf: XMatchMax?
+    let udemae: String
+    let udemaeMax: String
+    let weaponHistory: WeaponHistoryConnection
+    let winCountTotal: Int
+    let xMatchMaxAr: XMatchMax
+    let xMatchMaxCl: XMatchMax
+    let xMatchMaxGl: XMatchMax
+    let xMatchMaxLf: XMatchMax
     let xMatchRankAr: AnyCodable?
     let xMatchRankCl: AnyCodable?
     let xMatchRankGl: AnyCodable?
     let xMatchRankLf: AnyCodable?
-    let xMatchSeasonHistory: XMatchSeasonHistoryConnection?
+    let xMatchSeasonHistory: XMatchSeasonHistoryConnection
 }
 
 
@@ -300,8 +300,8 @@ struct PlayHistory: Codable {
 
 struct HistoryRecordQuery: Codable{
     struct Data: Codable {
-        let currentPlayer: CurrentPlayer?
-        let playHistory: PlayHistory?
+        let currentPlayer: CurrentPlayer
+        let playHistory: PlayHistory
     }
     let data:Data
 }

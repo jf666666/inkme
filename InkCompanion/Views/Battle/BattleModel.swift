@@ -69,7 +69,7 @@ class BattleModel:ObservableObject{
               if await self.inkData.isExist(id: h.id){
                 return nil
               }
-              if let completeDetail = await self.inkNet.fetchVsHistoryDetail(id: h.id,udemae: h.udemae){
+              if let completeDetail = await self.inkNet.fetchVsHistoryDetail(id: h.id,udemae: h.udemae, paintPoint: h.myTeam.result?.paintPoint){
                 return completeDetail
               }
               return nil

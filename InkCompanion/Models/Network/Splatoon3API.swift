@@ -121,6 +121,7 @@ enum GraphQL {
   case CoopRecord
   case StageSchedule
   case FriendList
+  case HistoryRecord
 }
 
 extension GraphQL {
@@ -150,6 +151,8 @@ extension GraphQL {
       return .StageScheduleQuery
     case .FriendList:
       return .FriendListQuery
+    case .HistoryRecord:
+      return .HistoryRecordQuery
     }
   }
 

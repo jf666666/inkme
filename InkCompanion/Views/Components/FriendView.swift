@@ -20,7 +20,7 @@ struct FriendView: View {
             ZStack{
                 Circle()
                     .fill(Color.gray.opacity(0.3)) // 默认背景色
-                    .frame(width: 80, height: 80)
+                    .frame(width: 35, height: 35)
                     .overlay(
 
                       KFImage(URL(string: friend.userIcon?.url ?? ""))
@@ -29,31 +29,31 @@ struct FriendView: View {
                     )
                     .clipShape(Circle())
                     .overlay(
-                        Circle().stroke(borderColor(for: friend), lineWidth: 4)
+                      Circle().stroke(borderColor(for: friend), lineWidth: 1.2)
                     )
-                    .shadow(radius: 10)
+                    .shadow(radius: 3)
                 if friend.onlineState != "OFFLINE" && friend.onlineState != "ONLINE"{
                     getStateIcon(friend: friend)
                         .resizable() // 使图标可调整大小
                         .scaledToFit() // 保持图标的宽高比
-                        .frame(width: 25, height: 25) // 设置图标的大小
-                        .offset(x: 30, y: 30)
+                        .frame(width: 10, height: 10) // 设置图标的大小
+                        .offset(x: 12, y: 12)
                 }
             }
             if expandedFriendId == friend.id {
                 Text(friend.nickname)
-                    .font(.caption)
-                    .lineLimit(1)
-                    .truncationMode(.tail)
-                    .frame(maxWidth: 80) // 限制最大宽度
-                    .minimumScaleFactor(0.5) // 文本缩放的最小比例
+                .inkFont(.font1, size: 12, relativeTo: .body)
+
+                .scaledLimitedLine()
+                    .frame(width: 35) // 限制最大宽度
+
                     .padding(.horizontal, 4)
                     .background(Color.white.opacity(0.5))
                     .cornerRadius(5)
             }
             
         }
-        .frame(width: 80, height: 120) // 限制FriendView的大小
+        .frame(width: 40, height: 50) // 限制FriendView的大小
         .contentShape(Rectangle()) // 确保整个区域都可以点击
         .onTapGesture {
             withAnimation(.easeInOut(duration: 0.2)) {

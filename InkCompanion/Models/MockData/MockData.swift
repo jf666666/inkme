@@ -103,6 +103,21 @@ struct MockData {
     return try! JSONDecoder().decode(CoopRecordQuery.self, from: data!).data.coopRecord
   }
 
+  static func getCoopResult()->CoopResult{
+    let fileURL = Bundle.main.url(forResource: "CoopResult", withExtension: "json")
+
+    let data = try? Data(contentsOf: fileURL!)
+
+    return try! JSONDecoder().decode(CoopHistories.self, from: data!).data.coopResult!
+  }
+
+  static func getHistoryRecord() -> HistoryRecordQuery{
+    let fileURL = Bundle.main.url(forResource: "HistoryRecordQuery", withExtension: "json")
+
+    let data = try? Data(contentsOf: fileURL!)
+
+    return try! JSONDecoder().decode(HistoryRecordQuery.self, from: data!)
+  }
   static func getBattleSchedules(preferredMode: ScheduleMode = .regular,
                                  preferredRule: BattleRule = .turfWar,
                            rawStartTime: Date = Date())->[BattleRegularSchedule]{
