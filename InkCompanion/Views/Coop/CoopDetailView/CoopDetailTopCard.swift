@@ -33,6 +33,9 @@ extension CoopDetailView{
   struct TopCard:View{
     let stats:CoopStatus
     var stage:StageSelection{StageSelection(rawValue: stats.stage) ?? .MaroonersBay}
+    var smell:Int
+    var boss:CoopEnemy.Enemy = CoopEnemy.Enemy.Cohozuna
+    @State var phase:Double = 0
     var width: CGFloat {
         var screentWidth = UIScreen.main.bounds.size.width
         if screentWidth > 500 {
@@ -71,6 +74,8 @@ extension CoopDetailView{
                 default:
                   Image(.coopRegular)
                 }
+
+
 
                 Text(stats.time.toPlayedTimeString(full: true))
                   .inkFont(.Splatoon2, size: 15, relativeTo: .body)
@@ -222,7 +227,7 @@ extension CoopDetailView{
           .frame(height: 1)
 
           HStack{
-            ForEach(0..<4,id: \.self){ i in
+            ForEach(weapons.indices,id: \.self){ i in
               KFImage(URL(string: weapons[i]))
                 .resizable()
                 .scaledToFit()
@@ -235,7 +240,33 @@ extension CoopDetailView{
           }
 
         }
-        
+        .overlay (
+          SineWaveShape(percent: 1-Double(smell)*0.2, strength: 1.2, frequency: 12, phase: self.phase, totalWidth: 60)
+            .fill(Color.salmonRunTheme)
+            .animation(Animation.linear(duration: 3).repeatForever(autoreverses: false), value: self.phase)
+            .onAppear {
+              withAnimation(.linear(duration: 2).repeatForever(autoreverses: false)) {
+                phase = .pi * 2
+              }
+            }
+            .frame(width: 60,height: 60)
+            .mask {
+              boss.image
+                .resizable()
+                .scaledToFit()
+                .frame(width: 60,height: 60)
+                .colorMultiply(.black)
+            }
+            .background(content: {
+              boss.image
+                .resizable()
+                .scaledToFit()
+                .frame(width: 60,height: 60)
+                .colorMultiply(.black)
+            })
+            .offset(x:20,y:-40),
+          alignment: .topTrailing
+        )
 
     }
   }
@@ -243,7 +274,7 @@ extension CoopDetailView{
 
 #Preview(body: {
   GeometryReader{geo in
-    CoopDetailView.TopCard(stats: getCoopStats(coop: MockData.getCoopHistoryDetail()))
+    CoopDetailView.TopCard(stats: getCoopStats(coop: MockData.getCoopHistoryDetail()), smell: 0)
       .frame(width: 400,height: 250)
   }
 })

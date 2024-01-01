@@ -17,7 +17,7 @@
                BlueprintIdentifier = "8B9BFDF62AF20BCE005F5FB8"
                BuildableName = "InkCompanion.app"
                BlueprintName = "InkCompanion"
-               ReferencedContainer = "container:InkCompanion.xcodeproj">
+               ReferencedContainer = "container:InkMe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -37,7 +37,7 @@
                BlueprintIdentifier = "8B9BFE0D2AF20BD0005F5FB8"
                BuildableName = "InkCompanionTests.xctest"
                BlueprintName = "InkCompanionTests"
-               ReferencedContainer = "container:InkCompanion.xcodeproj">
+               ReferencedContainer = "container:InkMe.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -48,7 +48,7 @@
                BlueprintIdentifier = "8B9BFE172AF20BD0005F5FB8"
                BuildableName = "InkCompanionUITests.xctest"
                BlueprintName = "InkCompanionUITests"
-               ReferencedContainer = "container:InkCompanion.xcodeproj">
+               ReferencedContainer = "container:InkMe.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,7 +71,7 @@
             BlueprintIdentifier = "8B9BFDF62AF20BCE005F5FB8"
             BuildableName = "InkCompanion.app"
             BlueprintName = "InkCompanion"
-            ReferencedContainer = "container:InkCompanion.xcodeproj">
+            ReferencedContainer = "container:InkMe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -95,7 +95,7 @@
             BlueprintIdentifier = "8B9BFDF62AF20BCE005F5FB8"
             BuildableName = "InkCompanion.app"
             BlueprintName = "InkCompanion"
-            ReferencedContainer = "container:InkCompanion.xcodeproj">
+            ReferencedContainer = "container:InkMe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

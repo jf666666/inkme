@@ -12,6 +12,9 @@ import Foundation
 struct HomePage: View {
   @EnvironmentObject var viewModel: HomeViewModel
 
+  @AppStorage("homeViewTodayTabSelection")
+  var tabSelection:Int = 0
+
   @State private var vdChartViewHeight: CGFloat = 200
   @State private var vdChartLastBlockWidth: CGFloat = 0
   
@@ -72,10 +75,12 @@ struct HomePage: View {
   }
 
   var today:some View{
-    TabView{
-      todayBattle
 
+    TabView(selection: $tabSelection){
+      todayBattle
+        .tag(0)
       todayCoop
+        .tag(1)
     }
     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     .frame(height: 240)

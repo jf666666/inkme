@@ -83,6 +83,7 @@ struct CoopHistoryDetail: Codable,Equatable,Identifiable,Hashable {
   let playedTime: String
   let dangerRate: Double
   let smellMeter: Int?
+  let boss:CoopEnemy?
   let scale: CoopScale?
   let jobPoint: Int
   let jobScore: Int
@@ -110,6 +111,7 @@ struct CoopHistoryDetail: Codable,Equatable,Identifiable,Hashable {
     self.dangerRate = try container.decode(Double.self, forKey: .dangerRate)
     self.smellMeter = try container.decodeIfPresent(Int.self, forKey: .smellMeter)
     self.scale = try container.decodeIfPresent(CoopScale.self, forKey: .scale)
+    self.boss = try container.decodeIfPresent(CoopEnemy.self, forKey: .boss)
     do{
       self.jobPoint = try container.decode(Int.self, forKey: .jobPoint)
     }catch{
@@ -208,7 +210,6 @@ struct CoopWaveResult: Codable,Hashable {
   let goldenPopCount: Int
   let teamDeliverCount: Int?
   let specialWeapons: [SpecialWeapon]
-
 }
 
 struct CoopScale: Codable {
@@ -346,8 +347,15 @@ extension CoopEnemy.Enemy{
 
 
 
-struct CoopPlayer: Codable {
+struct CoopPlayer: Codable,Hashable {
+  static func == (lhs: CoopPlayer, rhs: CoopPlayer) -> Bool {
+    return lhs.name == rhs.name && lhs.nameId == rhs.nameId
+  }
 
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(name)
+    hasher.combine(nameId)
+  }
   let id: String
   let name: String
   let nameId: String

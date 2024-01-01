@@ -10,7 +10,7 @@ import Combine
 import CoreData
 import SwiftUI
 import OSLog
-
+import IndicatorsKit
 
 class CoopModel:ObservableObject{
   
@@ -20,7 +20,7 @@ class CoopModel:ObservableObject{
   @Published var selectedId:String?
   @Published var progress:Double = 0
   @Published var rows:[[CoopHistoryDetail]] = []
-  
+  let indicator = SceneDelegate.indicators
 
   var ruleFilter:FilterProps = FilterProps(modes: ["salmon_run"])
   var startDate:Date? = nil
@@ -43,15 +43,30 @@ class CoopModel:ObservableObject{
       return
     }
     self.stats = .refreshing
+
+//    indicator.display(idtor)
     let newCoopGroups = await inkNet.fetchCoopHistories()?.historyGroups?.nodes ?? []
-    for group in newCoopGroups.reversed() {
-      if let details = group.historyDetails?.nodes{
+    let ids = newCoopGroups.compactMap{$0.historyDetails?.nodes.flatMap{$0.compactMap{$0}}}.flatMap{$0}
+    var details:[CoopGroupDetail] = []
+    for id in ids {
+      if await !self.inkData.isExist(id: id.id){
+        details.append(id)
+      }
+    }
+    let indicatorID = UUID().uuidString
+    if details.count > 0{
+      let style: Indicator.Style = .default
+      let idtor:Indicator = Indicator(id: "\(indicatorID)",  headline: "获取\(details.count)个记录",dismissType:.triggered,style: style)
+      DispatchQueue.main.async {
+        self.indicator.display(idtor)
+      }
+    }
+//    for group in newCoopGroups.reversed() {
+//      if let details = group.historyDetails?.nodes{
         await withTaskGroup(of: CoopHistoryDetail?.self) { group in
           for detail in details {
             group.addTask {
-              if await self.inkData.isExist(id: detail.id){
-                return nil
-              }
+
               if let completeDetail = await self.inkNet.fetchCoopHistoryDetail(id: detail.id, diff: detail.gradePointDiff ?? .NONE){
                 DispatchQueue.main.async {
                   withAnimation {
@@ -66,31 +81,18 @@ class CoopModel:ObservableObject{
           for await result in group{
             if let completeDetail = result{
               await inkData.addCoop(detail: completeDetail)
-//              DispatchQueue.main.async {
-//                if self.rows.isEmpty || !self.coopCanGroup(current: self.rows[0][0], new: completeDetail){
-//                  withAnimation {
-//                    self.rows.insert([completeDetail], at: 0)
-//                  }
-//                }else{
-//                  withAnimation {
-//                    self.rows[0].insert(contentsOf: [completeDetail])
-//                  }
-//                }
-//              }
             }
           }
         }
-      }
-    }
+//      }
+//    }
     self.stats = .none
+    await indicator.dismiss(matching: indicatorID)
   }
 
   @MainActor
   func loadFromData(length:Int) async {
-
     await self.rows = inkData.queryDetailGroup(totalGroup: 5,filter: self.ruleFilter, canGroup: coopCanGroup)
-
-
   }
   
   
@@ -105,7 +107,7 @@ class CoopModel:ObservableObject{
   }
 
   private func coopCanGroup(current detail: CoopHistoryDetail,new:CoopHistoryDetail)->Bool{
-    return detail.rule == new.rule && detail.coopStage.id == new.coopStage.id && detail.weapons.map{$0.image?.url ?? ""}.joined(separator: ",") == new.weapons.map{$0.image?.url ?? ""}.joined(separator: ",")
+    return detail.rule == new.rule && detail.coopStage.id == new.coopStage.id && detail.weapons.map{($0.image?.url ?? "").imageHash}.joined(separator: ",") == new.weapons.map{($0.image?.url ?? "").imageHash}.joined(separator: ",")
   }
 }
 

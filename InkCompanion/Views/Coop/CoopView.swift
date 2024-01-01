@@ -16,8 +16,66 @@ struct CoopView: View {
   @EnvironmentObject var model: CoopModel
   @Namespace var namespace
   @State private var showingDateRangePicker = false
+  @Environment(\.scenePhase) private var phase
+  @State private var selectedItem:String? = nil
+  @State private var selectedCard:Int? = nil
 
   var body: some View {
+
+//    NavigationSplitView {
+//      ScrollView {
+//        LazyVStack {
+//          ForEach(0..<model.rows.count, id: \.self) { index in
+//
+//              CoopSummaryCard(details: model.rows[index])
+//                .rotationEffect(.degrees(-1))
+//                .clipped(antialiased: true)
+//                .padding([.leading, .trailing])
+//                .padding(.top, 15)
+//                .padding(.bottom, 0.1)
+//                .onTapGesture {
+//                  self.selectedCard = index
+//                  self.selectedItem = nil
+//                }
+//
+//
+//            .buttonStyle(PlainButtonStyle())
+//
+//            ForEach(model.rows[index]){ detail in
+//
+//                CoopItem(historyDetail: detail, namespace: namespace)
+//                  .padding([.leading, .trailing])
+//                  .padding(.top,3)
+//                  .onTapGesture {
+//                    self.selectedItem = detail.id
+//                    self.selectedCard = nil
+//                  }
+//
+////              .buttonStyle(PlainButtonStyle())
+//
+//            }
+//          }
+//        }
+//      }
+//      .fixSafeareaBackground()
+//      .navigationBarTitle(model.navigationTitle, displayMode: .inline)
+//      .toolbarTitleMenu{
+//        titleMenu
+//      }
+//      .toolbar {
+//        toolbarMenu
+//      }
+//    } detail: {
+//      if let id = self.selectedItem, let detail = model.rows.first(where: { $0.contains(where: {$0.id == id}) })?.first(where: {$0.id == id}) {
+//        CoopDetailView(detail: detail, namespace: namespace)
+//      }
+//      if let index = self.selectedCard{
+//        CoopSummaryDetail(details: model.rows[index])
+//      }
+//    }
+
+
+
     NavigationStack {
       ScrollView {
         LazyVStack {
@@ -91,6 +149,16 @@ struct CoopView: View {
             await model.loadFromNet()
 
     }
+    .onChange(of: phase) { newPhase in
+         switch newPhase {
+         case .active:
+           Task{
+             await model.loadFromNet()
+           }
+         default: break
+         }
+     }
+
   }
 
   var coopDetail:some View {

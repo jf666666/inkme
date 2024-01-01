@@ -44,7 +44,7 @@ struct CoopDetailView: View {
   }
 
   var card:some View{
-    TopCard(stats: stat)
+    TopCard(stats: stat,smell:detail.smellMeter ?? 0, boss: detail.boss?.enemy ?? .Cohozuna)
       .padding([.leading, .trailing], 12)
       .padding(.top, 9)
       .padding(.bottom, 8)

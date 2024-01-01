@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import IndicatorsKit
 
 class AccountViewModel:ObservableObject{
   let inkData = InkData.shared
@@ -30,50 +31,57 @@ class AccountViewModel:ObservableObject{
       self.selectedAccount = self.accounts.firstIndex(where: {$0.sessionToken == self.inkUserDefaults.sessionToken}) ?? 0
     }
   }
-  
+
   func changeAccount(to index: Int) {
-      guard self.selectedAccount != index else {
-          return
-      }
+    guard self.selectedAccount != index else {
+      return
+    }
 
-      let player = self.accounts[index]
-      self.selectedAccount = index
-      self.changingAccount = true
-      inkNet.bulletToken = player.bulletToken
-      inkNet.webServiceToken = player.webServiceToken
+    let player = self.accounts[index]
+    self.selectedAccount = index
+//    self.changingAccount = true
+    let indicatorID = UUID().uuidString
+    let indicator = Indicator(id: indicatorID, headline: "切换账号中",dismissType: .triggered)
+    indicators.display(indicator)
 
-
-      self.inkUserDefaults.sessionToken = player.sessionToken
-      self.inkUserDefaults.webServiceToken = player.webServiceToken.encode()
-      self.inkUserDefaults.bulletToken = player.bulletToken
-      self.inkUserDefaults.currentUserKey = String(player.id)
+    inkNet.bulletToken = player.bulletToken
+    inkNet.webServiceToken = player.webServiceToken
 
 
-      if self.shouldUpdate() {
-          Task {
-              do {
-                  try await updateCurrentAccount() { bullet in
-                      if let bullet {
-                          print(bullet, terminator: "!")
-                      }
-                  }
-                  DispatchQueue.main.async { [weak self] in
-                      self?.changingAccountSuccess = true
-                      self?.changingAccount = false
-                  }
-              } catch {
-                  DispatchQueue.main.async { [weak self] in
-                      self?.indicators.display(.init(error: error))
-                      self?.changingAccount = false
-                  }
-              }
+    self.inkUserDefaults.sessionToken = player.sessionToken
+    self.inkUserDefaults.webServiceToken = player.webServiceToken.encode()
+    self.inkUserDefaults.bulletToken = player.bulletToken
+    self.inkUserDefaults.currentUserKey = String(player.id)
+
+
+    if self.shouldUpdate() {
+      Task {
+        do {
+          try await updateCurrentAccount() { bullet in
+            if let bullet {
+              print(bullet, terminator: "!")
+            }
           }
-      } else {
-          self.changingAccount = false
+          DispatchQueue.main.async { [weak self] in
+            self?.indicators.dismiss(matching: indicatorID)
+            self?.indicators.display(.init(id: "\(UUID().uuidString)",icon:"checkmark",headline: "切换成功",style: .init(iconColor: .green)))
+          }
+        } catch {
+          DispatchQueue.main.async { [weak self] in
+            self?.indicators.display(.init(error: error))
+            self?.indicators.dismiss(matching: indicatorID)
+          }
+        }
       }
+    } else {
+      self.changingAccount = false
+      Task{
+        await indicators.dismiss(matching: indicatorID)
+      }
+    }
   }
 
-  
+
   func updateCurrentAccount(bullet:(String?)->Void) async throws{
     do{
       let (w, b) = try await nintendo.updateTokens()
@@ -123,9 +131,12 @@ class AccountViewModel:ObservableObject{
   }
 
   func shouldUpdate()->Bool{
+    if self.accounts.count == 0 {
+      return false
+    }
     let lastUpdate = self.accounts[self.selectedAccount].lastRefreshTime
     let currentTime = Date()
-    let updateInterval = 1 
+    let updateInterval = 1
 
     if currentTime.timeIntervalSince(lastUpdate) > TimeInterval(updateInterval) {
       return true

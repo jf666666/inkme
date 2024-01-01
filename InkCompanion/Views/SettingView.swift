@@ -1,4 +1,5 @@
 import SwiftUI
+import IndicatorsKit
 import AuthenticationServices
 import CoreData
 import AlertToast
@@ -103,17 +104,17 @@ struct SettingView: View {
           }
         }
 
-        Section {
-          Text("鲑鱼跑记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["salmon_run"],accountId: accountViewModel.accounts[accountViewModel.selectedAccount].id)))")
-
-          Text("对战记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["REGULAR","BANKARA","XMATCH","LEAGUE","PRIVATE"],accountId: accountViewModel.accounts[accountViewModel.selectedAccount].id)))")
-
-          if let url = PersistenceController.shared.container.persistentStoreDescriptions.first?.url {
-            Text(url.path())
-          }
-        } header: {
-          Text("数据库")
-        }
+//        Section {
+//          Text("鲑鱼跑记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["salmon_run"],accountId: accountViewModel.accounts[accountViewModel.selectedAccount].id)))")
+//
+//          Text("对战记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["REGULAR","BANKARA","XMATCH","LEAGUE","PRIVATE"],accountId: accountViewModel.accounts[accountViewModel.selectedAccount].id)))")
+//
+//          if let url = PersistenceController.shared.container.persistentStoreDescriptions.first?.url {
+//            Text(url.path())
+//          }
+//        } header: {
+//          Text("数据库")
+//        }
 
 
         Button("登录") {
@@ -170,18 +171,21 @@ struct SettingView: View {
             .frame(height: 40)
         }
       }
+      .overlay(alignment: .top, content: {
+        IndicatorsOverlay(model: SceneDelegate.indicators)
+      })
 
 
     }
-    .toast(isPresenting: $accountViewModel.changingAccount,  tapToDismiss: false) {
-      AlertToast(displayMode: .alert, type: .loading, title: "正在切换账号...")
-    }
-    .toast(isPresenting: $accountViewModel.changingAccountSuccess,duration: 1.5,  tapToDismiss: false) {
-      AlertToast(displayMode: .alert, type: .complete(.green), title: "切换成功")
-    }
-    .toast(isPresenting: $accountViewModel.changingAccountFailed,duration: 1.5,  tapToDismiss: false) {
-      AlertToast(displayMode: .alert, type: .error(.red), title: "切换失败")
-    }
+//    .toast(isPresenting: $accountViewModel.changingAccount,  tapToDismiss: false) {
+//      AlertToast(displayMode: .alert, type: .loading, title: "正在切换账号...")
+//    }
+//    .toast(isPresenting: $accountViewModel.changingAccountSuccess,duration: 1.5,  tapToDismiss: false) {
+//      AlertToast(displayMode: .alert, type: .complete(.green), title: "切换成功")
+//    }
+//    .toast(isPresenting: $accountViewModel.changingAccountFailed,duration: 1.5,  tapToDismiss: false) {
+//      AlertToast(displayMode: .alert, type: .error(.red), title: "切换失败")
+//    }
 
   }
 

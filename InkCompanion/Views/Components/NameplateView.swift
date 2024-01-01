@@ -41,7 +41,7 @@ struct NameplateView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geometryWidth, height: geometryHeight)
                         .clipped()
-                        .cornerRadius(8)
+                        .cornerRadius(geometryWidth*0.02)
                 }
                 
                 // 称号位置在左上角

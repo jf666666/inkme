@@ -15,9 +15,9 @@ struct CoopSummaryCard: View {
   // MARK: computed variables
   var stats:[CoopStatus] {details.compactMap { detail in
     let s = getCoopStats(coop: detail)
-    if s.exempt{
-      return nil
-    }
+//    if s.exempt{
+//      return nil
+//    }
     return s
   }}
   var weapons:[String] {details[0].weapons.map{$0.image!.url!}}
@@ -152,7 +152,7 @@ struct CoopSummaryCard: View {
             .foregroundStyle(.secondary)
 
           HStack{
-            ForEach(0..<4,id: \.self){ i in
+            ForEach(weapons.indices,id: \.self){ i in
               KFImage(URL(string: weapons[i]))
                 .resizable()
                 .scaledToFit()

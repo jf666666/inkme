@@ -16,10 +16,10 @@ class InkUserDefaults:ObservableObject{
   var firstLaunch:Bool = true
 
   @AppStorage("NSOVersion")
-  var NSOVersion:String = "2.8.0"
+  var NSOVersion:String = "2.9.0"
 
   @AppStorage("splatnet_version")
-  var SplatNetVersion:String = "6.0.0-e135295b"
+  var SplatNetVersion:String = "6.0.0-eb33aadc"
 
   @AppStorage("sessionToken")
   var sessionToken:String? {
