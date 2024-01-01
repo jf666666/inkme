@@ -80,7 +80,7 @@ struct BattleItem: View {
               .foregroundStyle(detail.judgement == .LOSE ? Color.secondary : .spGreen)
           }else if let point = detail.myTeam.result?.paintPoint{
             Text("\(point)p")
-              .inkFont(.Splatoon2, size: 14, relativeTo: .body)
+              .inkFont(.Splatoon1, size: 14, relativeTo: .body)
               .foregroundStyle(detail.judgement == .LOSE ? Color.secondary : .spGreen)
           }
           Spacer()

@@ -23,18 +23,56 @@ struct CoopSummaryDetail:View {
       VStack(spacing:20) {
         card
         wave
-        enemy
-        
+        weapon
         king
+        enemy
       }
     }
     .fixSafeareaBackground()
   }
+
+  var weapon:some View{
+    
+    VStack{
+      let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+      ]
+      
+      LazyVGrid(columns: columns, spacing: 10) {
+        ForEach(weaponUsages,id: \.id){w in
+          VStack(spacing:3){
+            KFImage(URL(string: w.id))
+              .resizable()
+              .scaledToFit()
+              .frame(width: 30,height: 30)
+            Text("x\(w.count)")
+              .inkFont(.font1, size: 15, relativeTo: .body)
+          }
+        }
+      }
+    }
+    .padding(.all, 10)
+    .textureBackground(texture: .bubble, radius: 18)
+  }
   var wave:some View{
     VStack{
+//      GridRow{
+//        Text("WAVE记录")
+//        Text("干潮")
+//        Text("普通")
+//        Text("涨潮")
+//      }
+//      .inkFont(.font1, size: 15, relativeTo: .body)
       ForEach(status.waves.reversed(), id: \.id){result in
         WaveRow(wave: result)
-          .frame(height: 20)
+//          .frame(height: 20)
       }
     }
     .padding(.all, 10)
@@ -123,6 +161,13 @@ struct CoopSummaryDetail:View {
                 }
               }
             }
+            HStack{
+              Text("Clear:\(status.clear)")
+                .foregroundStyle(.waveClear)
+              Text("Failure:\(status.count-status.clear-status.exempt)")
+                .foregroundStyle(.waveDefeat)
+            }
+            .inkFont(.font1, size: 13, relativeTo: .body)
             Spacer()
           }
         }
@@ -133,7 +178,7 @@ struct CoopSummaryDetail:View {
             .foregroundStyle(.secondary)
           Spacer()
           HStack{
-            ForEach(0..<4,id: \.self){ i in
+            ForEach(suppliedWeapons.indices,id: \.self){ i in
               KFImage(URL(string: suppliedWeapons[i]))
                 .resizable()
                 .scaledToFit()
@@ -319,14 +364,166 @@ extension CoopSummaryDetail{
 extension CoopSummaryDetail{
   struct WaveRow:View {
     let wave:WaveStats
+    var levels:[WaveStats.Level]{
+      wave.levels.sorted(by: {$0.id<$1.id})
+    }
     var body: some View {
-      HStack{
+      let s:[String] = ["干潮","普通","涨潮"]
+//      GridRow {
+//        Text(wave.id.localizedString)
+//          .scaledLimitedLine(minScaleFactor: 0.4)
+//          .frame(maxWidth: .infinity)
+//                  .inkFont(.font1, size: 15, relativeTo: .body)
+//        // 创建一个固定大小为3的数组来表示每个level的位置
+//        let levelSlots: [WaveStats.Level?] = Array(repeating: nil, count: 3)
+//
+//        // 填充levelSlots数组
+//        let filledSlots = wave.levels.reduce(into: levelSlots) { (slots, level) in
+//          if level.id >= 0 && level.id < slots.count {
+//            slots[level.id] = level
+//          }
+//        }
+//        ForEach(0..<filledSlots.count, id: \.self) { index in
+//          if let level = filledSlots[index] {
+//            // 这里显示level的信息
+//            Text("\(level.appear)/\(level.clear)")
+//              .frame(maxWidth: .infinity)
+//              .inkFont(.font1, size: 15, relativeTo: .body)
+//          } else {
+//            // 没有对应的level，显示占位符
+//            Text("-")
+//              .frame(maxWidth: .infinity)
+//              .inkFont(.font1, size: 15, relativeTo: .body)
+//          }
+//        }
+//      }
+      DisclosureGroup {
+        HStack(spacing:5){
+          ForEach(wave.levels,id: \.id){ level in
+//                      HStack{
+//                        Text("\(s[level.id])")
+//                          .inkFont(.font1, size: 15, relativeTo: .body)
+//                        Spacer()
+//                        HStack(spacing: 10) {
+//                          Text("收集\(level.goldenDeliver/Double(level.appear))/\(level.goldenNorm/Double(level.appear))")
+//                            .font(.custom(InkFont.font1.rawValue, size: 15))
+//                          HStack(spacing:0){
+//                            Image(.golden)
+//                              .resizable()
+//                              .scaledToFit()
+//                              .frame(width: 10, height: 10)
+//                            Text("x\(level.goldenAppear/Double(level.appear))").font(.custom(InkFont.font1.rawValue, size: 15))
+//                          }
+//                          Text("\(level.clear)")
+//                            .inkFont(.font1, size: 15, relativeTo: .body)
+//                            .foregroundStyle(.waveClear)
+//                          Text("/")
+//                          Text("\(level.appear)")
+//                            .inkFont(.font1, size: 15, relativeTo: .body)
+//                        }
+//            
+//                      }
+            WaveResult(result: level)
+          }
+        }
+      } label: {
         Text(wave.id.localizedString)
-          .inkFont(.font1, size: 15, relativeTo: .body)
-        Spacer()
-        Text("\(wave.levels.map{$0.clear}.sum())/\(wave.levels.map{$0.appear}.sum())")
-          .inkFont(.font1, size: 15, relativeTo: .body)
+          .scaledLimitedLine(minScaleFactor: 1)
+                  .inkFont(.font1, size: 15, relativeTo: .body)
       }
+
+
+    }
+  }
+}
+
+extension CoopSummaryDetail{
+  struct WaveResult:View {
+    let result:WaveStats.Level
+    let waterLevel = ["干潮","普通","涨潮"]
+    var waveHeight: CGFloat {
+        switch result.id {
+        case 2:
+            return 72
+        case 1:
+            return 49
+        case 0:
+            return 16
+        default:
+          return 49
+        }
+    }
+    var body: some View {
+      VStack {
+        ZStack {
+          VStack {
+            Spacer()
+            WaveShape()
+              .fill(LinearGradient(
+                gradient: Gradient(colors: [AppColor.waveGradientStartColor, AppColor.listItemBackgroundColor]),
+                startPoint: .top,
+                endPoint: .bottom))
+              .frame(height: waveHeight)
+          }
+
+          VStack {
+            VStack(spacing:4){
+              HStack(spacing:0){
+                Text("\(result.clear)")
+                  .inkFont(.font1, size: 15, relativeTo: .body)
+                  .foregroundStyle(.waveClear)
+                Text("/")
+                  .inkFont(.font1, size: 15, relativeTo: .body)
+                Text("\(result.appear - result.clear)")
+                  .inkFont(.font1, size: 15, relativeTo: .body)
+                  .foregroundStyle(.waveDefeat)
+              }
+
+
+              Text("\((result.goldenDeliver ?? 0)/Double(result.appear))/\((result.goldenNorm ?? 0)/Double(result.appear))")
+
+
+
+              Text("\(waterLevel[result.id])")
+              HStack(spacing:0){
+                Image(.golden)
+                  .resizable()
+                  .scaledToFit()
+                  .frame(width: 10, height: 10)
+                Text("x\((result.goldenAppear ?? 0)/Double(result.appear))").font(.custom(InkFont.font1.rawValue, size: 10))
+              }
+              Text("平均出现数量").font(.custom(InkFont.font1.rawValue, size: 8))
+                .foregroundStyle(.secondary)
+
+            }
+            .inkFont(.font1, size: 15, relativeTo: .body)
+            .padding(.top,10)
+            Spacer()
+          }
+        }
+        .frame(width: 85, height: 110)
+        .background(AppColor.listItemBackgroundColor)
+        .continuousCornerRadius(10)
+
+//        let columns = Array(repeating: GridItem(.fixed(13)), count: min(result.specialWeaponUsage.count, 4))
+//        LazyVGrid(columns: columns, spacing: 2) {
+//          ForEach(0..<result.specialWeapons.count, id: \.self){index in
+//            Rectangle()
+//              .overlay {
+//                KFImage(URL(string: result.specialWeapons[index].image?.url ?? ""))
+//                  .resizable()
+//                  .scaledToFit()
+//                  .frame(width: 12, height: 12)
+//              }
+//              .foregroundStyle(Color.salmonRunSpecialBackground)
+//              .frame(width: 13, height: 13)
+//              .clipShape(Capsule())
+//          }
+//        }
+//        .frame(width: 85)
+      }
+
+
     }
   }
 }

@@ -103,17 +103,17 @@ struct SettingView: View {
           }
         }
 
-        Section {
-          Text("鲑鱼跑记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["salmon_run"],accountId: accountViewModel.accounts[accountViewModel.selectedAccount].id)))")
-
-          Text("对战记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["REGULAR","BANKARA","XMATCH","LEAGUE","PRIVATE"],accountId: accountViewModel.accounts[accountViewModel.selectedAccount].id)))")
-
-          if let url = PersistenceController.shared.container.persistentStoreDescriptions.first?.url {
-            Text(url.path())
-          }
-        } header: {
-          Text("数据库")
-        }
+//        Section {
+//          Text("鲑鱼跑记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["salmon_run"],accountId: accountViewModel.accounts[accountViewModel.selectedAccount].id)))")
+//
+//          Text("对战记录数量 ：\(InkData.shared.countDetailsMatchingFilter(filter: FilterProps(modes: ["REGULAR","BANKARA","XMATCH","LEAGUE","PRIVATE"],accountId: accountViewModel.accounts[accountViewModel.selectedAccount].id)))")
+//
+//          if let url = PersistenceController.shared.container.persistentStoreDescriptions.first?.url {
+//            Text(url.path())
+//          }
+//        } header: {
+//          Text("数据库")
+//        }
 
 
         Button("登录") {

@@ -7,12 +7,14 @@
 
 import Foundation
 import SwiftUI
+import IndicatorsKit
 
 class BattleModel:ObservableObject{
   @Published var rows:[[VsHistoryDetail]] = []
   @Published var fetching:Bool = false
   private let inkNet = InkNet.shared
   private let inkData = InkData.shared
+  let indicator = SceneDelegate.indicators
 
   enum Stats {
     case refreshing
@@ -28,7 +30,9 @@ class BattleModel:ObservableObject{
       return
     }
     self.stats = .refreshing
-    guard let histories = await inkNet.fetchBattleHistory(for: .Latest)?.historyGroups.nodes?[0].historyDetails.nodes else {return}
+//    guard let histories = await inkNet.fetchBattleHistory(for: .Latest)?.historyGroups.nodes?[0].historyDetails.nodes else {return}
+    guard let historiesGroups = await inkNet.fetchBattleHistory(for: .Latest)?.historyGroups.nodes else {return}
+    let histories = historiesGroups.compactMap { $0.historyDetails.nodes }.flatMap { $0 }
     var modeShouldSkip:[BattleMode:Bool] = [:]
     for mode in BattleMode.allCases{
       modeShouldSkip[mode] = true
@@ -41,60 +45,69 @@ class BattleModel:ObservableObject{
     }
 
     await self.loadFromNet(modeShouldSkip: modeShouldSkip)
-    await MainActor.run {
-      withAnimation {
-        self.fetching = false
-      }
-    }
+//    await MainActor.run {
+//      withAnimation {
+//        self.fetching = false
+//      }
+//    }
     self.stats = .none
   }
 
   private func loadFromNet(modeShouldSkip:[BattleMode:Bool]) async {
+    var allNodes:[GeneralBattleHistories.BriefDetail] = []
+    for skip in modeShouldSkip {
+      if skip.value {
+        continue
+      }
+
+      guard let tempNodes = await inkNet.fetchBattleHistory(for: skip.key.fetchEnum)?.historyGroups.nodes, !tempNodes.isEmpty else { continue }
+      for tempNode in tempNodes {
+        if let his = tempNode.historyDetails.nodes {
+          allNodes.append(contentsOf: his)
+        }
+      }
+    }
+    var needFetchNodes:[GeneralBattleHistories.BriefDetail] = []
+    for node in allNodes {
+      if await !self.inkData.isExist(id: node.id){
+        needFetchNodes.append(node)
+      }
+    }
+    let indicatorID = UUID().uuidString
+    if needFetchNodes.count > 0{
+        let style: Indicator.Style = .default
+        let idtor:Indicator = Indicator(id: "\(indicatorID)",  headline: "获取\(needFetchNodes.count)个记录",dismissType:.triggered,style: style)
+        DispatchQueue.main.async {
+          self.indicator.display(idtor)
+        }
+    }
     await withTaskGroup(of: VsHistoryDetail?.self) { group in
-      DispatchQueue.main.async {
-        withAnimation {
-          self.fetching = true
-        }
-      }
-      for skip in modeShouldSkip{
-        if skip.value{
-          continue
-        }
-
-        guard let tempNodes = await inkNet.fetchBattleHistory(for: skip.key.fetchEnum)?.historyGroups.nodes, !tempNodes.isEmpty else {continue}
-        for tempNode in tempNodes {
-          guard let his = tempNode.historyDetails.nodes else {continue}
-          for h in his{
-            group.addTask {
-              if await self.inkData.isExist(id: h.id){
-                return nil
-              }
-              if let completeDetail = await self.inkNet.fetchVsHistoryDetail(id: h.id,udemae: h.udemae, paintPoint: h.myTeam.result?.paintPoint){
-                return completeDetail
-              }
-              return nil
-            }
-          }
+      // 第二步：为每个node添加一个任务
+      for node in needFetchNodes {
+        group.addTask {
+          return await self.inkNet.fetchVsHistoryDetail(id: node.id, udemae: node.udemae, paintPoint: node.myTeam.result?.paintPoint)
         }
       }
 
-      for await result in group{
-        if let completeDetail = result{
+      // 第三步：处理结果
+      for await result in group {
+        if let completeDetail = result {
           await inkData.addBattle(detail: completeDetail)
           DispatchQueue.main.async {
-            if self.rows.isEmpty || !self.battleCanGroup(current: self.rows[0][0], new: completeDetail){
+            if self.rows.isEmpty || !self.battleCanGroup(current: self.rows[0][0], new: completeDetail) {
               withAnimation {
                 self.rows.insert([completeDetail], at: 0)
               }
-            }else{
+            } else {
               withAnimation {
-                self.rows[0].insert(contentsOf: [completeDetail])
+                self.rows[0].insert(contentsOf: [completeDetail], at: 0)
               }
             }
           }
         }
       }
     }
+    await indicator.dismiss(matching: indicatorID)
   }
 
   func loadFromData(length:Int, filter: FilterProps? = nil) async {

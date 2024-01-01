@@ -16,7 +16,11 @@ func importJsonData(from url: URL)  {
     struct temp1:Codable{
       let coopHistoryDetail:CoopHistoryDetail
     }
+    struct temp2:Codable{
+      let vsHistoryDetail:VsHistoryDetail
+    }
     let coops:[temp1]
+    let battles:[temp2]
   }
   Task{
     print("开始导入")
@@ -27,6 +31,11 @@ func importJsonData(from url: URL)  {
       for detail in data.coops{
         if  await !InkData.shared.isExist(id: detail.coopHistoryDetail.id){
           await InkData.shared.addCoop(detail: detail.coopHistoryDetail)
+        }
+      }
+      for detail in data.battles{
+        if  await !InkData.shared.isExist(id: detail.vsHistoryDetail.id){
+          await InkData.shared.addBattle(detail: detail.vsHistoryDetail)
         }
       }
     } catch {

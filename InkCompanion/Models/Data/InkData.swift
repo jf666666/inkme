@@ -315,13 +315,18 @@ class InkData{
     do{
       let result = try context.fetch(fetchRequest)
       for detail in result{
-        if detail.id!.base64Decoded().hasPrefix("Vs"){
-          detail.stats = detail.detail?.decode(VsHistoryDetail.self)?.status.encode()
-        }else{
-          detail.stats = detail.detail?.decode(CoopHistoryDetail.self)?.status.encode()
+//        if detail.id!.base64Decoded().hasPrefix("Vs"){
+//          detail.stats = detail.detail?.decode(VsHistoryDetail.self)?.status.encode()
+//        }else{
+//          detail.stats = detail.detail?.decode(CoopHistoryDetail.self)?.status.encode()
+//        }
+//        await save()
+        
+        if detail.id!.base64Decoded().userKey == "qaenpmwwot2cvyq3qpmm"{
+          detail.playerId = 5366484838940672
         }
-        await save()
       }
+      await save()
       print("done!!!!")
     }catch{
 
@@ -345,11 +350,12 @@ class InkData{
     }
   }
 
+  
   func queryDetailGroup<T: Codable>(totalGroup:Int, offset:Int = 0, filter: FilterProps? = nil, canGroup: @escaping (T, T) -> Bool) async -> [[T]] {
     var groups: [[T]] = []
     var currentGroup: [T] = []
     var offset = offset
-    let limit = 30
+    let limit = 130
     var keepFetching = true
 
     while keepFetching {
@@ -366,9 +372,10 @@ class InkData{
         if let last = currentGroup.last, !canGroup(last, detail) {
           // 当前元素不符合分组条件，开始新的组
           groups.append(currentGroup)
-          if groups.count >= totalGroup{
-            keepFetching = false
-            break
+          if groups.count == totalGroup{
+            return groups
+//            keepFetching = false
+//            break
           }
           currentGroup = [detail]
         } else {

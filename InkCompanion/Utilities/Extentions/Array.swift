@@ -176,7 +176,7 @@ extension Array where Element == WaveStats.Level{
 
     for wave in self {
         if let existingWave = dict[wave.id] {
-          let newWave = WaveStats.Level(id: wave.id, appear: wave.appear + existingWave.appear, clear: wave.clear+existingWave.clear)
+          let newWave = WaveStats.Level(id: wave.id, appear: wave.appear + existingWave.appear, clear: wave.clear+existingWave.clear, goldenAppear: (wave.goldenAppear ?? 0) + (existingWave.goldenAppear ?? 0), goldenDeliver: (wave.goldenDeliver ?? 0) + (existingWave.goldenDeliver ?? 0),goldenNorm: (wave.goldenNorm ?? 0)+(existingWave.goldenNorm ?? 0), turnIndex: 0, specialWeaponUsage: (wave.specialWeaponUsage ?? [])+(existingWave.specialWeaponUsage ?? []))
             dict[wave.id] = newWave
         } else {
             dict[wave.id] = wave
@@ -186,13 +186,26 @@ extension Array where Element == WaveStats.Level{
   }
 }
 
+struct TempStruct:Hashable{
+  let name:String
+  let hash:String
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(hash)
+  }
+  static func == (lhs: TempStruct, rhs: TempStruct) -> Bool {
+    return lhs.hash == rhs.hash
+  }
+}
+
 extension Array where Element == String{
   func countWeapons() -> [CoopsStatus.Weapon] {
-      var counts = [String: Int]()
+
+      var counts = [TempStruct: Int]()
       for string in self {
-          counts[string, default: 0] += 1
+        counts[TempStruct(name: string, hash: string.imageHash), default: 0] += 1
       }
-    return counts.map { CoopsStatus.Weapon(id: $0.key, count: $0.value) }
+    return counts.map { CoopsStatus.Weapon(id: $0.key.name, count: $0.value) }.sorted(by: {$0.id<$1.id})
   }
 
   func countSpecialWeapons() -> [CoopsStatus.SpecialWeapon]{

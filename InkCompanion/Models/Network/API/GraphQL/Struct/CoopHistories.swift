@@ -208,7 +208,6 @@ struct CoopWaveResult: Codable,Hashable {
   let goldenPopCount: Int
   let teamDeliverCount: Int?
   let specialWeapons: [SpecialWeapon]
-
 }
 
 struct CoopScale: Codable {

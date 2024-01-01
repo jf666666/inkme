@@ -123,6 +123,9 @@ class AccountViewModel:ObservableObject{
   }
 
   func shouldUpdate()->Bool{
+    if self.accounts.count == 0 {
+      return false
+    }
     let lastUpdate = self.accounts[self.selectedAccount].lastRefreshTime
     let currentTime = Date()
     let updateInterval = 1 

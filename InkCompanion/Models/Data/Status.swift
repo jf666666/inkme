@@ -36,11 +36,11 @@ func getCoopStats(coop:CoopHistoryDetail) -> CoopStatus{
   var king:CoopStatus.King?
   if let bossResult = coop.bossResult {
     let waveResult = coop.waveResults[3]
-    waves.append(WaveStats(id: bossResult.boss.id, levels: [WaveStats.Level(id: waveResult.waterLevel, appear: 1, clear: (bossResult.hasDefeatBoss) ? 1:0)]))
+    waves.append(WaveStats(id: bossResult.boss.id, levels: [WaveStats.Level(id: waveResult.waterLevel, appear: 1, clear: (bossResult.hasDefeatBoss) ? 1:0, goldenAppear: Double(waveResult.goldenPopCount), goldenDeliver: Double(waveResult.teamDeliverCount ?? 0),goldenNorm: Double(waveResult.deliverNorm ?? 0), turnIndex: waveResult.waveNumber, specialWeaponUsage: waveResult.specialWeapons)]))
     king = CoopStatus.King(id: bossResult.boss.id, defeat: bossResult.hasDefeatBoss)
   }
   for (i,result) in coop.waveResults.enumerated() {
-    waves.append(WaveStats(id: result.eventWave?.id ?? "-", levels: [WaveStats.Level(id: result.waterLevel, appear: 1, clear: (coop.resultWave == 0 || coop.resultWave > i + 1) ? 1 : 0)]))
+    waves.append(WaveStats(id: result.eventWave?.id ?? "-", levels: [WaveStats.Level(id: result.waterLevel, appear: 1, clear: (coop.resultWave == 0 || coop.resultWave > i + 1) ? 1 : 0, goldenAppear: Double(result.goldenPopCount), goldenDeliver: Double(result.teamDeliverCount ?? 0),goldenNorm: Double(result.deliverNorm ?? 0), turnIndex: result.waveNumber, specialWeaponUsage: result.specialWeapons)]))
   }
   let selfResult = getCoopPlayerStats(player: coop.myResult)
   return CoopStatus(time: coop.playedTime.asDate,
@@ -147,11 +147,25 @@ struct BossSalmonidStats:Codable {
   }
 }
 
-struct WaveStats:Codable {
-  struct Level:Codable{
+struct WaveStats:Codable, Identifiable, Hashable {
+  static func == (lhs: WaveStats, rhs: WaveStats) -> Bool {
+    return lhs.id == rhs.id
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(id)
+  }
+
+  struct Level:Codable,Identifiable{
     let id:Int
     let appear:Int
     let clear:Int
+    var children: [Level]? = nil
+    let goldenAppear:Double?
+    let goldenDeliver:Double?
+    let goldenNorm:Double?
+    let turnIndex:Int?
+    let specialWeaponUsage:[SpecialWeapon]?
   }
   let id: String
   let levels:[Level]

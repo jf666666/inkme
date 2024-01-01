@@ -16,6 +16,7 @@ struct CoopView: View {
   @EnvironmentObject var model: CoopModel
   @Namespace var namespace
   @State private var showingDateRangePicker = false
+  @Environment(\.scenePhase) private var phase
 
   var body: some View {
     NavigationStack {
@@ -91,6 +92,16 @@ struct CoopView: View {
             await model.loadFromNet()
 
     }
+    .onChange(of: phase) { newPhase in
+         switch newPhase {
+         case .active:
+           Task{
+             await model.loadFromNet()
+           }
+         default: break
+         }
+     }
+
   }
 
   var coopDetail:some View {

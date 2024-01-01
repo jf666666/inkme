@@ -152,7 +152,7 @@ struct CoopSummaryCard: View {
             .foregroundStyle(.secondary)
 
           HStack{
-            ForEach(0..<4,id: \.self){ i in
+            ForEach(weapons.indices,id: \.self){ i in
               KFImage(URL(string: weapons[i]))
                 .resizable()
                 .scaledToFit()
