@@ -53,7 +53,9 @@ struct CoopSummaryDetail:View {
       ]
       
       LazyVGrid(columns: columns, spacing: 10) {
-        ForEach(weaponUsages,id: \.id){w in
+        ForEach(weaponUsages.sorted{
+          return $0.count>$1.count
+        },id: \.id){w in
           VStack(spacing:3){
             KFImage(URL(string: w.id))
               .resizable()

@@ -30,6 +30,11 @@ class AccountViewModel:ObservableObject{
       self.accounts = aaccounts
       self.selectedAccount = self.accounts.firstIndex(where: {$0.sessionToken == self.inkUserDefaults.sessionToken}) ?? 0
     }
+//    let player = aaccounts[self.selectedAccount]
+//    self.inkUserDefaults.sessionToken = player.sessionToken
+//    self.inkUserDefaults.webServiceToken = player.webServiceToken.encode()
+//    self.inkUserDefaults.bulletToken = player.bulletToken
+//    self.inkUserDefaults.currentUserKey = String(player.id)
   }
 
   func changeAccount(to index: Int) {
